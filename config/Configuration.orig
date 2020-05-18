@@ -1,0 +1,106 @@
+/************************************************************************/
+/*									*/
+/* Configuration - Xinu device configuration specification file		*/
+/*									*/
+/* This file becomes input to the config program, which generates	*/
+/* 		conf.h  and  conf.c					*/
+/*									*/
+/* Entries for a device specify the functions that handle each of the	*/
+/* high-level I/O operations as follows:				*/
+/*									*/
+/*	-i    init	-o    open	-c    close			*/
+/*	-r    read	-w    write	-s    seek			*/
+/*	-g    getc	-p    putc	-n    control			*/
+/*	-intr int_hndlr	-csr  csr	-irq  irq			*/
+/*									*/
+/************************************************************************/
+
+/* Type Declarations for both real- and pseudo- device types */
+
+/* type of a null device */
+null:
+	on nothing
+		-i ionull	-o ionull	-c ionull
+		-r ionull	-g ionull	-p ionull
+		-w ionull	-s ioerr
+
+/* type of a gpio device */
+gpio:
+	on standard_gpio
+		-i gpioinit      -o ionull       -c ionull
+		-r gpioread      -g ionull       -p ionull
+		-w gpiowrite     -s ioerr        -n gpiocontrol
+		-intr gpiohandler
+
+/* type of a tty device */
+tty:
+	on uart
+		-i ttyinit      -o ionull       -c ionull
+		-r ttyread      -g ttygetc      -p ttyputc
+		-w ttywrite     -s ioerr        -n ttycontrol
+		-intr ttyhandler
+
+/* type of ram disk */
+ram:
+	on mem
+		-i raminit	-o ramopen	-c ramclose
+		-r ramread	-g ioerr	-p ioerr
+		-w ramwrite	-s ioerr	-n ioerr
+		-intr ionull
+
+/* type of namespace device */
+nam:
+	on top
+		-i naminit 	-o namopen 	-c ioerr
+		-r ioerr 	-g ioerr 	-p ioerr
+		-w ioerr 	-s ioerr 	-n ioerr
+		-intr ioerr
+
+spi:
+	on standard_spi
+		-i spiinit 	-o ioerr 	-c ioerr
+		-r ioerr 	-g ioerr 	-p spiputc
+		-w ioerr 	-s ioerr 	-n ioerr
+		-intr ioerr
+	
+%%
+
+/* Actual device declarations that each give the name of a device that	*/
+/*   will be present in the system					*/
+
+   /* Define the console device to be a tty and specify CSR*/
+   CONSOLE is tty  on uart  csr 0x40013800 -irq 53
+   
+   /* Define the console device to be a tty and specify CSR*/
+   GPIO0 is gpio  on standard_gpio  csr 0x40010800 -irq 99
+   /* Define the console device to be a tty and specify CSR*/
+   GPIO1 is gpio  on standard_gpio  csr 0x40010C00 -irq 99
+   /* Define the console device to be a tty and specify CSR*/
+   GPIO2 is gpio  on standard_gpio  csr 0x40011000 -irq 99
+   /* Define the console device to be a tty and specify CSR*/
+   GPIO3 is gpio  on standard_gpio  csr 0x40011400 -irq 99
+
+   /* Define a null device */
+   NULLDEV is null on nothing
+
+   /* Define a namespace device */
+   NAMESPACE is nam on top
+
+   /* Define a SPI device */
+   SPI1	is spi on standard_spi
+
+   /* Define a ram disk device */
+   RAM0 is ram on mem
+
+%%
+
+/* Configuration and Size Constants */
+
+#define	NPROC	     10		/* number of user processes		*/
+#define	NSEM	     10		/* number of semaphores			*/
+#define	IRQBASE	     32		/* base ivec for IRQ0			*/
+#define	IRQ_TIMER    IRQ_HW5	/* timer IRQ is wired to hardware 5	*/
+#define	IRQ_ATH_MISC IRQ_HW4	/* Misc. IRQ is wired to hardware 4	*/
+#define CLKFREQ      200000000	/* 200 MHz clock			*/
+
+#define	LF_DISK_DEV	RAM0

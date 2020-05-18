@@ -1,0 +1,149 @@
+/* Linker script for ATMEL(R) AVR(R) ATmega328P. */
+
+OUTPUT_FORMAT("elf32-avr","elf32-avr","elf32-avr")
+OUTPUT_ARCH(avr:5)
+
+/* The beginning and end of the program ROM area. */
+/* Leave 4 bytes for the 32-bit checksum plus 0x10 extra bytes free. */
+_rom_begin = 0x00000000;
+_rom_end   = 0x00007FEC;
+
+/* The beginning and end (i.e., top) of the stack */
+/* Set up a stack with a size of (1/2)K */
+_stack_begin = 0x800500;
+_stack_end   = 0x8008FF;  /* RAFA, en atmega328 el fin de la RAM */
+
+/* The end of the 2K RAM stack */
+__initial_stack_pointer = 0x8008FF;
+
+MEMORY
+{
+  ROM(rx)   : ORIGIN = 0, LENGTH = 32K
+  RAM(rw!x) : ORIGIN = 0x800100, LENGTH = 2K
+}
+
+SECTIONS
+{
+  . = 0x0;
+  . = ALIGN(2);
+
+  .text :
+  {
+    /* RAFA _*/
+    text = ABSOLUTE(.);         /* text: beginning of text segment      */
+
+    *(.vectors)
+    KEEP(*(.vectors))
+
+    /*Init sections were here*/
+    /* From this point on, we don't bother about wether the insns are
+       below or above the 16 bits boundary.  */
+    *(.init0)  /* Start here after reset.  */
+    KEEP (*(.init0))
+    *(.init1)
+    KEEP (*(.init1))
+    *(.init2)  /* Clear __zero_reg__, set up stack pointer.  */
+    KEEP (*(.init2))
+    *(.init3)
+    KEEP (*(.init3))
+    *(.init4)  /* Initialize data and BSS.  */
+    KEEP (*(.init4))
+    *(.init5)
+    KEEP (*(.init5))
+    *(.init6)  /* C++ constructors.  */
+    KEEP (*(.init6))
+    *(.init7)
+    KEEP (*(.init7))
+    *(.init8)
+    KEEP (*(.init8))
+    *(.init9)  /* Call main().  */
+    KEEP (*(.init9))
+
+    *(.def_isr)
+    KEEP(*(.def_isr))
+
+
+
+	__muluhisi3 = .;
+	start = .;
+	__do_copy_data = .;
+	__do_clear_bss = .;
+	_/* _data_end = .; */
+	__data_load_start = .;
+	__bss_end = .;
+	__bss_start = .;
+	__data_start = .;
+
+    /* FIN DE RAFA */
+    _ctors_begin = .;
+    *(.ctors)
+    . = ALIGN(2);
+    KEEP (*(SORT(.ctors)))
+    _ctors_end = .;
+    *(.progmem*)
+    . = ALIGN(2);
+    *(.trampolines*)
+    . = ALIGN(2);
+    *(.text)
+    . = ALIGN(2);
+    *(.text*)
+    . = ALIGN(2);
+    etext = ABSOLUTE(.) ;       /* etext: end of text                   */
+
+  } > ROM
+
+  .text :
+  {
+    . = ALIGN(0x10);
+  } > ROM = 0xAAAA
+
+  .= 0x800100;
+  . = ALIGN(2);
+
+  /* The ROM-to-RAM initialized data section */
+  .data :
+  {
+   data = ABSOLUTE(.);         /* data: beginning of data segment      */
+
+    _data_begin = .;
+    *(.data)
+    . = ALIGN(2);
+    KEEP (*(.data))
+    *(.data*)
+    . = ALIGN(2);
+    KEEP (*(.data*))
+    *(.rodata)  /* Do *NOT* move this! Include .rodata here if gcc is used with -fdata-sections. */
+    . = ALIGN(2);
+    KEEP (*(.rodata))
+    *(.rodata*)
+    . = ALIGN(2);
+    KEEP (*(.rodata*))
+    _data_end = .;
+    __data_end = .;
+
+   edata = ABSOLUTE(.) ;       /* edata: end of data                   */   
+  } > RAM AT > ROM
+
+  /* The uninitialized (zero-cleared) data section */
+  .bss :
+  {
+   bss = ABSOLUTE(.);          /* bss: beginning of bss segment        */
+
+    _bss_begin = .;
+    *(.bss)
+    . = ALIGN(2);
+    KEEP (*(.bss))
+    *(.bss*)
+    . = ALIGN(2);
+    KEEP (*(.bss*))
+    _bss_end = .;
+
+ ebss = ABSOLUTE(.) ;        /* ebss: end of bss                     */
+
+   end = ABSOLUTE(.);          /* end: end of image                    */
+    _end = ABSOLUTE(.);         /* _end: end of image                   */
+
+  } > RAM
+
+  _rom_data_begin = LOADADDR(.data);
+}
