@@ -1,26 +1,12 @@
 
-en el ldscript hay que limpiar y dejar las variables tal cual
+Vamos a usar los startupfiles y el ldscript de avr-gcc
 
-El simbolo etext tiene la dirección en flash donde termina .text,
-por lo tanto, ahí comienza .data, y desde ahí hay que copiar
-a la ram
+para poder llamar a nulluser agregamos la sección init8
+en system/start.S
+
+
 
 la ram empieza en 0x800100 (en realidad parece empezar en
 0x800060, pero el linker de avr-gcc pone esa dirección porque al parecer
 en el 0x800060 hay registros.
 
-Hay que copiar .data a 0x800100, la cantidad de datos: que es 
-_data_end - etext.
-
-Luego hay que iniciarlizar bss. Podría hacerse con memset en 
-RAM 0x800100 + (_data_end - etext) y la cantidad de bytes 
-end - _bss_begin  (end es el final de la imagen).
-
-Todos estos simbolos estan en el ld.script.avr
-
-
-Hay que establecer el stack. Al menos puede ser 0x8008FF. pero 
-no sé si necesita estar alineado.
-
-El inicio del stack es 
-0x800100 + (_data_end - etext) + (end - _bss_begin)
