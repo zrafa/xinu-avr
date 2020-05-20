@@ -7,7 +7,7 @@ typedef unsigned int size_t;
 #include <stdio.h>
 
 
-uint32	__attribute__((aligned(0x100))) intc_vector[92];	/* Interrupt vector	*/
+// RAFA uint32	__attribute__((aligned(0x100))) intc_vector[92];	/* Interrupt vector	*/
 
 /* Each message corresponds to an exception in the vector table. */
 char * exception_message(uint8 intnr) {
@@ -106,10 +106,10 @@ __attribute__ ((naked)) void * dummy_isr(void) {
 int32	initintc()
 {
 	/* System control block */
-	struct	scb_csreg *csrptr = (struct scb_csreg *)0xE000ED00;
+	// STM32 specific: struct	scb_csreg *csrptr = (struct scb_csreg *)0xE000ED00;
 	
 	/* clear entire IVT location in memory  */
-	memset(&intc_vector, 0, (sizeof(uint32) * 92));
+	// RAFA memset(&intc_vector, 0, (sizeof(uint32) * 92));
 
 	/* set dummy handlers */
 	for (int i = 1; i <= 64 ; i++) {
@@ -119,12 +119,12 @@ int32	initintc()
 	/* Enable memory management, bus and usage fault exceptions handlers
 	 * If these are not enabled, the processor treats them as a hard
 	 * faults. Unpriviliged access will cause a busfault in case no MPU */
-	csrptr->shcsr |= (1 << MPUFAULT_EN) | (1 << BUSFAULT_EN) | (1 << USAGEFAULT_EN);	
+	// STM32 specific: srptr->shcsr |= (1 << MPUFAULT_EN) | (1 << BUSFAULT_EN) | (1 << USAGEFAULT_EN);	
 	
 	/* The vector table is intially at 0x0. The vector table can be
 	 * relocated to other memory locations. We can do this by setting 
 	 * a register in the NVIC called the vector table offset register */
-	csrptr->vtor = (uint32) &intc_vector;
+	// RAFA // STM32 specific: srptr->vtor = (uint32) &intc_vector;
 	
 	return OK;
 }
@@ -143,7 +143,7 @@ int32	set_evec(uint32 xnum, uint32 handler)
 
 	/* Install the handler */
 
-	intc_vector[xnum] = handler;
+	// STM32 specific: intc_vector[xnum] = handler;
 
 	return OK;
 }

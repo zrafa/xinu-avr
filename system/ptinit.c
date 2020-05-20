@@ -21,7 +21,7 @@ syscall	ptinit(
 
 	ptfree = (struct ptnode *)getmem(maxmsgs*sizeof(struct ptnode));
 	if (ptfree == (struct ptnode *)SYSERR) {
-		panic("ptinit - insufficient memory");
+		panic(&m7[0]);
 	}
 
 	/* Initialize all port table entries to free */

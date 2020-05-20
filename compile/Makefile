@@ -43,11 +43,12 @@ REBUILDFLAGS	=	-s $(TOPDIR)/system  debug.c 	\
 REBUILDFLAGS	=	-s $(TOPDIR)/system   	\
 			-s $(TOPDIR)/lib			\
 			-s $(TOPDIR)/device/nam			\
+			-s $(TOPDIR)/device/tty			\
 			-s $(TOPDIR)/shell  'xsh_rdstest*'
 
 INCLUDE		=	-I$(TOPDIR)/include
 # RAFA DEFS		= 	-DBSDURG -DVERSION=\""`cat $(VERSIONFILE)`"\"
-DEFS		= 	-DVERSION=\""Rafa"\"
+DEFS		= 	-DVERSION=\""Xinu AVR 0.1 RAFA"\"
 
 # Compiler flags
 # CFLAGS  = -mcpu=cortex-m3 -mno-unaligned-access -mthumb -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O ${DEFS} ${INCLUDE}

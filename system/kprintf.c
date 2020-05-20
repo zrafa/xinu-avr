@@ -7,6 +7,8 @@
 #include <xinu.h>
 #include <stdarg.h>
 
+#include <serial_avr.h>
+
 /*------------------------------------------------------------------------
  * kputc - use polled I/O to write a character to the console serial line
  *------------------------------------------------------------------------
@@ -16,16 +18,21 @@ syscall kputc(
 	)
 {
 	intmask mask;
-	volatile struct uart_csreg * uptr = 0x40013800;
+	// STM32 specific: volatile struct uart_csreg * uptr = 0x40013800;
 
 	mask = disable();
 
+	if (c == '\n')
+		serial_put_char('\r');
+	serial_put_char(c);
+/*
 	if (c == '\n') {
               while(!(uptr->sr & UART_TC));
 	      uptr->dr = 0x0D; // return line
       	}
               while(!(uptr->sr & UART_TC));
 	      uptr->dr = c;
+*/
 
 	restore(mask);
 	return OK;

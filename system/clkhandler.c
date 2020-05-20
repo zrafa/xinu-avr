@@ -23,11 +23,10 @@
 void clkhandler()
 {
 	struct timer_csreg *tptr;
-	tptr = (struct timer_csreg *)TIM2_BASE;
+	// STM32 specific tptr = (struct timer_csreg *)TIM2_BASE;
 
-	/* Clear interrupt flag */
-
-	tptr->sr &= ~(1 << TIM_UIF);
+	// STM32 specific /* Clear interrupt flag */
+	// STM32 specific tptr->sr &= ~(1 << TIM_UIF);
 
 	/* Increment 1000ms counter */
 
@@ -58,6 +57,6 @@ void clkhandler()
 	if((--preempt) == 0) {
 		preempt = QUANTUM;
 		// PendSV call
-		 *SCB_ICSR |= (1 << PENDSV_INTR);
+		// STM32 specific *SCB_ICSR |= (1 << PENDSV_INTR);
 	}
 }

@@ -1,6 +1,7 @@
 /* mark.h - notmarked */
 
-#define	MAXMARK	20		/* Maximum number of marked locations	*/
+// RAFA #define	MAXMARK	20		/* Maximum number of marked locations	*/
+#define	MAXMARK	10		/* Maximum number of marked locations	*/
 
 extern	int32	*(marks[]);
 extern	int32	nmarks;

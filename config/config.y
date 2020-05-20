@@ -110,7 +110,7 @@ char *devstab[] = {
 	"\tvoid    (*dvintr)(void);",
 	"\tbyte    dvirq;",
 	"};\n",
-	"extern	const struct	dentry	devtab[]; /* one entry per device */",
+	"extern	struct	dentry	devtab[]; /* one entry per device */",
 	NULL
 };
 
@@ -390,11 +390,10 @@ int main(int argc, char **argv) {
 	fprintf(confc, "/* Device independent I/O switch */\n\n");
 	if (ndevs > 0)
 	{
-		// RAFA fprintf(confc, "const struct	dentry	devtab[NDEVS] =\n{\n");
-		fprintf(confc, "typedef unsigned int size_t;\n");
-		fprintf(confc, "#include <avr/pgmspace.h>\n");
-		fprintf(confc, "const struct	dentry	devtab[] PROGMEM =\n{\n");
-		// RAFA fprintf(confc, "const struct	dentry	devtab[] PROGMEM =\n{\n");
+		// fprintf(confc, "typedef unsigned int size_t;\n");
+		// fprintf(confc, "#include <avr/pgmspace.h>\n");
+		// fprintf(confc, "const struct	dentry	devtab[] PROGMEM =\n{\n");
+		fprintf(confc, "struct	dentry	devtab[] =\n{\n");
 		fprintf(confc, "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n\n",
 			"/**",
 			" * Format of entries is:",

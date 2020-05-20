@@ -122,7 +122,7 @@ void	nulluser()
 	uint32	free_mem;		/* Total amount of free memory	*/
 
 	//RAFA
-	cli();
+	cli();	/* AVR disable interrups */
 	blink_avr();
 
         // RAFA uartinit();
@@ -133,6 +133,9 @@ void	nulluser()
 	int c = atoi(&f);
         serial_put_char('X');
         serial_put_char(frase[c]);
+        serial_put_str(frase);
+	blink_avr();
+	blink_avr();
 
 	/* Initialize the system */
 
@@ -172,6 +175,9 @@ void	nulluser()
 	/* Initialize the real time clock */
 	clkinit();
 	
+	//RAFA
+	kprintf("\nstartup %s\n\n", VERSION);
+
 	/* Start of nullprocess */
 	startup(0, prptr);
 
@@ -219,9 +225,11 @@ static	void	sysinit()
 	kprintf(CONSOLE_RESET);
 	kprintf("\n%s\n\n", VERSION);
 
+
 	/* Initialize free memory list */
 	
 	meminit();
+
 
 	/* Initialize system variables */
 
@@ -253,6 +261,7 @@ static	void	sysinit()
 		semptr->squeue = newqueue();
 	}
 
+
 	/* Initialize buffer pools */
 
 	bufinit();
@@ -265,6 +274,8 @@ static	void	sysinit()
 	for (i = 0; i < NDEVS; i++) {
 		init(i);
 	}
+
+
 	return;
 }
 

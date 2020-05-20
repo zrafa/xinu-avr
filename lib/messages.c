@@ -9,6 +9,7 @@ const char m3[] PROGMEM = "\n\nAll user processes have completed.\n\n";
 const char m4[] PROGMEM = "namespace: cannot mount device %d\r\n";
 const char m5[] PROGMEM = "namespace: device name %s too long\r\n";
 const char m6[] PROGMEM = "Can't startup system";
+const char m7[] PROGMEM = "ptinit - insufficient memory";
 
 
 

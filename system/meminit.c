@@ -21,12 +21,14 @@ void	meminit(void)
 
 	/* Initialize the minheap and maxheap variables */
 
-	//RAFA AGREGO ESTO
-	int end = __bss_end + 1;
 
-	minheap = (void *)&end;
+	minheap = (void *)__bss_end+1;
+	maxheap = (void *)__bss_end+1024; /* 1KB for AVR */
+
+	// STM32 specific: minheap = (void *)&end;
 	/* 1024 bytes is reserved for supervise mode handling */
-	maxheap = (void *)MAXADDR - HANDLERSTACK;
+	// STM32 specific: maxheap = (void *)MAXADDR - HANDLERSTACK;
+
 
 	/* Initialize the memory list as one big block */
 

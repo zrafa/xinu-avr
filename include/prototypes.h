@@ -552,13 +552,15 @@ extern	devcall	ttycontrol(struct dentry *, int32, int32, int32);
 extern	devcall	ttygetc(struct dentry *);
 
 /* in file ttyhandle_in.c */
-extern	void	ttyhandle_in(struct ttycblk *, struct uart_csreg *);
+// RAFA extern	void	ttyhandle_in(struct ttycblk *, struct uart_csreg *);
+extern	void	ttyhandle_in(struct ttycblk *, struct uart_csreg *, char c);
 
 /* in file ttyhandle_out.c */
 extern	void	ttyhandle_out(struct ttycblk *, struct uart_csreg *);
 
 /* in file ttyhandler.c */
-extern	void	ttyhandler(uint32);
+// RAFA extern	void	ttyhandler(uint32);
+extern	void	ttyhandler(uint32, char c, int tipo);
 
 /* in file ttyinit.c */
 extern	devcall	ttyinit(struct dentry *);

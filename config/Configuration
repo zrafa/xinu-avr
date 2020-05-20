@@ -36,18 +36,18 @@ FIN DE RAFA */
 
 /* type of a tty device */
 tty:
-	/* RAFA 
 	on uart
 		-i ttyinit      -o ionull       -c ionull
 		-r ttyread      -g ttygetc      -p ttyputc
 		-w ttywrite     -s ioerr        -n ttycontrol
 		-intr ttyhandler
-	FIN DE RAFA */
+	/* RAFA 
 	on uart
 		-i ionull      -o ionull       -c ionull
 		-r ionull      -g ionull      -p ionull
 		-w ionull     -s ioerr        -n ionull
 		-intr ionull
+	FIN DE RAFA */
 
 /* type of ram disk */
 /* RAFA

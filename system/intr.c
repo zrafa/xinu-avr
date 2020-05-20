@@ -1,4 +1,4 @@
-/* Xinu for STM32
+/* Xinu for AVR
  *
  * Original license applies
  * Modifications for STM32 by Robin Krens
@@ -14,47 +14,50 @@
 
 /* intr.S - enable, disable, restore, halt, pause, (ARM) */
 
-#include <cortexm3.h>
+#include <xinu.h>
+#include <avr/interrupt.h>
 
-	.text
-	.globl	disable
-	.globl	restore
-	.globl	enable
-	.globl	pause
-	.globl	halt
+
+/* RAFA: the arguments and returns do not have any meaning. It were there
+ * for STM32.
+ * 
+ * For AVR: remove them some day
+ */
 
 /*------------------------------------------------------------------------
  * disable  -  Disable interrupts and return the previous state
  *------------------------------------------------------------------------
  */
-disable:
-//	mrs	r0, psr		/* Copy the CPSR into r0		*/
-//	cpsid	i		/* Disable interrupts			*/
-//	bx	lr		/* Return the CPSR			*/
+intmask disable() {
+	cli();
+	return 0;
+}
 
 /*------------------------------------------------------------------------
  * restore  -  Restore interrupts to value given by mask argument
    Cortex M3 hardware handles a lot, rewrite
  *------------------------------------------------------------------------
  */
-restore:
-//	msr	psr_nzcvq, r0	/* Restore the CPSR			*/
-//	cpsie	i		
-//	bx 	lr		/* Return to caller			*/
+inline void restore(intmask c) {
+	sei();
+}
 
 /*------------------------------------------------------------------------
  * enable  -  Enable interrupts
  *------------------------------------------------------------------------
  */
-enable:
-//	cpsie	i		/* Enable interrupts			*/
-//	bx	lr		/* Return				*/
+inline void enable() {
+	sei();
+}
 
 /*------------------------------------------------------------------------
  * pause or halt  -  Place the processor in a hard loop
  *------------------------------------------------------------------------
  */
-halt:
-pause:
-//	cpsid	i		/* Disable interrupts		*/
-//dloop:	b	dloop		/* Dead loop			*/
+inline void halt() {
+	for (;;);
+}
+
+inline void pause() {
+	for (;;);
+}
