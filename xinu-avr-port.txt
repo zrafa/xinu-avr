@@ -42,3 +42,26 @@ ttykickout. Con el flag de envío como argumento.
 
 
 
+Memory
+------
+
+Hay un gran bolonqui con la memoria (gestor de memoria de Xinu y AVR).
+En AVR los punteros son de 16bits. Pero, la direcciones de SRAM son de al
+menos 3 bytes (arranca en 0x800100); 
+ 
+En la inicialización hay que prestar atención:
+- O convertimos todos los punteros a unsigned long * (en avr long es de 32bits);
+- o cada vez que se usa ese puntero se castea a unsigned long *, y se le 
+suma 0x800000;
+
+Además hay que ver que a veces no use uint32 para algún calculo intermedio.
+No daría problemas si no le sumamos previamente 0x800000, y si en su 
+utilización final. 
+
+ACLARACION: los punteros de 16bits están bien para ser usados.
+Ahí no debería haber problemas.
+El problema puede surgir unicamente cuando se hace cast de las direcciones
+de 32bits a 16bits.
+
+
+
