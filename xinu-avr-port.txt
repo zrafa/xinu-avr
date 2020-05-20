@@ -10,3 +10,35 @@ la ram empieza en 0x800100 (en realidad parece empezar en
 0x800060, pero el linker de avr-gcc pone esa dirección porque al parecer
 en el 0x800060 hay registros.
 
+
+
+uart: vamos a poner un serial_avr.c con el manejador de interrupciones
+en recepción, tambien putc, e init.
+
+En el device tty se utiliza mucho entremezclado el manejador del uart
+(para stm32). 
+Vamos a dejarlo por ahora, y cada vez que se llame
+a enviar un dato llamaremos a putc de nuestro driver serial.
+
+
+UART:
+tenemos 
+ttykickout
+ttyhandle_out
+ttyhandle_in
+ttyhandler (un solo argumento).
+
+Intentaremos mandar a ttyhandler otro argumento, c (char) recibido.
+Entonces lo llamaremos desde la rutina de atencion de interrupciones del 
+uart RX (recepcion). Enviando el char c, y un flag para indicar recepcion.
+
+Para enviar al parecer el software termina produciendo una interrupcion
+forzada con ttykickout. Antes al forzar la interrupción se llamaba
+tambien a ttyhandler.
+Nosotros podemos intentar llamar a ttyhandler forzadamente desde 
+ttykickout. Con el flag de envío como argumento.
+
+
+
+
+
