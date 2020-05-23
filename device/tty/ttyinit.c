@@ -50,33 +50,33 @@ devcall	ttyinit(
 						/*   is full		*/
 
 	/* Initialize UART */
-	struct 	gpio_csreg *gptr;	
-	struct 	clock_csreg *cptr;
+	// STM32 specifi: struct 	gpio_csreg *gptr;	
+	// STM32 specifi: struct 	clock_csreg *cptr;
 
 	/* Enable 'clock' on peripherals */
-	cptr = (struct clock_csreg *)CLOCK_BASE;
-	cptr->apb2enr |= (1 << IOPAEN) | (1 << USART1EN);
+	// STM32 specifi: cptr = (struct clock_csreg *)CLOCK_BASE;
+	// STM32 specifi: cptr->apb2enr |= (1 << IOPAEN) | (1 << USART1EN);
 
 	/* Set in and output mode */
-	gptr = (struct gpio_csreg *)(0x40010800);
-	gptr->crh = 0x44444894;
+	// STM32 specifi: gptr = (struct gpio_csreg *)(0x40010800);
+	// STM32 specifi: gptr->crh = 0x44444894;
 
 	/* Enable peripheral */
-	uptr = (struct uart_csreg *)(0x40013800);
-	uptr->cr1 &= ~(1 << UART_EN);
+	// STM32 specifi: uptr = (struct uart_csreg *)(0x40013800);
+	// STM32 specifi: uptr->cr1 &= ~(1 << UART_EN);
 	
 	/* Set baudrate 115200 */
-	uptr->brr = 0x00000045;
+	// STM32 specifi: uptr->brr = 0x00000045;
 	
-	uptr->cr1 |= (1 << UART_TX_EN) | (1 << UART_RX_EN); /* Enable lines */
-	uptr->cr1 |= (1 << UART_INTR_RX) | (1 << UART_INTR_TX); /* Enable interrupts */ 
+	// STM32 specifi: uptr->cr1 |= (1 << UART_TX_EN) | (1 << UART_RX_EN); /* Enable lines */
+	// STM32 specifi: uptr->cr1 |= (1 << UART_INTR_RX) | (1 << UART_INTR_TX); /* Enable interrupts */ 
 
 	/* Set and enable interrupt vector */
-	set_evec(devptr->dvirq, (uint32)devptr->dvintr);
-	*NVIC_ISER1 |= (1 << 5);
+	// STM32 specifi: set_evec(devptr->dvirq, (uint32)devptr->dvintr);
+	// STM32 specifi: *NVIC_ISER1 |= (1 << 5);
 
 	/* Start the device */
-	uptr->cr1 |= (1 << UART_EN);
+	// STM32 specifi: uptr->cr1 |= (1 << UART_EN);
 
 //	ttykickout(uptr);
 	return OK;

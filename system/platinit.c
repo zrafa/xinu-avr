@@ -60,26 +60,26 @@ Used by kprintf and early system debugging */
 void uartinit()
 {
 	
-	struct	uart_csreg *uptr;	/* Address of UART's CSRs */
-	struct 	gpio_csreg *gptr;	
-	struct 	clock_csreg *cptr;
+	// STM32 specific: struct	uart_csreg *uptr;	/* Address of UART's CSRs */
+	// STM32 specific: struct 	gpio_csreg *gptr;	
+	// STM32 specific: struct 	clock_csreg *cptr;
 
 	/* Enable 'clock' on peripherals */
-	cptr = (struct clock_csreg *)CLOCK_BASE;
-	cptr->apb2enr |= (1 << IOPAEN) | (1 << USART1EN);
+	// STM32 specific: cptr = (struct clock_csreg *)CLOCK_BASE;
+	// STM32 specific: cptr->apb2enr |= (1 << IOPAEN) | (1 << USART1EN);
 
 	/* Set in and output mode (dirty) */
-	gptr = (struct gpio_csreg *)(0x40010800);
-	gptr->crh = 0x44444894;
+	// STM32 specific: gptr = (struct gpio_csreg *)(0x40010800);
+	// STM32 specific: gptr->crh = 0x44444894;
 
 	/* Enable peripheral */
-	uptr = (struct uart_csreg *)(0x40013800);
-	uptr->cr1 &= ~(1 << UART_EN);
+	// STM32 specific: uptr = (struct uart_csreg *)(0x40013800);
+	// STM32 specific: uptr->cr1 &= ~(1 << UART_EN);
 	
 	/* Set baudrate 115200 */
-	uptr->brr = 0x00000045;
+	// STM32 specific: uptr->brr = 0x00000045;
 	
-	uptr->cr1 |= (1 << UART_INTR_RX) | (1 << UART_TX_EN) | (1 << UART_RX_EN);
-	uptr->cr1 |= (1 << UART_EN);
+	// STM32 specific: uptr->cr1 |= (1 << UART_INTR_RX) | (1 << UART_TX_EN) | (1 << UART_RX_EN);
+	// STM32 specific: uptr->cr1 |= (1 << UART_EN);
 	
 }

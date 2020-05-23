@@ -15,6 +15,14 @@ char	*strncpy(
     register char *os1;
 
     os1 = s1;
+	blink_avr();
+	blink_avr();
+	blink_avr();
+	blink_avr();
+	blink_avr();
+	blink_avr();
+    kprintf("s1 0x%08X , s2 0x%08X\n\n", s1, s2);
+
     for (i = 0; i < n; i++)
     {
         if (((*s1++) = (*s2++)) == '\0')

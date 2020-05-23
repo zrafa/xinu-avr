@@ -3,7 +3,7 @@
 /* Maximum number of processes in the system */
 
 #ifndef NPROC
-#define	NPROC		8
+#define	NPROC		4
 #endif		
 
 /* Process state constants */
@@ -19,13 +19,14 @@
 
 /* Miscellaneous process definitions */
 
-#define	PNMLEN		16	/* Length of process "name"		*/
+// RAFA #define	PNMLEN		16	/* Length of process "name"		*/
+#define	PNMLEN		8	/* Length of process "name"		*/
 #define	NULLPROC	0	/* ID of the null process		*/
 
 /* Process initialization constants */
 
 // #define	INITSTK		4096	/* Initial process stack size		*/
-#define	INITSTK		1024	/* Initial process stack size		*/
+#define	INITSTK		128	/* Initial process stack size		*/
 #define	INITPRIO	20	/* Initial process priority		*/
 #define	INITRET		userret	/* Address to which process returns	*/
 

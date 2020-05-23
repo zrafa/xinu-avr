@@ -6,9 +6,7 @@ local	pid32 newpid();
 
 #define	roundew(x)	( (x+3)& ~0x3)
 
-//RAFA
 
-char nombre[10];
 
 /*------------------------------------------------------------------------
  *  create  -  create a process to start running a procedure
@@ -35,7 +33,6 @@ pid32	create(
 	if (ssize < MINSTK)
 		ssize = MINSTK;
 	ssize = (uint32) roundew(ssize);
-	strncpy(nombre, name, 4);
 	if (((saddr = (uint32 *)getstk(ssize)) ==
 	     (uint32 *)SYSERR ) ||
 	     (pid=newpid()) == SYSERR || priority < 1 ) {
@@ -106,13 +103,14 @@ local	pid32	newpid(void)
 
 	for (i = 0; i < NPROC; i++) {
 		nextpid %= NPROC;	/* wrap around to beginning */
+			kprintf("\nnextpid NPROC: 0x%08X\n", NPROC);
+			kprintf("\nnextpid i: 0x%08X\n", i);
 		if (proctab[nextpid].prstate == PR_FREE) {
+			kprintf("\nnextpid: 0x%08X\n", nextpid);
 			return nextpid++;
 		} else {
 			nextpid++;
 		}
 	}
-	if (strncmp(nombre, "Main", 4) == 0)
-		notmain(); // RAFA
 	return (pid32) SYSERR;
 }

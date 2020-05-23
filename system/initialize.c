@@ -22,6 +22,20 @@
 //RAFA
 #include <serial_avr.h>
 
+void probar_memoria() {
+
+	char *m1;
+	char *m2;
+	char m3[] = "hola mundo";
+
+	m1 = getmem(20);
+	kprintf("m1 0x%08X , m3 0x%08X\n\n", m1, m3);
+	strncpy(m1, m3, 10);
+	kprintf("getmem %s \n", m1);
+	kprintf("m1 0x%08X , m3 0x%08X\n\n", m1, m3);
+
+}
+
 
 extern	void	start(void);	/* Start of Xinu code			*/
 extern	void	*_end;		/* End of Xinu code			*/
@@ -42,7 +56,7 @@ struct	memblk	memlist;	/* List of free memory blocks		*/
 
 /* Active system status */
 
-int	prcount;		/* Total number of live processes	*/
+int32	prcount;		/* Total number of live processes	*/
 pid32	currpid;		/* ID of currently executing process	*/
 
 /* Control sequence to reset the console colors and cusor positiion	*/
@@ -77,24 +91,6 @@ void notmain ( void )
     unsigned int rx;
 
 
-//    ra=GET32(RCCBASE+0x18);
- //   ra|=1<<4; //enable port c
-  //  PUT32(RCCBASE+0x18,ra);
-    //config
-   // ra=GET32(GPIOCBASE+0x04);
-    //ra&=~(3<<20);   //PC13
-//    ra|=1<<20;      //PC13
- //   ra&=~(3<<22);   //PC13
-  //  ra|=0<<22;      //PC13
-   // PUT32(GPIOCBASE+0x04,ra);
-
-//    for(rx=0;rx<10;rx++)
- //   {
-  //      PUT32(GPIOCBASE+0x10,1<<(13+0));
-   //     for(ra=0;ra<200000;ra++) dummy(ra);
-    //    PUT32(GPIOCBASE+0x10,1<<(13+16));
-     //   for(ra=0;ra<200000;ra++) dummy(ra);
-   // }
 }
 
 // FIN RAFA
@@ -110,6 +106,25 @@ void nullprocess(void) {
 	
 	for(;;);
 }
+
+// RAFA AVR specific:
+#define GET_FAR_ADDRESS(var)                          \
+({                                                    \
+    uint32_t tmp;                                     \
+                                                      \
+    __asm__ __volatile__(                             \
+                                                      \
+            "ldi    %A0, lo8(%1)"           "\n\t"    \
+            "ldi    %B0, hi8(%1)"           "\n\t"    \
+            "ldi    %C0, hh8(%1)"           "\n\t"    \
+            "clr    %D0"                    "\n\t"    \
+        :                                             \
+            "=d" (tmp)                                \
+        :                                             \
+            "p"  (&(var))                             \
+    );                                                \
+    tmp;                                              \
+})
 
 
 //RAFA
@@ -141,26 +156,26 @@ void	nulluser()
 
 	sysinit();
 
+	// AVR specific:
+	extern uint32 __bss_end, __data_start;
+	uint32 ptr_bss_end;
+	ptr_bss_end = GET_FAR_ADDRESS(__bss_end);  //get the pointer
+	// data = pgm_read_byte_far(ptr_bss_end + i); 			/* read from FLASH */
+
+	uint32 ptr_data_start;
+	ptr_data_start = GET_FAR_ADDRESS(__data_start);  //get the pointer
+
 	/* Output Xinu memory layout */
 	free_mem = 0;
 	for (memptr = memlist.mnext; memptr != NULL;
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
 	}
-	// RAFA kprintf("%10d bytes of free memory.  Free list:\n", free_mem);
+	 kprintf("%10d bytes of free memory.  Free list:\n", free_mem);
 	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
 	    kprintf("           [0x%08X to 0x%08X]\n",
 		(uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
 	}
-
-// RAFA 	kprintf("%10d bytes of Xinu code.\n",
-// RAFA 		(uint32)&etext - (uint32)&text);
-// RAFA 	kprintf("           [0x%08X to 0x%08X]\n",
-// RAFA 		(uint32)&text, (uint32)&etext - 1);
-// RAFA 	kprintf("%10d bytes of data.\n",
-// RAFA 		(uint32)&ebss - (uint32)&data);
-// RAFA 	kprintf("           [0x%08X to 0x%08X]\n\n",
-// RAFA 		(uint32)&data, (uint32)&ebss - 1);
 
 
 	/* Initialize the Null process entry */	
@@ -229,6 +244,10 @@ static	void	sysinit()
 	/* Initialize free memory list */
 	
 	meminit();
+
+	blink_avr();
+	//RAFA
+	// probar_memoria();
 
 
 	/* Initialize system variables */
