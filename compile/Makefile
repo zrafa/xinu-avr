@@ -60,7 +60,7 @@ SFLAGS  = ${INCLUDE}
 
 # RAFA LDFLAGS = -Wl,--wrap,malloc,--wrap,free,--wrap,realloc,--wrap,fdevopen
 # LDFLAGS = -mmcu=atmega328p -nostartfiles -T ld.script  -Wl,-Map,xinu.map
-LDFLAGS = -mmcu=atmega328p -Wl,-Map,xinu.map -lm /usr/lib/avr/lib/avr5/libm.a
+LDFLAGS = -mmcu=atmega328p -Wl,-Map,xinu.map 
 
 
 all:	xinu

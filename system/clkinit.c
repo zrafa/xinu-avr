@@ -80,11 +80,11 @@ void clkinit(void)
 
 
 
-int avr_ticks;
+unsigned long avr_ticks;
 
 ISR(TIMER0_COMPA_vect)
 {
-    cli();
+     cli();
 
 	/* Every ms: What TO DO */
 	clkhandler();
@@ -96,6 +96,7 @@ ISR(TIMER0_COMPA_vect)
 	
 	/* every second */
 	avr_ticks=0;
+	resched();
     }
 
     sei();

@@ -40,22 +40,22 @@ struct	defer	Defer;
  *
  * */
 
-__attribute__ ((naked))
-void resched(void)
-{
-	uint32 * restorestk;
+// RAFA __attribute__ ((naked))
+// RAFA void resched(void)
+// RAFA {
+// RAFA 	uint32 * restorestk;
 /*
 	asm volatile("mrs r0, psp");
 	asm volatile("stmdb r0!, {r4-r11}");
 	asm volatile("mov %0, r0" : "=r" (restorestk)); // save tmp pointer
 
 */
-	struct procent *ptold;	/* Ptr to table entry for old process	*/
-	struct procent *ptnew;	/* Ptr to table entry for new process	*/
+// RAFA 	struct procent *ptold;	/* Ptr to table entry for old process	*/
+// RAFA 	struct procent *ptnew;	/* Ptr to table entry for new process	*/
 
 	/* If rescheduling is deferred, record attempt and return */
 
-	if (Defer.ndefers > 0) {
+// RAFA 	if (Defer.ndefers > 0) {
 /*
 		Defer.attempt = TRUE;
 		asm volatile ("mov r0, %0" : : "r" (restorestk));
@@ -66,14 +66,16 @@ void resched(void)
 	                 "mov lr, r0" "\n\t"
 	                 "bx lr");
 */
-	}
+// RAFA 	}
 
 	/* Point to process table entry for the current (old) process */
 
-	ptold = &proctab[currpid];
+//RAFA		ptold = &proctab[currpid];
 
-	if (ptold->prstate == PR_CURR) {  /* Process remains eligible */
-		if (ptold->prprio > firstkey(readylist)) {
+//RAFA		if (ptold->prstate == PR_CURR) {  /* Process remains eligible */
+//RAFA			if (ptold->prprio > firstkey(readylist)) {
+//RAFA				return (OK);
+//RAFA			}
 /*
 			asm volatile ("mov r0, %0" : : "r" (restorestk));
 			asm volatile("ldmia r0!, {r4-r11} ");
@@ -83,24 +85,24 @@ void resched(void)
 	                 "mov lr, r0" "\n\t"
 	                 "bx lr");
 */
-		}
+// RAFA 		}
 
 		/* Old process will no longer remain current */
 
-		ptold->prstate = PR_READY;
-		insert(currpid, readylist, ptold->prprio);
-	}
+//RAFA			ptold->prstate = PR_READY;
+//RAFA			insert(currpid, readylist, ptold->prprio);
+//RAFA		}
 
 	/* Force context switch to highest priority ready process */
 
 	
-	currpid = dequeue(readylist);
-	ptnew = &proctab[currpid];
-	ptnew->prstate = PR_CURR;
-	preempt = QUANTUM;		/* Reset time slice for process	*/
+// RAFA 	currpid = dequeue(readylist);
+// RAFA 	ptnew = &proctab[currpid];
+// RAFA 	ptnew->prstate = PR_CURR;
+// RAFA 	preempt = QUANTUM;		/* Reset time slice for process	*/
 
 
-	ptold->prstkptr = restorestk;
+// RAFA 	ptold->prstkptr = restorestk;
 	
 	/* Old process returns here when resumed */
 /*
@@ -112,7 +114,92 @@ void resched(void)
                  "mov lr, r0" "\n\t"
                  "bx lr");
 */
+
+
+// RAFA }
+print_free_mem() {
+
+	struct	memblk	*memptr;	/* Ptr to memory block		*/
+	uint32	free_mem;		/* Total amount of free memory	*/
+
+
+	/* Output Xinu memory layout */
+	free_mem = 0;
+	for (memptr = memlist.mnext; memptr != NULL;
+						memptr = memptr->mnext) {
+		free_mem += memptr->mlength;
+	// RAFA agrego
+	    kprintf("           [0x%08X ]\n",
+		(uint32)memptr->mlength);
+	}
+	 kprintf("%10d bytes of free memory.  Free list:\n", free_mem);
+	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
+	    kprintf("           [0x%08X to 0x%08X]\n",
+		// RAFA (uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
+		(uint32)memptr, (uint32)memptr);
+	    kprintf("           [0x%08X ]\n",
+		(uint32)memptr + memptr->mlength - 1);
+	}
+
+
 }
+
+int resched(void)
+{
+	// register struct	pentry volatile *ptold;	/* pointer to old process entry */
+	// register struct	pentry volatile *nptr;	/* pointer to new process entry */
+	register struct procent volatile *ptold;	/* Ptr to table entry for old process	*/
+	register struct procent volatile *ptnew;	/* Ptr to table entry for new process	*/
+	int newpid;
+
+	preempt = QUANTUM;		/* reset preemption counter	*/
+
+	/* no switch needed if current process priority higher than next */
+	
+		ptold = (struct pentry *)&proctab[currpid];
+
+		if (ptold->prstate == PR_CURR) {  /* Process remains eligible */
+			if (ptold->prprio > firstkey(readylist)) {
+				kprintf("resch no %s\n", ptold->prname);
+				return (OK);
+			}
+
+			ptold->prstate = PR_READY;
+			insert(currpid, readylist, ptold->prprio);
+		}
+
+//RAFA	if ( ( (optr= &proctab[currpid])->pstate == PRCURR) &&
+     //RAFA        ( lastkey(rdytail) < optr->pprio) )	{
+//		kprintf("resched: No Switch currpid=%d\n", currpid);
+	//RAFA	return(OK);
+	//RAFA}
+	
+	/* force context switch */
+//RAFA	if (optr->pstate == PRCURR) {
+//RAFA		optr->pstate = PRREADY;
+//RAFA		insert(currpid,rdyhead,optr->pprio);
+//RAFA	}
+
+	/* remove highest priority process at end of ready list */
+	
+		currpid = dequeue(readylist);
+		ptnew = &proctab[currpid];
+		ptnew->prstate = PR_CURR;
+
+//	if ( (newpid = getlast(rdytail)) == EMPTY )
+//		return(EMPTY);
+	
+//	nptr = &proctab[ ( currpid = newpid ) ];
+//	nptr->pstate = PRCURR;		/* mark it currently running	*/
+//	kprintf("resched: Yes Switch currpid=%d\n", currpid);
+
+				kprintf("ctxs %s\n", ptnew->prname);
+	// print_free_mem();
+	ctxsw(&ptold->pregs[0],&ptnew->pregs[0]);	/* switch context from old to new */
+
+	return(OK);
+}
+
 
 /*------------------------------------------------------------------------
  *  resched_cntl  -  Control whether rescheduling is deferred or allowed

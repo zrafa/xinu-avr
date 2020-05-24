@@ -12,7 +12,7 @@ status	ready(
 	  pid32		pid		/* ID of process to make ready	*/
 	)
 {
-	register struct procent *prptr;
+	register struct procent volatile *prptr;
 
 	if (isbadpid(pid)) {
 		return SYSERR;
@@ -24,7 +24,7 @@ status	ready(
 	prptr->prstate = PR_READY;
 	insert(pid, readylist, prptr->prprio);
 	
-	*SCB_ICSR |= (1 << PENDSV_INTR);
+	// *SCB_ICSR |= (1 << PENDSV_INTR);
 
 	return OK;
 }

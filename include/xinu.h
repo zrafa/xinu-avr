@@ -5,6 +5,9 @@ extern void notmain(void);
 typedef unsigned int size_t;
 void blink_avr();
 #include <messages.h>
+#define hibyte(x) (unsigned char)(((int)(x)>>8)&0xff)
+#define lobyte(x) (unsigned char)(((int)(x))&0xff)
+
 
 // FIN DE RAFA
 

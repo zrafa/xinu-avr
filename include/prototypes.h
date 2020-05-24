@@ -40,7 +40,8 @@ extern	syscall	close(did32);
 extern	syscall	control(did32, int32, int32, int32);
 
 /* in file create.c */
-extern	pid32	create(void *, uint32, pri16, char *, uint32, ...);
+// RAFA extern	pid32	create(void *, uint32, pri16, char *, uint32, ...);
+extern	pid32	create(int (*procaddr)(), int, int, char *, int, ...);
 
 /* in file ctxsw.S */
 extern	void	ctxsw(void *, void *);
@@ -420,7 +421,8 @@ extern	umsg32	recvclr(void);
 extern	umsg32	recvtime(int32);
 
 /* in file resched.c */
-extern	void	resched(void);
+//RAFA extern	void	resched(void);
+extern	int	resched(void);
 extern	status	resched_cntl(int32);
 
 /* in file intr.S */

@@ -11,10 +11,12 @@ process	main(void)
 	notmain();
 
 	/* Run the Xinu shell */
-	recvclr();
+	// recvclr();
 
 	
-	resume(create(shell, 4096, 50, "shell", 1, 0));
+	kprintf("MAIn\n");
+	// RAFA resume(create(shell, 4096, 50, "shell", 1, 0));
+	resume(create(shell, 64, 50, "shell", 1, 0));
 	
 	/* Wait for shell to exit and recreate it */
 

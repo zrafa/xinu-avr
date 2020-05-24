@@ -30,6 +30,7 @@ process	shell (
 		did32	dev		/* ID of tty device from which	*/
 	)				/*   to accept commands		*/
 {
+	kprintf("shell\n");
 	return OK;
 }
 

@@ -65,3 +65,22 @@ de 32bits a 16bits.
 
 
 
+Gestion de procesos
+
+
+resched.c
+create.c
+
+- copiar context switch de xinu-Avr a xinu-avr
+- En la estructura procent hay que poner los elementos registros que
+estan en el viejo xinu avr.o
+
+En create.c hay que inicializar esos elementos registros de la estructura
+struct procent . 
+En el viejo xinu se llaman pregs[]
+
+En el resched.c nuevo hay que poner la llamada a ctxswitch.
+
+
+
+

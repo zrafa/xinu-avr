@@ -100,6 +100,7 @@ void nullprocess(void) {
 
 	notmain();
 
+	kprintf("iit nullp\n");
 	
 	
 	resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
@@ -165,22 +166,33 @@ void	nulluser()
 	uint32 ptr_data_start;
 	ptr_data_start = GET_FAR_ADDRESS(__data_start);  //get the pointer
 
+
+
+
 	/* Output Xinu memory layout */
 	free_mem = 0;
 	for (memptr = memlist.mnext; memptr != NULL;
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
+	// RAFA agrego
+	    kprintf("           [0x%08X ]\n",
+		(uint32)memptr->mlength);
 	}
 	 kprintf("%10d bytes of free memory.  Free list:\n", free_mem);
 	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
 	    kprintf("           [0x%08X to 0x%08X]\n",
-		(uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
+		// RAFA (uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
+		(uint32)memptr, (uint32)memptr);
+	    kprintf("           [0x%08X ]\n",
+		(uint32)memptr + memptr->mlength - 1);
 	}
+
 
 
 	/* Initialize the Null process entry */	
 	int pid = create((void *)nullprocess, INITSTK, 10, "Null process", 0, NULL);
 
+	kprintf("\nstartup %s\n\n", VERSION);
 	struct procent * prptr = &proctab[pid];
 	prptr->prstate = PR_CURR;
 	
@@ -190,8 +202,8 @@ void	nulluser()
 	/* Initialize the real time clock */
 	clkinit();
 	
+
 	//RAFA
-	kprintf("\nstartup %s\n\n", VERSION);
 
 	/* Start of nullprocess */
 	startup(0, prptr);
@@ -215,8 +227,11 @@ void startup(int INIT, struct procent *p) {
  //       asm volatile("svc 1");
 
 	/* Should not be here, panic */
+	kprintf("startup\n");
+	// resume(INIT);
+	nullprocess();
 	// RAFA panic("Can't startup system"); 
-	panic(&m6[0]); 
+	// panic(&m6[0]); 
 }
 
 
@@ -245,8 +260,8 @@ static	void	sysinit()
 	
 	meminit();
 
-	blink_avr();
 	//RAFA
+	// blink_avr();
 	// probar_memoria();
 
 

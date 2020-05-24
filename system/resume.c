@@ -12,24 +12,27 @@ pri16	resume(
 {
 
 
-	//intmask	mask;			/* Saved interrupt mask		*/
+	intmask	mask;			/* Saved interrupt mask		*/
 	struct	procent *prptr;		/* Ptr to process's table entry	*/
 	pri16	prio;			/* Priority to return		*/
 
-	//mask = disable();
+	mask = disable();
 	if (isbadpid(pid)) {
 // RAFA ACA ABORTA		notmain();
-	//	restore(mask);
+		kprintf("no resume\n");
+		restore(mask);
 		return (pri16)SYSERR;
 	}
 	prptr = &proctab[pid];
 	if (prptr->prstate != PR_SUSP) {
-	//	restore(mask);
+		restore(mask);
+		kprintf("no resume 2%d\n", prptr->prstate);
 		return (pri16)SYSERR;
 	}
 	prio = prptr->prprio;		/* Record priority to return	*/
 
+	kprintf("resume\n");
 	ready(pid);
-	//restore(mask);
+	restore(mask);
 	return prio;
 }
