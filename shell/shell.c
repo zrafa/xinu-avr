@@ -31,6 +31,10 @@ process	shell (
 	)				/*   to accept commands		*/
 {
 	kprintf("shell\n");
+	blink_avr();
+	blink_avr();
+	blink_avr();
+	blink_avr();
 	return OK;
 }
 

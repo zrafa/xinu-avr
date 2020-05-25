@@ -21,7 +21,9 @@
 
 //RAFA
 #include <serial_avr.h>
+#include <avr/pgmspace.h>
 
+/*
 void probar_memoria() {
 
 	char *m1;
@@ -35,6 +37,7 @@ void probar_memoria() {
 	kprintf("m1 0x%08X , m3 0x%08X\n\n", m1, m3);
 
 }
+*/
 
 
 extern	void	start(void);	/* Start of Xinu code			*/
@@ -79,29 +82,21 @@ pid32	currpid;		/* ID of currently executing process	*/
 
 // RAFA 
 // void PUT32 ( unsigned int, unsigned int );
-unsigned int GET32 ( unsigned int );
-void dummy ( unsigned int );
+// unsigned int GET32 ( unsigned int );
+// void dummy ( unsigned int );
 
-#define GPIOCBASE 0x40011000
-#define RCCBASE 0x40021000
+// #define GPIOCBASE 0x40011000
+// #define RCCBASE 0x40021000
 
-void notmain ( void )
-{
-    unsigned int ra;
-    unsigned int rx;
-
-
-}
 
 // FIN RAFA
 
 
 void nullprocess(void) {
 
-	notmain();
+	// notmain();
 
-	kprintf("iit nullp\n");
-	
+	kprintf("nullp\n");
 	
 	resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
 	
@@ -131,7 +126,6 @@ void nullprocess(void) {
 //RAFA
 #include <avr/interrupt.h>
 
-char frase[] = "Xinu AVR loading...\n";
 void	nulluser()
 {	
 	struct	memblk	*memptr;	/* Ptr to memory block		*/
@@ -139,19 +133,16 @@ void	nulluser()
 
 	//RAFA
 	cli();	/* AVR disable interrups */
+
+	blink_avr();
 	blink_avr();
 
-        // RAFA uartinit();
+	// char frase[] PROGMEM = "Xinu Loading...\n";
         serial_init();
-        serial_put_char('A');
-        serial_put_char('B');
+        // serial_put_char('B');
 	char f = serial_get_char();
-	int c = atoi(&f);
-        serial_put_char('X');
-        serial_put_char(frase[c]);
-        serial_put_str(frase);
-	blink_avr();
-	blink_avr();
+	// int c = atoi(&f);
+        // serial_put_str(frase);
 
 	/* Initialize the system */
 
@@ -174,25 +165,22 @@ void	nulluser()
 	for (memptr = memlist.mnext; memptr != NULL;
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
-	// RAFA agrego
-	    kprintf("           [0x%08X ]\n",
-		(uint32)memptr->mlength);
 	}
-	 kprintf("%10d bytes of free memory.  Free list:\n", free_mem);
-	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
-	    kprintf("           [0x%08X to 0x%08X]\n",
-		// RAFA (uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
-		(uint32)memptr, (uint32)memptr);
-	    kprintf("           [0x%08X ]\n",
-		(uint32)memptr + memptr->mlength - 1);
-	}
+	
+	kprintf("FreeMEM:%d", free_mem);
+//	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
+//	    kprintf("[0x%08X to 0x%08X]\n",
+//		// RAFA (uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
+//		(uint32)memptr, (uint32)memptr);
+//	    kprintf("[0x%08X ]\n",
+//		(uint32)memptr + memptr->mlength - 1);
+//	}
 
 
 
 	/* Initialize the Null process entry */	
 	int pid = create((void *)nullprocess, INITSTK, 10, "Null process", 0, NULL);
 
-	kprintf("\nstartup %s\n\n", VERSION);
 	struct procent * prptr = &proctab[pid];
 	prptr->prstate = PR_CURR;
 	
@@ -202,8 +190,6 @@ void	nulluser()
 	/* Initialize the real time clock */
 	clkinit();
 	
-
-	//RAFA
 
 	/* Start of nullprocess */
 	startup(0, prptr);
@@ -227,9 +213,12 @@ void startup(int INIT, struct procent *p) {
  //       asm volatile("svc 1");
 
 	/* Should not be here, panic */
-	kprintf("startup\n");
+	// kprintf("startup\n");
 	// resume(INIT);
 	nullprocess();
+
+
+
 	// RAFA panic("Can't startup system"); 
 	// panic(&m6[0]); 
 }
@@ -259,10 +248,6 @@ static	void	sysinit()
 	/* Initialize free memory list */
 	
 	meminit();
-
-	//RAFA
-	// blink_avr();
-	// probar_memoria();
 
 
 	/* Initialize system variables */

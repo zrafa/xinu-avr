@@ -54,6 +54,11 @@ DEFS		= 	-DVERSION=\""Xinu AVR 0.1 RAFA"\"
 # CFLAGS  = -mcpu=cortex-m3 -mno-unaligned-access -mthumb -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O ${DEFS} ${INCLUDE}
 # CFLAGS  = -DF_CPU=16000000UL -mmcu=atmega328p -mrelax -fno-builtin -fno-stack-protector -nostdlib -c -Wall -Os ${DEFS} ${INCLUDE}
 CFLAGS  = -DF_CPU=16000000UL -mmcu=atmega328p  -fno-builtin -c -Wall -Os ${DEFS} ${INCLUDE}
+# RAFA AGREGA LAS 3 de ABAJO
+CFLAGS += -Wl,-static
+CFLAGS += -ffunction-sections
+CFLAGS += -Wl,--gc-sections
+
 SFLAGS  = ${INCLUDE}
 
 # Loader flags

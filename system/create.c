@@ -49,12 +49,11 @@ pid32	create(
 	     (uint32 *)SYSERR ) ||
 	     (pid=newpid()) == SYSERR || priority < 1 ) {
 		restore(mask);
-		kprintf("ERROR GETSTK\n");
+		kprintf("ERROR GETSTK %s\n",name);
 		return SYSERR;
 	}
 
 
-	kprintf("crea.pid:%d\n",pid);
 	
 	prcount++;
 	prptr = &proctab[pid];
@@ -137,7 +136,8 @@ pid32	create(
 	prptr->pregs[SSP_L] = lobyte((unsigned) saddr);
 	prptr->pregs[SSP_H] = hibyte((unsigned) saddr);
 
-	kprintf("creat:%s\n",prptr->prname);
+	// kprintf("creat:%s\n",prptr->prname);
+	kprintf("crea.pid:%d %s\n",pid,name);
 // RAFA FIN AGREGA
 	restore(mask);
 	return pid;
@@ -158,10 +158,10 @@ local	pid32	newpid(void)
 
 	for (i = 0; i < NPROC; i++) {
 		nextpid %= NPROC;	/* wrap around to beginning */
-			kprintf("\nnextpid NPROC: 0x%08X\n", NPROC);
-			kprintf("\nnextpid i: 0x%08X\n", i);
+			// kprintf("\nnextpid NPROC: 0x%08X\n", NPROC);
+			// kprintf("\nnextpid i: 0x%08X\n", i);
 		if (proctab[nextpid].prstate == PR_FREE) {
-			kprintf("\nnextpid: 0x%08X\n", nextpid);
+			// kprintf("\nnextpid: 0x%08X\n", nextpid);
 			return nextpid++;
 		} else {
 			nextpid++;

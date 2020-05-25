@@ -19,14 +19,15 @@ pri16	resume(
 	mask = disable();
 	if (isbadpid(pid)) {
 // RAFA ACA ABORTA		notmain();
-		kprintf("no resume\n");
+		kprintf("nores1\n");
 		restore(mask);
 		return (pri16)SYSERR;
 	}
 	prptr = &proctab[pid];
 	if (prptr->prstate != PR_SUSP) {
 		restore(mask);
-		kprintf("no resume 2%d\n", prptr->prstate);
+		// kprintf("no resume 2%d\n", prptr->prstate);
+		kprintf("nores2\n");
 		return (pri16)SYSERR;
 	}
 	prio = prptr->prprio;		/* Record priority to return	*/

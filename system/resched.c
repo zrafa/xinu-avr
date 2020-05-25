@@ -117,25 +117,20 @@ struct	defer	Defer;
 
 
 // RAFA }
+/*
 print_free_mem() {
 
-	struct	memblk	*memptr;	/* Ptr to memory block		*/
-	uint32	free_mem;		/* Total amount of free memory	*/
+	struct	memblk	*memptr;
+	uint32	free_mem;		
 
-
-	/* Output Xinu memory layout */
 	free_mem = 0;
 	for (memptr = memlist.mnext; memptr != NULL;
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
-	// RAFA agrego
-	    kprintf("           [0x%08X ]\n",
-		(uint32)memptr->mlength);
 	}
 	 kprintf("%10d bytes of free memory.  Free list:\n", free_mem);
 	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
-	    kprintf("           [0x%08X to 0x%08X]\n",
-		// RAFA (uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
+	   kprintf("           [0x%08X to 0x%08X]\n",
 		(uint32)memptr, (uint32)memptr);
 	    kprintf("           [0x%08X ]\n",
 		(uint32)memptr + memptr->mlength - 1);
@@ -143,6 +138,7 @@ print_free_mem() {
 
 
 }
+*/
 
 int resched(void)
 {
@@ -152,8 +148,10 @@ int resched(void)
 	register struct procent volatile *ptnew;	/* Ptr to table entry for new process	*/
 	int newpid;
 
+	// print_free_mem();
 	preempt = QUANTUM;		/* reset preemption counter	*/
 
+	serial_put_char('X');
 	/* no switch needed if current process priority higher than next */
 	
 		ptold = (struct pentry *)&proctab[currpid];
@@ -167,7 +165,6 @@ int resched(void)
 			ptold->prstate = PR_READY;
 			insert(currpid, readylist, ptold->prprio);
 		}
-
 //RAFA	if ( ( (optr= &proctab[currpid])->pstate == PRCURR) &&
      //RAFA        ( lastkey(rdytail) < optr->pprio) )	{
 //		kprintf("resched: No Switch currpid=%d\n", currpid);
@@ -193,8 +190,11 @@ int resched(void)
 //	nptr->pstate = PRCURR;		/* mark it currently running	*/
 //	kprintf("resched: Yes Switch currpid=%d\n", currpid);
 
-				kprintf("ctxs %s\n", ptnew->prname);
-	// print_free_mem();
+//	kprintf("ctxs %s\n", ptnew->prname);
+	serial_put_char('W');
+//	if ((*ptnew->prname) == 's')
+//		serial_put_char('S');
+//	serial_put_char(*ptold->prname);;
 	ctxsw(&ptold->pregs[0],&ptnew->pregs[0]);	/* switch context from old to new */
 
 	return(OK);

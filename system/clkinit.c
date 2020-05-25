@@ -80,25 +80,24 @@ void clkinit(void)
 
 
 
-unsigned long avr_ticks;
+unsigned long avr_ticks=0;
 
 ISR(TIMER0_COMPA_vect)
 {
      cli();
 
 	/* Every ms: What TO DO */
-	clkhandler();
+	//clkhandler();
 
 
     avr_ticks ++;
-    if (avr_ticks == 1000) {
-    	/* PORTB ^= ( 1 << PORTB5 );  */ 
-	
-	/* every second */
+    if (avr_ticks > 100) {
+//	/* every second */
 	avr_ticks=0;
 	resched();
     }
 
+ //   resched();
     sei();
 }
 
