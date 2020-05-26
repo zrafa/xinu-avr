@@ -516,7 +516,8 @@ extern	syscall	semreset(sid32, int32);
 extern	syscall	send(pid32, umsg32);
 
 /* in file shell.c */
-extern 	process shell(did32);
+// RAFA extern 	process shell(did32);
+extern 	process shell(void);
 
 /* in file signal.c */
 extern	syscall	signal(sid32);

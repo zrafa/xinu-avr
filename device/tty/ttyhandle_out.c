@@ -26,6 +26,7 @@ void	ttyhandle_out(
 		return;
 	}
 
+
 	/* If echo and output queues empty, turn off interrupts */
 
 	if ( (typtr->tyehead == typtr->tyetail) &&

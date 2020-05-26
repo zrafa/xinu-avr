@@ -260,13 +260,16 @@ local	void	eputc(
 	  struct uart_csreg *csrptr	/* Address of UART's CSRs	*/
 	)
 {
-	*typtr->tyetail++ = ch;
+	// *typtr->tyetail++ = ch;
+
+	// RAFA
+	serial_put_char(ch);
 
 	/* Wrap around buffer, if needed */
 
-	if (typtr->tyetail >= &typtr->tyebuff[TY_EBUFLEN]) {
-		typtr->tyetail = typtr->tyebuff;
-	}
-	ttykickout(csrptr);
+	// if (typtr->tyetail >= &typtr->tyebuff[TY_EBUFLEN]) {
+// 		typtr->tyetail = typtr->tyebuff;
+// 	}
+ //	ttykickout(csrptr);
 	return;
 }

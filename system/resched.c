@@ -151,14 +151,14 @@ int resched(void)
 	// print_free_mem();
 	preempt = QUANTUM;		/* reset preemption counter	*/
 
-	serial_put_char('X');
+	// serial_put_char('X');
 	/* no switch needed if current process priority higher than next */
 	
 		ptold = (struct pentry *)&proctab[currpid];
 
 		if (ptold->prstate == PR_CURR) {  /* Process remains eligible */
 			if (ptold->prprio > firstkey(readylist)) {
-				kprintf("resch no %s\n", ptold->prname);
+				// kprintf("resch no %s\n", ptold->prname);
 				return (OK);
 			}
 
@@ -191,10 +191,7 @@ int resched(void)
 //	kprintf("resched: Yes Switch currpid=%d\n", currpid);
 
 //	kprintf("ctxs %s\n", ptnew->prname);
-	serial_put_char('W');
-//	if ((*ptnew->prname) == 's')
-//		serial_put_char('S');
-//	serial_put_char(*ptold->prname);;
+	// serial_put_char('W');
 	ctxsw(&ptold->pregs[0],&ptnew->pregs[0]);	/* switch context from old to new */
 
 	return(OK);

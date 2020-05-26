@@ -31,7 +31,8 @@ syscall	wait(
 		prptr->prstate = PR_WAIT;	/* Set state to waiting	*/
 		prptr->prsem = sem;		/* Record semaphore ID	*/
 		enqueue(currpid,semptr->squeue);/* Enqueue on semaphore	*/
-		*SCB_ICSR |= (1 << PENDSV_INTR);
+// RAFA		*SCB_ICSR |= (1 << PENDSV_INTR);
+		resched();
 	}
 
 	restore(mask);

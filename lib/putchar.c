@@ -11,5 +11,7 @@ int	putchar(
 	  int		c
 	)
 {
-    return fputc(c, stdout);
+    // RAFA return fputc(c, stdout);
+    serial_put_char(c);
+	return 0;
 }

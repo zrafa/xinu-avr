@@ -28,10 +28,10 @@ process	main(void)
 	//blink_avr();
 	blink_avr();
 	blink_avr();
-	// RAFA resume(create(shell, 4096, 50, "shell", 1, 0));
+	resume(create(shell, 64, 50, "shell", 1, 0));
 	// resume(create(shell, 64, 50, "shell", 1, 0));
 	// resume(create(shell, 64, 50, "shell", 0, NULL));
-	resume(create((void *)main2, INITSTK, 50, "main2", 0, NULL));
+	// resume(create((void *)main2, INITSTK, 50, "main2", 0, NULL));
 
 	
 	for(;;)

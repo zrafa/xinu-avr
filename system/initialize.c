@@ -46,6 +46,7 @@ extern	void	*_end;		/* End of Xinu code			*/
 /* Function prototypes */
 
 extern	void main(void);	/* Main is the first process created	*/
+extern	process shell(void);	/* Main is the first process created	*/
 static	void sysinit(); 	/* Internal system initialization	*/
 extern	void meminit(void);	/* Initializes the free memory list	*/
 extern 	int32 initintc(void);
@@ -98,7 +99,8 @@ void nullprocess(void) {
 
 	kprintf("nullp\n");
 	
-	resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
+	// resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
+	resume(create((void *)shell, 300, INITPRIO, "shell", 0, NULL));
 	
 	for(;;);
 }
@@ -167,7 +169,7 @@ void	nulluser()
 		free_mem += memptr->mlength;
 	}
 	
-	kprintf("FreeMEM:%d", free_mem);
+	kprintf("\n\rFreeMEM:%d", free_mem);
 //	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
 //	    kprintf("[0x%08X to 0x%08X]\n",
 //		// RAFA (uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);

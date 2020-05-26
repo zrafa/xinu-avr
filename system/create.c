@@ -33,7 +33,7 @@ pid32	create(
 	pid32		pid;		/* stores new process id	*/
 	struct	procent	*prptr;		/* pointer to proc. table entry */
 	int32		i;
-	uint32		*a;		/* points to list of args	*/
+	// uint32		*a;		/* points to list of args	*/
 	// RAFA uint32		*saddr;		/* stack address		*/
 	unsigned char		*saddr;		/* stack address		*/
 	va_list ap;
@@ -48,8 +48,8 @@ pid32	create(
 	if (((saddr = (unsigned char *)getstk(ssize)) ==
 	     (uint32 *)SYSERR ) ||
 	     (pid=newpid()) == SYSERR || priority < 1 ) {
+		kprintf("STK_ERR"); /* m10[] */
 		restore(mask);
-		kprintf("ERROR GETSTK %s\n",name);
 		return SYSERR;
 	}
 
@@ -110,16 +110,18 @@ pid32	create(
 	// POR AHORA NO prptr->pdevs[0] = prptr->pdevs[1] = BADDEV;
 	
 
-//RAFA	a = (uint32 *)(&nargs + 1);
-//RAFA	for (int i = 0; i < nargs; i++) {
-//RAFA		prptr->parg[i] = (uint32) *a++;
-//RAFA	}
+	int * a = (int *)(&nargs + 1);
+	for (int i = 0; i < nargs; i++) {
+		prptr->parg[i] = (int) *a++;
+	}
+/* RAFA ESTO ANDA
 	va_start(ap,nargs);
 	for (i=0 ; i < nargs; i++)
 		{
 	    prptr->parg[i] = va_arg(ap, unsigned int);
 		}
 	va_end(ap);
+/* FIN RAFA ESTO ANDA */
 
 	prptr->parg[nargs] = 0;
 	

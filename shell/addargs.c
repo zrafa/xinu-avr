@@ -38,6 +38,7 @@ status	addargs(
 	/* Check argument count and data length */
 
 	if ( (ntok <= 0) || (tlen < 0) ) {
+		// serial_put_char('M');
 		restore(mask);
 		return SYSERR;
 	}
@@ -48,46 +49,71 @@ status	addargs(
 	/*	args array will be stored followed by the argument	*/
 	/*	strings							*/
 	
-	aloc = (uint32) (prptr->prstkbase
-		- prptr->prstklen + sizeof(uint32));
-	argloc = (uint32*) ((aloc + 3) & ~0x3);	/* round multiple of 4	*/
+//	aloc = (uint32) (prptr->prstkbase
+//		- prptr->prstklen + sizeof(uint32));
+//	argloc = (uint32*) ((aloc + 3) & ~0x3);	/* round multiple of 4	*/
 
 	/* Compute the first location beyond args array for the strings	*/
-
-	argstr = (char *) (argloc + (ntok+1));	/* +1 for a null ptr	*/
+//
+//	argstr = (char *) (argloc + (ntok+1));	/* +1 for a null ptr	*/
 
 	/* Set each location in the args vector to be the address of	*/
 	/*	string area plus the offset of this argument		*/
 
-	for (aptr=argloc, i=0; i < ntok; i++) {
-		*aptr++ = (uint32) (argstr + tok[i]);
-	}
+//	for (aptr=argloc, i=0; i < ntok; i++) {
+//		*aptr++ = (uint32) (argstr + tok[i]);
+//	}
 
 	/* Add a null pointer to the args array */
 
-	*aptr++ = (uint32)NULL;
+//	*aptr++ = (uint32)NULL;
 
 	/* Copy the argument strings from tokbuf into process's	stack	*/
 	/*	just beyond the args vector				*/
 
-	memcpy(aptr, tokbuf, tlen);
+//	memcpy(aptr, tokbuf, tlen);
 
 	/* Find the second argument in process's stack */
 
-	for (search = (uint32 *)prptr->prstkptr;
-	     search < (uint32 *)prptr->prstkbase; search++) {
+//	for (search = (uint32 *)prptr->prstkptr;
+//	     search < (uint32 *)prptr->prstkbase; search++) {
 
 		/* If found, replace with the address of the args vector*/
 
-		if (*search == (uint32)dummy) {
-			*search = (uint32)argloc;
-			restore(mask);
-			return OK;
-		}
-	}
+//		if (*search == (uint32)dummy) {
+//			*search = (uint32)argloc;
+//			restore(mask);
+//			return OK;
+//		}
+//	}
 
 	/* Argument value not found on the stack - report an error */
 
+	// serial_put_char('\n');
+
+//	for (fromarg=Shl.shtok ; nargs > 0 ; nargs--) {
+	for (i=0 ; i < ntok; i++) {
+		// prptr->parg[i+prptr->pargs] = (int)tok[i]; /******** change int parg[] TO void *parg[] in proc.h ******/
+		// prptr->parg[i+prptr->pargs] = (void *)tok[i]; /******** change int parg[] TO void *parg[] in proc.h ******/
+//		serial_put_char(48+i);
+//		serial_put_char(' ');
+//		serial_put_char(tokbuf[tok[i]]);
+//		serial_put_char(' ');
+		prptr->parg[i] = &tokbuf[tok[i]];
+
+	}
+//	*toarg = 0;
+	prptr->pargs = ntok;
+	prptr->parg[ntok] = 0;
+	
+// RAFA	prptr->pargs += ntok;
+// RAFA	prptr->parg[prptr->pargs] = 0;
+	/* machine/compiler dependent pass arguments to created process */
+	prptr->pregs[24] = lobyte((unsigned)prptr->pargs);	/*r24*/
+	prptr->pregs[25] = hibyte((unsigned)prptr->pargs);
+	
+
 	restore(mask);
-	return SYSERR;
+	return OK;
+//	return SYSERR;
 }

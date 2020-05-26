@@ -20,7 +20,6 @@ typedef struct
 // volatile uart_t *puerto_serial = (uart_t *) (0xc0);
 
 char letra_start = 'R';
-// char cadena[100];
 
 #define F_CPU 16000000UL
 
@@ -41,16 +40,13 @@ void serial_init() {
 
 	/* Configurar los registros High y Low con BAUD_PRESCALE */
 
-	blink_avr();
-
-
 	puerto_serial->baud_rate_h = (unsigned char) (BAUD_PRESCALE>>8);
 	puerto_serial->baud_rate_l = (unsigned char) (BAUD_PRESCALE);
 	/* Configurar un frame de 8bits, con un bit de paridad y bit de stop */
 	puerto_serial->status_control_c = (unsigned char)(INIT);
 
 	/* Activar la recepcion y transmicion e interrupcion de recepcion */
-	puerto_serial->status_control_b = (unsigned char)(EN_RX_TX | UART_RXCIE0);
+	puerto_serial->status_control_b = (unsigned char)(EN_RX_TX | (1<<UART_RXCIE0));
 
 	/* test */
 	while(!((puerto_serial->status_control_a) & (EN_TX)));
@@ -74,6 +70,7 @@ char value;
 ISR(USART_RX_vect){
 	cli(); 
 	value = UDR0;             //read UART register into value
+//	serial_put_char (value);
 	ttyhandler (1, value, 0);
 	sei(); 
 }

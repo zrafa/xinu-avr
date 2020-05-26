@@ -3,8 +3,10 @@
 /* Size constants */
 
 #define SHELL_BUFLEN	TY_IBUFLEN+1	/* Length of input buffer	*/
-#define SHELL_MAXTOK	32		/* Maximum tokens per line	*/
-#define SHELL_CMDSTK	4096		/* Size of stack for process	*/
+// RAFA #define SHELL_MAXTOK	32		/* Maximum tokens per line	*/
+#define SHELL_MAXTOK	3		/* Maximum tokens per line	*/
+// RAFA #define SHELL_CMDSTK	4096		/* Size of stack for process	*/
+#define SHELL_CMDSTK	256		/* Size of stack for process	*/
 					/*    that executes command	*/
 #define	SHELL_ARGLEN	(SHELL_BUFLEN+SHELL_MAXTOK) /* Argument area	*/
 #define SHELL_CMDPRIO	20		/* Process priority for command	*/
@@ -75,3 +77,5 @@ struct	cmdent	{			/* Entry in command table	*/
 extern	uint32	ncmd;
 // RAFA extern	const	struct	cmdent	cmdtab[];
 extern	const	struct	cmdent	cmdtab[] ;
+
+

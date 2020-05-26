@@ -78,7 +78,7 @@ void _svc_handler(void) {
 			ret = putc(args[1], args[2]);
 			break;
 		default:
-			kprintf("System call not implemented\n");	
+			kprintf(&m9[0]);	
 			break;
 	}
 

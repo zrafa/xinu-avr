@@ -62,7 +62,8 @@ struct procent {		/* Entry in the process table		*/
 	unsigned char pregs[PNREGS];/* saved context (see ctxsw)	*/
 
 	int pargs;				/* initial number of arguments	*/
-	int parg[MAXARG];	/* arguments					*/
+	// int parg[MAXARG];	/* arguments					*/
+	void * parg[MAXARG];	/* arguments					*/
 	int *paddr;			/* initial code address			*/
 
 	char	*prstkptr;	/* Saved stack pointer			*/
