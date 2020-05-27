@@ -8,6 +8,7 @@
 /* Table of Xinu shell commands and the function associated with each	*/
 /************************************************************************/
 const	struct	cmdent	cmdtab[] = {
+	{"memstat",	TRUE,	xsh_memstat}, /* Make built-in */
 	{"echo",	FALSE,	xsh_echo}
 //	{"argecho",	TRUE,	xsh_argecho},
 //	{"cat",		FALSE,	xsh_cat},
@@ -19,7 +20,6 @@ const	struct	cmdent	cmdtab[] = {
 //	{"help",	FALSE,	xsh_help},
 //	{"kill",	TRUE,	xsh_kill},
 //	{"memdump",	FALSE,	xsh_memdump},
-//	{"memstat",	TRUE,	xsh_memstat}, /* Make built-in */
 //	{"ps",		FALSE,	xsh_ps},
 //	{"sleep",	FALSE,	xsh_sleep},
 //	{"uptime",	FALSE,	xsh_uptime},
@@ -275,7 +275,7 @@ process	shell (
 		// RAFA 	SHELL_CMDSTK, SHELL_CMDPRIO,
 		// RAFA 	cmdtab[j].cname, 2, ntok, &tmparg);
 		child = create(cmdtab[j].cfunc,
-			300, SHELL_CMDPRIO,
+			160, SHELL_CMDPRIO,
 			cmdtab[j].cname, 2, ntok, &tmparg);
 
 		/* If creation or argument copy fails, report error */

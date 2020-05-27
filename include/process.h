@@ -19,7 +19,8 @@
 
 /* Miscellaneous process definitions */
 
-#define	PNMLEN		16	/* Length of process "name"		*/
+// RAFA #define	PNMLEN		16	/* Length of process "name"		*/
+#define	PNMLEN		8	/* Length of process "name"		*/
 #define	NULLPROC	0	/* ID of the null process		*/
 
 // RAFA para AVR
@@ -31,7 +32,8 @@
 #define SSREG           36              /* saved Status Register        */
 
 #define	INITPS		0x80	/* initial process SREG (interrupts enabled)	*/
-#define MAXARG		6
+// RAFA #define MAXARG		6
+#define MAXARG		4
 #define	INITREG		0
 
 

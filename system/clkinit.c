@@ -80,7 +80,7 @@ void clkinit(void)
 
 
 
-unsigned long avr_ticks=0;
+unsigned int avr_ticks=0;
 
 ISR(TIMER0_COMPA_vect)
 {
@@ -92,12 +92,13 @@ ISR(TIMER0_COMPA_vect)
 
     avr_ticks ++;
     if (avr_ticks > 100) {
-//	/* every second */
 	avr_ticks=0;
 	resched();
     }
 
- //   resched();
+    /* every second */
+    /* if avr_ticks == 1000 then 1 second */
+
     sei();
 }
 

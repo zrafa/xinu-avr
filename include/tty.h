@@ -13,11 +13,11 @@
 #endif
 #ifndef	TY_IBUFLEN
 // RAFA #define	TY_IBUFLEN	128		/* Num. chars in input queue	*/
-#define	TY_IBUFLEN	8		/* Num. chars in input queue	*/
+#define	TY_IBUFLEN	32		/* Num. chars in input queue	*/
 #endif
 #ifndef	TY_OBUFLEN
 // RAFA #define	TY_OBUFLEN	64		/* Num.	chars in output	queue	*/
-#define	TY_OBUFLEN	8		/* Num.	chars in output	queue	*/
+#define	TY_OBUFLEN	4		/* Num.	chars in output	queue	*/
 #endif
 
 /* Mode constants for input and output modes */

@@ -100,7 +100,7 @@ void nullprocess(void) {
 	kprintf("nullp\n");
 	
 	// resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
-	resume(create((void *)shell, 300, INITPRIO, "shell", 0, NULL));
+	resume(create((void *)shell, 400, INITPRIO, "shell", 0, NULL));
 	
 	for(;;);
 }
@@ -167,6 +167,7 @@ void	nulluser()
 	for (memptr = memlist.mnext; memptr != NULL;
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
+		kprintf("\n\r0x%8X, FreeMEM:%d", memptr, memptr->mlength);
 	}
 	
 	kprintf("\n\rFreeMEM:%d", free_mem);

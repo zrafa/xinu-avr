@@ -13,6 +13,5 @@ const char m7[] PROGMEM = "ptinit - insufficient memory";
 const char m8[] PROGMEM =  "free mem: %10d bytes. Free-list:\n";
 const char m9[] PROGMEM =  "System call not implemented\n";
 const char m10[] PROGMEM =  "ERROR GETSTK %s\n";
-
-
+const char m11[] PROGMEM =  "0x%08x    %d\n";
 

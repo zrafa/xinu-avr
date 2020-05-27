@@ -4,7 +4,7 @@
 
 #define SHELL_BUFLEN	TY_IBUFLEN+1	/* Length of input buffer	*/
 // RAFA #define SHELL_MAXTOK	32		/* Maximum tokens per line	*/
-#define SHELL_MAXTOK	3		/* Maximum tokens per line	*/
+#define SHELL_MAXTOK	5		/* Maximum tokens per line	*/
 // RAFA #define SHELL_CMDSTK	4096		/* Size of stack for process	*/
 #define SHELL_CMDSTK	256		/* Size of stack for process	*/
 					/*    that executes command	*/
