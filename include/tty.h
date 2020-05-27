@@ -17,7 +17,7 @@
 #endif
 #ifndef	TY_OBUFLEN
 // RAFA #define	TY_OBUFLEN	64		/* Num.	chars in output	queue	*/
-#define	TY_OBUFLEN	4		/* Num.	chars in output	queue	*/
+#define	TY_OBUFLEN	8		/* Num.	chars in output	queue	*/
 #endif
 
 /* Mode constants for input and output modes */

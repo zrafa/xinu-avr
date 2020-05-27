@@ -21,6 +21,6 @@ umsg32	recvclr(void)
 		msg = OK;
 	}
 	restore(mask);
-	kprintf("recvlcr\n");
+	// kprintf("recvlcr\n");
 	return msg;
 }

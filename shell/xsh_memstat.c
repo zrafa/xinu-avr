@@ -59,16 +59,12 @@ static void printFreeList(void)
 	/* Output a heading for the free list */
 
 //	printf("Free:\n");
-	printf("FreeMEM: addr  Len\n");
+	printf("FreeMEM: addr len\n");
 	
-	avr_printf(m11);
+	// avr_printf(m11);
 	for (block = memlist.mnext; block != NULL; block = block->mnext) {
-		// printf("0x%08x    %d\n", block,
-//		printf(m11, block,
-
-			printf_P(m11);
-			//printf_P(m11, block,
-			//(uint32) block->mlength);
+		printf("0x%08x %d\n", block,
+			(uint32) block->mlength);
 	}
 }
 

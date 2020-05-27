@@ -167,10 +167,10 @@ void	nulluser()
 	for (memptr = memlist.mnext; memptr != NULL;
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
-		kprintf("\n\r0x%8X, FreeMEM:%d", memptr, memptr->mlength);
+		// kprintf("\n\r0x%8X, FreeMEM:%d", memptr, memptr->mlength);
 	}
 	
-	kprintf("\n\rFreeMEM:%d", free_mem);
+	kprintf("\n\rFreeMEM:%d\n", free_mem);
 //	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
 //	    kprintf("[0x%08X to 0x%08X]\n",
 //		// RAFA (uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
@@ -245,7 +245,9 @@ static	void	sysinit()
 	platinit();
 
 	kprintf(CONSOLE_RESET);
-	kprintf("\n%s\n\n", VERSION);
+	kprintf("\n\r%s\n", VERSION);
+	// avr_printf(CONSOLE_RESET);
+	// avr_printf(m0);
 
 
 	/* Initialize free memory list */
@@ -303,8 +305,8 @@ static	void	sysinit()
 
 int32	stop(char *s)
 {
-	kprintf("%s\n", s);
 //	kprintf("looping... press reset\n");
+	avr_printf(m12);
 	while(1)
 		/* Empty */;
 }

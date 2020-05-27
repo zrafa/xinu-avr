@@ -15,7 +15,7 @@ status	ready(
 	register struct procent volatile *prptr;
 
 	if (isbadpid(pid)) {
-		kprintf("ready1:%d\n",pid);
+		// kprintf("ready1:%d\n",pid);
 		return SYSERR;
 	}
 
@@ -25,7 +25,7 @@ status	ready(
 	prptr->prstate = PR_READY;
 	insert(pid, readylist, prptr->prprio);
 	
-	kprintf("readyok\n");
+	// kprintf("readyok\n");
 	
 	// *SCB_ICSR |= (1 << PENDSV_INTR);
 

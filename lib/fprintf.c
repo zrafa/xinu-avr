@@ -17,12 +17,30 @@ int	fprintf(
 	  ...
 	)
 {
-    va_list ap;
+//    va_list ap;
     syscall putc(did32, char);
 
-    va_start(ap, fmt);
-    _fdoprnt(fmt, ap, putc, dev);
-    va_end(ap);
+//    va_start(ap, fmt);
+//    _fdoprnt(fmt, ap, putc, dev);
+//    va_end(ap);
+
+	va_list ap;
+
+        // RAFA
+        char output[81];
+        char *c;
+
+        memset(output, 0, 81);
+	va_start(ap, fmt);
+	vsnprintf(output, 80, fmt, ap);
+	va_end(ap);
+
+        c = output;
+        while(*c) {
+               //  kputc(*c);
+                putc(dev, *c);
+                c++;
+        };
 
     return 0;
 }

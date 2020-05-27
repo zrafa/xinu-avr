@@ -3,6 +3,8 @@ typedef unsigned int size_t;
 #include <avr/pgmspace.h>
 
 
+// extern const char CONSOLE_RESET[];
+// extern const char m0[];
 extern const char m1[];
 extern const char m2[];
 extern const char m3[];
@@ -14,6 +16,7 @@ extern const char m8[];
 extern const char m9[];
 extern const char m10[];
 extern const char m11[];
+extern const char m12[];
 
 
 

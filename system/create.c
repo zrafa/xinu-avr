@@ -48,7 +48,8 @@ pid32	create(
 	if (((saddr = (unsigned char *)getstk(ssize)) ==
 	     (uint32 *)SYSERR ) ||
 	     (pid=newpid()) == SYSERR || priority < 1 ) {
-		kprintf("STK_ERR"); /* m10[] */
+		// kprintf("STK_ERR"); /* m10[] */
+		avr_printf(m10);
 		restore(mask);
 		return SYSERR;
 	}
@@ -139,7 +140,7 @@ pid32	create(
 	prptr->pregs[SSP_H] = hibyte((unsigned) saddr);
 
 	// kprintf("creat:%s\n",prptr->prname);
-	kprintf("crea.pid:%d %s\n",pid,name);
+	// kprintf("crea.pid:%d %s\n",pid,name);
 // RAFA FIN AGREGA
 	restore(mask);
 	return pid;
