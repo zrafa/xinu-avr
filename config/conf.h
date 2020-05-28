@@ -21,7 +21,7 @@ struct	dentry	{
 	byte    dvirq;
 };
 
-extern	const struct	dentry	devtab[]; /* one entry per device */
+extern	struct	dentry	devtab[]; /* one entry per device */
 
 /* Device name definitions */
 
@@ -41,7 +41,8 @@ extern	const struct	dentry	devtab[]; /* one entry per device */
 /* Configuration and Size Constants */
 
 #define	NPROC	     4		/* number of user processes		*/
-#define	NSEM	     4		/* number of semaphores			*/
+// RAFA #define	NSEM	     4		/* number of semaphores			*/
+#define	NSEM	     2		/* number of semaphores			*/
 #define	IRQBASE	     32		/* base ivec for IRQ0			*/
 #define	IRQ_TIMER    IRQ_HW5	/* timer IRQ is wired to hardware 5	*/
 #define	IRQ_ATH_MISC IRQ_HW4	/* Misc. IRQ is wired to hardware 4	*/

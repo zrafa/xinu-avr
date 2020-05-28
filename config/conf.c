@@ -8,9 +8,7 @@ extern	devcall	ionull(void);
 
 /* Device independent I/O switch */
 
-typedef unsigned int size_t;
-#include <avr/pgmspace.h>
-const struct	dentry	devtab[] PROGMEM =
+struct	dentry	devtab[] =
 {
 /**
  * Format of entries is:
@@ -23,10 +21,10 @@ const struct	dentry	devtab[] PROGMEM =
 
 /* CONSOLE is tty */
 	{ 0, 0, "CONSOLE",
-	  (void *)ionull, (void *)ionull, (void *)ionull,
-	  (void *)ionull, (void *)ionull, (void *)ioerr,
-	  (void *)ionull, (void *)ionull, (void *)ionull,
-	  (void *)0x40013800, (void *)ionull, 53 },
+	  (void *)ttyinit, (void *)ionull, (void *)ionull,
+	  (void *)ttyread, (void *)ttywrite, (void *)ioerr,
+	  (void *)ttygetc, (void *)ttyputc, (void *)ttycontrol,
+	  (void *)0x40013800, (void *)ttyhandler, 53 },
 
 /* NULLDEV is null */
 	{ 1, 0, "NULLDEV",
