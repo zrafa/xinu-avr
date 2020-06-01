@@ -11,7 +11,7 @@ syscall	yield(void)
 	intmask	mask;			/* Saved interrupt mask		*/
 
 	mask = disable();
-	*SCB_ICSR |= (1 << PENDSV_INTR);
+	resched();
 	restore(mask);
 	return OK;
 }

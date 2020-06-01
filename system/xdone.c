@@ -8,7 +8,7 @@
  */
 void	xdone(void)
 {
-	// RAFA kprintf("\n\nAll user processes have completed.\n\n");
-	kprintf(&m3[0]);
+	// avr specific
+	avr_kprintf(m3);
 	halt();				/* Halt the processor		*/
 }
