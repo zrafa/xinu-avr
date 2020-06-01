@@ -14,7 +14,6 @@ syscall	init(
 	struct dentry	*devptr;	/* Entry in device switch table	*/
 	int32		retval;		/* Value to return to caller	*/
 
-
 	mask = disable();
 	if (isbaddev(descrp)) {
 		restore(mask);
@@ -23,6 +22,5 @@ syscall	init(
 	devptr = (struct dentry *) &devtab[descrp];
 	retval = (*devptr->dvinit) (devptr);
 	restore(mask);
-
 	return retval;
 }

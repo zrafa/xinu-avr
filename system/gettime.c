@@ -15,8 +15,7 @@ status	gettime(
 
 	/* Get current time in UCT representation (GMT) */
 
-	//retval = getutime(&now);
-	retval = SYSERR;
+//	retval = getutime(&now);
 	if (retval == SYSERR) {
 		return SYSERR;
 	}
