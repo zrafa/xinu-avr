@@ -1,4 +1,9 @@
 
+Si en include/shell.c achicamos maxtokens podemos achicar la cantidad
+de memoria que necesita el shell en create() en initialice()
+Por ejemplo, podemos rescatar 56 bytes si tokens maximo son 5.
+
+
 Vamos a usar los startupfiles y el ldscript de avr-gcc
 
 para poder llamar a nulluser agregamos la sección init8

@@ -274,6 +274,7 @@ process	shell (
 		// RAFA child = create(cmdtab[j].cfunc,
 		// RAFA 	SHELL_CMDSTK, SHELL_CMDPRIO,
 		// RAFA 	cmdtab[j].cname, 2, ntok, &tmparg);
+		/* 160 bytes de stack perfecto */
 		child = create(cmdtab[j].cfunc,
 			160, SHELL_CMDPRIO,
 			cmdtab[j].cname, 2, ntok, &tmparg);

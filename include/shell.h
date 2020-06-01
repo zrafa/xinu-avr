@@ -1,11 +1,11 @@
 /* shell.h - Declarations and constants used by the Xinu shell */
 
+/* avr specific values. Original saved under orig/ folder */
+
 /* Size constants */
 
 #define SHELL_BUFLEN	TY_IBUFLEN+1	/* Length of input buffer	*/
-// RAFA #define SHELL_MAXTOK	32		/* Maximum tokens per line	*/
-#define SHELL_MAXTOK	5		/* Maximum tokens per line	*/
-// RAFA #define SHELL_CMDSTK	4096		/* Size of stack for process	*/
+#define SHELL_MAXTOK	8		/* Maximum tokens per line	*/
 #define SHELL_CMDSTK	256		/* Size of stack for process	*/
 					/*    that executes command	*/
 #define	SHELL_ARGLEN	(SHELL_BUFLEN+SHELL_MAXTOK) /* Argument area	*/
@@ -23,7 +23,7 @@
 #define SHELL_BAN5      "    / /\\ \\    _| |_   | \\   |  | |  | |   "
 #define SHELL_BAN6      "   / /  \\ \\  |     |  | | \\ |  \\  --  /   "
 #define SHELL_BAN7      "   --    --   -----    -   -     ----     "
-#define SHELL_BAN8	"       STM32 Version by Robin Krens	   "
+#define SHELL_BAN8	"                                    	   "
 #define SHELL_BAN9      "------------------------------------------"
 #define	SHELL_BAN10	"\033[0m\n"
 
@@ -75,7 +75,4 @@ struct	cmdent	{			/* Entry in command table	*/
 };
 
 extern	uint32	ncmd;
-// RAFA extern	const	struct	cmdent	cmdtab[];
-extern	const	struct	cmdent	cmdtab[] ;
-
-
+extern	const	struct	cmdent	cmdtab[];
