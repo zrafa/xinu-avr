@@ -1,5 +1,7 @@
 /* create.c - create, newpid */
 
+/* avr specific */
+
 #include <stdarg.h>
 #include <xinu.h>
 
@@ -7,8 +9,7 @@ local	pid32 newpid();
 
 #define	roundew(x)	( (x+3)& ~0x3)
 
-
-// RAFA
+/* avr specific */
 #define	MAGIC		0xaa	/* unusual value for top of stk	*/
 
 
@@ -17,14 +18,10 @@ local	pid32 newpid();
  *------------------------------------------------------------------------
  */
 pid32	create(
-	  // void		*procaddr,	/* procedure address		*/
 	  int		(*procaddr)(),	/* procedure address		*/
-	  // uint32	ssize,		/* stack size in bytes		*/
 	  int	ssize,		/* stack size in bytes		*/
-	  // pri16		priority,	/* process priority > 0		*/
 	  int		priority,	/* process priority > 0		*/
 	  char		*name,		/* name (for debugging)		*/
-	  // RAFA uint32	nargs,		/* number of args that follow	*/
 	  int	nargs,		/* number of args that follow	*/
 	  ...
 	)
@@ -33,22 +30,16 @@ pid32	create(
 	pid32		pid;		/* stores new process id	*/
 	struct	procent	*prptr;		/* pointer to proc. table entry */
 	int32		i;
-	// uint32		*a;		/* points to list of args	*/
-	// RAFA uint32		*saddr;		/* stack address		*/
 	unsigned char		*saddr;		/* stack address		*/
 	va_list ap;
-
 
 	mask = disable();
 	if (ssize < MINSTK)
 		ssize = MINSTK;
-	// ssize = (uint32) roundew(ssize);
 	ssize = (int) roundew(ssize);
-	// RAFA if (((saddr = (uint32 *)getstk(ssize)) ==
 	if (((saddr = (unsigned char *)getstk(ssize)) ==
 	     (uint32 *)SYSERR ) ||
 	     (pid=newpid()) == SYSERR || priority < 1 ) {
-		// kprintf("STK_ERR"); /* m10[] */
 		avr_printf(m10);
 		restore(mask);
 		return SYSERR;
@@ -78,27 +69,6 @@ pid32	create(
 
 
 	/* Initialize stack as if the process was called		*/
-//RAFA	uint32 * tmpstk;
-//RAFA	uint32 * extraregs;
-//RAFA	a = (uint32 *)(&nargs + 1);
-//RAFA	tmpstk = ((uint32) saddr) - 0x1C;
-//RAFA	extraregs = ((uint32) tmpstk) - 0x20; /* r4 - r11 */
-
-//RAFA	for (int i = 0; i < nargs; i++) {
-//RAFA		tmpstk[i] = (uint32) *a++;
-//RAFA	}
-
-//RAFA	tmpstk[5] = (uint32) userret;	/* LR */
-//RAFA	tmpstk[6] = (uint32) procaddr; /* Function */
-//RAFA	tmpstk[7] = (uint32) 0x01000000; /* Flag register */
-
-	
-//RAFA	for (int i = 0; i <= 7; i++) {
-//RAFA		extraregs[i] = 0x0; /* Initialize to zero */
-//RAFA	}
-//RAFA	prptr->prstkptr = (char *)extraregs;
-
-// RAFA AGREGA
 	*saddr-- = (char)MAGIC;		/* Bottom of stack */
 	prptr->pargs = nargs;
 	for (i=0 ; i<PNREGS ; i++)		// VER TAMANIO PARA AVR
@@ -110,20 +80,10 @@ pid32	create(
 	// POR AHORA NO  (usado en kill.c en avr orig : prptr->pnxtkin = BADPID;
 	// POR AHORA NO prptr->pdevs[0] = prptr->pdevs[1] = BADDEV;
 	
-
 	int * a = (int *)(&nargs + 1);
 	for (int i = 0; i < nargs; i++) {
 		prptr->parg[i] = (int) *a++;
 	}
-/* RAFA ESTO ANDA
-	va_start(ap,nargs);
-	for (i=0 ; i < nargs; i++)
-		{
-	    prptr->parg[i] = va_arg(ap, unsigned int);
-		}
-	va_end(ap);
-/* FIN RAFA ESTO ANDA */
-
 	prptr->parg[nargs] = 0;
 	
 	/* machine/compiler dependent pass arguments to created process */
@@ -139,9 +99,6 @@ pid32	create(
 	prptr->pregs[SSP_L] = lobyte((unsigned) saddr);
 	prptr->pregs[SSP_H] = hibyte((unsigned) saddr);
 
-	// kprintf("creat:%s\n",prptr->prname);
-	// kprintf("crea.pid:%d %s\n",pid,name);
-// RAFA FIN AGREGA
 	restore(mask);
 	return pid;
 }
