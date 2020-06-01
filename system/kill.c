@@ -15,7 +15,6 @@ syscall	kill(
 	int32	i;			/* Index into descriptors	*/
 
 	mask = disable();
-
 	if (isbadpid(pid) || (pid == NULLPROC)
 	    || ((prptr = &proctab[pid])->prstate) == PR_FREE) {
 		restore(mask);
@@ -32,13 +31,10 @@ syscall	kill(
 	}
 	freestk(prptr->prstkbase, prptr->prstklen);
 
-
 	switch (prptr->prstate) {
 	case PR_CURR:
 		prptr->prstate = PR_FREE;	/* Suicide */
-		// RAFA AGREGA
 		resched();
-//		*SCB_ICSR |= (1 << PENDSV_INTR);
 
 	case PR_SLEEP:
 	case PR_RECTIM:

@@ -1,43 +1,15 @@
-/* Xinu for STM32
- *
- * Original license applies
- * Modifications for STM32 by Robin Krens
- * Please see LICENSE and AUTHORS 
- * 
- * $LOG$
- * 2019/11/11 - ROBIN KRENS
- * Initial version 
- * 
- * $DESCRIPTION$
- *
- * */
-
 /* initialize.c - nulluser, sysinit */
+
+/* avr specific */
 
 /* Handle system initialization and become the null process */
 
 #include <xinu.h>
 #include <string.h>
 
-//RAFA
+/* avr specific */
 #include <serial_avr.h>
 #include <avr/pgmspace.h>
-
-/*
-void probar_memoria() {
-
-	char *m1;
-	char *m2;
-	char m3[] = "hola mundo";
-
-	m1 = getmem(20);
-	kprintf("m1 0x%08X , m3 0x%08X\n\n", m1, m3);
-	strncpy(m1, m3, 10);
-	kprintf("getmem %s \n", m1);
-	kprintf("m1 0x%08X , m3 0x%08X\n\n", m1, m3);
-
-}
-*/
 
 
 extern	void	start(void);	/* Start of Xinu code			*/
@@ -81,21 +53,7 @@ pid32	currpid;		/* ID of currently executing process	*/
  *------------------------------------------------------------------------
  */
 
-// RAFA 
-// void PUT32 ( unsigned int, unsigned int );
-// unsigned int GET32 ( unsigned int );
-// void dummy ( unsigned int );
-
-// #define GPIOCBASE 0x40011000
-// #define RCCBASE 0x40021000
-
-
-// FIN RAFA
-
-
 void nullprocess(void) {
-
-	// notmain();
 
 	kprintf("nullp\n");
 	
@@ -106,7 +64,7 @@ void nullprocess(void) {
 	for(;;);
 }
 
-// RAFA AVR specific:
+/* avr specific */
 #define GET_FAR_ADDRESS(var)                          \
 ({                                                    \
     uint32_t tmp;                                     \
@@ -126,15 +84,13 @@ void nullprocess(void) {
 })
 
 
-//RAFA
-#include <avr/interrupt.h>
-
 void	nulluser()
 {	
 	struct	memblk	*memptr;	/* Ptr to memory block		*/
 	uint32	free_mem;		/* Total amount of free memory	*/
 
 	/* Initialize the system */
+
 	sysinit();
 
 	/* avr specific */
@@ -145,15 +101,12 @@ void	nulluser()
 	uint32 ptr_data_start;
 	ptr_data_start = GET_FAR_ADDRESS(__data_start);  //get the pointer
 
-
 	/* Output Xinu memory layout */
 	free_mem = 0;
 	for (memptr = memlist.mnext; memptr != NULL;
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
-		// kprintf("\n\r0x%8X, FreeMEM:%d", memptr, memptr->mlength);
 	}
-	
 	kprintf("\n\rFreeMEM:%d\n", free_mem);
 
 	/* Initialize the Null process entry */	
@@ -212,6 +165,7 @@ static	void	sysinit()
 	kprintf("\n\r%s\n", VERSION);
 
 	/* Initialize free memory list */
+
 	meminit();
 
 	/* Initialize system variables */
@@ -257,6 +211,10 @@ static	void	sysinit()
 	for (i = 0; i < NDEVS; i++) {
 		init(i);
 	}
+
+	/* Initialize the real time clock */
+
+	clkinit();
 
 
 	return;
