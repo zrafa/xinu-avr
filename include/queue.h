@@ -4,10 +4,6 @@
 
 /* Default # of queue entries: 1 per process plus 2 for ready list plus	*/
 /*			2 for sleep list plus 2 per semaphore		*/
-
-// RAFA OJO (quitar):
-// #define NQENT	(NPROC + 4)
-
 #ifndef NQENT
 #define NQENT	(NPROC + 4 + NSEM + NSEM)
 #endif
@@ -17,9 +13,6 @@
 #define	MINKEY	0x80000000	/* Min key that can be stored in queue	*/
 
 struct	qentry	{		/* One per process plus two per list	*/
-	// RAFA int32	qkey;		/* Key on which the queue is ordered	*/
-	// RAFA qid16	qnext;		/* Index of next process or tail	*/
-	// RAFA qid16	qprev;		/* Index of previous process or head	*/
 	char	qkey;		/* Key on which the queue is ordered	*/
 	qid16	qnext;		/* Index of next process or tail	*/
 	qid16	qprev;		/* Index of previous process or head	*/

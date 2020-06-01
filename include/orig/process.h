@@ -3,7 +3,7 @@
 /* Maximum number of processes in the system */
 
 #ifndef NPROC
-#define	NPROC		4
+#define	NPROC		8
 #endif		
 
 /* Process state constants */
@@ -19,26 +19,12 @@
 
 /* Miscellaneous process definitions */
 
-#define	PNMLEN		8	/* Length of process "name"		*/
+#define	PNMLEN		16	/* Length of process "name"		*/
 #define	NULLPROC	0	/* ID of the null process		*/
-
-/* avr specific */
-
-#define PNREGS          38              /* size of saved register area  */
-#define SSP_L           32              /* saved SP (low)               */
-#define SSP_H           33              /* saved SP (high)                              */
-#define SPC_L           34              /* saved PC (low)               */
-#define SPC_H           35              /* saved PC (high)              */
-#define SSREG           36              /* saved Status Register        */
-
-#define	INITPS		0x80	/* initial process SREG (interrupts enabled)	*/
-#define MAXARG		4
-#define	INITREG		0
-
 
 /* Process initialization constants */
 
-#define	INITSTK		64	/* Initial process stack size		*/
+#define	INITSTK		65536	/* Initial process stack size		*/
 #define	INITPRIO	20	/* Initial process priority		*/
 #define	INITRET		userret	/* Address to which process returns	*/
 
@@ -57,14 +43,8 @@
 struct procent {		/* Entry in the process table		*/
 	uint16	prstate;	/* Process state: PR_CURR, etc.		*/
 	pri16	prprio;		/* Process priority			*/
-	unsigned char pregs[PNREGS];/* saved context (see ctxsw)	*/
-
-	int pargs;				/* initial number of arguments	*/
-	void * parg[MAXARG];	/* arguments					*/
-	int *paddr;			/* initial code address			*/
-
 	char	*prstkptr;	/* Saved stack pointer			*/
-	unsigned char	*prstkbase;	/* Base of run time stack		*/
+	char	*prstkbase;	/* Base of run time stack		*/
 	uint32	prstklen;	/* Stack length in bytes		*/
 	char	prname[PNMLEN];	/* Process name				*/
 	sid32	prsem;		/* Semaphore on which process waits	*/

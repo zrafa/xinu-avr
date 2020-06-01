@@ -1,9 +1,7 @@
 /* ports.h - isbadport */
 
-/* avr specific values. Original saved under orig/ folder */
-
-#define	NPORTS		3		/* Maximum number of ports	*/
-#define	PT_MSGS		10		/* Total messages in system	*/
+#define	NPORTS		30		/* Maximum number of ports	*/
+#define	PT_MSGS		100		/* Total messages in system	*/
 #define	PT_FREE		1		/* Port is free			*/
 #define	PT_LIMBO	2		/* Port is being deleted/reset	*/
 #define	PT_ALLOC	3		/* Port is allocated		*/

@@ -1,13 +1,11 @@
 /* name.h */
 
-/* avr specific values. Original saved under orig/ folder */
-
 /* Constants that define the namespace mapping table sizes */
 
-#define	NM_PRELEN	8		/* Max size of a prefix string	*/
-#define	NM_REPLLEN	8		/* Maximum size of a replacement*/
-#define	NM_MAXLEN	8		/* Maximum size of a file name	*/
-#define	NNAMES		3		/* Number of prefix definitions	*/
+#define	NM_PRELEN	64		/* Max size of a prefix string	*/
+#define	NM_REPLLEN	96		/* Maximum size of a replacement*/
+#define	NM_MAXLEN	256		/* Maximum size of a file name	*/
+#define	NNAMES		40		/* Number of prefix definitions	*/
 
 /* Definition of the name prefix table that defines all name mappings */
 

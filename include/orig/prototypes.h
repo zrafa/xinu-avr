@@ -1,5 +1,3 @@
-/* avr specific values. Original saved under orig/ folder */
-
 /* in file addargs.c */
 extern	status	addargs(pid32, int32, int32[], int32,char *, void *);
 
@@ -42,7 +40,7 @@ extern	syscall	close(did32);
 extern	syscall	control(did32, int32, int32, int32);
 
 /* in file create.c */
-extern	pid32	create(int (*procaddr)(), int, int, char *, int, ...);
+extern	pid32	create(void *, uint32, pri16, char *, uint32, ...);
 
 /* in file ctxsw.S */
 extern	void	ctxsw(void *, void *);
@@ -422,7 +420,7 @@ extern	umsg32	recvclr(void);
 extern	umsg32	recvtime(int32);
 
 /* in file resched.c */
-extern	int	resched(void);
+extern	void	resched(void);
 extern	status	resched_cntl(int32);
 
 /* in file intr.S */
@@ -516,7 +514,7 @@ extern	syscall	semreset(sid32, int32);
 extern	syscall	send(pid32, umsg32);
 
 /* in file shell.c */
-extern 	process shell(void);
+extern 	process shell(did32);
 
 /* in file signal.c */
 extern	syscall	signal(sid32);
@@ -554,13 +552,13 @@ extern	devcall	ttycontrol(struct dentry *, int32, int32, int32);
 extern	devcall	ttygetc(struct dentry *);
 
 /* in file ttyhandle_in.c */
-extern	void	ttyhandle_in(struct ttycblk *, struct uart_csreg *, char c);
+extern	void	ttyhandle_in(struct ttycblk *, struct uart_csreg *);
 
 /* in file ttyhandle_out.c */
 extern	void	ttyhandle_out(struct ttycblk *, struct uart_csreg *);
 
 /* in file ttyhandler.c */
-extern	void	ttyhandler(uint32, char c, int tipo);
+extern	void	ttyhandler(uint32);
 
 /* in file ttyinit.c */
 extern	devcall	ttyinit(struct dentry *);
@@ -611,29 +609,6 @@ extern	void	xdone(void);
 
 /* in file yield.c */
 extern	syscall	yield(void);
-
-/* in file syscall.c */
-extern void syscall_init();
-
-/* in file suicide.c */
-
-/* in file lib/syscall. c*/
-
-/* in file spiinit.c */
-// extern	devcall	spiinit(struct dentry *);
-
-/* in file spiputc.c */
-extern	devcall	spiputc(struct dentry *, char);
-
-
-/* avr specific */
-extern void avr_printf(char mess[]);
-extern void avr_kprintf(char mess[]);
-extern void blink_avr();
-typedef unsigned int size_t;
-#define hibyte(x) (unsigned char)(((int)(x)>>8)&0xff)
-#define lobyte(x) (unsigned char)(((int)(x))&0xff)
-
 
 /* NETWORK BYTE ORDER CONVERSION NOT NEEDED ON A BIG-ENDIAN COMPUTER */
 #define	htons(x)   ( ( 0xff & ((x)>>8) ) | ( (0xff & (x)) << 8 ) )
