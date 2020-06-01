@@ -1,7 +1,7 @@
+/* avr specific */
 
 typedef unsigned int size_t;
 #include <avr/pgmspace.h>
-
 
 // extern const char CONSOLE_RESET[];
 // extern const char m0[];

@@ -1,7 +1,8 @@
 
+/* avr specific */
+
 typedef unsigned int size_t;
 #include <avr/pgmspace.h>
-
 
 // const char CONSOLE_RESET[] PROGMEM = " \033[0m\033[2J\033[;H";
 // const char m0[] PROGMEM = "Welcome to Xinu for AVR microcontrollers!\n v0.1 rafa@fi.uncoma.edu.ar";

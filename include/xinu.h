@@ -1,19 +1,9 @@
 /* xinu.h - include all system header files */
 
-// RAFA
-extern void notmain(void);
-typedef unsigned int size_t;
-void blink_avr();
-#include <messages.h>
-#define hibyte(x) (unsigned char)(((int)(x)>>8)&0xff)
-#define lobyte(x) (unsigned char)(((int)(x))&0xff)
-
-
-// FIN DE RAFA
-
+/* avr specific */
+#include <avr_messages.h>
 
 #include <kernel.h>
-#include <cortexm3.h> 	/* Cortex M3 Processor */
 #include <conf.h>
 #include <process.h>
 #include <queue.h>
@@ -23,11 +13,11 @@ void blink_avr();
 #include <bufpool.h>
 #include <mark.h>
 #include <ports.h>
-#include <clk.h> 	/* STM32 Clock system */
-#include <timer.h>	/* STM32 Timer peripheral */
-#include <uart.h>	/* STM32 UART peripheral */
+#include <clk.h> 	/* avr Clock system */
+#include <timer.h>	/* avr Timer peripheral */
+#include <uart.h>	/* avr UART peripheral */
 #include <tty.h>
-#include <gpio.h>	/* STM32 GPIO peripherals */
+#include <gpio.h>	/* avr GPIO peripherals */
 #include <gpioselect.h>
 #include <device.h>
 #include <interrupt.h>

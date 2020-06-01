@@ -629,9 +629,16 @@ extern void syscall_init();
 extern	devcall	spiputc(struct dentry *, char);
 
 
-//RAFA
+/* avr specific */
 extern void avr_printf(char mess[]);
 extern void avr_kprintf(char mess[]);
+extern void blink_avr();
+typedef unsigned int size_t;
+#define hibyte(x) (unsigned char)(((int)(x)>>8)&0xff)
+#define lobyte(x) (unsigned char)(((int)(x))&0xff)
+
+
+
 
 /* NETWORK BYTE ORDER CONVERSION NOT NEEDED ON A BIG-ENDIAN COMPUTER */
 #define	htons(x)   ( ( 0xff & ((x)>>8) ) | ( (0xff & (x)) << 8 ) )

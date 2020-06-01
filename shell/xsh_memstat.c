@@ -80,7 +80,6 @@ static void printMemUse(void)
 	int i;				/* Index into process table	*/
 	uint32 code = 0;		/* Total Xinu code memory	*/
 	uint32 stack = 0;		/* Total used stack memory	*/
-	uint32 mspstack = HANDLERSTACK; /* Total used handler stack mem */
 	uint32 kheap = 0;		/* Free kernel heap memory	*/
 	uint32 kfree = 0;		/* Total free memory		*/
 	struct memblk *block;	 	/* Ptr to memory block		*/
