@@ -1,18 +1,6 @@
-/* Xinu for STM32
- *
- * Original license applies
- * Modifications for STM32 by Robin Krens
- * Please see LICENSE and AUTHORS 
- * 
- * $LOG$
- * 2019/11/11 - ROBIN KRENS
- * Initial version 
- * 
- * $DESCRIPTION$
- *
- * */
-
 /* clkhandler.c - clkhandler */
+
+/* avr specific */
 
 #include <xinu.h>
 
@@ -23,10 +11,6 @@
 void clkhandler()
 {
 	struct timer_csreg *tptr;
-	// STM32 specific tptr = (struct timer_csreg *)TIM2_BASE;
-
-	// STM32 specific /* Clear interrupt flag */
-	// STM32 specific tptr->sr &= ~(1 << TIM_UIF);
 
 	/* Increment 1000ms counter */
 
@@ -56,7 +40,6 @@ void clkhandler()
 
 	if((--preempt) == 0) {
 		preempt = QUANTUM;
-		// PendSV call
-		// STM32 specific *SCB_ICSR |= (1 << PENDSV_INTR);
+		resched();
 	}
 }
