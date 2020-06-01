@@ -1,5 +1,8 @@
 /* spi.h - SPI definitions */
 
+/* avr : this port does not use spi yet */
+/* values below for another platform-arch */
+
 struct	spi_csreg {
 	volatile uint32 cr1;		
 	volatile uint32 cr2;		

@@ -1,5 +1,7 @@
 /* stdio.h - definintions and constants for standard I/O functions */
 
+/* avr specific values. Original saved under orig/ folder */
+
 
 /* Prototypes for formatted input functions */
 
@@ -19,9 +21,7 @@ extern	int32	fscanf(int32, char *, int32);
 
 /* Prototypes for formatted output functions */
 
-// RAFA extern	int32	fprintf(int, char *, ...);
 extern	int	fprintf(int, char *, ...);
-// RAFA extern	int32	printf(const char *, ...);
 extern	int	printf(const char *, ...);
 extern	int32	sprintf(char *, char *, ...);
 
@@ -32,7 +32,5 @@ extern	int32	fgetc(int);
 extern	char	*fgets(char *, int32, int32);
 extern	int32	fputc(int32, int32);
 extern	int32	fputs(char *, int32);
-// RAFA extern	int32	putchar(int32 c);
 extern	int	putchar(int c);
-// RAFA extern	int32	getchar(void);
 extern	int	getchar(void);

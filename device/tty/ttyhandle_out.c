@@ -40,8 +40,9 @@ void	ttyhandle_out(
 	/* Initialize uspace to the available space in the Tx FIFO */
 
 	//uspace = UART_FIFO_SIZE - csrptr->txfifo_lvl;
-	uspace = UART_FIFO_SIZE;
 
+	/* avr specific: just one byte of fifo so far */
+	uspace = UART_FIFO_SIZE;
 	
 	/* While onboard FIFO is not full and the echo queue is	*/
 	/*   nonempty, xmit chars from the echo queue		*/
