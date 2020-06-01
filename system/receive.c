@@ -8,18 +8,18 @@
  */
 umsg32	receive(void)
 {
-	//intmask	mask;			/* Saved interrupt mask		*/
+	intmask	mask;			/* Saved interrupt mask		*/
 	struct	procent *prptr;		/* Ptr to process's table entry	*/
 	umsg32	msg;			/* Message to return		*/
 
-	//mask = disable();
+	mask = disable();
 	prptr = &proctab[currpid];
 	if (prptr->prhasmsg == FALSE) {
 		prptr->prstate = PR_RECV;
-		*SCB_ICSR |= (1 << PENDSV_INTR); /* Reschedule */
+		resched();		/* Block until message arrives	*/
 	}
 	msg = prptr->prmsg;		/* Retrieve message		*/
 	prptr->prhasmsg = FALSE;	/* Reset message flag		*/
-	//restore(mask);
+	restore(mask);
 	return msg;
 }

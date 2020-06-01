@@ -2,12 +2,6 @@
 
 #include <xinu.h>
 
-//RAFA 
-typedef unsigned int size_t;
-#include <avr/pgmspace.h>
-typedef void (*fn_ptr) (void);
-
-
 /*------------------------------------------------------------------------
  *  open  -  Open a device (some devices ignore name and mode parameters)
  *------------------------------------------------------------------------
@@ -29,13 +23,6 @@ syscall	open(
 	}
 	devptr = (struct dentry *) &devtab[descrp];
 	retval = (*devptr->dvopen) (devptr, name, mode);
-	// devcall * f = (devcall *) pgm_read_word(&devtab[descrp].dvopen);
-	// (f) (devptr, name, mode);
-	// devptr = (struct dentry *) pgm_read_word(&devtab[descrp]);
-	//retval = (*fn_ptr) (pgm_read_word(*devptr->dvopen)) (devptr, name, mode);
-	// retval = (fn_ptr pgm_read_word(&devtab[descrp].dvopen)) (devptr, name, mode);
-	// retval = (fn_ptr pgm_read_word(*devptr->dvopen) (devptr, name, mode);
-
 	restore(mask);
 	return retval;
 }

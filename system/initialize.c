@@ -134,33 +134,16 @@ void	nulluser()
 	struct	memblk	*memptr;	/* Ptr to memory block		*/
 	uint32	free_mem;		/* Total amount of free memory	*/
 
-	//RAFA
-	cli();	/* AVR disable interrups */
-
-	blink_avr();
-	blink_avr();
-
-	// char frase[] PROGMEM = "Xinu Loading...\n";
-        serial_init();
-        // serial_put_char('B');
-	char f = serial_get_char();
-	// int c = atoi(&f);
-        // serial_put_str(frase);
-
 	/* Initialize the system */
-
 	sysinit();
 
-	// AVR specific:
+	/* avr specific */
 	extern uint32 __bss_end, __data_start;
 	uint32 ptr_bss_end;
 	ptr_bss_end = GET_FAR_ADDRESS(__bss_end);  //get the pointer
-	// data = pgm_read_byte_far(ptr_bss_end + i); 			/* read from FLASH */
 
 	uint32 ptr_data_start;
 	ptr_data_start = GET_FAR_ADDRESS(__data_start);  //get the pointer
-
-
 
 
 	/* Output Xinu memory layout */
@@ -172,15 +155,6 @@ void	nulluser()
 	}
 	
 	kprintf("\n\rFreeMEM:%d\n", free_mem);
-//	for (memptr=memlist.mnext; memptr!=NULL;memptr = memptr->mnext) {
-//	    kprintf("[0x%08X to 0x%08X]\n",
-//		// RAFA (uint32)memptr, ((uint32)memptr) + memptr->mlength - 1);
-//		(uint32)memptr, (uint32)memptr);
-//	    kprintf("[0x%08X ]\n",
-//		(uint32)memptr + memptr->mlength - 1);
-//	}
-
-
 
 	/* Initialize the Null process entry */	
 	int pid = create((void *)nullprocess, INITSTK, 10, "Null process", 0, NULL);
@@ -208,23 +182,12 @@ void	nulluser()
  * take place */
 void startup(int INIT, struct procent *p) {
 	
-//	asm volatile (
-//	         "push {r0}" "\n\t"
-                 //"mov r0, 0x3" "\n\t"  // kernel to user mode switch 
-                 //"msr control, r0" "\n\t"  
-                 //"isb" "\n\t"
-  //               "pop {r0}" );
- //       asm volatile("svc 1");
-
 	/* Should not be here, panic */
-	// kprintf("startup\n");
 	// resume(INIT);
 	nullprocess();
 
-
-
-	// RAFA panic("Can't startup system"); 
-	// panic(&m6[0]); 
+	avr_kprintf(m6);
+	panic("");
 }
 
 
@@ -247,14 +210,9 @@ static	void	sysinit()
 
 	kprintf(CONSOLE_RESET);
 	kprintf("\n\r%s\n", VERSION);
-	// avr_printf(CONSOLE_RESET);
-	// avr_printf(m0);
-
 
 	/* Initialize free memory list */
-	
 	meminit();
-
 
 	/* Initialize system variables */
 
@@ -306,8 +264,7 @@ static	void	sysinit()
 
 int32	stop(char *s)
 {
-//	kprintf("looping... press reset\n");
-	avr_printf(m12);
+	avr_kprintf(m12);
 	while(1)
 		/* Empty */;
 }
