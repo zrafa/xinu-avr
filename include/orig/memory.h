@@ -1,8 +1,6 @@
 /* memory.h - roundmb, truncmb, freestk */
 
-/* avr specific values. Original saved under orig/ folder */
-
-#define	PAGE_SIZE	1024 // TODO: unused?
+#define	PAGE_SIZE	4096
 
 /*----------------------------------------------------------------------
  * roundmb, truncmb - Round or truncate address to memory block size
@@ -27,3 +25,14 @@ struct	memblk	{			/* See roundmb & truncmb	*/
 extern	struct	memblk	memlist;	/* Head of free memory list	*/
 extern	void	*minheap;		/* Start of heap		*/
 extern	void	*maxheap;		/* Highest valid heap address	*/
+
+
+/* Added by linker */
+
+extern	int	text;			/* Start of text segment	*/
+extern	int	etext;			/* End of text segment		*/
+extern	int	data;			/* Start of data segment	*/
+extern	int	edata;			/* End of data segment		*/
+extern	int	bss;			/* Start of bss segment		*/
+extern	int	ebss;			/* End of bss segment		*/
+extern	int	end;			/* End of program		*/

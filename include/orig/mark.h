@@ -1,8 +1,6 @@
 /* mark.h - notmarked */
 
-/* avr specific values. Original saved under orig/ folder */
-
-#define	MAXMARK	10		/* Maximum number of marked locations	*/
+#define	MAXMARK	20		/* Maximum number of marked locations	*/
 
 extern	int32	*(marks[]);
 extern	int32	nmarks;
