@@ -47,8 +47,7 @@ syscall	sleepms(
 	}
 
 	proctab[currpid].prstate = PR_SLEEP;
-	*SCB_ICSR |= (1 << PENDSV_INTR);	
-	
+	resched();
 	restore(mask);
 	return OK;
 }

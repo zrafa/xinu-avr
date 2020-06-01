@@ -33,7 +33,7 @@ syscall	suspend(
 		prptr->prstate = PR_SUSP;
 	} else {
 		prptr->prstate = PR_SUSP;   /* Mark the current process	*/
-		*SCB_ICSR |= (1 << PENDSV_INTR);
+		resched();		    /*   suspended and resched.	*/
 	}
 	prio = prptr->prprio;
 	restore(mask);

@@ -1,3 +1,7 @@
+/* avr specific */
+/* We do a hack for calling (insert) nulluser before main,
+ * so avr-libc does everything : ld scripts, startup, etc 
+ */
 #include <avr/io.h>
 
 .weak __heap_end
@@ -11,7 +15,6 @@
 
 .section .vectors
 __vectors:
-//    jmp __init
     jmp __ctors_end
     vector __vector_1
     vector __vector_2
@@ -39,15 +42,5 @@ __vectors:
     vector __vector_24
     vector __vector_25
 
-// .section .init2
-// __init:
-//     clr r1
-  //   out _SFR_IO_ADDR(SREG), r1
-//     ldi r28, lo8(RAMEND)
-//     ldi r29, hi8(RAMEND)
-//     out _SFR_IO_ADDR(SPL), r28
-//     out _SFR_IO_ADDR(SPH), r29
-
-// .section .init9
 .section .init8
     jmp nulluser

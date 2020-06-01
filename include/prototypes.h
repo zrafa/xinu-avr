@@ -631,6 +631,7 @@ extern	devcall	spiputc(struct dentry *, char);
 
 //RAFA
 extern void avr_printf(char mess[]);
+extern void avr_kprintf(char mess[]);
 
 /* NETWORK BYTE ORDER CONVERSION NOT NEEDED ON A BIG-ENDIAN COMPUTER */
 #define	htons(x)   ( ( 0xff & ((x)>>8) ) | ( (0xff & (x)) << 8 ) )

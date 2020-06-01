@@ -1,7 +1,6 @@
 /* userret.c - userret */
 
 #include <xinu.h>
-#include <avr/interrupt.h>
 
 /*------------------------------------------------------------------------
  *  userret  -  Called when a process returns from the top-level function
