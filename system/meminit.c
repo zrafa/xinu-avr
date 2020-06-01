@@ -10,10 +10,10 @@ void	*maxheap;	/* End address of heap		*/
  *------------------------------------------------------------------------
  */
 
-//RAFA AGREGO ESTO
+/* avr specific */
 extern int __bss_end;
 
-// RAFA AVR specific:
+/* avr specific */
 #define GET_FAR_ADDRESS(var)                          \
 ({                                                    \
     uint32_t tmp;                                     \
@@ -38,7 +38,7 @@ void	meminit(void)
 {
 	struct	memblk *memptr;	/* Memory block pointer	*/
 
-        // AVR specific:
+	/* avr specific */
         uint32 ptr_bss_end;
         ptr_bss_end = GET_FAR_ADDRESS(__bss_end);  //get the pointer
 
@@ -46,11 +46,6 @@ void	meminit(void)
 
 	minheap = ptr_bss_end+1;
 	maxheap = 0x008008FF;	/* AVR atmega328p stack pointer when booting */
-
-	// STM32 specific: minheap = (void *)&end;
-	/* 1024 bytes is reserved for supervise mode handling */
-	// STM32 specific: maxheap = (void *)MAXADDR - HANDLERSTACK;
-
 
 	/* Initialize the memory list as one big block */
 

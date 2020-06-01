@@ -18,23 +18,14 @@ syscall kputc(
 	)
 {
 	intmask mask;
-	// STM32 specific: volatile struct uart_csreg * uptr = 0x40013800;
 
-//RAFA	mask = disable();
+	mask = disable();
 
 	if (c == '\n')
 		serial_put_char('\r');
 	serial_put_char(c);
-/*
-	if (c == '\n') {
-              while(!(uptr->sr & UART_TC));
-	      uptr->dr = 0x0D; // return line
-      	}
-              while(!(uptr->sr & UART_TC));
-	      uptr->dr = c;
-*/
 
-//RAFA	restore(mask);
+	restore(mask);
 	return OK;
 }
 
@@ -58,25 +49,25 @@ extern	void	_doprnt(char *, va_list, int (*)(int));
  */
 syscall kprintf(char *fmt, ...)
 {
-    va_list ap;
+	va_list ap;
+	intmask mask;
 
-	// RAFA
+	mask = disable();
+
 	char output[81];
 	char *c;
 
 	memset(output, 0, 81);
-    va_start(ap, fmt);
-     // RAFA _doprnt(fmt, ap, (int (*)(int))kputc);
-    // vsnprintf(output, 80, fmt, ap);
-    vsnprintf(output, 80, fmt, ap);
-    va_end(ap);
-
-
+	va_start(ap, fmt);
+	vsnprintf(output, 80, fmt, ap);
+	va_end(ap);
 
 	c = output;
 	while(*c) {
 		kputc(*c);
 		c++;
 	};
-    return OK;
+
+	restore(mask);
+        return OK;
 }
