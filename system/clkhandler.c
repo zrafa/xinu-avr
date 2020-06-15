@@ -24,8 +24,9 @@ ISR(TIMER0_COMPA_vect)
 	/* every second */
 	/* if avr_ticks == 1000 then 1 second */
 
+	/* our MCU is slow 16Mhz, so we do clkhandler every 100ms */
 	avr_ticks ++;
-	if (avr_ticks > 100) {
+	if (avr_ticks > 100) {		
 		avr_ticks=0;
 
 
@@ -35,7 +36,7 @@ ISR(TIMER0_COMPA_vect)
 
 		/* After 1 sec, increment clktime */
 
-		if(count1000 >= 1000) {
+		if(count1000 >= 10) {	/* previous was: if(count1000 >= 1000) */
 			clktime++;
 			count1000 = 0;
 		}
