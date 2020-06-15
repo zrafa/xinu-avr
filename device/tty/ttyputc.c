@@ -11,10 +11,8 @@ devcall	ttyputc(
 	char	ch			/* Character to write		*/
 	)
 {
-	//struct uart_csreg * uptr;
 	struct	ttycblk	*typtr;		/* Pointer to tty control block	*/
 
-	//uptr = (struct uart_csreg *)devptr->csreg;
 	typtr = &ttytab[devptr->dvminor];
 
 	/* Handle output CRLF by sending CR first */
@@ -22,7 +20,6 @@ devcall	ttyputc(
         if ( ch==TY_NEWLINE && typtr->tyocrlf ) {
                 ttyputc(devptr, TY_RETURN);
 	}
-
 
 	wait(typtr->tyosem);		/* Wait	for space in queue */
 	*typtr->tyotail++ = ch;
@@ -34,10 +31,7 @@ devcall	ttyputc(
 	}
 
 	/* Start output in case device is idle */
-	//while () {
-	//	
-	//	uptr->dr =
-	//}
+
 	ttykickout((struct uart_csreg *)devptr->dvcsr);
 
 	return OK;

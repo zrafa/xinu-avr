@@ -63,6 +63,4 @@ devcall	ttyread(
 		nread++;
 	}
 	return nread;
-
-	return OK;
 }
