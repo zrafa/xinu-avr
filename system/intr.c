@@ -1,45 +1,34 @@
-/* Xinu for AVR
- *
- * Original license applies
- * Modifications for STM32 by Robin Krens
- * Please see LICENSE and AUTHORS 
- * 
- * $LOG$
- * 2019/11/11 - ROBIN KRENS
- * Initial version 
- * 
- * $DESCRIPTION$
- *
- * */
-
 /* intr.S - enable, disable, restore, halt, pause, (ARM) */
+
+/* avr specific */
 
 #include <xinu.h>
 #include <avr/interrupt.h>
 
-
-/* RAFA: the arguments and returns do not have any meaning. It were there
- * for STM32.
- * 
- * For AVR: remove them some day
+/*
+ *  This code is based on AVR-Xinu by Michael Minor
  */
+
+#include <avr/io.h>
 
 /*------------------------------------------------------------------------
  * disable  -  Disable interrupts and return the previous state
  *------------------------------------------------------------------------
  */
-intmask disable() {
-	cli();
-	return 0;
+intmask disable(void)
+{
+	int x = SREG;
+	asm("cli");	/*and disable interrupts*/
+	return x;
 }
 
 /*------------------------------------------------------------------------
  * restore  -  Restore interrupts to value given by mask argument
-   Cortex M3 hardware handles a lot, rewrite
  *------------------------------------------------------------------------
  */
-inline void restore(intmask c) {
-	sei();
+void restore(uint8 x)
+{
+	SREG = x;	/*restore the status register, possibly reenabling interrupts*/
 }
 
 /*------------------------------------------------------------------------

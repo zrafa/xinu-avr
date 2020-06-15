@@ -4,42 +4,62 @@
 
 #include <xinu.h>
 
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+volatile unsigned int avr_ticks=0;
+
 /*-----------------------------------------------------------------------
  * clkhandler - high level clock interrupt handler
  *-----------------------------------------------------------------------
  */
-void clkhandler()
+
+/* void clkhandler() */
+
+ISR(TIMER0_COMPA_vect)
 {
-	struct timer_csreg *tptr;
 
-	/* Increment 1000ms counter */
+	/* Every ms: What TO DO */
 
-	count1000++;
+	/* every second */
+	/* if avr_ticks == 1000 then 1 second */
 
-	/* After 1 sec, increment clktime */
+	avr_ticks ++;
+	if (avr_ticks > 100) {
+		avr_ticks=0;
 
-	if(count1000 >= 1000) {
-		clktime++;
-		count1000 = 0;
-	}
 
-	/* check if sleep queue is empty */
+	       /* Increment 1000ms counter */
 
-	if(!isempty(sleepq)) {
-		/* sleepq nonempty, decrement the key of */
-		/* topmost process on sleepq		 */
+		count1000++;
 
-		if((--queuetab[firstid(sleepq)].qkey) == 0) {
+		/* After 1 sec, increment clktime */
 
-			wakeup();
+		if(count1000 >= 1000) {
+			clktime++;
+			count1000 = 0;
+		}
+
+		/* check if sleep queue is empty */
+
+		if(!isempty(sleepq)) {
+			/* sleepq nonempty, decrement the key of */
+			/* topmost process on sleepq             */
+
+			if((--queuetab[firstid(sleepq)].qkey) == 0) {
+
+				wakeup();
+			}
+		}
+
+		/* Decrement the preemption counter */
+		/* Reschedule if necessary          */
+
+		if((--preempt) == 0) {
+			preempt = QUANTUM;
+			resched();
 		}
 	}
 
-	/* Decrement the preemption counter */
-	/* Reschedule if necessary	    */
-
-	if((--preempt) == 0) {
-		preempt = QUANTUM;
-		resched();
-	}
 }
+
