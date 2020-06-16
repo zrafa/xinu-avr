@@ -1,4 +1,4 @@
-# AVR atmega328p (Arduion) Xinu OS
+# AVR atmega328p (Arduino) Xinu OS
 
 ## What is Xinu?
 
