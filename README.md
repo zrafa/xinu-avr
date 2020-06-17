@@ -4,49 +4,43 @@
 
 Xinu stands for Xinu Is Not Unix -- 
 
-Xinu is a small, elegant, and easy to understand operating system,
+Xinu is a small, elegant, and easy to understand complete operating system,
 originally developed by Douglas Comer for instructional purposes at
 Purdue University in the 1980s.
 
 Xinu supports dynamic process creation, dynamic memory allocation, network communication, local and remote file systems, a shell, and device-independent I/O functions. Since the whole source code size is small, Xinu is suitable 
-for embedded environments.
+for embedded systems.
 
 Xinu arranges  the  components  of  the system into a hiearchy of
-layers, clarifying the interaction between the various  com-
-ponents of the system and making the system easier to under-
-stand and modify.  Despite its small size, Xinu uses  power-
-ful  primitives  to provide the same functionality many con-
+layers, clarifying the interaction between the various  components 
+of the system and making the system easier to understand 
+and modify.  Despite its small size, Xinu uses  powerful  
+primitives  to provide the same functionality many con-
 ventional operating systems supply.
-
-As we will see, the internal structure of Xinu differs completely
-from the internal structure of Unix (or Linux). 
-Xinu is smaller, elegant, and easier to understand.
-Applications written for one system will not
-run on the other without modification. Xinu is not Unix.
 
 Xinu originally ran on  Digital  Equipment  Corporation
 LSI  11's with only 64K bytes of memory, at the end of 1979 
-and the inning of 1980.
-Surprisingly, living with the constraints of microcomputers proved
-to be valuable because it made to consider the design carefully. 
-Small memory size forced economy of space; slow processor speed 
-forced economy of code.
-Xinu follows a hierarchical design in which successivel levels of
-functionality are built using primitives provided by lower levels.
-The resulting system, was called Xinu, and proved impressive functionality
-in very little space. It is both useful and elegant.
-
-Over the years Xinu versions have  been  ported
+and the inning of 1980. Over the years Xinu versions have  been  ported
 to  many  architectures , CISC and RISC: including  the IBM PC (x86), Sun 3, 
 Transputer, MacIntosh, ARM, PowerPC and MIPS. There 
 are current versions of Xinu for Galileo Intel boards,
 Beagle Boards, several MIPS platforms, and for PC hardware and virtual
 machines.
 
+Xinu differs completely
+from the internal structure of Unix (or Linux). 
+Xinu is smaller, elegant, and easier to understand.
+Applications written for one system will not
+run on the other without modification. Xinu is not Unix.
+
+## Xinu OS for AVR atmega328p
+
 This version of Xinu runs on AVR atmega328 microcontroller,
 which just provides 2KB of RAM, 32KB of Flash memory and 1KB of EEPROM.
-so it is possible to build an embedded system solution using 
-concurrent process under a real operating system, using for example,
+This port of Xinu uses 17KB of FLASH and 0.9KB of RAM, so there
+are still resources (SRAM and FLASH) available for developing 
+an embedded system solution programming 
+concurrent processes under a real operating system; using for example,
 an Arduino hardware and the Xinu operating system inside.
 
 Xinu is easy of understand, so a developer can obtain a copy 
