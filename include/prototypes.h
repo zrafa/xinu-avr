@@ -363,20 +363,6 @@ extern	syscall	putc(did32, char);
 extern	pid32	enqueue(pid32, qid16);
 extern	pid32	dequeue(qid16);
 
-/* in file ramclose.c */
-extern	devcall	ramclose(struct dentry *);
-
-/* in file raminit.c */
-extern	devcall	raminit(struct dentry *);
-
-/* in file ramopen.c */
-extern	devcall	ramopen(struct dentry *, char *, char *);
-
-/* in file ramread.c */
-extern	devcall	ramread(struct dentry *, char *, int32);
-
-/* in file ramwrite.c */
-extern	devcall	ramwrite(struct dentry *, char *, int32);
 
 /* in file rdsclose.c */
 extern	devcall	rdsclose(struct dentry *);
@@ -614,6 +600,23 @@ extern	syscall	yield(void);
 
 /* in file syscall.c */
 extern void syscall_init();
+
+/* RAFA avr : EEPROM */
+/* in file ramclose.c */
+extern	devcall	eeprom_close(struct dentry *);
+
+/* in file raminit.c */
+extern	devcall	eeprom_init(struct dentry *);
+
+/* in file ramopen.c */
+extern	devcall	eeprom_open(struct dentry *, char *, char *);
+
+/* in file ramread.c */
+extern	devcall	eeprom_read(struct dentry *, char *, int32);
+
+/* in file ramwrite.c */
+extern	devcall	eeprom_write(struct dentry *, char *, int32);
+
 
 /* in file suicide.c */
 

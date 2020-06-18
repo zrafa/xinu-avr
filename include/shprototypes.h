@@ -75,3 +75,8 @@ extern	shellcmd  xsh_uptime	(int32, char *[]);
 
 /* in file xsh_help.c */
 extern	shellcmd  xsh_help	(int32, char *[]);
+
+
+// RAFA AGREGO TODO ESTO
+/* in file xsh_editor.c */
+extern	shellcmd  xsh_editor	(int32, char *[]);

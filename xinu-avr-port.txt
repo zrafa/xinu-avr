@@ -1,3 +1,4 @@
+BASIC: https://github.com/robinhedwards/ArduinoBASIC/blob/master/arduino_BASIC.ino
 
 Si en include/shell.c achicamos maxtokens podemos achicar la cantidad
 de memoria que necesita el shell en create() en initialice()
@@ -89,3 +90,4 @@ En el resched.c nuevo hay que poner la llamada a ctxswitch.
 
 
 
+BASIC: https://github.com/robinhedwards/ArduinoBASIC/blob/master/arduino_BASIC.ino

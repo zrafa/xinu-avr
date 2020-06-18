@@ -35,8 +35,6 @@ int	printf(
 	vsnprintf(output, 80, fmt, ap);
 	va_end(ap);
 
-
-
         c = output;
         while(*c) {
                //  kputc(*c);

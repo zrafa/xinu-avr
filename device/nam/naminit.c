@@ -81,7 +81,7 @@ status	naminit(void)
 
 	/* Add other prefixes (longest prefix first) */
 
-        mount("/dev/null",	"",        NULLDEV);
+//        mount("/dev/null",	"",        NULLDEV);
 //	mount("/remote/",	"remote:", RFILESYS);
 //	mount("/local/",	NULLSTR,   LFILESYS);
 	mount("/dev/",		NULLSTR,   SYSERR);

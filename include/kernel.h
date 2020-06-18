@@ -19,14 +19,27 @@ typedef	uint32	umsg32;		/* message passed among processes	*/
 typedef	int32	bpid32;		/* buffer pool ID			*/
 typedef	byte	bool8;		/* Boolean type				*/
 
-typedef	char	sid32;		/* semaphore ID				*/
-typedef	char	qid16;		/* queue ID				*/
-typedef	char	pid32;		/* process ID				*/
-typedef	char	did32;		/* device ID				*/
-typedef	char	intmask;	/* saved interrupt mask			*/
-typedef	char	ibid32;		/* index block ID (used in file system)	*/
-typedef	char	dbid32;		/* data block ID (used in file system)	*/
-typedef	char	uid32;		/* ID for UDP table descriptor		*/
+/* Xinu-specific types */
+
+typedef int   sid32;          /* semaphore ID                         */
+typedef int16   qid16;          /* queue ID                             */
+typedef int32   pid32;          /* process ID                           */
+typedef int32   did32;          /* device ID                            */
+// typedef uint32  intmask;        /* saved interrupt mask                 */
+typedef uint8  intmask;        /* saved interrupt mask                 */
+typedef int32   ibid32;         /* index block ID (used in file system) */
+typedef int32   dbid32;         /* data block ID (used in file system)  */
+typedef int32   uid32;          /* ID for UDP table descriptor          */
+
+
+//typedef	char	sid32;		/* semaphore ID				*/
+//typedef	char	qid16;		/* queue ID				*/
+//typedef	char	pid32;		/* process ID				*/
+//typedef	char	did32;		/* device ID				*/
+//typedef	char	intmask;	/* saved interrupt mask			*/
+//typedef	char	ibid32;		/* index block ID (used in file system)	*/
+//typedef	char	dbid32;		/* data block ID (used in file system)	*/
+//typedef	char	uid32;		/* ID for UDP table descriptor		*/
 
 /* Function declaration return types */
 

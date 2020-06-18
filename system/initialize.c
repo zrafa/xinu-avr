@@ -19,6 +19,10 @@ extern	void	*_end;		/* End of Xinu code			*/
 
 extern	void main(void);	/* Main is the first process created	*/
 extern	process shell(void);	/* Main is the first process created	*/
+
+// RAFA
+extern	process test(void);	/* test is the first process created	*/
+
 static	void sysinit(); 	/* Internal system initialization	*/
 extern	void meminit(void);	/* Initializes the free memory list	*/
 extern 	int32 initintc(void);
@@ -60,7 +64,11 @@ void nullprocess(void) {
 	// resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
 	// 200 ok  and 400 ok
 	// resume(create((void *)shell, 200, INITPRIO, "shell", 0, NULL));
-	resume(create((void *)shell, 256, INITPRIO, "shell", 0, NULL));
+	//resume(create((void *)shell, 256, INITPRIO, "shell", 0, NULL));
+	
+
+	resume(create((void *)test, 256, INITPRIO, "test", 0, NULL));
+	//resume(create((void *)test, 400, INITPRIO, "test", 0, NULL));
 	
 	for(;;);
 }
