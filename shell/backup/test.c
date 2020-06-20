@@ -40,6 +40,7 @@ process test(int nargs, char *args[])
 {
 //	int32 a = roundmb(81);
 
+/* EEPROM TEST
 	char buf[6];
 	char buf2[6];
 	memset(buf, 0, 6);
@@ -59,7 +60,8 @@ process test(int nargs, char *args[])
 	blink_avr();
 	blink_avr();
 	blink_avr();
-/*
+ EN EEPROM TEST */
+
 	sid32 produced, consumed;
 	consumed = semcreate(0);
 	produced = semcreate(1);
@@ -67,9 +69,8 @@ process test(int nargs, char *args[])
 	printf ("consu=%d \n", consumed);
 	blink_avr();
 	blink_avr();
-	resume(create(cons2, 256, 20, "cons", 3, consumed, produced, 4));
-	resume(create(prod2, 256, 20, "prod", 3, consumed, produced, 4));
-*/
+	resume(create(cons2, 200, 20, "cons", 3, consumed, produced, 4));
+	resume(create(prod2, 200, 20, "prod", 3, consumed, produced, 4));
 	return 0;
 }
 
