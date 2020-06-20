@@ -80,3 +80,4 @@ extern	shellcmd  xsh_help	(int32, char *[]);
 // RAFA AGREGO TODO ESTO
 /* in file xsh_editor.c */
 extern	shellcmd  xsh_editor	(int32, char *[]);
+extern	shellcmd  xsh_basic	(int32, char *[]);

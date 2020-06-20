@@ -26,7 +26,6 @@ void platinit(void)
 
 	/* avr uart init */
         serial_init();
-	char f = serial_get_char();
 
 	/* Initialize the Interrupt Controller (evec.c) */
 	initintc();

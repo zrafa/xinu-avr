@@ -59,16 +59,15 @@ pid32	currpid;		/* ID of currently executing process	*/
 
 void nullprocess(void) {
 
-	kprintf("nullp\n");
+//	kprintf("nullp\n");
 	
 	// resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
 	// 200 ok  and 400 ok
 	// resume(create((void *)shell, 200, INITPRIO, "shell", 0, NULL));
-	//resume(create((void *)shell, 256, INITPRIO, "shell", 0, NULL));
+	resume(create((void *)shell, 360, INITPRIO, "shell", 0, NULL));
 	
 
-	resume(create((void *)test, 256, INITPRIO, "test", 0, NULL));
-	//resume(create((void *)test, 400, INITPRIO, "test", 0, NULL));
+//	resume(create((void *)test, 256, INITPRIO, "test", 0, NULL));
 	
 	for(;;);
 }
@@ -116,7 +115,13 @@ void	nulluser()
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
 	}
-	kprintf("\n\rFreeMEM:%d\n", free_mem);
+	kprintf("\nFreeMEM:%d\n", free_mem);
+
+/*
+	long * b = (long *) memlist.mnext;
+	*(b+32) = STACKMAGIC;
+	kprintf("S2:%X\n", *(b+32));
+*/
 
 	/* Initialize the Null process entry */	
 	int pid = create((void *)nullprocess, INITSTK, 10, "Null process", 0, NULL);
@@ -127,10 +132,9 @@ void	nulluser()
 	/* Enable interrupts */
 	enable();
 	
-	/* Initialize the real time clock */
-	clkinit();
+//	/* Initialize the real time clock */
+//	clkinit();
 	
-
 	/* Start of nullprocess */
 	startup(0, prptr);
 
@@ -147,6 +151,7 @@ void startup(int INIT, struct procent *p) {
 	/* Should not be here, panic */
 	// resume(INIT);
 	nullprocess();
+	//resume(INIT);
 
 	avr_kprintf(m6);
 	panic("");
@@ -171,7 +176,7 @@ static	void	sysinit()
 	platinit();
 
 	kprintf(CONSOLE_RESET);
-	kprintf("\n\r%s\n", VERSION);
+	avr_kprintf(m0);
 
 	/* Initialize free memory list */
 
@@ -224,7 +229,6 @@ static	void	sysinit()
 	/* Initialize the real time clock */
 
 	clkinit();
-
 
 	return;
 }

@@ -631,7 +631,9 @@ extern	devcall	spiputc(struct dentry *, char);
 
 /* avr specific */
 extern void avr_printf(char mess[]);
-extern void avr_kprintf(char mess[]);
+extern void avr_kprintf(const unsigned char *msg);
+
+// extern void avr_kprintf(char mess[]);
 extern void blink_avr();
 typedef unsigned int size_t;
 #define hibyte(x) (unsigned char)(((int)(x)>>8)&0xff)

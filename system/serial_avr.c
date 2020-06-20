@@ -49,8 +49,8 @@ void serial_init() {
 	puerto_serial->status_control_b = (unsigned char)(EN_RX_TX | (1<<UART_RXCIE0));
 
 	/* test */
-	while(!((puerto_serial->status_control_a) & (EN_TX)));
-	puerto_serial->data_es = 'R';
+//	while(!((puerto_serial->status_control_a) & (EN_TX)));
+//	puerto_serial->data_es = 'R';
 }
 
 
@@ -58,8 +58,7 @@ void serial_put_char (char outputChar)
 {
 
 	while(!((puerto_serial->status_control_a) & (EN_TX)));
-
-	puerto_serial->data_es = outputChar;
+		puerto_serial->data_es = outputChar;
 }
 
 char value;
@@ -79,7 +78,7 @@ char serial_get_char(void)
 {
     /* Wait for the next character to arrive. */
 	while(!((puerto_serial->status_control_a) & (EN_RX)));
-	return (puerto_serial->data_es);
+		return (puerto_serial->data_es);
 }
 
 void serial_put_str (char * mensaje)

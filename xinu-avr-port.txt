@@ -91,3 +91,8 @@ En el resched.c nuevo hay que poner la llamada a ctxswitch.
 
 
 BASIC: https://github.com/robinhedwards/ArduinoBASIC/blob/master/arduino_BASIC.ino
+En 
+#define STACK_SIZE (sizeof(struct stack_for_frame)*2)
+estaba en *5  en vez de *2
+Pero pisaba memoria de datos. Y con 2 no anda bien.
+

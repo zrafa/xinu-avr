@@ -4,6 +4,10 @@
 #include <stdio.h>
 #include <string.h>
 
+// RAFA
+#include <avr/interrupt.h>
+
+
 static	void	printMemUse(void);
 static	void	printFreeList(void);
 
@@ -14,33 +18,10 @@ static	void	printFreeList(void);
 shellcmd xsh_memstat(int nargs, char *args[])
 {
 
-	/* For argument '--help', emit help about the 'memstat' command	*/
 
-/*
-	if (nargs == 2 && strncmp(args[1], "--help", 7) == 0) {
-		printf("use: %s \n\n", args[0]);
-		printf("Description:\n");
-		printf("\tDisplays the current memory use and prints the\n");
-		printf("\tfree list.\n");
-		printf("Options:\n");
-		printf("\t--help\t\tdisplay this help and exit\n");
-		return 0;
-	}
-*/
-
-	/* Check for valid number of arguments */
-
-/*
-	if (nargs > 1) {
-		fprintf(stderr, "%s: too many arguments\n", args[0]);
-		fprintf(stderr, "Try '%s --help' for more information\n",
-				args[0]);
-		return 1;
-	}
-*/
-
-	printMemUse();
+//	printMemUse();
 	printFreeList();
+
 
 	return 0;
 }
@@ -53,7 +34,7 @@ shellcmd xsh_memstat(int nargs, char *args[])
  */
 static void printFreeList(void)
 {
-	char t[80];
+//	char t[80];
 	struct memblk *block;
 
 	/* Output a heading for the free list */
@@ -65,6 +46,23 @@ static void printFreeList(void)
 	for (block = memlist.mnext; block != NULL; block = block->mnext) {
 		printf("0x%08x %d\n", block,
 			(uint32) block->mlength);
+	}
+	long i;
+	int j=0;
+	char * c = 0;
+	for (i=0; i<0x5bd ; i++) {
+		c = (char *)i;
+		if (j==0) {
+			serial_put_char('\n');
+			serial_put_char('\r');
+			printf ("0x%08x  ", c);
+		}
+		j++;
+		if (j==16) j=0;
+		if (*c < 33)
+			serial_put_char('-');
+		else
+			serial_put_char(*c);
 	}
 }
 

@@ -28,6 +28,8 @@ char  	*getstk(
 	fitsprev = NULL;  /* Just to avoid a compiler warning */
 
 	while (curr != NULL) {			/* Scan entire list	*/
+		// RAFA kprintf("c:%d ",curr->mlength);
+		// RAFA kprintf("n:%d ",nbytes);
 		if (curr->mlength >= nbytes) {	/* Record block address	*/
 			fits = curr;		/*   when request fits	*/
 			fitsprev = prev;

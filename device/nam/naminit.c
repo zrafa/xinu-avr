@@ -65,16 +65,16 @@ status	naminit(void)
 
 		if (len > NM_MAXLEN) {
 			// RAFA kprintf("namespace: device name %s too long\r\n",
-			kprintf(&m5[0],
-					devptr->dvname);
+			avr_kprintf(m5);
+			kprintf("%s", devptr->dvname);
 			continue;
 		}
 
 		retval = mount(tmpstr, NULLSTR, devptr->dvnum);
                 if (retval == SYSERR) {
 			// RAFA kprintf("namespace: cannot mount device %d\r\n",
-			kprintf(&m4[0],
-					devptr->dvname);
+			avr_kprintf(m4);
+			kprintf("%s", devptr->dvname);
 			continue;
 		}
 	}

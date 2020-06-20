@@ -6,6 +6,7 @@ typedef unsigned int size_t;
 
 // const char CONSOLE_RESET[] PROGMEM = " \033[0m\033[2J\033[;H";
 // const char m0[] PROGMEM = "Welcome to Xinu for AVR microcontrollers!\n v0.1 rafa@fi.uncoma.edu.ar";
+const char m0[] PROGMEM = "\nWelcome to Xinu!\n\n\r\tXinu OS Copyright (c) 2012, 2015\n\r\tDouglas E. Comer and CRC Press, Inc.\n\n\r\tThis version for AVR atmega328p v0.1 (c) 2020\n\r\tRafael Ignacio Zurita <rafa@fi.uncoma.edu.ar>\n\n\r";
 const char m1[] PROGMEM = "\n\nMain process recreating shell\n\n";
 const char m2[] PROGMEM = "Port system ran out of message nodes";
 const char m3[] PROGMEM = "\n\nAll user processes have completed.\n\n";

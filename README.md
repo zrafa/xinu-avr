@@ -20,12 +20,20 @@ ventional operating systems supply.
 
 Xinu originally ran on  Digital  Equipment  Corporation
 LSI  11's with only 64K bytes of memory, at the end of 1979 
-and the inning of 1980. Over the years Xinu versions have  been  ported
-to  many  architectures , CISC and RISC: including  the IBM PC (x86), Sun 3, 
-Transputer, MacIntosh, ARM, PowerPC and MIPS. There 
-are current versions of Xinu for Galileo Intel boards,
-Beagle Boards, several MIPS platforms, and for PC hardware and virtual
-machines.
+and the inning of 1980. Over the years Xinu versions 
+Xinu have been expanded and ported to a wide variety of architectures and platforms, including: IBM PC, 
+Macintosh, Digital Equipment Corporation VAX and DECStation 3100, Sun Microsystems Sun 2, 
+Sun 3 and Sparcstations, and for several ARM, MIPS and x86 embedded boards.
+It has been used as the basis for many research projects. 
+Furthermore, Xinu has been used as an embedded system in products 
+by companies such as Motorola, Mitsubishi, Hewlett-Packard, and Lexmark. 
+There is a full TCP/IP stack, and even the original version of Xinu 
+(for the PDP-11) supported arbitrary processes and network I/O.
+have  been  ported
+
+There are current versions of Xinu for Galileo Intel boards,
+ARM Beagle Boards, several MIPS platforms, and for x86 PC hardware 
+and virtual machines.
 
 Xinu differs completely
 from the internal structure of Unix (or Linux). 

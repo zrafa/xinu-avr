@@ -13,7 +13,7 @@ devcall	ttyinit(
 	)
 {
 	struct	ttycblk	*typtr;		/* Pointer to ttytab entry	*/
-	struct	uart_csreg *uptr;	/* Address of UART's CSRs	*/
+//	struct	uart_csreg *uptr;	/* Address of UART's CSRs	*/
 
 	typtr = &ttytab[ devptr->dvminor ];
 
@@ -52,6 +52,6 @@ devcall	ttyinit(
 	/* Initialize UART */
 	/* avr: TODO port uart to here */
 
-	ttykickout(uptr);
+//	ttykickout(uptr);
 	return OK;
 }

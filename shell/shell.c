@@ -8,7 +8,9 @@
 /* Table of Xinu shell commands and the function associated with each	*/
 /************************************************************************/
 const	struct	cmdent	cmdtab[] = {
-	{"memstat",	TRUE,	xsh_memstat}, /* Make built-in */
+	{"memstat",	FALSE,	xsh_memstat}, /* Make built-in */
+	{"editor",	FALSE,	xsh_editor}, /* Make built-in */
+	{"basic",	FALSE,	xsh_basic}, /* Make built-in */
 	{"echo",	FALSE,	xsh_echo}
 //	{"argecho",	TRUE,	xsh_argecho},
 //	{"cat",		FALSE,	xsh_cat},
@@ -93,6 +95,10 @@ process	shell (
 
 	
 	while (TRUE) {
+
+		// RAFA
+		// fprintf(dev, "\033[2J");
+		// fprintf(dev, "\033[H");
 
 		/* Display prompt */
 		fprintf(dev, SHELL_PROMPT);
@@ -269,6 +275,11 @@ process	shell (
 			}
 		}
 
+		// int eeprom_fd = open(RAM0, nombre, "w");
+		// char raf[32] = "pepe";
+		// write(fd, pepe, 32);
+		// int eeprom_fd = open(RAM0, nombre, "w");
+
 		/* Spawn child thread for non-built-in commands */
 
 		// RAFA child = create(cmdtab[j].cfunc,
@@ -276,7 +287,7 @@ process	shell (
 		// RAFA 	cmdtab[j].cname, 2, ntok, &tmparg);
 		/* 160 bytes de stack perfecto */
 		child = create(cmdtab[j].cfunc,
-			160, SHELL_CMDPRIO,
+			460, SHELL_CMDPRIO,
 			cmdtab[j].cname, 2, ntok, &tmparg);
 
 		/* If creation or argument copy fails, report error */

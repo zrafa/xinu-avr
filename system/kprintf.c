@@ -50,9 +50,9 @@ extern	void	_doprnt(char *, va_list, int (*)(int));
 syscall kprintf(char *fmt, ...)
 {
 	va_list ap;
-	intmask mask;
+	//intmask mask;
 
-	mask = disable();
+	//mask = disable();
 
 	char output[81];
 	char *c;
@@ -68,6 +68,6 @@ syscall kprintf(char *fmt, ...)
 		c++;
 	};
 
-	restore(mask);
+	//restore(mask);
         return OK;
 }
