@@ -35,11 +35,12 @@ There are current versions of Xinu for Galileo Intel boards,
 ARM Beagle Boards, several MIPS platforms, and for x86 PC hardware 
 and virtual machines.
 
-Xinu differs completely
+Many sites defines Xinu as a free Unix system, or similar statements.
+It is not. Xinu differs completely
 from the internal structure of Unix (or Linux). 
-Xinu is smaller, elegant, and easier to understand.
+For academic purposes Xinu is smaller, elegant, and easier to understand.
 Applications written for one system will not
-run on the other without modification. Xinu is not Unix.
+run on the other without modification. **Xinu is not Unix.**
 
 ## Xinu OS for AVR atmega328p
 

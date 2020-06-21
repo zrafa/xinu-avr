@@ -11,6 +11,12 @@
 static	void	printMemUse(void);
 static	void	printFreeList(void);
 
+static void printnl(void)
+{
+	printf("\n\r");
+}
+
+
 /*------------------------------------------------------------------------
  * xsh_memstat - Print statistics about memory use and dump the free list
  *------------------------------------------------------------------------
@@ -47,6 +53,7 @@ static void printFreeList(void)
 		printf("0x%08x %d\n", block,
 			(uint32) block->mlength);
 	}
+
 	long i;
 	int j=0;
 	char * c = 0;
@@ -64,6 +71,7 @@ static void printFreeList(void)
 		else
 			serial_put_char(*c);
 	}
+	printnl();
 }
 
 extern void start(void);

@@ -68,11 +68,17 @@
 
 /* Structure of an entry in the table of shell commands */
 
+//typedef void (*cfunc)(void);
+// typedef void (*CmdFunc_t)(char);
+//typedef char *cname;
+
 struct	cmdent	{			/* Entry in command table	*/
-	char	*cname;			/* Name of command		*/
+	//char	*cname;			/* Name of command		*/
 	bool8	cbuiltin;		/* Is this a builtin command?	*/
 	int32	(*cfunc)(int32,char*[]);/* Function for command		*/
 };
 
 extern	uint32	ncmd;
-extern	const	struct	cmdent	cmdtab[];
+// extern	const	struct	cmdent	cmdtab[];
+typedef struct cmdent cmdent_t;
+extern	const	__flash cmdent_t cmdtab[];

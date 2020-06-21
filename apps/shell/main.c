@@ -7,14 +7,71 @@
 //#include <stdio.h>
 #include "shprototypes.h"
 
+void xsh_help(void);
+
+typedef void (*CmdFunc_t)(char);
+typedef struct cmdent cmdent_t;
 /************************************************************************/
 /* Table of Xinu shell commands and the function associated with each	*/
 /************************************************************************/
-const	struct	cmdent	cmdtab[] = {
-	{"memstat",	FALSE,	xsh_memstat}, /* Make built-in */
-	{"editor",	FALSE,	xsh_editor}, /* Make built-in */
-	{"basic",	FALSE,	xsh_basic}, /* Make built-in */
-	{"echo",	FALSE,	xsh_echo}
+// const struct	cmdent	cmdtab[] = {
+
+const __flash uint8_t * const __flash cmdtab_cname[] =
+{
+  (const __flash uint8_t[]) { "memstat" },
+  (const __flash uint8_t[]) { "editor" },
+  (const __flash uint8_t[]) { "basic" },
+  (const __flash uint8_t[]) { "help" },
+  (const __flash uint8_t[]) { "echo" }
+};
+
+typedef int32	(*cmdfunc_t)(int32,char*[]);
+//typedef void (*cmdfunc_t)(char);
+
+// const cmdfunc_t __flash cmdtab_cfunc[] = { 
+/*
+cmdfunc_t cmdtab_cfunc[] = { 
+	xsh_memstat,
+	xsh_editor,
+	xsh_basic,
+	xsh_help,
+	xsh_echo};
+
+const __flash	int cmdtab_cbuiltin[] = {
+	FALSE,
+	FALSE,
+	FALSE,
+	TRUE,
+	FALSE};
+*/
+
+const __flash cmdent_t	cmdtab[] = {
+	{FALSE,	xsh_memstat},
+	{FALSE,	xsh_editor},
+	{FALSE,	xsh_basic},
+	{TRUE,	xsh_help},
+	{FALSE,	xsh_echo}
+};
+
+const __flash char shell_commands[] = "\n\rCommands:\n\n\r";
+
+void xsh_help(void) 
+{
+	int i;
+	
+	printf("%S", shell_commands);
+	for (i=0; i<ncmd; i++) 
+		printf("%S\n", cmdtab_cname[i]);
+	printf("\n\r");
+
+}
+
+//const struct	cmdent	cmdtab[] = {
+//	{"memstat",	FALSE,	xsh_memstat}, /* Make built-in */
+//	{"editor",	FALSE,	xsh_editor}, /* Make built-in */
+//	{"basic",	FALSE,	xsh_basic}, /* Make built-in */
+//	{"help",	TRUE,	xsh_help}, /* Make built-in */
+//	{"echo",	FALSE,	xsh_echo}
 //	{"argecho",	TRUE,	xsh_argecho},
 //	{"cat",		FALSE,	xsh_cat},
 //	{"clear",	TRUE,	xsh_clear},
@@ -30,9 +87,10 @@ const	struct	cmdent	cmdtab[] = {
 //	{"uptime",	FALSE,	xsh_uptime},
 //	{"?",		FALSE,	xsh_help}
 
-};
+//};
 
-uint32	ncmd = sizeof(cmdtab) / sizeof(struct cmdent);
+// uint32	ncmd = sizeof(cmdtab) / sizeof(struct cmdent);
+uint32	ncmd = 5;
 
 /************************************************************************/
 /* shell  -  Provide an interactive user interface that executes	*/
@@ -92,8 +150,10 @@ process	main(void)
 	fprintf(dev, "%s\n\n", SHELL_STRTMSG);
 */
 
-	/* Continually prompt the user, read input, and execute command	*/
+	cmdfunc_t f;
+	int len_p;
 
+	/* Continually prompt the user, read input, and execute command	*/
 	
 	while (TRUE) {
 
@@ -209,9 +269,17 @@ process	main(void)
 		/* Lookup first token in the command table */
 
 		for (j = 0; j < ncmd; j++) {
-			src = cmdtab[j].cname;
+			// src = cmdtab[j].cname;
 			cmp = tokbuf;
-			diff = FALSE;
+			//diff = FALSE;
+			diff = TRUE;
+			len_p = strlen_P(cmdtab_cname[j]);
+			if (strncmp_P(cmp, cmdtab_cname[j], len_p) == 0 ) { 
+				//diff = TRUE;
+				diff = FALSE;
+				//printf("IGUA:j:%d\n",j);
+		};
+/*
 			while (*src != NULLCH) {
 				if (*cmp != *src) {
 					diff = TRUE;
@@ -220,9 +288,12 @@ process	main(void)
 				src++;
 				cmp++;
 			}
-			if (diff || (*cmp != NULLCH)) {
+*/
+			//if (diff || (*cmp != NULLCH)) {
+			if (diff || (*(cmp+len_p) != NULLCH)) {
 				continue;
 			} else {
+				//printf("IGUA:j2:%d\n",j);
 				break;
 			}
 		}
@@ -237,6 +308,7 @@ process	main(void)
 		/* Handle built-in command */
 
 		if (cmdtab[j].cbuiltin) { /* No background or redirect. */
+		//if (cmdtab_cbuiltin) { /* No background or redirect. */
 			if (inname != NULL || outname != NULL || backgnd){
 				// fprintf(dev, SHELL_BGERRMSG);
 				continue;
@@ -250,6 +322,8 @@ process	main(void)
 				/* Call builtin shell function */
 
 				if ((*cmdtab[j].cfunc)(ntok, args)
+				//f = cmdtab_cfunc[j];
+				//if (f(ntok, args)
 							== SHELL_EXIT) {
 					break;
 				}
@@ -287,9 +361,11 @@ process	main(void)
 		// RAFA 	SHELL_CMDSTK, SHELL_CMDPRIO,
 		// RAFA 	cmdtab[j].cname, 2, ntok, &tmparg);
 		/* 160 bytes de stack perfecto */
+//		f = cmdtab_cfunc[j];
 		child = create(cmdtab[j].cfunc,
-			460, SHELL_CMDPRIO,
-			cmdtab[j].cname, 2, ntok, &tmparg);
+			552, SHELL_CMDPRIO,
+			cmdtab_cname[j], 2, ntok, &tmparg);
+			//cmdtab[j].cname, 2, ntok, &tmparg);
 
 		/* If creation or argument copy fails, report error */
 
@@ -300,7 +376,8 @@ process	main(void)
 		    (addargs(child, ntok, tok, tlen, tokbuf, &tmparg)
 							== SYSERR) ) {
 			// serial_put_char('Z');
-			fprintf(dev, SHELL_CREATMSG);
+			// fprintf(dev, SHELL_CREATMSG);
+			fprintf(dev, "?\n\r");
 			continue;
 		}
 

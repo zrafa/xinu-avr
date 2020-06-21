@@ -1,10 +1,10 @@
-/* xsh_editor.c - xsh_editor */
+/* xsh_basic.c - xsh_basic */
 
 #include <xinu.h>
 #include <stdio.h>
 
-#define NLINES 10
-#define LINE_LEN 24
+#define NLINES 14
+#define LINE_LEN 32
 
 void outchar( char ch );
 
@@ -233,7 +233,7 @@ shellcmd xsh_basic(int nargs, char *args[])
 
 // size of our program ram
 // RAFA #define kRamSize   64*1024 /* arbitrary - not dependant on libraries */
-// RAFA #define kRamSize   24 /* arbitrary - not dependant on libraries */
+#define kRamSize   400 /* arbitrary - not dependant on libraries */
 
 
 // RAFA AGREGA
@@ -313,7 +313,6 @@ typedef short unsigned LINENUM;
 #define ECHO_CHARS 0
 
 // RAFA
-//unsigned char program[kRamSize];
 // extern unsigned char program[NLINES*LINE_LEN];
 
 static const char *  sentinel = "HELLO";
@@ -458,7 +457,7 @@ const static unsigned char highlow_tab[] PROGMEM = {
 
 //RAFA ANTES DECIA 5
 //#define STACK_SIZE (sizeof(struct stack_for_frame)*5)
-#define STACK_SIZE (sizeof(struct stack_for_frame)*4)
+#define STACK_SIZE (sizeof(struct stack_for_frame)*5)
 
 
 #define VAR_SIZE sizeof(short int) // Size of variables in bytes
@@ -975,7 +974,8 @@ void loop()
   boolean alsoWait = false;
   int val;
 
-  unsigned char program[NLINES*LINE_LEN];
+//  unsigned char program[NLINES*LINE_LEN];
+	unsigned char program[kRamSize];
 
   program_start = program;
   program_end = program_start;

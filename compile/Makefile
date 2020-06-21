@@ -39,16 +39,18 @@ REBUILDFLAGS	=	-s $(TOPDIR)/system  debug.c 	\
 			#-s $(TOPDIR)/device/gpio			\
 			#-s $(TOPDIR)/device/spi			\
 			-s $(TOPDIR)/device/tty			\
+			-s $(TOPDIR)/shell  'xsh_rdstest*'
 			#
 REBUILDFLAGS	=	-s $(TOPDIR)/system   	\
 			-s $(TOPDIR)/lib			\
 			-s $(TOPDIR)/device/nam			\
 			-s $(TOPDIR)/device/tty			\
-			-s $(TOPDIR)/shell  'xsh_rdstest*'
+			-s $(TOPDIR)/device/avr_eeprom			\
+			-s $(TOPDIR)/main  
 
 INCLUDE		=	-I$(TOPDIR)/include
 # RAFA DEFS		= 	-DBSDURG -DVERSION=\""`cat $(VERSIONFILE)`"\"
-DEFS		= 	-DVERSION=\""Xinu AVR 0.1 RAFA"\"
+DEFS		= 	-DVERSION=\""Xinu AVR 0.1 RAFA\0"\"
 
 # Compiler flags
 # CFLAGS  = -mcpu=cortex-m3 -mno-unaligned-access -mthumb -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O ${DEFS} ${INCLUDE}
@@ -57,6 +59,7 @@ CFLAGS  = -DF_CPU=16000000UL -mmcu=atmega328p  -fno-builtin -c -Wall -Os ${DEFS}
 # RAFA AGREGA LAS 3 de ABAJO
 CFLAGS += -Wl,-static
 CFLAGS += -ffunction-sections
+CFLAGS += -fdata-sections
 CFLAGS += -Wl,--gc-sections
 
 SFLAGS  = ${INCLUDE}
