@@ -1,3 +1,34 @@
+Datos importantes sobre el port actual:
+
+- Podemos tener varios procesos en ejecución en el shell 
+  con background &
+- En config/Configuration necesitamos al menos NPROC 4
+
+TODO
+----
+
+- sleep usa sleepms. Como tenemos interrupciones cada 100ms
+y como qkey en queue.h es char (originalmente es int32, pero 
+con int32 nos quita muchisima RAM) tenemos un hack/workaround
+para lograr el sleepms acorde, pero no es en ms.
+SOLUCIONAR.
+
+- agregar a la tabla de cmdtab del shell que pueda indicar
+el stack para cada proceso.
+
+- agregar al help la ayuda de si el programa es un comando 
+interno al shell o externo.
+
+- agregar el eeprom fs
+
+- 
+
+
+
+
+Demas
+-----
+
 BASIC: https://github.com/robinhedwards/ArduinoBASIC/blob/master/arduino_BASIC.ino
 
 Si en include/shell.c achicamos maxtokens podemos achicar la cantidad

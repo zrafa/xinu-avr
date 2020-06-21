@@ -55,7 +55,7 @@ void editor_del(char * buf, int line, int i)
 	//	printf("\033[D");
 }
 
-void clear(void)
+static void clear(void)
 {
 	fprintf(0, "\033[2J");
 	fprintf(0, "\033[H");

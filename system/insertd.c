@@ -9,7 +9,8 @@
 status	insertd(			/* Assumes interrupts disabled	*/
 	  pid32		pid,		/* ID of process to insert	*/
 	  qid16		q,		/* ID of queue to use		*/
-	  int32		key		/* Delay from "now" (in ms.)	*/
+	  // int32		key		/* Delay from "now" (in ms.)	*/
+	  char		key		/* Delay from "now" (in ms.)	*/
 	)
 {
 	int32	next;			/* Runs through the delta list	*/

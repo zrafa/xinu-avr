@@ -18,38 +18,41 @@ typedef struct cmdent cmdent_t;
 
 const __flash uint8_t * const __flash cmdtab_cname[] =
 {
-  (const __flash uint8_t[]) { "memstat" },
+  (const __flash uint8_t[]) { "memdump" },
   (const __flash uint8_t[]) { "editor" },
   (const __flash uint8_t[]) { "basic" },
   (const __flash uint8_t[]) { "help" },
+  (const __flash uint8_t[]) { "sleep" },
+  (const __flash uint8_t[]) { "free" },
+  (const __flash uint8_t[]) { "clear" },
+  (const __flash uint8_t[]) { "ps" },
   (const __flash uint8_t[]) { "echo" }
 };
 
+//	{"sleep",	FALSE,	xsh_sleep},
+const __flash uint8_t * const __flash cmdtab_help[] =
+{
+  (const __flash uint8_t[]) { "[from to] : tisplay SRAM memory contents using ASCII." },
+  (const __flash uint8_t[]) { ": text editor." },
+  (const __flash uint8_t[]) { ": basic language interpreter." },
+  (const __flash uint8_t[]) { ": this help." },
+  (const __flash uint8_t[]) { "n : sleep n seconds." },
+  (const __flash uint8_t[]) { ": display amount of free and used memory in the system." },
+  (const __flash uint8_t[]) { ": clear the terminal screen." },
+  (const __flash uint8_t[]) { ": display current processes table." },
+  (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output." }
+};
 typedef int32	(*cmdfunc_t)(int32,char*[]);
-//typedef void (*cmdfunc_t)(char);
-
-// const cmdfunc_t __flash cmdtab_cfunc[] = { 
-/*
-cmdfunc_t cmdtab_cfunc[] = { 
-	xsh_memstat,
-	xsh_editor,
-	xsh_basic,
-	xsh_help,
-	xsh_echo};
-
-const __flash	int cmdtab_cbuiltin[] = {
-	FALSE,
-	FALSE,
-	FALSE,
-	TRUE,
-	FALSE};
-*/
 
 const __flash cmdent_t	cmdtab[] = {
-	{FALSE,	xsh_memstat},
+	{FALSE,	xsh_memdump},
 	{FALSE,	xsh_editor},
 	{FALSE,	xsh_basic},
 	{TRUE,	xsh_help},
+	{FALSE,	xsh_sleep},
+	{TRUE,	xsh_free},
+	{TRUE,	xsh_clear},
+	{TRUE,	xsh_ps},
 	{FALSE,	xsh_echo}
 };
 
@@ -61,7 +64,7 @@ void xsh_help(void)
 	
 	printf("%S", shell_commands);
 	for (i=0; i<ncmd; i++) 
-		printf("%S\n", cmdtab_cname[i]);
+		printf(" %S %S\n", cmdtab_cname[i], cmdtab_help[i]);
 	printf("\n\r");
 
 }
@@ -89,8 +92,8 @@ void xsh_help(void)
 
 //};
 
-// uint32	ncmd = sizeof(cmdtab) / sizeof(struct cmdent);
-uint32	ncmd = 5;
+uint32	ncmd = sizeof(cmdtab) / sizeof(struct cmdent);
+//uint32	ncmd = 5;
 
 /************************************************************************/
 /* shell  -  Provide an interactive user interface that executes	*/
@@ -140,6 +143,7 @@ process	main(void)
 					/*   builtin commands		*/
 	did32	dev = 0;		/* ID of tty device from which	*/
 
+	char cname[8];
 	/* Print shell banner and startup message */
 
 /*
@@ -362,9 +366,15 @@ process	main(void)
 		// RAFA 	cmdtab[j].cname, 2, ntok, &tmparg);
 		/* 160 bytes de stack perfecto */
 //		f = cmdtab_cfunc[j];
+		strncpy_P(cname, cmdtab_cname[j], len_p);
+		cname[len_p] = 0;
 		child = create(cmdtab[j].cfunc,
-			552, SHELL_CMDPRIO,
-			cmdtab_cname[j], 2, ntok, &tmparg);
+			// 560, SHELL_CMDPRIO,
+			// 470, SHELL_CMDPRIO,
+			// 360, SHELL_CMDPRIO,
+			128, SHELL_CMDPRIO,
+			cname, 2, ntok, &tmparg);
+			// cmdtab_cname[j], 2, ntok, &tmparg);
 			//cmdtab[j].cname, 2, ntok, &tmparg);
 
 		/* If creation or argument copy fails, report error */
