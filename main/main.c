@@ -4,10 +4,10 @@
 
 
 #include <xinu.h>
-//#include <stdio.h>
 #include "shprototypes.h"
 
 void xsh_help(void);
+shellcmd xsh_kill(int nargs, char *args[]);
 
 typedef void (*CmdFunc_t)(char);
 typedef struct cmdent cmdent_t;
@@ -23,40 +23,72 @@ const __flash uint8_t * const __flash cmdtab_cname[] =
   (const __flash uint8_t[]) { "basic" },
   (const __flash uint8_t[]) { "help" },
   (const __flash uint8_t[]) { "sleep" },
+  (const __flash uint8_t[]) { "forever" },
+  (const __flash uint8_t[]) { "uptime" },
+  (const __flash uint8_t[]) { "kill" },
   (const __flash uint8_t[]) { "free" },
   (const __flash uint8_t[]) { "clear" },
   (const __flash uint8_t[]) { "ps" },
   (const __flash uint8_t[]) { "echo" }
 };
 
-//	{"sleep",	FALSE,	xsh_sleep},
 const __flash uint8_t * const __flash cmdtab_help[] =
 {
-  (const __flash uint8_t[]) { "[from to] : tisplay SRAM memory contents using ASCII." },
-  (const __flash uint8_t[]) { ": text editor." },
-  (const __flash uint8_t[]) { ": basic language interpreter." },
-  (const __flash uint8_t[]) { ": this help." },
-  (const __flash uint8_t[]) { "n : sleep n seconds." },
-  (const __flash uint8_t[]) { ": display amount of free and used memory in the system." },
-  (const __flash uint8_t[]) { ": clear the terminal screen." },
-  (const __flash uint8_t[]) { ": display current processes table." },
-  (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output." }
+  (const __flash uint8_t[]) { "[from to] : display SRAM memory contents" },
+  (const __flash uint8_t[]) { ": text editor" },
+  (const __flash uint8_t[]) { ": basic language interpreter" },
+  (const __flash uint8_t[]) { ": this help" },
+  (const __flash uint8_t[]) { "n : sleep n seconds" },
+  (const __flash uint8_t[]) { ": for (;;); for ever" },
+  (const __flash uint8_t[]) { ": tell how long the Xinu system has been running" },
+  (const __flash uint8_t[]) { "n : kill (terminates) the n ID process" },
+  (const __flash uint8_t[]) { ": display amount of free and used memory in the system" },
+  (const __flash uint8_t[]) { ": clear the terminal screen" },
+  (const __flash uint8_t[]) { ": display current processes table" },
+  (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output" }
 };
 typedef int32	(*cmdfunc_t)(int32,char*[]);
 
-const __flash cmdent_t	cmdtab[] = {
+const cmdent_t __flash cmdtab[] = {
 	{FALSE,	xsh_memdump},
 	{FALSE,	xsh_editor},
 	{FALSE,	xsh_basic},
 	{TRUE,	xsh_help},
 	{FALSE,	xsh_sleep},
+	{FALSE,	xsh_forever},
+	{FALSE,	xsh_uptime},
+	{TRUE,	xsh_kill},
 	{TRUE,	xsh_free},
 	{TRUE,	xsh_clear},
 	{TRUE,	xsh_ps},
 	{FALSE,	xsh_echo}
 };
 
+const __flash int cmdtab_stk[] = {
+	256,	/* memdump */
+	400,	/* editor */
+	400,	/* basic */
+	128,	/* help */
+	128,	/* sleep */
+	256,	/* forever */
+	200,	/* uptime */
+	300,	/* kill */
+	128,
+	64,
+	128,
+	256,
+};
+
+//const __flash int32	(*f2)(int32,char*[]);
+//struct cmdent p[2];
+
+
+//shellcmd rafa(int a, char*args[]) {
+//	printf("a:%d\n",a);
+//}
+
 const __flash char shell_commands[] = "\n\rCommands:\n\n\r";
+const __flash char shell_init_msg[] = "\n\rfor a list of programs on this system type 'help'\nREADY\n\r";
 
 void xsh_help(void) 
 {
@@ -93,7 +125,6 @@ void xsh_help(void)
 //};
 
 uint32	ncmd = sizeof(cmdtab) / sizeof(struct cmdent);
-//uint32	ncmd = 5;
 
 /************************************************************************/
 /* shell  -  Provide an interactive user interface that executes	*/
@@ -144,6 +175,9 @@ process	main(void)
 	did32	dev = 0;		/* ID of tty device from which	*/
 
 	char cname[8];
+
+	change_proc_name("shell");
+
 	/* Print shell banner and startup message */
 
 /*
@@ -154,7 +188,6 @@ process	main(void)
 	fprintf(dev, "%s\n\n", SHELL_STRTMSG);
 */
 
-	cmdfunc_t f;
 	int len_p;
 
 	/* Continually prompt the user, read input, and execute command	*/
@@ -297,7 +330,6 @@ process	main(void)
 			if (diff || (*(cmp+len_p) != NULLCH)) {
 				continue;
 			} else {
-				//printf("IGUA:j2:%d\n",j);
 				break;
 			}
 		}
@@ -326,8 +358,6 @@ process	main(void)
 				/* Call builtin shell function */
 
 				if ((*cmdtab[j].cfunc)(ntok, args)
-				//f = cmdtab_cfunc[j];
-				//if (f(ntok, args)
 							== SHELL_EXIT) {
 					break;
 				}
@@ -354,38 +384,27 @@ process	main(void)
 			}
 		}
 
-		// int eeprom_fd = open(RAM0, nombre, "w");
-		// char raf[32] = "pepe";
-		// write(fd, pepe, 32);
-		// int eeprom_fd = open(RAM0, nombre, "w");
-
 		/* Spawn child thread for non-built-in commands */
 
 		// RAFA child = create(cmdtab[j].cfunc,
 		// RAFA 	SHELL_CMDSTK, SHELL_CMDPRIO,
 		// RAFA 	cmdtab[j].cname, 2, ntok, &tmparg);
 		/* 160 bytes de stack perfecto */
-//		f = cmdtab_cfunc[j];
 		strncpy_P(cname, cmdtab_cname[j], len_p);
 		cname[len_p] = 0;
 		child = create(cmdtab[j].cfunc,
 			// 560, SHELL_CMDPRIO,
 			// 470, SHELL_CMDPRIO,
 			// 360, SHELL_CMDPRIO,
-			128, SHELL_CMDPRIO,
+			cmdtab_stk[j], SHELL_CMDPRIO,
 			cname, 2, ntok, &tmparg);
-			// cmdtab_cname[j], 2, ntok, &tmparg);
 			//cmdtab[j].cname, 2, ntok, &tmparg);
 
 		/* If creation or argument copy fails, report error */
 
-		// serial_put_char('X');
-		// if (child == SYSERR)
-			// serial_put_char('Y');
 		if ((child == SYSERR) ||
 		    (addargs(child, ntok, tok, tlen, tokbuf, &tmparg)
 							== SYSERR) ) {
-			// serial_put_char('Z');
 			// fprintf(dev, SHELL_CREATMSG);
 			fprintf(dev, "?\n\r");
 			continue;
@@ -399,10 +418,6 @@ process	main(void)
 		msg = recvclr();
 		resume(child);
 
-		// RAFA AGREGA
-		resched();
-		// serial_put_char('X');
-		
 		if (! backgnd) {
 			msg = receive();
 			while (msg != child) {

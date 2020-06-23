@@ -32,7 +32,7 @@ extern	shellcmd  xsh_exit	(int32, char *[]);
 // extern	shellcmd  xsh_help	(int32, char *[]);
 
 /* in file xsh_kill.c */
-extern	shellcmd  xsh_kill	(int32, char *[]);
+// extern	shellcmd  xsh_kill	(int32, char *[]);
 
 /* in file xsh_ls.c */
 extern	shellcmd  xsh_ls	(int32,	char *[]);
@@ -83,3 +83,4 @@ extern	shellcmd  xsh_editor	(int32, char *[]);
 extern	shellcmd  xsh_basic	(int32, char *[]);
 extern	shellcmd  xsh_ps	(int32, char *[]);
 extern	shellcmd  xsh_free	(int32, char *[]);
+extern	shellcmd  xsh_forever	(int32, char *[]);

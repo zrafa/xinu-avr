@@ -12,6 +12,8 @@ y como qkey en queue.h es char (originalmente es int32, pero
 con int32 nos quita muchisima RAM) tenemos un hack/workaround
 para lograr el sleepms acorde, pero no es en ms.
 SOLUCIONAR.
+- ademas como las key en queue son char, podemos tener
+sleep de maximo 20 segundos aprox. (de la llamada 20*10ms de sleep100ms())
 
 - agregar a la tabla de cmdtab del shell que pueda indicar
 el stack para cada proceso.

@@ -7,7 +7,8 @@
  *------------------------------------------------------------------------
  */
 devcall	ttyputc(
-	struct	dentry	*devptr,	/* Entry in device switch table	*/
+	// struct	dentry	*devptr,	/* Entry in device switch table	*/
+	const __flash struct	dentry	*devptr,	/* Entry in device switch table	*/
 	char	ch			/* Character to write		*/
 	)
 {

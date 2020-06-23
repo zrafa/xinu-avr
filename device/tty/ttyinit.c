@@ -9,7 +9,8 @@ struct	ttycblk	ttytab[Ntty];
  *------------------------------------------------------------------------
  */
 devcall	ttyinit(
-	  struct dentry	*devptr		/* Entry in device switch table	*/
+	  // struct dentry	*devptr		/* Entry in device switch table	*/
+	  const __flash struct dentry	*devptr		/* Entry in device switch table	*/
 	)
 {
 	struct	ttycblk	*typtr;		/* Pointer to ttytab entry	*/

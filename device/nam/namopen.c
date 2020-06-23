@@ -7,7 +7,8 @@
  *------------------------------------------------------------------------
  */
 devcall	namopen(
-	  struct dentry *devptr,	/* Entry in device switch table */
+	  // struct dentry *devptr,	/* Entry in device switch table */
+	  const __flash struct dentry *devptr,	/* Entry in device switch table */
 	  char	*name,			/* Name to open			*/
 	  char	*mode			/* Mode argument		*/
 	)

@@ -24,7 +24,8 @@ int32	nnames;				/* Number of entries allocated	*/
 status	naminit(void)
 {
 	did32	i;			/* Index into devtab		*/
-	struct	dentry *devptr;		/* Pointer to device table entry*/
+	// struct	dentry *devptr;		/* Pointer to device table entry*/
+	const __flash struct	dentry *devptr;		/* Pointer to device table entry*/
 	char	tmpstr[NM_MAXLEN];	/* String to hold a name	*/
 	status	retval;			/* Return value			*/
 	char	*tptr;			/* Pointer into tempstring	*/

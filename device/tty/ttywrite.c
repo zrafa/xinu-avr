@@ -7,7 +7,8 @@
  *------------------------------------------------------------------------
  */
 devcall	ttywrite(
-	  struct dentry	*devptr,	/* Entry in device switch table	*/
+	  // struct dentry	*devptr,	/* Entry in device switch table	*/
+	  const __flash struct dentry	*devptr,	/* Entry in device switch table	*/
 	  char	*buff,			/* Buffer of characters		*/
 	  int32	count 			/* Count of character to write	*/
 	)

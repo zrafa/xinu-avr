@@ -7,7 +7,8 @@
  *------------------------------------------------------------------------
  */
 devcall	ttycontrol(
-	  struct dentry	*devptr,	/* Entry in device switch table	*/
+	  // struct dentry	*devptr,	/* Entry in device switch table	*/
+	  const __flash struct dentry	*devptr,	/* Entry in device switch table	*/
 	  int32	 func,			/* Function to perform		*/
 	  int32	 arg1,			/* Argument 1 for request	*/
 	  int32	 arg2			/* Argument 2 for request	*/

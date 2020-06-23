@@ -313,7 +313,8 @@ extern	did32	namrepl(char *, char[]);
 extern	status	namcpy(char *, char *, int32);
 
 /* in file namopen.c */
-extern	devcall	namopen(struct dentry *, char *, char *);
+// extern	devcall	namopen(struct dentry *, char *, char *);
+extern	devcall	namopen(const __flash struct dentry *, char *, char *);
 
 /* in file newqueue.c */
 extern	qid16	newqueue(void);
@@ -537,10 +538,12 @@ extern	int32	insw(int32, int32 ,int32);
 extern	syscall	suspend(pid32);
 
 /* in file ttycontrol.c */
-extern	devcall	ttycontrol(struct dentry *, int32, int32, int32);
+// extern	devcall	ttycontrol(struct dentry *, int32, int32, int32);
+extern	devcall	ttycontrol(const __flash struct dentry *, int32, int32, int32);
 
 /* in file ttygetc.c */
-extern	devcall	ttygetc(struct dentry *);
+// extern	devcall	ttygetc(struct dentry *);
+extern	devcall	ttygetc(const __flash struct dentry *);
 
 /* in file ttyhandle_in.c */
 extern	void	ttyhandle_in(struct ttycblk *, struct uart_csreg *, char c);
@@ -552,19 +555,23 @@ extern	void	ttyhandle_out(struct ttycblk *, struct uart_csreg *);
 extern	void	ttyhandler(uint32, char c, int tipo);
 
 /* in file ttyinit.c */
-extern	devcall	ttyinit(struct dentry *);
+// extern	devcall	ttyinit(struct dentry *);
+extern	devcall	ttyinit(const __flash struct dentry *);
 
 /* in file ttykickout.c */
 extern	void	ttykickout(struct uart_csreg *);
 
 /* in file ttyputc.c */
-extern	devcall	ttyputc(struct dentry *, char);
+// extern	devcall	ttyputc(struct dentry *, char);
+extern	devcall	ttyputc(const __flash struct dentry *, char);
 
 /* in file ttyread.c */
-extern	devcall	ttyread(struct dentry *, char *, int32);
+// extern	devcall	ttyread(struct dentry *, char *, int32);
+extern	devcall	ttyread(const __flash struct dentry *, char *, int32);
 
 /* in file ttywrite.c */
-extern	devcall	ttywrite(struct dentry *, char *, int32);
+// extern	devcall	ttywrite(struct dentry *, char *, int32);
+extern	devcall	ttywrite(const __flash struct dentry *, char *, int32);
 
 /* in file udp.c */
 
@@ -635,6 +642,8 @@ extern	devcall	spiputc(struct dentry *, char);
 /* avr specific */
 extern void avr_printf(char mess[]);
 extern void avr_kprintf(const unsigned char *msg);
+extern void change_proc_name( char *name);
+
 
 // extern void avr_kprintf(char mess[]);
 extern void blink_avr();

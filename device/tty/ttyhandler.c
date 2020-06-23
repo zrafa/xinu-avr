@@ -7,7 +7,8 @@
  *------------------------------------------------------------------------
  */
 void ttyhandler(uint32 xnum, char c, int flag) {
-	struct	dentry	*devptr;	/* Address of device control blk*/
+	// struct	dentry	*devptr;	/* Address of device control blk*/
+	const __flash struct	dentry	*devptr;	/* Address of device control blk*/
 	struct	ttycblk	*typtr;		/* Pointer to ttytab entry	*/	
 	struct	uart_csreg *csrptr;	/* Address of UART's CSR	*/
 //	uint32	iir = 0;		/* Interrupt identification	*/
