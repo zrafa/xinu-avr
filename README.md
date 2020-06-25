@@ -10,8 +10,8 @@ The Operating System Xinu supports dynamic process creation, dynamic memory allo
 
 Since the whole source code size is small, Xinu is suitable 
 for embedded systems.  Xinu uses  powerful  
-primitives to provide the same functionality many con-
-ventional operating systems supply (despite its small size).
+primitives to provide the same functionality many conventional 
+operating systems supply (despite its small size).
 
 Many sites defines Xinu as a free Unix system, or similar statements.
 It is not. Xinu differs completely
