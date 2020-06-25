@@ -33,7 +33,6 @@ Furthermore, Xinu has been used as an embedded system in products
 by companies such as Motorola, Mitsubishi, Hewlett-Packard, and Lexmark. 
 There is a full TCP/IP stack, and even the original version of Xinu 
 (for the PDP-11) supported arbitrary processes and network I/O.
-have  been  ported
 
 There are current versions of Xinu for Galileo Intel boards,
 ARM Beagle Boards, several MIPS platforms, and for x86 PC hardware 
