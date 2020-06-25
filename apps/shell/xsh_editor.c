@@ -55,7 +55,7 @@ void editor_del(char * buf, int line, int i)
 	//	printf("\033[D");
 }
 
-void clear(void)
+static void clear(void)
 {
 	fprintf(0, "\033[2J");
 	fprintf(0, "\033[H");
@@ -97,6 +97,7 @@ shellcmd xsh_editor(int nargs, char *args[])
 	int col = 0;
 
 	clear();
+	printf("editor\n");
 	fprintf(dev, "%S %i\n", editor_banner0, page);
 
 	for (i=0; i<LINE_LEN; i++)

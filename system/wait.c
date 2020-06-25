@@ -26,7 +26,6 @@ syscall	wait(
 		return SYSERR;
 	}
 
-//	serial_put_char('%');
 	if (--(semptr->scount) < 0) {		/* If caller must block	*/
 		prptr = &proctab[currpid];
 		prptr->prstate = PR_WAIT;	/* Set state to waiting	*/

@@ -64,7 +64,7 @@ void nullprocess(void) {
 	// resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
 	// 200 ok  and 400 ok
 	// resume(create((void *)shell, 360, INITPRIO, "shell", 0, NULL));
-	resume(create((void *)main, 400, INITPRIO, "main", 0, NULL));
+	resume(create((void *)main, 500, INITPRIO, "main", 0, NULL));
 	
 
 //	resume(create((void *)test, 256, INITPRIO, "test", 0, NULL));

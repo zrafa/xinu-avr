@@ -43,15 +43,6 @@ devcall	ttyread(
 	}
 
 
-	// RAFA: HORRIBLE WORKAROUND TO THE FOREVER BUG
-	char *c;	// RAFA: HORRIBLE WORKAROUND TO THE FOREVER BUG
-	int i;	// RAFA: HORRIBLE WORKAROUND TO THE FOREVER BUG
-	c = typtr->tyibuff;	// RAFA: HORRIBLE WORKAROUND TO THE FOREVER BUG
-	for (i=0; i<TY_IBUFLEN; i++)	// RAFA: HORRIBLE WORKAROUND TO THE FOREVER BUG
-		c[i] = 0;	// RAFA: HORRIBLE WORKAROUND TO THE FOREVER BUG
-	typtr->tyihead = typtr->tyitail = typtr->tyibuff;	// RAFA: HORRIBLE WORKAROUND TO THE FOREVER BUG
-
-
 	/* Block until input arrives */
 
 	firstch = ttygetc(devptr);

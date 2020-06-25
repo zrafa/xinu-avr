@@ -61,16 +61,15 @@ const cmdent_t __flash cmdtab[] = {
 	{FALSE,	xsh_uptime},
 	{FALSE,	xsh_reboot},
 	{TRUE,	xsh_kill},
-	{TRUE,	xsh_free},
+	{FALSE,	xsh_free},
 	{TRUE,	xsh_clear},
-//	{TRUE,	xsh_ps},
-	{FALSE,	xsh_ps},
+	{TRUE,	xsh_ps},
 	{FALSE,	xsh_echo}
 };
 
 const __flash int cmdtab_stk[] = {
 	256,	/* memdump */
-	400,	/* editor */
+	500,	/* editor */
 	500,	/* basic */
 	128,	/* help */
 	128,	/* sleep */
@@ -199,16 +198,24 @@ process	main(void)
 
 	/* Continually prompt the user, read input, and execute command	*/
 	
+//RAFA
+	const __flash struct dentry	*devptr;	/* Entry in device switch table	*/
+	struct	ttycblk	*typtr;		/* Pointer to tty control block	*/
 	char *c;
+// FIN RAFA
+
 	while (TRUE) {
 
 
 		/* Display prompt */
 		fprintf(dev, SHELL_PROMPT);
 
-//		c = buf;
-//		for (i=0;i<SHELL_BUFLEN; i++)
-//			c[i] = 0;
+			// HORRIBLE HACK FOR FOREVER BUG
+			devptr = (struct dentry *) &devtab[0];
+			typtr= &ttytab[devptr->dvminor];
+			typtr->tyihead = typtr->tyitail = typtr->tyibuff;
+			semreset(typtr->tyisem, 0);
+
 
 		len = read(dev, buf, sizeof(buf));
 

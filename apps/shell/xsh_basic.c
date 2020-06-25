@@ -233,7 +233,8 @@ shellcmd xsh_basic(int nargs, char *args[])
 
 // size of our program ram
 // RAFA #define kRamSize   64*1024 /* arbitrary - not dependant on libraries */
-#define kRamSize   400 /* arbitrary - not dependant on libraries */
+// RAFA #define kRamSize   320 /* arbitrary - not dependant on libraries */
+#define kRamSize   260 /* arbitrary - not dependant on libraries */
 
 
 // RAFA AGREGA
@@ -457,7 +458,7 @@ const static unsigned char highlow_tab[] PROGMEM = {
 
 //RAFA ANTES DECIA 5
 //#define STACK_SIZE (sizeof(struct stack_for_frame)*5)
-#define STACK_SIZE (sizeof(struct stack_for_frame)*5)
+#define STACK_SIZE (sizeof(struct stack_for_frame)*3)
 
 
 #define VAR_SIZE sizeof(short int) // Size of variables in bytes
@@ -478,8 +479,9 @@ static const unsigned char okmsg[]            PROGMEM = "OK";
 static const unsigned char whatmsg[]          PROGMEM = "What? ";
 static const unsigned char howmsg[]           PROGMEM =	"How?";
 static const unsigned char sorrymsg[]         PROGMEM = "Sorry!";
-static const unsigned char initmsg[]          PROGMEM = "TinyBasic Plus " kVersion;
+static const unsigned char initmsg[]          PROGMEM = "\nWelcome to TinyBasic Plus interpreter " kVersion;
 static const unsigned char memorymsg[]        PROGMEM = " bytes free.";
+static const unsigned char avr_vars_msg[]        PROGMEM = "available VARS: A - J";
 static const unsigned char breakmsg[]         PROGMEM = "break!";
 static const unsigned char unimplimentedmsg[] PROGMEM = "Unimplemented";
 static const unsigned char backspacemsg[]     PROGMEM = "\b \b";
@@ -983,15 +985,19 @@ void loop()
 #ifdef ALIGN_MEMORY
   // Ensure these memory blocks start on even pages
   stack_limit = ALIGN_DOWN(program+sizeof(program)-STACK_SIZE);
-  variables_begin = ALIGN_DOWN(stack_limit - 27*VAR_SIZE);
+  // RAFA variables_begin = ALIGN_DOWN(stack_limit - 27*VAR_SIZE);
+  variables_begin = ALIGN_DOWN(stack_limit - 10*VAR_SIZE);
 #else
   stack_limit = program+sizeof(program)-STACK_SIZE;
-  variables_begin = stack_limit - 27*VAR_SIZE;
+  // RAFA variables_begin = stack_limit - 27*VAR_SIZE;
+  variables_begin = stack_limit - 10*VAR_SIZE;
 #endif
 
   // memory free
+  printmsg(initmsg);
   printnum(variables_begin-program_end);
   printmsg(memorymsg);
+  printmsg(avr_vars_msg);
 
 warmstart:
   // this signifies that it is running in 'direct' mode.

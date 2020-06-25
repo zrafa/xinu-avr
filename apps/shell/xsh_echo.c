@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /*------------------------------------------------------------------------
- * xhs_echo - write argument strings to stdout
+ * xsh_echo - write argument strings to stdout
  *------------------------------------------------------------------------
  */
 shellcmd xsh_echo(int nargs, char *args[])

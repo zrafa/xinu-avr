@@ -97,6 +97,7 @@ shellcmd xsh_editor(int nargs, char *args[])
 	int col = 0;
 
 	clear();
+	printf("editor\n");
 	fprintf(dev, "%S %i\n", editor_banner0, page);
 
 	for (i=0; i<LINE_LEN; i++)
