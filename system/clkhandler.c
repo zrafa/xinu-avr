@@ -26,6 +26,7 @@ ISR(TIMER0_COMPA_vect)
 
 
 
+
 	       /* Increment 1000ms counter */
 
 		count1000++;
@@ -38,7 +39,7 @@ ISR(TIMER0_COMPA_vect)
 			count1000 = 0;
 		}
 
-		/* check if sleep queue is empty */
+		/* check if sleep queue is empty every 100ms */
 
 		//if ((count1000 % 10) == 0)	/* every 100ms */
 		if ((count1000 % 100) == 0)	/* every 100ms */
@@ -52,15 +53,16 @@ ISR(TIMER0_COMPA_vect)
 			}
 		}
 
-	/* our MCU is slow 16Mhz, so we do clkhandler every 100ms */
+	/* our MCU is slow (16Mhz), so we do resched/preemption every 300ms */
 	avr_ticks ++;
-//	if (avr_ticks > 100) {		
+////	if (avr_ticks > 100) {		
 	if (avr_ticks > 300) {		
-	// if (avr_ticks > 10) {		
+//	// if (avr_ticks > 10) {		
 		avr_ticks=0;
+
+
 		/* Decrement the preemption counter */
 		/* Reschedule if necessary          */
-
 		if((--preempt) == 0) {
 			preempt = QUANTUM;
 			resched();

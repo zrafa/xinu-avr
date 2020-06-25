@@ -96,7 +96,9 @@ char *devstab[] = {
 	"\tint32   dvnum;",
 	"\tint32   dvminor;",
 // RAFA 	"\tchar    *dvname;",
-	"\tchar    dvname[16];",
+//	"\tchar    dvname[16];",
+	// RAFA BIEN "\tchar    dvname[8];",
+	"\tchar    dvname[10];",
 	"\tdevcall (*dvinit) (struct dentry *);",
 	"\tdevcall (*dvopen) (struct dentry *, char *, char *);",
 	"\tdevcall (*dvclose)(struct dentry *);",
@@ -110,9 +112,12 @@ char *devstab[] = {
 	"\tvoid    (*dvintr)(void);",
 	"\tbyte    dvirq;",
 	"};\n",
-	"extern	struct	dentry	devtab[]; /* one entry per device */",
+	"extern	const __flash struct dentry	devtab[] ; /* one entry per device */",
+//	"extern	struct dentry	devtab[] ; /* one entry per device */",
 	NULL
 };
+	//"};\n",
+	// "extern	struct	dentry	devtab[] PROGMEM; /* one entry per device */",
 
 char	saveattrid[MAXNAME];		/* Holds the IDENT from an attribute	*/
 
@@ -392,8 +397,8 @@ int main(int argc, char **argv) {
 	{
 		// fprintf(confc, "typedef unsigned int size_t;\n");
 		// fprintf(confc, "#include <avr/pgmspace.h>\n");
-		// fprintf(confc, "const struct	dentry	devtab[] PROGMEM =\n{\n");
-		fprintf(confc, "struct	dentry	devtab[] =\n{\n");
+		fprintf(confc, "const __flash struct	dentry	devtab[] =\n{\n");
+		// fprintf(confc, "struct	dentry	devtab[] =\n{\n");
 		fprintf(confc, "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n\n",
 			"/**",
 			" * Format of entries is:",

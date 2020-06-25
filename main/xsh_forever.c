@@ -10,8 +10,8 @@
 shellcmd xsh_forever(int nargs, char *args[])
 {
 
-	for (;;)
-		printf("a");
+	for (;;);
+		//sleep(1);
 
 	return 0;
 }

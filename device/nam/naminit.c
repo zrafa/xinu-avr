@@ -38,6 +38,10 @@ status	naminit(void)
 
 	nnames = 0;
 
+	// RAFA 
+	/* avr specific */
+	char name[10];
+
 	for (i=0; i<NDEVS ; i++) {
 		tptr = tmpstr;
 		nptr = devprefix;
@@ -51,6 +55,9 @@ status	naminit(void)
                 tptr--; /* Move pointer to position before NULLCH */
 		devptr = &devtab[i];
 		nptr = devptr->dvname;	/* Move to device name */
+		/* avr specific */
+		strncpy_P(name, devptr->dvname, 10);
+		nptr = name;
 
 		/* Map device name to lower case and append */
 
@@ -65,17 +72,18 @@ status	naminit(void)
 		}
 
 		if (len > NM_MAXLEN) {
-			// RAFA kprintf("namespace: device name %s too long\r\n",
 			avr_kprintf(m5);
-			kprintf("%s", devptr->dvname);
+			//kprintf("%s", devptr->dvname);
 			continue;
 		}
 
+			// RAFA
+			kprintf("m:%s\n",tmpstr);
 		retval = mount(tmpstr, NULLSTR, devptr->dvnum);
                 if (retval == SYSERR) {
 			// RAFA kprintf("namespace: cannot mount device %d\r\n",
 			avr_kprintf(m4);
-			kprintf("%s", devptr->dvname);
+	//		kprintf("%s", devptr->dvname);
 			continue;
 		}
 	}

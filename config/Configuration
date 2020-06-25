@@ -58,6 +58,12 @@ ram:
 		-w ramwrite	-s ioerr	-n ioerr
 		-intr ionull
 FIN DE RAFA */
+eeprom:
+	on disk
+		-i eeprom_init	-o eeprom_open	-c eeprom_close
+		-r eeprom_read	-g ioerr	-p ioerr
+		-w eeprom_write	-s ioerr	-n ioerr
+		-intr ionull
 
 /* type of namespace device */
 nam:
@@ -104,6 +110,7 @@ FIN DE RAFA */
 
    /* Define a ram disk device */
 /* RAFA   RAM0 is ram on mem */
+   EEPROM0 is eeprom on disk
 
 %%
 
@@ -111,10 +118,5 @@ FIN DE RAFA */
 
 #define	NPROC	     4		/* number of user processes		*/
 // RAFA #define	NSEM	     4		/* number of semaphores			*/
+// #define	NSEM	     2		/* number of semaphores			*/
 #define	NSEM	     2		/* number of semaphores			*/
-#define	IRQBASE	     32		/* base ivec for IRQ0			*/
-#define	IRQ_TIMER    IRQ_HW5	/* timer IRQ is wired to hardware 5	*/
-#define	IRQ_ATH_MISC IRQ_HW4	/* Misc. IRQ is wired to hardware 4	*/
-#define CLKFREQ      200000000	/* 200 MHz clock			*/
-
-// #define	LF_DISK_DEV	RAM0

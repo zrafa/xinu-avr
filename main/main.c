@@ -25,6 +25,7 @@ const __flash uint8_t * const __flash cmdtab_cname[] =
   (const __flash uint8_t[]) { "sleep" },
   (const __flash uint8_t[]) { "forever" },
   (const __flash uint8_t[]) { "uptime" },
+  (const __flash uint8_t[]) { "reboot" },
   (const __flash uint8_t[]) { "kill" },
   (const __flash uint8_t[]) { "free" },
   (const __flash uint8_t[]) { "clear" },
@@ -36,13 +37,14 @@ const __flash uint8_t * const __flash cmdtab_help[] =
 {
   (const __flash uint8_t[]) { "[from to] : display SRAM memory contents" },
   (const __flash uint8_t[]) { ": text editor" },
-  (const __flash uint8_t[]) { ": basic language interpreter" },
+  (const __flash uint8_t[]) { ": BASIC language interpreter" },
   (const __flash uint8_t[]) { ": this help" },
   (const __flash uint8_t[]) { "n : sleep n seconds" },
-  (const __flash uint8_t[]) { ": for (;;); for ever" },
+  (const __flash uint8_t[]) { ": for (;;);" },
   (const __flash uint8_t[]) { ": tell how long the Xinu system has been running" },
-  (const __flash uint8_t[]) { "n : kill (terminates) the n ID process" },
-  (const __flash uint8_t[]) { ": display amount of free and used memory in the system" },
+  (const __flash uint8_t[]) { ": reset the Xinu system sw. THIS IS NOT a hw reset" },
+  (const __flash uint8_t[]) { "n : kill (terminates) the n (ID) process" },
+  (const __flash uint8_t[]) { ": display amount of free and used memory" },
   (const __flash uint8_t[]) { ": clear the terminal screen" },
   (const __flash uint8_t[]) { ": display current processes table" },
   (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output" }
@@ -57,21 +59,24 @@ const cmdent_t __flash cmdtab[] = {
 	{FALSE,	xsh_sleep},
 	{FALSE,	xsh_forever},
 	{FALSE,	xsh_uptime},
+	{FALSE,	xsh_reboot},
 	{TRUE,	xsh_kill},
 	{TRUE,	xsh_free},
 	{TRUE,	xsh_clear},
-	{TRUE,	xsh_ps},
+//	{TRUE,	xsh_ps},
+	{FALSE,	xsh_ps},
 	{FALSE,	xsh_echo}
 };
 
 const __flash int cmdtab_stk[] = {
 	256,	/* memdump */
 	400,	/* editor */
-	400,	/* basic */
+	500,	/* basic */
 	128,	/* help */
 	128,	/* sleep */
-	256,	/* forever */
+	128,	/* forever */
 	200,	/* uptime */
+	128,	/* reboot */
 	300,	/* kill */
 	128,
 	64,
@@ -178,6 +183,8 @@ process	main(void)
 
 	change_proc_name("shell");
 
+	for (i=0;i<NDEVS;i++)
+		printf("%S\n", devtab[i].dvname);
 	/* Print shell banner and startup message */
 
 /*
@@ -192,15 +199,16 @@ process	main(void)
 
 	/* Continually prompt the user, read input, and execute command	*/
 	
+	char *c;
 	while (TRUE) {
 
-		// RAFA
-		// fprintf(dev, "\033[2J");
-		// fprintf(dev, "\033[H");
 
 		/* Display prompt */
 		fprintf(dev, SHELL_PROMPT);
 
+//		c = buf;
+//		for (i=0;i<SHELL_BUFLEN; i++)
+//			c[i] = 0;
 
 		len = read(dev, buf, sizeof(buf));
 
@@ -364,6 +372,7 @@ process	main(void)
 			}
 			continue;
 		}
+
 
 		/* Open files and redirect I/O if specified */
 

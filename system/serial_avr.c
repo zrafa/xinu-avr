@@ -67,11 +67,9 @@ char value;
  * RX interrupt service rutine
  */
 ISR(USART_RX_vect){
-	cli(); 
 	value = UDR0;             //read UART register into value
-//	serial_put_char (value);
 	ttyhandler (1, value, 0);
-	sei(); 
+
 }
 
 char serial_get_char(void)

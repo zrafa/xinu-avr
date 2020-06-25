@@ -84,3 +84,4 @@ extern	shellcmd  xsh_basic	(int32, char *[]);
 extern	shellcmd  xsh_ps	(int32, char *[]);
 extern	shellcmd  xsh_free	(int32, char *[]);
 extern	shellcmd  xsh_forever	(int32, char *[]);
+extern	shellcmd  xsh_reboot	(int32, char *[]);

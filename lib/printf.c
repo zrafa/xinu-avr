@@ -41,10 +41,19 @@ int	printf(
 
 
   
+        char *c;
   char buf[PRINTF_BUF];
   va_list ap;
   va_start(ap, fmt);
   vsnprintf(buf, sizeof(buf), fmt, ap);
+        c = buf;
+        while(*c) {
+    		if(*c == '\n')
+      			putc(stdout, '\r');
+                putc(stdout, *c);
+                c++;
+        };
+/*
   for(char *p = &buf[0]; *p; p++) // emulate cooked mode for newlines
   {
     if(*p == '\n')
@@ -53,6 +62,7 @@ int	printf(
     }
     putchar(*p);
   }
-  va_end(ap);
+*/
+	va_end(ap);
 	return 0;
 }

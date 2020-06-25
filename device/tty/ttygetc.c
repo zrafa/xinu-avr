@@ -22,8 +22,17 @@ devcall	ttygetc(
 //	struct sentry * semptr;
 //	semptr = &semtab[typtr->tyisem];
 //	while(--(semptr->scount) < 0);  
+
+
 	wait(typtr->tyisem);
+
+	// RAFA : HORRIBLE WORKAROUND TO THE BUG FOREVER
+	ch = 0; 	// RAFA : HORRIBLE WORKAROUND TO THE BUG FOREVER
+	while (ch == 0) { 	// RAFA : HORRIBLE WORKAROUND TO THE BUG FOREVER
+
 	ch = *typtr->tyihead++;
+
+	} 	// RAFA : HORRIBLE WORKAROUND TO THE BUG FOREVER
 
 	/* Wrap around to beginning of buffer, if needed */
 

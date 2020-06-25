@@ -132,7 +132,12 @@ void	ttyhandle_in (
 			if (typtr->tyitail>=&typtr->tyibuff[TY_IBUFLEN]) {
 				typtr->tyitail = typtr->tyibuff;
 			}
+			// RAFA
+			// serial_put_char('*');
 			/* Make entire line (plus \n or \r) available */
+
+	//RAFA
+	//semreset(typtr->tyisem, 1);
 			signaln(typtr->tyisem, typtr->tyicursor + 1);
 			typtr->tyicursor = 0; 	/* Reset for next line	*/
 			return;
@@ -176,6 +181,9 @@ void	ttyhandle_in (
 
 		typtr->tyicursor++;
 		*typtr->tyitail++ = ch;
+
+		// RAFA
+//		signal(typtr->tyisem);
 
 		/* Wrap around if needed */
 
