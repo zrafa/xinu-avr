@@ -40,8 +40,12 @@ and virtual machines.
 
 ## Xinu OS for AVR atmega328p
 
-This version of Xinu runs on AVR atmega328 microcontrollers,
-(still if those MCUs have 2KB of SRAM, 32KB of Flash memory and 1KB of EEPROM.
+This repository keeps the source code of a port of the current
+Xinu operating system for the AVR atmega328p microcontroller.
+This MCU has just 2KB of SRAM, 32KB of Flash memory, and 1KB of EEPROM,
+so the work in progress is stimulating and very fun for lovers
+of embedded systems development and operating system internals.
+
 This port of Xinu uses 17KB of FLASH and 0.9KB of RAM, so there
 are still resources (SRAM and FLASH) available for developing 
 an embedded system solution programming 
