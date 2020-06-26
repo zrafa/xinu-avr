@@ -5,7 +5,10 @@ typedef unsigned int size_t;
 
 // extern const char CONSOLE_RESET[];
 // extern const char m0[];
-extern const char m0[];
+extern const char sysinit_m0[];
+extern const char sysinit_m1[];
+extern const char sysinit_m2[];
+extern const char sysinit_m3[];
 extern const char m00[];
 extern const char m000[];
 extern const char m1[];

@@ -640,8 +640,9 @@ extern	devcall	spiputc(struct dentry *, char);
 
 
 /* avr specific */
-extern void avr_printf(char mess[]);
-extern void avr_kprintf(const unsigned char *msg);
+//extern void avr_printf(char mess[]);
+//extern void avr_kprintf(const unsigned char *msg);
+extern void avr_kprintf(const __flash char mess[]);
 extern void change_proc_name( char *name);
 
 

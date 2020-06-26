@@ -1,7 +1,11 @@
 # Xinu OS for AVR atmega328p (Arduino)
 
-This repository keeps the source code of a port of the current
-Xinu operating system version, for the AVR atmega328p microcontroller.
+This repository keeps the source code of a Xinu operating system version
+targeted for the AVR atmega328p microcontroller.
+Most of Xinu kernel is ported in this work in progress. As an example,
+For an interesting exercise using this port
+the Xinu shell for user interface and many programs and utilities 
+are provided as well.
 
 ## What is Xinu?
 
@@ -11,10 +15,10 @@ Purdue University in the 1980s.
 
 The Xinu Operating System supports: dynamic process creation, dynamic memory allocation, network communication, local and remote file systems, a shell, and device-independent I/O functions. 
 
+Xinu uses powerful primitives to provides all the componentes and the 
+same functionality many conventional operating sytems supply.
 Since the whole source code size is small, Xinu is suitable 
-for embedded systems.  Xinu uses  powerful  
-primitives to provide the same functionality many conventional 
-operating systems supply (despite its small size).
+for embedded systems.  
 
 Many sites defines Xinu as a free Unix system, or similar statements.
 It is not. Xinu differs completely

@@ -40,7 +40,7 @@ pid32	create(
 	if (((saddr = (unsigned char *)getstk(ssize)) ==
 	     (uint32 *)SYSERR ) ||
 	     (pid=newpid()) == SYSERR || priority < 1 ) {
-		avr_printf(m10);
+		avr_kprintf(m10);
 		restore(mask);
 		return SYSERR;
 	}

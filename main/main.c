@@ -30,12 +30,13 @@ const __flash uint8_t * const __flash cmdtab_cname[] =
   (const __flash uint8_t[]) { "free" },
   (const __flash uint8_t[]) { "clear" },
   (const __flash uint8_t[]) { "ps" },
-  (const __flash uint8_t[]) { "echo" }
+  (const __flash uint8_t[]) { "echo" },
+  (const __flash uint8_t[]) { "cal" }
 };
 
 const __flash uint8_t * const __flash cmdtab_help[] =
 {
-  (const __flash uint8_t[]) { "[from to] : display SRAM memory contents" },
+  (const __flash uint8_t[]) { ": display SRAM memory contents" },
   (const __flash uint8_t[]) { ": text editor" },
   (const __flash uint8_t[]) { ": BASIC language interpreter" },
   (const __flash uint8_t[]) { ": this help" },
@@ -47,7 +48,8 @@ const __flash uint8_t * const __flash cmdtab_help[] =
   (const __flash uint8_t[]) { ": display amount of free and used memory" },
   (const __flash uint8_t[]) { ": clear the terminal screen" },
   (const __flash uint8_t[]) { ": display current processes table" },
-  (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output" }
+  (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output" },
+  (const __flash uint8_t[]) { "[mon] year : calendar" }
 };
 typedef int32	(*cmdfunc_t)(int32,char*[]);
 
@@ -64,7 +66,8 @@ const cmdent_t __flash cmdtab[] = {
 	{FALSE,	xsh_free},
 	{TRUE,	xsh_clear},
 	{TRUE,	xsh_ps},
-	{FALSE,	xsh_echo}
+	{FALSE,	xsh_echo},
+	{FALSE,	xsh_cal}
 };
 
 const __flash int cmdtab_stk[] = {
@@ -80,6 +83,7 @@ const __flash int cmdtab_stk[] = {
 	128,
 	64,
 	128,
+	256,
 	256,
 };
 
