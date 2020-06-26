@@ -1,12 +1,15 @@
 # Xinu OS for AVR atmega328p (Arduino)
 
+This repository keeps the source code of a port of the current
+Xinu operating system version, for the AVR atmega328p microcontroller.
+
 ## What is Xinu?
 
 Xinu is a small, elegant, and easy to understand operating system,
 originally developed by Douglas Comer for instructional purposes at
 Purdue University in the 1980s.
 
-The Operating System Xinu supports dynamic process creation, dynamic memory allocation, network communication, local and remote file systems, a shell, and device-independent I/O functions. 
+The Xinu Operating System supports: dynamic process creation, dynamic memory allocation, network communication, local and remote file systems, a shell, and device-independent I/O functions. 
 
 Since the whole source code size is small, Xinu is suitable 
 for embedded systems.  Xinu uses  powerful  
@@ -18,7 +21,8 @@ It is not. Xinu differs completely
 from the internal structure of Unix (or Linux). 
 For academic purposes Xinu is smaller, elegant, and easier to understand.
 Applications written for one system will not
-run on the other without modification. **Xinu is not Unix.**
+run on the other without modification. 
+**Xinu is not Unix.**
 
 ### History
 
@@ -40,17 +44,15 @@ and virtual machines.
 
 ## Xinu OS for AVR atmega328p
 
-This repository keeps the source code of a port of the current
-Xinu operating system for the AVR atmega328p microcontroller.
 This MCU has just 2KB of SRAM, 32KB of Flash memory, and 1KB of EEPROM,
 so the work in progress is stimulating and very fun for lovers
 of embedded systems development and operating system internals.
 
-This port of Xinu uses 17KB of FLASH and 0.9KB of RAM, so there
-are still resources (SRAM and FLASH) available for developing 
-an embedded system solution programming 
-concurrent processes under a real operating system; using for example,
-an Arduino hardware and the Xinu operating system inside.
+This port of Xinu fits in 17KB of FLASH and 0.9KB of RAM, so there
+are still room (SRAM and FLASH) available for developing 
+an embedded system solution, programming 
+concurrent processes under a real operating system. For example,
+using an Arduino hardware board.
 
 Xinu is easy of understand, so a developer can obtain a copy 
 of the system to examine, modify,
