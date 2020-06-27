@@ -1,10 +1,6 @@
 # Xinu OS for AVR atmega328p (Arduino)
 
-This repository keeps the source code of a Xinu operating system version targeted for the AVR atmega328p microcontroller. Most of Xinu kernel has been ported in this work in progress. For an interesting exercise the Xinu shell for user interface and several programs and UNIX-like utilities are provided as well.
-
-Current Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required substantial changes to some low-level structure of Xinu, mainly to use
-the FLASH memory in the AVR MCU for several read only data structures previously
-in RAM.
+This repository keeps the source code of a Xinu operating system version targeted for the AVR atmega328p microcontroller. 
 
 
 
@@ -26,19 +22,19 @@ There are current versions of Xinu for Galileo Intel boards, ARM Beagle Boards, 
 
 ## Xinu OS for AVR atmega328p
 
-This MCU has just 2KB of SRAM, 32KB of Flash memory, and 1KB of EEPROM,
-so the work in progress is stimulating and very fun for lovers
-of embedded systems development and operating system internals.
+Current Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required substantial changes to some low-level structure of Xinu, mainly using the FLASH memory in the AVR MCU for keeping several read only data structures previously
+in RAM.
 
-This port of Xinu fits in 17KB of FLASH and 0.9KB of RAM, so there
-are still room (SRAM and FLASH) available for developing 
-an embedded system solution, programming 
-concurrent processes under a real operating system. For example,
-using an Arduino hardware board.
+This MCU has just 2KB of SRAM, 32KB of FLASH memory, and 1KB of EEPROM. The Xinu version for AVR fits in 17KB of FLASH and 0.9KB of RAM, so there are still room (SRAM and FLASH) available for the developing  of an embedded system, using  a real operating system and an inexpensive hardware (like bare MCUs or any board of the tons of Arduinos that you will find around).
+
+So this project might be stimulating and very fun for lovers of embedded systems development and operating system internals.
+
+Most of the Xinu kernel has been ported in this work in progress. 
+For an interesting exercise the Xinu shell for user interface and several programs and UNIX-like utilities are provided as well.
 
 Xinu is easy of understand, so a developer can obtain a copy 
-of the system to examine, modify,
-instrument, measure, extend, or transport it to another architecture.
+of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.
+
 
 ## Douglas Comer
 
@@ -46,17 +42,10 @@ Douglas Comer is a Professor of Computer Science at Purdue University who
 was inducted into the Internet Hall of Fame on September, 2019.
 
 https://www.cs.purdue.edu/homes/comer/
+
 https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html
 
 As one of the earliest TCP/IP and internetworking researchers, Comer wrote the first series of textbooks explaining the scientific principles underlying the design of the Internet and its communications protocols, providing some of the earliest formal guidance for building efficient networks and applications that use the Internet. 
 
 Comer’s three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals. 
-
-Version 6 Xinu, as
-it was called, supplied primitives to handle memory  manage-
-ment,          process          management,          process
-coordination/synchronization,  interprocess   communication,
-real-time clock management, device drivers, and intermachine
-communication (a ring network).  Version 7 Xinu replaced the
-
 
