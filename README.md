@@ -1,8 +1,11 @@
 # Xinu OS for AVR atmega328p (Arduino)
 
-This repository keeps the source code of a Xinu operating system version targeted for the AVR atmega328p microcontroller. 
+This repository keeps the source code of a Xinu operating system version designed to run on an AVR atmega328p microcontroller. 
 
+Using just the major pieces of this Xinu repository (and any bare AVR MCU or Arduino board) it is possible to develop a multi tasking embedded system.
 
+A complete application example is provided as well: the Xinu shell for user interface, and several programs and UNIX-like utilities.
+Check the video (an Arduino board running the Xinu shell and several concurrent processes, under the control of Xinu).
 
 ## What is Xinu?
 
@@ -25,12 +28,15 @@ There are current versions of Xinu for Galileo Intel boards, ARM Beagle Boards, 
 Current Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required substantial changes to some low-level structure of Xinu, mainly using the FLASH memory in the AVR MCU for keeping several read only data structures previously
 in RAM.
 
+The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.
+
+
+
 This MCU has just 2KB of SRAM, 32KB of FLASH memory, and 1KB of EEPROM. The Xinu version for AVR fits in 17KB of FLASH and 0.9KB of RAM, so there are still room (SRAM and FLASH) available for the developing  of an embedded system, using  a real operating system and an inexpensive hardware (like bare MCUs or any board of the tons of Arduinos that you will find around).
 
 So this project might be stimulating and very fun for lovers of embedded systems development and operating system internals.
 
 Most of the Xinu kernel has been ported in this work in progress. 
-For an interesting exercise the Xinu shell for user interface and several programs and UNIX-like utilities are provided as well.
 
 Xinu is easy of understand, so a developer can obtain a copy 
 of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.
