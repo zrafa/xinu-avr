@@ -1,50 +1,29 @@
 # Xinu OS for AVR atmega328p (Arduino)
 
-This repository keeps the source code of a Xinu operating system version
-targeted for the AVR atmega328p microcontroller.
-Most of Xinu kernel is ported in this work in progress. As an example,
-For an interesting exercise using this port
-the Xinu shell for user interface and many programs and utilities 
-are provided as well.
+Xinu OS for AVR atmega328p (Arduino)
+This repository keeps the source code of a Xinu operating system version targeted for the AVR atmega328p microcontroller. Most of Xinu kernel has been ported in this work in progress. For an interesting exercise the Xinu shell for user interface and several programs and UNIX-like utilities are provided as well.
+
+Current Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required substantial changes to some low-level structure of Xinu, mainly to use
+the FLASH memory in the AVR MCU for several read only data structures previously
+in RAM.
+
+
 
 ## What is Xinu?
 
-Xinu is a small, elegant, and easy to understand operating system,
-originally developed by Douglas Comer for instructional purposes at
-Purdue University in the 1980s.
+Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s.
 
-The Xinu Operating System supports: dynamic process creation, dynamic memory allocation, network communication, local and remote file systems, a shell, and device-independent I/O functions. 
+The Xinu Operating System includes: dynamic process creation, dynamic memory allocation, real-time clock management, process coordination and synchronization, local and remote file systems, a shell, and device-independent I/O functions.  
 
-Xinu uses powerful primitives to provides all the componentes and the 
-same functionality many conventional operating sytems supply.
-Since the whole source code size is small, Xinu is suitable 
-for embedded systems.  
+Xinu uses powerful primitives to provides all the componentes and the same functionality many conventional operating sytems supply. Since the whole source code size is small, Xinu is suitable for embedded systems.
 
-Many sites defines Xinu as a free Unix system, or similar statements.
-It is not. Xinu differs completely
-from the internal structure of Unix (or Linux). 
-For academic purposes Xinu is smaller, elegant, and easier to understand.
-Applications written for one system will not
-run on the other without modification. 
-**Xinu is not Unix.**
+Many sites defines Xinu as a free Unix system, or similar statements. It is not. Xinu differs completely from the internal structure of Unix (or Linux). For academic purposes Xinu is smaller, elegant, and easier to understand. Applications written for one system will not run on the other without modification. Xinu is not Unix.
 
-### History
+## History
 
-Xinu originally ran on  Digital  Equipment  Corporation
-LSI  11's with only 64K bytes of memory, at the end of 1979 
-and the inning of 1980. Over the years Xinu versions 
-Xinu have been expanded and ported to a wide variety of architectures and platforms, including: IBM PC, 
-Macintosh, Digital Equipment Corporation VAX and DECStation 3100, Sun Microsystems Sun 2, 
-Sun 3 and Sparcstations, and for several ARM, MIPS and x86 embedded boards.
-It has been used as the basis for many research projects. 
-Furthermore, Xinu has been used as an embedded system in products 
-by companies such as Motorola, Mitsubishi, Hewlett-Packard, and Lexmark. 
-There is a full TCP/IP stack, and even the original version of Xinu 
-(for the PDP-11) supported arbitrary processes and network I/O.
+Xinu originally ran on Digital Equipment Corporation LSI 11's with only 64K bytes of memory, at the end of 1979 and the inning of 1980. Over the years Xinu versions Xinu have been expanded and ported to a wide variety of architectures and platforms, including: IBM PC, Macintosh, Digital Equipment Corporation VAX and DECStation 3100, Sun Microsystems Sun 2, Sun 3 and Sparcstations, and for several ARM, MIPS and x86 embedded boards. It has been used as the basis for many research projects. Furthermore, Xinu has been used as an embedded system in products by companies such as Motorola, Mitsubishi, Hewlett-Packard, and Lexmark. There is a full TCP/IP stack, and even the original version of Xinu (for the PDP-11) supported arbitrary processes and network I/O.
 
-There are current versions of Xinu for Galileo Intel boards,
-ARM Beagle Boards, several MIPS platforms, and for x86 PC hardware 
-and virtual machines.
+There are current versions of Xinu for Galileo Intel boards, ARM Beagle Boards, several MIPS platforms, and for x86 PC hardware and virtual machines.
 
 ## Xinu OS for AVR atmega328p
 
