@@ -1,6 +1,5 @@
 # Xinu OS for AVR atmega328p (Arduino)
 
-Xinu OS for AVR atmega328p (Arduino)
 This repository keeps the source code of a Xinu operating system version targeted for the AVR atmega328p microcontroller. Most of Xinu kernel has been ported in this work in progress. For an interesting exercise the Xinu shell for user interface and several programs and UNIX-like utilities are provided as well.
 
 Current Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required substantial changes to some low-level structure of Xinu, mainly to use
