@@ -31,7 +31,6 @@
 body
 {
 /* font-size:16px; */
-font-size:20pt;
 /*	margin:10px 10px 0px 10px; */
 	margin:10px 10px 0px 10px;
 	padding:0px;
@@ -85,7 +84,7 @@ ol
 margin-left:100px;
 margin-right:70px;
 margin-top:5px;
-font-size:18px;
+font-size:12pt;
 }
 
 
@@ -93,7 +92,7 @@ ul
 {
 margin-left:60px;
 margin-right:100px;
-font-size:18px;
+font-size:12pt;
 }
 
 table
