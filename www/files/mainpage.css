@@ -1,3 +1,33 @@
+@media (min-width: 858px) {
+        html {
+            font-size: 12px;
+        }
+    }
+
+    @media (min-width: 780px) {
+        html {
+            font-size: 11px;
+        }
+    }
+
+    @media (min-width: 702px) {
+        html {
+            font-size: 10px;
+        }
+    }
+
+    @media (min-width: 724px) {
+        html {
+            font-size: 9px;
+        }
+    }
+
+    @media (max-width: 623px) {
+        html {
+            font-size: 8px;
+        }
+    }
+
 body
 {
 /* font-size:16px; */
@@ -47,7 +77,7 @@ margin-left:70px;
 margin-right:70px;
 margin-top:5px;
 /*font-size:12pt;*/
-font-size:8pt;
+font-size:12pt;
 }
 
 ol
