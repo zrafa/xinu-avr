@@ -1,6 +1,6 @@
 
 
-<img style="float: right;" src="m2_files/placa.jpg">
+<img style="float: right;" width="40%" src="m2_files/placa.jpg">
 
 This repository keeps the source code of a Xinu operating system version designed to run on an AVR atmega328p microcontroller. 
 Using just the major pieces of this Xinu repository (and any bare AVR MCU or Arduino board) it is possible to develop a multi tasking embedded system.
