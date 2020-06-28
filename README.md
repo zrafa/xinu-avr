@@ -1,4 +1,7 @@
 
+
+<img style="float: right;" src="m2_files/placa.jpg">
+
 This repository keeps the source code of a Xinu operating system version designed to run on an AVR atmega328p microcontroller. 
 Using just the major pieces of this Xinu repository (and any bare AVR MCU or Arduino board) it is possible to develop a multi tasking embedded system.
 A complete application example is provided as well: the Xinu shell for user interface, and several programs and UNIX-like utilities.
@@ -9,6 +12,9 @@ Thus the source code is comprise of:
 1. The **Xinu OS** for AVR atmega328p (microkernel)
 2. Basic examples (**apps**) of how to use Xinu
 3. A complete example: **The Xinu shell** and ultra tiny versions of several **UNIX-like utilities** for AVR atmega328p (it includes an editor, a basic interpreter, ps, kill, free, and several more)
+
+
+[![ODOR](http://img.youtube.com/vi/a8kwHT_R_ZU/0.jpg)](http://www.youtube.com/watch?v=a8kwHT_R_ZU "ODOR")
 
 <a name="whatisxinu">
 ### <a name="whatisxinu"></a>What is Xinu?
@@ -41,8 +47,10 @@ Notes about the port:
 2. main process is now the embedded application process
 3. Max. number of semaphores (2 to 6) (the size of the table of process queues depends on this)
 4. Max. number of devices (4 to 5)
-4. The preemption reschedules a new process for CPU every 300ms
-5. Several limits for buffers: 32bytes for tty input, 16bytes for names of devices, 1byte for the queues keys, and the list continues.
+4. The clkhandler() wakeup() a process (preemption) for CPU every 100ms
+5. Several limits for buffers: 32bytes for tty input, 16bytes for names of devices, 1byte for the queues keys, and the list continues
+6. sleepms() is now delay sleep100ms()
+7. Many vars in data structures have a smaller size (e.g. before:int32, now:char)
 
 ### Douglas Comer
 
