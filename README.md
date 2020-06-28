@@ -1,6 +1,6 @@
 
 
-<img style="float: right;" width="40%" src="m2_files/placa.jpg">
+<img style="float: right;" width="40%" src="www/files/placa.jpg">
 
 This repository keeps the source code of a Xinu operating system version designed to run on an AVR atmega328p microcontroller. 
 Using just the major pieces of this Xinu repository (and any bare AVR MCU or Arduino board) it is possible to develop a multi tasking embedded system.
@@ -13,8 +13,6 @@ Thus the source code is comprise of:
 2. Basic examples (**apps**) of how to use Xinu
 3. A complete example: **The Xinu shell** and ultra tiny versions of several **UNIX-like utilities** for AVR atmega328p (it includes an editor, a basic interpreter, ps, kill, free, and several more)
 
-
-[![ODOR](http://img.youtube.com/vi/a8kwHT_R_ZU/0.jpg)](http://www.youtube.com/watch?v=a8kwHT_R_ZU "ODOR")
 
 <a name="whatisxinu">
 ### <a name="whatisxinu"></a>What is Xinu?
