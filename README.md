@@ -2,22 +2,22 @@
 
 <img style="float: right;" width="40%" src="www/files/placa.jpg">
 
-This repository keeps the source code of a Xinu operating system version designed to run on an AVR atmega328p microcontroller. 
-Using just the major pieces of this Xinu repository (and any bare AVR MCU or Arduino board) it is possible to develop a multi tasking embedded system.
-A complete application example is provided as well: the Xinu shell for user interface, and several programs and UNIX-like utilities.
-Check the video (an Arduino board running the Xinu shell and several concurrent processes, under the control of Xinu).
+This repository keeps the source code of the Xinu operating system modified to run on an AVR atmega328p microcontroller. 
+Using the major pieces of Xinu from this repository
+a multi tasking embedded system can be developed (you will also need
+any bare AVR MCU, or Arduino board, of course).
 
-Thus the source code is comprise of:
+The source code is comprise of:
 
 1. The **Xinu OS** for AVR atmega328p (microkernel)
 2. Basic examples (**apps**) of how to use Xinu
-3. A complete example: **The Xinu shell** and ultra tiny versions of several **UNIX-like utilities** for AVR atmega328p (it includes an editor, a basic interpreter, ps, kill, free, and several more)
+3. A complete example: **The Xinu shell** and ultra tiny versions of several **UNIX-like utilities** for AVR atmega328p: an editor, a basic interpreter, ps, kill, free, and some more
 
 
 <a name="whatisxinu">
 ### <a name="whatisxinu"></a>What is Xinu?
 
-Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s.
+Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s. Since the internal data structures and algorithms are so clear that it was possible to explain the whole operating system in just one book, including the source code for each componente in their pages.
 
 <strong>The Xinu Operating System includes</strong>: dynamic process creation, dynamic memory allocation, real-time clock management, process coordination and synchronization, local and remote file systems, a shell, and device-independent I/O functions.  
 Xinu uses powerful primitives to provides all the componentes and the same functionality many conventional operating sytems supply. Since the whole source code size is small, Xinu is suitable for embedded systems.
@@ -55,9 +55,9 @@ Notes about the port:
 Douglas Comer is a Professor of Computer Science at Purdue University who
 was inducted into the Internet Hall of Fame on September, 2019.
 
-https://www.cs.purdue.edu/homes/comer/
+[Douglas Comer Page](https://www.cs.purdue.edu/homes/comer/)
 
-https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html
+[Internet Hall of Fame](https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html)
 
 As one of the earliest TCP/IP and internetworking researchers, Comer wrote the first series of textbooks explaining the scientific principles underlying the design of the Internet and its communications protocols, providing some of the earliest formal guidance for building efficient networks and applications that use the Internet. 
 

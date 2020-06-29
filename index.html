@@ -41,18 +41,18 @@
 
 <p><img style="float: right;" width="40%" src="www/files/placa.jpg"></p>
 <p>This repository keeps the source code of the Xinu operating system modified to run on an AVR atmega328p microcontroller. 
-Using just the major pieces of this Xinu repository (and any bare AVR MCU or Arduino board) it is possible to develop a multi tasking embedded system.
-A complete application example is provided as well: the Xinu shell for user interface, and several programs and UNIX-like utilities.
-Check the video (an Arduino board running the Xinu shell and several concurrent processes, under the control of Xinu).</p>
-<p>Thus the source code is comprise of:</p>
+Using the major pieces of Xinu from this repository
+a multi tasking embedded system can be developed (you will also need
+any bare AVR MCU, or Arduino board, of course).</p>
+<p>The source code is comprise of:</p>
 <ol>
 <li>The <strong>Xinu OS</strong> for AVR atmega328p (microkernel)</li>
 <li>Basic examples (<strong>apps</strong>) of how to use Xinu</li>
-<li>A complete example: <strong>The Xinu shell</strong> and ultra tiny versions of several <strong>UNIX-like utilities</strong> for AVR atmega328p (it includes an editor, a basic interpreter, ps, kill, free, and several more)</li>
+<li>A complete example: <strong>The Xinu shell</strong> and ultra tiny versions of several <strong>UNIX-like utilities</strong> for AVR atmega328p: an editor, a basic interpreter, ps, kill, free, and some more</li>
 </ol>
 <p><a name="whatisxinu"></p>
 <h3><a name="whatisxinu"></a>What is Xinu?</h3>
-<p>Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s.</p>
+<p>Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s. Since the internal data structures and algorithms are so clear that it was possible to explain the whole operating system in just one book, including the source code for each componente in their pages.</p>
 <p><strong>The Xinu Operating System includes</strong>: dynamic process creation, dynamic memory allocation, real-time clock management, process coordination and synchronization, local and remote file systems, a shell, and device-independent I/O functions.<br />
 Xinu uses powerful primitives to provides all the componentes and the same functionality many conventional operating sytems supply. Since the whole source code size is small, Xinu is suitable for embedded systems.</p>
 <p>Many sites defines Xinu as a free Unix system, or similar statements. It is not. Xinu differs completely from the internal structure of Unix (or Linux). For academic purposes Xinu is smaller, elegant, and easier to understand. Applications written for one system will not run on the other without modification. <strong> Xinu is not Unix </strong>.</p>
