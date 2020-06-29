@@ -1,5 +1,5 @@
 
-<img style="float: right;" width="25%" src="www/files/placa2.jpg">
+<img style="float: right;" src="www/files/placa2.jpg">
 
 xinu-avr is a tiny Xinu operating system subset, modified to run on an AVR atmega328p microcontroller. 
 Thus, using the major pieces of Xinu from this repository

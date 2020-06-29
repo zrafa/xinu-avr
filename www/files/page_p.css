@@ -1,8 +1,4 @@
 
-img {
-  border: 5px solid #000;
-}
-
         body{
              margin:1em auto;
 /*             margin:1em 1em;*/
@@ -21,6 +17,7 @@ font-family: Sans-Serif;
         img{
                 width:100%;
                 max-width:60em;
+  		border: 5px solid #000;
         }
 
 /*

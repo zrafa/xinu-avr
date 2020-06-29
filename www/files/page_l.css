@@ -1,7 +1,3 @@
-img {
-  border: 5px solid #000;
-}
-
 body
 {
 	font-family: Tahoma,Verdana,Helvetica,Arial;
@@ -11,6 +7,12 @@ body
 	color:#202020; 
 	background-color: #EeEeFa;
 
+}
+
+img{
+	width:25%;
+	max-width:60em;
+	border: 5px solid #000;
 }
 
 h1
