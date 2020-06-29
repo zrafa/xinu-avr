@@ -1,6 +1,5 @@
 
-
-<img style="float: right;" width="40%" src="www/files/placa.jpg">
+<img style="float: right;" width="25%" src="www/files/placa2.jpg">
 
 This repository keeps the source code of the Xinu operating system modified to run on an AVR atmega328p microcontroller. 
 Using the major pieces of Xinu from this repository
@@ -14,8 +13,8 @@ The source code is comprise of:
 3. A complete example: **The Xinu shell** and ultra tiny versions of several **UNIX-like utilities** for AVR atmega328p: an editor, a basic interpreter, ps, kill, free, and some more
 
 
-<a name="whatisxinu">
-### <a name="whatisxinu"></a>What is Xinu?
+<a name="whatisxinu"></a>
+### What is Xinu?
 
 Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s. Since the internal data structures and algorithms are so clear that it was possible to explain the whole operating system in just one book, including the source code for each componente in their pages.
 
@@ -24,12 +23,25 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 
 Many sites defines Xinu as a free Unix system, or similar statements. It is not. Xinu differs completely from the internal structure of Unix (or Linux). For academic purposes Xinu is smaller, elegant, and easier to understand. Applications written for one system will not run on the other without modification. ** Xinu is not Unix **.
 
+<a name="history"></a>
 ### History
 
 Xinu originally ran on Digital Equipment Corporation LSI 11's with only 64K bytes of memory, at the end of 1979 and the inning of 1980. Over the years Xinu versions Xinu have been expanded and ported to a wide variety of architectures and platforms, including: IBM PC, Macintosh, Digital Equipment Corporation VAX and DECStation 3100, Sun Microsystems Sun 2, Sun 3 and Sparcstations, and for several ARM, MIPS and x86 embedded boards. It has been used as the basis for many research projects. Furthermore, Xinu has been used as an embedded system in products by companies such as Motorola, Mitsubishi, Hewlett-Packard, and Lexmark. There is a full TCP/IP stack, and even the original version of Xinu (for the PDP-11) supported arbitrary processes and network I/O.
 
 There are current versions of Xinu for Galileo Intel boards, ARM Beagle Boards, several MIPS platforms, and for x86 PC hardware and virtual machines.
 
+<a name="code"></a>
+### Xinu for AVR atmega328p available for download:
+
+The git repository is just one and it has everything. The list below is just for convenience:
+
+* <a href="https://github.com/zrafa/xinu-avr">The Xinu OS for AVR atmega328p</a>
+* <a href="https://github.com/zrafa/xinu-avr/apps">example apps</a>
+* <a href="https://github.com/zrafa/xinu-avr/apps/shell">The xinu shell and tiny UNIX-like utilities (editor, basic interpreter, ps, kill, echo, uptime, sleep, etc)</a>
+* <a href="https://xinu.cs.purdue.edu/">The official Xinu Page and Code</a>
+
+
+<a name="xinuavr"></a>
 ### Xinu OS for AVR atmega328p
 
 Current official Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required some changes to some low-level data structures of Xinu, mainly using the FLASH memory in the AVR MCU, for keeping several read only data structures, previously in RAM. Also, several limits were imposed so those data structures fits into the SRAM AVR memory. The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.
@@ -50,6 +62,7 @@ Notes about the port:
 6. sleepms() is now delay sleep100ms()
 7. Many vars in data structures have a smaller size (e.g. before:int32, now:char)
 
+<a name="douglas"></a>
 ### Douglas Comer
 
 Douglas Comer is a Professor of Computer Science at Purdue University who
@@ -63,6 +76,7 @@ As one of the earliest TCP/IP and internetworking researchers, Comer wrote the f
 
 Comer’s three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals. 
 
+<a name="lab"></a>
 ### Getting started
 Xinu is easy of understand, so a developer can obtain a copy 
 of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.
