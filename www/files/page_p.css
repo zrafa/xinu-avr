@@ -1,20 +1,22 @@
 
         body{
-            /* margin:1em auto;*/
+             /*margin:1em auto;*/
+             margin:1em 1em;
             /*max-width:100em;*/
-            max-width:40em;
+            max-width:60em;
                 width:100%;
-            /* padding:0.5em .5em;*/
-		padding:0;
-		margin:0;
-		font-size:1.0em;
+             padding:0.3em 0.3em 0.3em 0.3em;
+/*		padding:0;*/
+/*		margin:0;*/
+		font-size:2.0em;
  		color:#222222; 
 	background-color: #EeEeFA;
-font-family: Tahoma,Verdana,Helvetica,Arial;
+font-family: Sans-Serif;
+/*font-family: Tahoma,Verdana,Helvetica,Arial;*/
         }
         img{
                 width:100%;
-                max-width:40em;
+                max-width:60em;
         }
 
 /*
