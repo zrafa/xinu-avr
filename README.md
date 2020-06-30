@@ -83,8 +83,8 @@ Comer’s three-volume textbook series, Internetworking with TCP/IP, written in 
 <a name="book"></a>
 The Xinu Operating System is documented in the book:
 
-        Operating System Design -- The Xinu Approach, CRC Press,
-        Boca Raton, FL, Linksys version 2012, Second Edition 2015.
+* D. Comer, Operating System Design - The Xinu Approach, Second Edition CRC Press, 2015. ISBN 9781498712439
+
 
 
 
