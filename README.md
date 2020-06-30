@@ -14,16 +14,16 @@ The source code is comprise of:
 <a name="whatisxinu"></a>
 ### What is Xinu?
 
-Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s. Since the internal data structures and algorithms are so clear it was possible to explain the whole operating system in just one book, including the source code for each component in its pages (<a href="http://se.fi.uncoma.edu.ar/xinu-avr/index.html#book">Xinu book</a>).
-
+Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s. Since then it has been ported to many architectures and hardware platforms.
+Xinu uses powerful primitives to provides all the componentes and the same functionality many conventional operating sytems supply. Since the whole source code size is small, Xinu is suitable for embedded systems.
 
 <strong>The Xinu Operating System includes</strong>: dynamic process creation, dynamic memory allocation, real-time clock management, process coordination and synchronization, local and remote file systems, a shell, and device-independent I/O functions.  
-Xinu uses powerful primitives to provides all the componentes and the same functionality many conventional operating sytems supply. Since the whole source code size is small, Xinu is suitable for embedded systems.
+
+Because the internals of data structures and algorithms are small and clear, it was possible to explain the whole operating system in just one book, including the most of the source code in its pages (<a href="http://se.fi.uncoma.edu.ar/xinu-avr/index.html#book">Xinu book</a>).
 
 Many sites defines Xinu as a free Unix system, or similar statements. It is not. Xinu differs completely from the internal structure of Unix (or Linux). For academic purposes Xinu is smaller, elegant, and easier to understand. Applications written for one system will not run on the other without modification. ** Xinu is not Unix **.
 
-<a name="history"></a>
-### History
+#### History
 
 Xinu originally ran on Digital Equipment Corporation LSI 11's with only 64K bytes of memory, at the end of 1979 and the inning of 1980. Over the years Xinu versions Xinu have been expanded and ported to a wide variety of architectures and platforms, including: IBM PC, Macintosh, Digital Equipment Corporation VAX and DECStation 3100, Sun Microsystems Sun 2, Sun 3 and Sparcstations, and for several ARM, MIPS and x86 embedded boards. It has been used as the basis for many research projects. Furthermore, Xinu has been used as an embedded system in products by companies such as Motorola, Mitsubishi, Hewlett-Packard, and Lexmark. There is a full TCP/IP stack, and even the original version of Xinu (for the PDP-11) supported arbitrary processes and network I/O.
 
