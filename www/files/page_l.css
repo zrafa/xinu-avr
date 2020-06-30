@@ -1,12 +1,13 @@
 body
 {
-	font-family: Tahoma,Verdana,Helvetica,Arial;
 	margin:10px 10px 0px 10px;
 	padding:0px;
-	font-size:18px;
-	color:#202020; 
-	background-color: #EeEeFa;
 
+	/* font-family: Sans-Serif; */
+	font-family: Tahoma,Verdana,Helvetica,Arial;
+	color:#333; 
+	background-color: #fafafa;
+	/* background-color: #EeEeFA; */
 }
 
 img{

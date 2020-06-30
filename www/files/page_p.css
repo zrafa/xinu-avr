@@ -1,18 +1,13 @@
 
-        body{
-             margin:1em auto;
-/*             margin:1em 1em;*/
-            /*max-width:100em;*/
-/*            max-width:60em; 
-                width:100%;*/
-             padding:1.5em 1.5em 1.5em 1.5em;
-/*		padding:0;*/
-/*		margin:0;*/
-		font-size:0.7em;
- 		color:#222222; 
-	background-color: #EeEeFA;
-font-family: Sans-Serif;
-/*font-family: Tahoma,Verdana,Helvetica,Arial;*/
+body{
+        margin:1em auto;
+	padding:1.5em 1.5em 1.5em 1.5em;
+/*	padding:0;*/
+/*	margin:0;*/
+	font-size:0.7em;
+	font-family: Sans-Serif;
+	color:#333; 
+	background-color: #fafafa;
         }
 
 img{
