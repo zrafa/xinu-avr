@@ -61,7 +61,7 @@ Notes about the port:
 6. sleepms() is now delay sleep100ms()
 7. Many vars in data structures have a smaller size (e.g. before:int32, now:char)
 
-** Acknowledgments **
+**Acknowledgments**
 
 * Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (from the 1st book edition).
  
