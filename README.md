@@ -4,7 +4,7 @@
 xinu-avr is a Xinu operating system subset, modified to run on an AVR atmega328p microcontroller. At present, the core pieces of Xinu are working, 
 and thus intended to be integrated in the development of multi tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).
 
-The source code is comprise of ([xinu-avr git](http://github.com/zrafa/xinu-avr)):
+The source code is comprise of:
 
 1. The **Xinu OS** for AVR atmega328p (microkernel)
 2. Basic examples (**apps**) of how to use Xinu
