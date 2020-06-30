@@ -40,6 +40,14 @@ There is just one git repository, and it has everything. The list below is just 
 * <a href="https://github.com/zrafa/xinu-avr/apps/shell">The xinu shell and tiny UNIX-like utilities (editor, basic interpreter, ps, kill, echo, uptime, sleep, etc)</a>
 * <a href="https://xinu.cs.purdue.edu/">The official Xinu Page and Code</a>
 
+<a name="authors"></a>
+**Authors**:
+
+* Xinu OS Copyright (c) 2012, 2015
+  Douglas E. Comer and CRC Press, Inc.
+* This version for AVR atmega328p v0.1 (c) 2020
+  Rafael Ignacio Zurita <rafa@fi.uncoma.edu.ar>
+
 
 <a name="xinuavr"></a>
 ### Xinu OS for AVR atmega328p
