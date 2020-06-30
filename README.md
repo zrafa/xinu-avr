@@ -14,7 +14,8 @@ The source code is comprise of:
 <a name="whatisxinu"></a>
 ### What is Xinu?
 
-Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s. Since the internal data structures and algorithms are so clear that it was possible to explain the whole operating system in just one book, including the source code for each componente in their pages.
+Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s. Since the internal data structures and algorithms are so clear it was possible to explain the whole operating system in just one book, including the source code for each component in its pages (<a href="http://se.fi.uncoma.edu.ar/xinu-avr/index.html#book">Xinu book</a>).
+
 
 <strong>The Xinu Operating System includes</strong>: dynamic process creation, dynamic memory allocation, real-time clock management, process coordination and synchronization, local and remote file systems, a shell, and device-independent I/O functions.  
 Xinu uses powerful primitives to provides all the componentes and the same functionality many conventional operating sytems supply. Since the whole source code size is small, Xinu is suitable for embedded systems.
@@ -77,7 +78,15 @@ was inducted into the Internet Hall of Fame on September, 2019.
 
 As one of the earliest TCP/IP and internetworking researchers, Comer wrote the first series of textbooks explaining the scientific principles underlying the design of the Internet and its communications protocols, providing some of the earliest formal guidance for building efficient networks and applications that use the Internet. 
 
-Comer’s three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals. 
+Comer’s three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals.
+
+<a name="book"></a>
+The Xinu Operating System is documented in the book:
+
+        Operating System Design -- The Xinu Approach, CRC Press,
+        Boca Raton, FL, Linksys version 2012, Second Edition 2015.
+
+
 
 <a name="lab"></a>
 ### Getting started
