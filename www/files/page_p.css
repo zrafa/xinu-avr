@@ -14,11 +14,12 @@
 font-family: Sans-Serif;
 /*font-family: Tahoma,Verdana,Helvetica,Arial;*/
         }
-        img{
-                width:100%;
-                max-width:60em;
-  		border: 5px solid #000;
-        }
+
+img{
+	width:100%;
+/*	max-width:60em;*/
+	border: 5px solid #000;
+}
 
 /*
 body
