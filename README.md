@@ -1,9 +1,8 @@
 
 <img style="float: right;" src="www/files/placa2.jpg">
 
-xinu-avr is a Xinu operating system subset, modified to run on an AVR atmega328p microcontroller. 
-Thus, using the major pieces of Xinu from this repository
-a multi tasking embedded system can be developed (you will also need
+xinu-avr is a Xinu operating system subset, modified to run on an AVR atmega328p microcontroller. At present, the core pieces of Xinu are working, 
+and thus a multi tasking embedded system can be developed (you will also need
 any bare AVR MCU, or Arduino board, of course).
 
 The source code is comprise of:
