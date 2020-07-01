@@ -2,7 +2,9 @@
 
 <img style="float: right;" src="www/files/placa2.jpg">
 
-xinu-avr is a Xinu operating system subset, modified to run on an AVR atmega328p microcontroller. At present, the core pieces of Xinu are working, 
+xinu-avr is a Xinu Operating System subset, modified to run on an AVR atmega328p microcontroller. 
+
+At present, the core pieces of Xinu are working, 
 and thus intended to be integrated in the development of multi tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).
 
 The source code is comprise of:
@@ -16,7 +18,7 @@ The source code is comprise of:
 ### What is Xinu?
 
 Xinu is a small, elegant, and easy to understand operating system, originally developed by Douglas Comer for instructional purposes at Purdue University in the 1980s. Since then it has been ported to many architectures and hardware platforms.
-Xinu uses powerful primitives to provides all the componentes and the same functionality many conventional operating sytems supply. Since the whole source code size is small, Xinu is suitable for embedded systems.
+Xinu uses powerful primitives to provides all the componentes and the same functionality many conventional operating sytems supply. Because the whole source code size is small, **Xinu is suitable for embedded systems**.
 
 <strong>The Xinu Operating System includes</strong>: dynamic process creation, dynamic memory allocation, real-time clock management, process coordination and synchronization, local and remote file systems, a shell, and device-independent I/O functions.  
 
