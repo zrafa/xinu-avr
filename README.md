@@ -1,3 +1,4 @@
+[visit the Xinu for AVR atmega328p Web Page](http://se.fi.uncoma.edu.ar/xinu-avr/)
 
 <img style="float: right;" src="www/files/placa2.jpg">
 
@@ -31,9 +32,9 @@ Xinu originally ran on Digital Equipment Corporation LSI 11's with only 64K byte
 There are current versions of Xinu for Galileo Intel boards, ARM Beagle Boards, several MIPS platforms, and for x86 PC hardware and virtual machines.
 
 <a name="code"></a>
-### Xinu for AVR atmega328p available for download:
+### source code:
 
-There is just one git repository, and it has everything. The list below is just for convenience:
+There is just one git repository, and it has everything [git](http://github.com/zrafa/xinu-avr/). The list below is just for convenience:
 
 * <a href="https://github.com/zrafa/xinu-avr">The Xinu OS for AVR atmega328p</a>
 * <a href="https://github.com/zrafa/xinu-avr/apps">example apps</a>
@@ -41,7 +42,7 @@ There is just one git repository, and it has everything. The list below is just 
 * <a href="https://xinu.cs.purdue.edu/">The official Xinu Page and Code</a>
 
 <a name="authors"></a>
-**Authors**:
+#### Authors:
 
 * Xinu OS Copyright (c) 2012, 2015
   Douglas E. Comer and CRC Press, Inc.
