@@ -115,7 +115,7 @@ void	nulluser()
 						memptr = memptr->mnext) {
 		free_mem += memptr->mlength;
 	}
-	kprintf("\nFreeMEM:%d\n", free_mem);
+	kprintf("\nFreeMEM:%d (bytes)\n\n", free_mem);
 
 /*
 	long * b = (long *) memlist.mnext;

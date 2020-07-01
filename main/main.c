@@ -6,6 +6,15 @@
 #include <xinu.h>
 #include "shprototypes.h"
 
+#include <time.h>
+
+extern int date (char *s);
+extern void seconds_to_date(int *y, int *m, int *d, int *h, int *min, int *s);
+extern seconds;
+extern int days;
+extern struct tm avr_tm;
+//extern long long int seconds;
+
 void xsh_help(void);
 shellcmd xsh_kill(int nargs, char *args[]);
 
@@ -73,7 +82,7 @@ const cmdent_t __flash cmdtab[] = {
 const __flash int cmdtab_stk[] = {
 	256,	/* memdump */
 	500,	/* editor */
-	500,	/* basic */
+	400,	/* basic */
 	128,	/* help */
 	128,	/* sleep */
 	128,	/* forever */
@@ -186,8 +195,9 @@ process	main(void)
 
 	change_proc_name("shell");
 
-	for (i=0;i<NDEVS;i++)
-		printf("%S\n", devtab[i].dvname);
+//	for (i=0;i<NDEVS;i++)
+//		printf("%S\n", devtab[i].dvname);
+
 	/* Print shell banner and startup message */
 
 /*
@@ -196,6 +206,31 @@ process	main(void)
 		SHELL_BAN5,SHELL_BAN6,SHELL_BAN7,SHELL_BAN8,SHELL_BAN9,SHELL_BAN10);
 
 	fprintf(dev, "%s\n\n", SHELL_STRTMSG);
+*/
+
+	unsigned int ss = 0;
+	int y, m, d, h, min, s;
+	ss = date("06/30/20 13:21:30");
+  	printf("dias:%i\n", days);
+	seconds_to_date(&y, &m, &d, &h, &min, &s);
+  	printf("y:%i\n", y);
+  	printf("m:%i\n", m);
+  	printf("d:%i\n", d);
+  	printf("h:%i\n", h);
+  	printf("m:%i\n", min);
+  	printf("s:%i\n", s);
+	
+	
+	char avr_date[80];
+	asctime_r(&avr_tm, avr_date);
+  	printf("f:%s\n", avr_date);
+/*
+	unsigned char destination[8];
+	for(int i=0; i<8; ++i) {
+    		destination[i] = s>>((7-i)*8);
+		printf ("n:%X\n", destination[i]);
+	}; 
+
 */
 
 	int len_p;

@@ -74,7 +74,7 @@ shellcmd xsh_basic(int nargs, char *args[])
 *                                                                *
 ******************************************************************
 *    Copyright (C) 1984 by Gordon Brandly. This program may be   *
-*    freely distributed for personal use only. All commercial    *
+*    freely distributed for personal use only.function avr all arduino pins in c language All commercial    *
 *                      rights are reserved.                      *
 ******************************************************************
 */
@@ -279,11 +279,6 @@ shellcmd xsh_basic(int nargs, char *args[])
 ////////////////////
 
 
-// some settings based things
-
-boolean inhibitOutput = false;
-static boolean runAfterLoad = false;
-static boolean triggerRun = false;
 
 // these will select, at runtime, where IO happens through for load/save
 enum {
@@ -291,8 +286,8 @@ enum {
   kStreamEEProm,
   kStreamFile
 };
-static unsigned char inStream = kStreamSerial;
-static unsigned char outStream = kStreamSerial;
+// static unsigned char inStream = kStreamSerial;
+// static unsigned char outStream = kStreamSerial;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -316,10 +311,9 @@ typedef short unsigned LINENUM;
 // RAFA
 // extern unsigned char program[NLINES*LINE_LEN];
 
-static const char *  sentinel = "HELLO";
+// static const char *  sentinel = "HELLO";
 static unsigned char *txtpos,*list_line, *tmptxtpos;
 static unsigned char expression_error;
-static unsigned char *tempsp;
 
 /***********************************************************/
 // Keyword table and constants - the last character has 0x80 added to it
@@ -978,6 +972,18 @@ void loop()
 
 //  unsigned char program[NLINES*LINE_LEN];
 	unsigned char program[kRamSize];
+
+// some settings based things
+boolean inhibitOutput = false;
+boolean runAfterLoad = false;
+boolean triggerRun = false;
+
+unsigned char *tempsp;
+
+
+
+
+
 
   program_start = program;
   program_end = program_start;
@@ -1711,34 +1717,6 @@ static int isValidFnChar( char c )
   return 0;
 }
 
-unsigned char * filenameWord(void)
-{
-  // SDL - I wasn't sure if this functionality existed above, so I figured i'd put it here
-  unsigned char * ret = txtpos;
-  expression_error = 0;
-
-  // make sure there are no quotes or spaces, search for valid characters
-  //while(*txtpos == SPACE || *txtpos == TAB || *txtpos == SQUOTE || *txtpos == DQUOTE ) txtpos++;
-  while( !isValidFnChar( *txtpos )) txtpos++;
-  ret = txtpos;
-
-  if( *ret == '\0' ) {
-    expression_error = 1;
-    return ret;
-  }
-
-  // now, find the next nonfnchar
-  txtpos++;
-  while( isValidFnChar( *txtpos )) txtpos++;
-  if( txtpos != ret ) *txtpos = '\0';
-
-  // set the error code if we've got no string
-  if( *ret == '\0' ) {
-    expression_error = 1;
-  }
-
-  return ret;
-}
 
 /***************************************************************************/
 static void line_terminator(void)

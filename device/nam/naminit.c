@@ -41,7 +41,7 @@ status	naminit(void)
 	// RAFA 
 	/* avr specific */
 	char name[10];
-	kprintf("devices:\n");
+	kprintf("naminit (devices):\n");
 
 	for (i=0; i<NDEVS ; i++) {
 		tptr = tmpstr;
@@ -79,7 +79,7 @@ status	naminit(void)
 		}
 
 			// RAFA
-			kprintf("%s\n",tmpstr);
+			kprintf("  %s\n",tmpstr);
 		retval = mount(tmpstr, NULLSTR, devptr->dvnum);
                 if (retval == SYSERR) {
 			// RAFA kprintf("namespace: cannot mount device %d\r\n",
