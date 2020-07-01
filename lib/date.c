@@ -1,13 +1,11 @@
 #include <stdint.h>
 
 typedef long unsigned int size_t;
-
 typedef uint32_t time_t;
 
 #include <time.h>
 
 time_t seconds;
-//time_t sec_stamp;
 
 extern clktime;
 
@@ -15,10 +13,9 @@ int get_date(char * s)
 {
 	struct tm avr_tm;
 
-//	seconds = seconds + (clktime - sec_stamp);
 	seconds = seconds + clktime;
-	localtime_r(&seconds, &avr_tm);
-	asctime_r(&avr_tm, s);
+ 	localtime_r(&seconds, &avr_tm);
+ 	asctime_r(&avr_tm, s);
 }
 
 int set_date(const char *s) 
@@ -73,13 +70,9 @@ int set_date(const char *s)
 	avr_tm.tm_year = y + 100;
 	avr_tm.tm_isdst = 0;
 
-	// seconds = mktime(&avr_tm);
+ 	/* FIXME - WARNING: interrupts should be disable before */
 	seconds = mktime(&avr_tm) - clktime;
-
-//	sec_stamp = clktime; /* WARNING: interrupts should be disable before */
 
 	return 0;
 }
-
-
 
