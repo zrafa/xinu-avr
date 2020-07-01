@@ -96,6 +96,7 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 <li>shell manages max. 6 tokens</li>
 <li>date and time is managed by a little lib. No NTP or RTC</li>
 <li>Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc</li>
+<li>tty_in is with interrupts (ok). But tty_out is polled based.</li>
 </ol>
 <p><strong>Acknowledgments</strong></p>
 <ul>
@@ -112,7 +113,7 @@ was inducted into the Internet Hall of Fame on September, 2019.</p>
 <p><a name="lab"></a></p>
 <h3>Getting started</h3>
 <p>Xinu is easy of understand, so a developer can obtain a copy 
-of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.</p><br><br><hr><small> last edit: mié jul 1 09:56:47 -03 2020 - <i>Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
+of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.</p><br><br><hr><small><i> last edit: mié jul 1 10:02:21 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
 
 
 </body></html>

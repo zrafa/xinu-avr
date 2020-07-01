@@ -76,6 +76,7 @@ Notes about the port:
 11. shell manages max. 6 tokens
 12. date and time is managed by a little lib. No NTP or RTC
 13. Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc
+14. tty_in is with interrupts (ok). But tty_out is polled based.
 
 **Acknowledgments**
 
