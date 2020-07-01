@@ -86,3 +86,4 @@ extern	shellcmd  xsh_free	(int32, char *[]);
 extern	shellcmd  xsh_forever	(int32, char *[]);
 extern	shellcmd  xsh_reboot	(int32, char *[]);
 extern	shellcmd  xsh_cal	(int32, char *[]);
+extern	shellcmd  xsh_date	(int32, char *[]);

@@ -90,6 +90,12 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 <li>Several limits for buffers: 32bytes for tty input, 16bytes for names of devices, 1byte for the queues keys, and the list continues</li>
 <li>sleepms() is now delay sleep100ms()</li>
 <li>Many vars in data structures have a smaller size (e.g. before:int32, now:char)</li>
+<li>sleep sleeps max. 20 seconds (date type)</li>
+<li>most of the libc are from avr-libc</li>
+<li>init (load bss and data from flash to ram) from avr-libc</li>
+<li>shell manages max. 6 tokens</li>
+<li>date and time is managed by a little lib. No NTP or RTC</li>
+<li>Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc</li>
 </ol>
 <p><strong>Acknowledgments</strong></p>
 <ul>

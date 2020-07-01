@@ -8,12 +8,9 @@
 
 #include <time.h>
 
-extern int date (char *s);
-extern void seconds_to_date(int *y, int *m, int *d, int *h, int *min, int *s);
-extern seconds;
-extern int days;
-extern struct tm avr_tm;
-//extern long long int seconds;
+extern int set_date (char *s);
+extern int get_date (char *s);
+// extern struct tm avr_tm;
 
 void xsh_help(void);
 shellcmd xsh_kill(int nargs, char *args[]);
@@ -40,6 +37,7 @@ const __flash uint8_t * const __flash cmdtab_cname[] =
   (const __flash uint8_t[]) { "clear" },
   (const __flash uint8_t[]) { "ps" },
   (const __flash uint8_t[]) { "echo" },
+  (const __flash uint8_t[]) { "date" },
   (const __flash uint8_t[]) { "cal" }
 };
 
@@ -58,6 +56,7 @@ const __flash uint8_t * const __flash cmdtab_help[] =
   (const __flash uint8_t[]) { ": clear the terminal screen" },
   (const __flash uint8_t[]) { ": display current processes table" },
   (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output" },
+  (const __flash uint8_t[]) { "[MM/DD/YY HH:MM:SS] : set or get the date and time" },
   (const __flash uint8_t[]) { "[mon] year : calendar" }
 };
 typedef int32	(*cmdfunc_t)(int32,char*[]);
@@ -76,6 +75,7 @@ const cmdent_t __flash cmdtab[] = {
 	{TRUE,	xsh_clear},
 	{TRUE,	xsh_ps},
 	{FALSE,	xsh_echo},
+	{FALSE,	xsh_date},
 	{FALSE,	xsh_cal}
 };
 
@@ -92,6 +92,7 @@ const __flash int cmdtab_stk[] = {
 	128,
 	64,
 	128,
+	256,
 	256,
 	256,
 };
@@ -208,22 +209,22 @@ process	main(void)
 	fprintf(dev, "%s\n\n", SHELL_STRTMSG);
 */
 
-	unsigned int ss = 0;
-	int y, m, d, h, min, s;
-	ss = date("06/30/20 13:21:30");
-  	printf("dias:%i\n", days);
-	seconds_to_date(&y, &m, &d, &h, &min, &s);
-  	printf("y:%i\n", y);
-  	printf("m:%i\n", m);
-  	printf("d:%i\n", d);
-  	printf("h:%i\n", h);
-  	printf("m:%i\n", min);
-  	printf("s:%i\n", s);
+//	int ss = 0;
+//	int y, m, d, h, min, s;
+//ss = set_date("06/30/20 13:21:30");
+ // 	printf("dias:%i\n", days);
+//	seconds_to_date(&y, &m, &d, &h, &min, &s);
+  //	printf("y:%i\n", y);
+  //	printf("m:%i\n", m);
+  //	printf("d:%i\n", d);
+  //	printf("h:%i\n", h);
+  //	printf("m:%i\n", min);
+  //	printf("s:%i\n", s);
 	
 	
-	char avr_date[80];
-	asctime_r(&avr_tm, avr_date);
-  	printf("f:%s\n", avr_date);
+//	char avr_date[80];
+//	get_date(avr_date);
+ // 	printf("f:%s\n", avr_date);
 /*
 	unsigned char destination[8];
 	for(int i=0; i<8; ++i) {

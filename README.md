@@ -69,6 +69,12 @@ Notes about the port:
 5. Several limits for buffers: 32bytes for tty input, 16bytes for names of devices, 1byte for the queues keys, and the list continues
 6. sleepms() is now delay sleep100ms()
 7. Many vars in data structures have a smaller size (e.g. before:int32, now:char)
+8. sleep sleeps max. 20 seconds (date type)
+9. most of the libc are from avr-libc
+10. init (load bss and data from flash to ram) from avr-libc
+11. shell manages max. 6 tokens
+12. date and time is managed by a little lib. No NTP or RTC
+13. Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc
 
 **Acknowledgments**
 
