@@ -3,7 +3,7 @@
 #include <xinu.h>
 #include <stdio.h>
 
-const __flash char ps_msg0[] = "\nTable of current process\n";
+const __flash char ps_msg0[] = "\ntable of current processes\n";
 const __flash char ps_msg1[] = "\nname\tid\tparent\tprio\tstate\tstklen\tsem waits\n--\n";
 
 /*------------------------------------------------------------------------

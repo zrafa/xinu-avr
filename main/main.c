@@ -6,11 +6,10 @@
 #include <xinu.h>
 #include "shprototypes.h"
 
-#include <time.h>
+// #include <time.h>
 
-extern int set_date (char *s);
-extern int get_date (char *s);
-// extern struct tm avr_tm;
+// extern int set_date (char *s);
+// extern int get_date (char *s);
 
 void xsh_help(void);
 shellcmd xsh_kill(int nargs, char *args[]);
@@ -89,7 +88,7 @@ const __flash int cmdtab_stk[] = {
 	200,	/* uptime */
 	128,	/* reboot */
 	300,	/* kill */
-	128,
+	128,	/* free */
 	64,
 	128,
 	256,
@@ -196,11 +195,7 @@ process	main(void)
 
 	change_proc_name("shell");
 
-//	for (i=0;i<NDEVS;i++)
-//		printf("%S\n", devtab[i].dvname);
-
 	/* Print shell banner and startup message */
-
 /*
 	fprintf(dev, "\n\n%s%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n",
 		SHELL_BAN0,SHELL_BAN1,SHELL_BAN2,SHELL_BAN3,SHELL_BAN4,
@@ -209,38 +204,15 @@ process	main(void)
 	fprintf(dev, "%s\n\n", SHELL_STRTMSG);
 */
 
-//	int ss = 0;
-//	int y, m, d, h, min, s;
-//ss = set_date("06/30/20 13:21:30");
- // 	printf("dias:%i\n", days);
-//	seconds_to_date(&y, &m, &d, &h, &min, &s);
-  //	printf("y:%i\n", y);
-  //	printf("m:%i\n", m);
-  //	printf("d:%i\n", d);
-  //	printf("h:%i\n", h);
-  //	printf("m:%i\n", min);
-  //	printf("s:%i\n", s);
-	
-	
-//	char avr_date[80];
-//	get_date(avr_date);
- // 	printf("f:%s\n", avr_date);
-/*
-	unsigned char destination[8];
-	for(int i=0; i<8; ++i) {
-    		destination[i] = s>>((7-i)*8);
-		printf ("n:%X\n", destination[i]);
-	}; 
-
-*/
-
 	int len_p;
 
 	/* Continually prompt the user, read input, and execute command	*/
 	
-//RAFA
-	const __flash struct dentry	*devptr;	/* Entry in device switch table	*/
-	struct	ttycblk	*typtr;		/* Pointer to tty control block	*/
+//RAFA: for HORRIBLE WORKAROUND
+	/* Entry in device switch table	*/
+	const __flash struct dentry	*devptr;	
+	/* Pointer to tty control block	*/
+	struct	ttycblk	*typtr;		
 	char *c;
 // FIN RAFA
 
@@ -361,7 +333,6 @@ process	main(void)
 		/* Lookup first token in the command table */
 
 		for (j = 0; j < ncmd; j++) {
-			// src = cmdtab[j].cname;
 			cmp = tokbuf;
 			//diff = FALSE;
 			diff = TRUE;
@@ -369,19 +340,8 @@ process	main(void)
 			if (strncmp_P(cmp, cmdtab_cname[j], len_p) == 0 ) { 
 				//diff = TRUE;
 				diff = FALSE;
-				//printf("IGUA:j:%d\n",j);
 		};
-/*
-			while (*src != NULLCH) {
-				if (*cmp != *src) {
-					diff = TRUE;
-					break;
-				}
-				src++;
-				cmp++;
-			}
-*/
-			//if (diff || (*cmp != NULLCH)) {
+
 			if (diff || (*(cmp+len_p) != NULLCH)) {
 				continue;
 			} else {
@@ -399,7 +359,6 @@ process	main(void)
 		/* Handle built-in command */
 
 		if (cmdtab[j].cbuiltin) { /* No background or redirect. */
-		//if (cmdtab_cbuiltin) { /* No background or redirect. */
 			if (inname != NULL || outname != NULL || backgnd){
 				// fprintf(dev, SHELL_BGERRMSG);
 				continue;
@@ -442,19 +401,11 @@ process	main(void)
 
 		/* Spawn child thread for non-built-in commands */
 
-		// RAFA child = create(cmdtab[j].cfunc,
-		// RAFA 	SHELL_CMDSTK, SHELL_CMDPRIO,
-		// RAFA 	cmdtab[j].cname, 2, ntok, &tmparg);
-		/* 160 bytes de stack perfecto */
 		strncpy_P(cname, cmdtab_cname[j], len_p);
 		cname[len_p] = 0;
 		child = create(cmdtab[j].cfunc,
-			// 560, SHELL_CMDPRIO,
-			// 470, SHELL_CMDPRIO,
-			// 360, SHELL_CMDPRIO,
 			cmdtab_stk[j], SHELL_CMDPRIO,
 			cname, 2, ntok, &tmparg);
-			//cmdtab[j].cname, 2, ntok, &tmparg);
 
 		/* If creation or argument copy fails, report error */
 

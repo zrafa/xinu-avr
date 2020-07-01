@@ -6,6 +6,11 @@
 #include <xinu.h>
 #include "shprototypes.h"
 
+// #include <time.h>
+
+// extern int set_date (char *s);
+// extern int get_date (char *s);
+
 void xsh_help(void);
 shellcmd xsh_kill(int nargs, char *args[]);
 
@@ -30,12 +35,14 @@ const __flash uint8_t * const __flash cmdtab_cname[] =
   (const __flash uint8_t[]) { "free" },
   (const __flash uint8_t[]) { "clear" },
   (const __flash uint8_t[]) { "ps" },
-  (const __flash uint8_t[]) { "echo" }
+  (const __flash uint8_t[]) { "echo" },
+  (const __flash uint8_t[]) { "date" },
+  (const __flash uint8_t[]) { "cal" }
 };
 
 const __flash uint8_t * const __flash cmdtab_help[] =
 {
-  (const __flash uint8_t[]) { "[from to] : display SRAM memory contents" },
+  (const __flash uint8_t[]) { ": display SRAM memory contents" },
   (const __flash uint8_t[]) { ": text editor" },
   (const __flash uint8_t[]) { ": BASIC language interpreter" },
   (const __flash uint8_t[]) { ": this help" },
@@ -47,7 +54,9 @@ const __flash uint8_t * const __flash cmdtab_help[] =
   (const __flash uint8_t[]) { ": display amount of free and used memory" },
   (const __flash uint8_t[]) { ": clear the terminal screen" },
   (const __flash uint8_t[]) { ": display current processes table" },
-  (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output" }
+  (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output" },
+  (const __flash uint8_t[]) { "[MM/DD/YY HH:MM:SS] : set or get the date and time" },
+  (const __flash uint8_t[]) { "[mon] year : calendar" }
 };
 typedef int32	(*cmdfunc_t)(int32,char*[]);
 
@@ -64,22 +73,26 @@ const cmdent_t __flash cmdtab[] = {
 	{FALSE,	xsh_free},
 	{TRUE,	xsh_clear},
 	{TRUE,	xsh_ps},
-	{FALSE,	xsh_echo}
+	{FALSE,	xsh_echo},
+	{FALSE,	xsh_date},
+	{FALSE,	xsh_cal}
 };
 
 const __flash int cmdtab_stk[] = {
 	256,	/* memdump */
 	500,	/* editor */
-	500,	/* basic */
+	400,	/* basic */
 	128,	/* help */
 	128,	/* sleep */
 	128,	/* forever */
 	200,	/* uptime */
 	128,	/* reboot */
 	300,	/* kill */
-	128,
+	128,	/* free */
 	64,
 	128,
+	256,
+	256,
 	256,
 };
 
@@ -182,10 +195,7 @@ process	main(void)
 
 	change_proc_name("shell");
 
-	for (i=0;i<NDEVS;i++)
-		printf("%S\n", devtab[i].dvname);
 	/* Print shell banner and startup message */
-
 /*
 	fprintf(dev, "\n\n%s%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n",
 		SHELL_BAN0,SHELL_BAN1,SHELL_BAN2,SHELL_BAN3,SHELL_BAN4,
@@ -198,9 +208,11 @@ process	main(void)
 
 	/* Continually prompt the user, read input, and execute command	*/
 	
-//RAFA
-	const __flash struct dentry	*devptr;	/* Entry in device switch table	*/
-	struct	ttycblk	*typtr;		/* Pointer to tty control block	*/
+//RAFA: for HORRIBLE WORKAROUND
+	/* Entry in device switch table	*/
+	const __flash struct dentry	*devptr;	
+	/* Pointer to tty control block	*/
+	struct	ttycblk	*typtr;		
 	char *c;
 // FIN RAFA
 
@@ -321,7 +333,6 @@ process	main(void)
 		/* Lookup first token in the command table */
 
 		for (j = 0; j < ncmd; j++) {
-			// src = cmdtab[j].cname;
 			cmp = tokbuf;
 			//diff = FALSE;
 			diff = TRUE;
@@ -329,19 +340,8 @@ process	main(void)
 			if (strncmp_P(cmp, cmdtab_cname[j], len_p) == 0 ) { 
 				//diff = TRUE;
 				diff = FALSE;
-				//printf("IGUA:j:%d\n",j);
 		};
-/*
-			while (*src != NULLCH) {
-				if (*cmp != *src) {
-					diff = TRUE;
-					break;
-				}
-				src++;
-				cmp++;
-			}
-*/
-			//if (diff || (*cmp != NULLCH)) {
+
 			if (diff || (*(cmp+len_p) != NULLCH)) {
 				continue;
 			} else {
@@ -359,7 +359,6 @@ process	main(void)
 		/* Handle built-in command */
 
 		if (cmdtab[j].cbuiltin) { /* No background or redirect. */
-		//if (cmdtab_cbuiltin) { /* No background or redirect. */
 			if (inname != NULL || outname != NULL || backgnd){
 				// fprintf(dev, SHELL_BGERRMSG);
 				continue;
@@ -402,19 +401,11 @@ process	main(void)
 
 		/* Spawn child thread for non-built-in commands */
 
-		// RAFA child = create(cmdtab[j].cfunc,
-		// RAFA 	SHELL_CMDSTK, SHELL_CMDPRIO,
-		// RAFA 	cmdtab[j].cname, 2, ntok, &tmparg);
-		/* 160 bytes de stack perfecto */
 		strncpy_P(cname, cmdtab_cname[j], len_p);
 		cname[len_p] = 0;
 		child = create(cmdtab[j].cfunc,
-			// 560, SHELL_CMDPRIO,
-			// 470, SHELL_CMDPRIO,
-			// 360, SHELL_CMDPRIO,
 			cmdtab_stk[j], SHELL_CMDPRIO,
 			cname, 2, ntok, &tmparg);
-			//cmdtab[j].cname, 2, ntok, &tmparg);
 
 		/* If creation or argument copy fails, report error */
 
