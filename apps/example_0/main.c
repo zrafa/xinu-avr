@@ -1,23 +1,41 @@
 /*  main.c  - main */
 
+/* Basic Xinu app for quick start */
+
 #include <xinu.h>
+
+
+process example0(int nargs, char *args[])
+{
+	printf("\n  Starting %s process\n", proctab[currpid].prname);
+	printf("  nargs = %d\n", nargs);
+	printf("  args[0]: %d\n", args[0]);
+	printf("  args[1]: %s\n", args[1]);
+	printf("  %s process has completed.\n", proctab[currpid].prname);
+
+	return OK;
+}
 
 process	main(void)
 {
+	printf("\nStarting %s process\n", proctab[currpid].prname);
 
-	/* Run the Xinu shell */
+	/* We create() a new process. Arguments:
+	 *         process code: example0()
+	 *         stack size: 128 bytes
+	 *         priority: 50
+	 * 	   name: "ex0"
+	 *         arguments: 2
+	 * 	   first argument: 3 (int)
+	 * 	   second argument: "hello world"
+	 */
 
-//RAFA	recvclr();
-//RAFA	resume(create(shell, 8192, 50, "shell", 1, CONSOLE));
+	resume(create(example0, 128, 50, "ex_0", 2, 3, "hello world"));
 
-	/* Wait for shell to exit and recreate it */
+	/* Wait for main to exit */
 
-//RAFA	while (TRUE) {
-//RAFA		receive();
-//RAFA		sleepms(200);
-//RAFA		kprintf("\n\nMain process recreating shell\n\n");
-//RAFA		resume(create(shell, 4096, 20, "shell", 1, CONSOLE));
-//RAFA	}
+	receive();
+	printf("\n%s process has completed.\n", proctab[currpid].prname);
+
 	return OK;
-    
 }
