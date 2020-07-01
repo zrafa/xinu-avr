@@ -34,7 +34,7 @@ There are current versions of Xinu for Galileo Intel boards, ARM Beagle Boards, 
 <a name="code"></a>
 ### source code:
 
-There is just one git repository, and it has everything [git](http://github.com/zrafa/xinu-avr/). The list below is just for convenience:
+There is just one git repository, and it has everything ([git](http://github.com/zrafa/xinu-avr/)). The list below is just for convenience:
 
 * <a href="https://github.com/zrafa/xinu-avr">The Xinu OS for AVR atmega328p</a>
 * <a href="https://github.com/zrafa/xinu-avr/apps">example apps</a>
