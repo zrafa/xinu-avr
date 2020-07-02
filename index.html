@@ -41,7 +41,7 @@
 <p><img style="float: right;" src="www/files/placa2.jpg"></p>
 <p>xinu-avr is a Xinu Operating System subset, modified to run on an AVR atmega328p microcontroller. </p>
 <p>At present, the core pieces of Xinu are working, 
-and thus intended to be integrated in the development of multi tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).</p>
+and thus intended to be integrated in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).</p>
 <p>The source code is comprise of:</p>
 <ol>
 <li>The <strong>Xinu OS</strong> for AVR atmega328p (microkernel)</li>
@@ -78,7 +78,7 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 </ul>
 <p><a name="xinuavr"></a></p>
 <h3>Xinu OS for AVR atmega328p</h3>
-<p>Current official Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required changes to some low-level data structures of Xinu, mainly using the FLASH memory in the AVR MCU, for keeping several read only data structures, previously in RAM. Also, several limits were imposed so those data structures fits into the SRAM AVR memory. The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.</p>
+<p>Current official Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required changes to some low-level data structures of Xinu, mainly using the FLASH memory in the AVR MCU, for keeping several read-only data structures, previously in RAM. Also, several limits were imposed, so the read-write data structures fits into the SRAM AVR memory. The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.</p>
 <p>This MCU has just 2KB of SRAM, 32KB of FLASH memory, and 1KB of EEPROM. The Xinu version for AVR uses 17KB of FLASH and 0.9KB of RAM, so there is still room (SRAM and FLASH) for the embedded application running on Xinu (concurrent processes).</p>
 <p>So this project might be stimulating and very fun for lovers of embedded systems development and operating system internals.</p>
 <p>Notes about the port:</p>
@@ -114,7 +114,7 @@ was inducted into the Internet Hall of Fame on September, 2019.</p>
 <p><a name="lab"></a></p>
 <h3>Getting started</h3>
 <p>Xinu is easy of understand, so a developer can obtain a copy 
-of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.</p><br><br><hr><small><i> last edit: mié jul 1 20:32:22 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
+of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.</p><br><br><hr><small><i> last edit: mié jul 1 21:20:03 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
 
 
 </body></html>
