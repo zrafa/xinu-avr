@@ -2,17 +2,16 @@
 
 <img style="float: right;" src="www/files/placa2.jpg">
 
-xinu-avr is a Xinu Operating System subset, modified to run on an AVR atmega328p microcontroller. 
+The xinu-avr project is a Xinu Operating System subset, modified to run on an AVR atmega328p microcontroller. Thre is also a complete example: The Xinu shell and several tiny versions of **UNIX-like utilities**, like a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.
 
-At present, the core pieces of Xinu are working, 
-and thus intended to be integrated in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).
+At present, the core pieces of Xinu are working, so you can already integrate it
+in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).
 
 The source code is comprise of:
 
 1. The **Xinu OS** for AVR atmega328p (microkernel)
 2. Basic examples (**apps**) of how to use Xinu
 3. A complete example: **The Xinu shell** and ultra tiny versions of several **UNIX-like utilities** for AVR atmega328p: an editor, a basic interpreter, ps, kill, free, and some more
-
 
 <a name="whatisxinu"></a>
 ### What is Xinu?
