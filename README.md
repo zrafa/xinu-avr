@@ -2,7 +2,8 @@
 
 <img style="float: right;" src="www/files/placa2.jpg">
 
-The **xinu-avr** project is a **Xinu Operating System** subset, modified to run on an AVR atmega328p microcontroller. For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The **Xinu shell** and several tiny versions of **UNIX-like utilities**, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.
+The **xinu-avr** project is a **Xinu Operating System** subset, modified to run on an AVR atmega328p microcontroller. 
+For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The **Xinu shell** and several tiny versions of **UNIX-like utilities**, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.
 
 At present, the core pieces of Xinu are working, so you can already integrate it
 in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).
