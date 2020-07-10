@@ -3,6 +3,7 @@
 <img style="float: right;" src="www/files/placa2.jpg">
 
 The **xinu-avr** project is a **Xinu Operating System** subset, modified to run on an AVR atmega328p microcontroller. 
+
 For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The **Xinu shell** and several tiny versions of **UNIX-like utilities**, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.
 
 At present, the core pieces of Xinu are working, so you can already integrate it
@@ -25,7 +26,7 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 Xinu is documented in the book:
 [D. Comer, Operating System Design - The Xinu Approach, Second Edition CRC Press, 2015. ISBN 9781498712439](https://xinu.cs.purdue.edu/#textbook)
 
-Many sites defines Xinu as a free Unix system, or similar statements. It is not. Xinu differs completely from the internal structure of Unix (or Linux). For academic purposes Xinu is smaller, elegant, and easier to understand. Applications written for one system will not run on the other without modification. ** Xinu is not Unix **.
+Many sites defines Xinu as a free Unix system, or similar statements. It is not. Xinu differs completely from the internal structure of Unix (or Linux). For academic purposes Xinu is smaller, elegant, and easier to understand. Applications written for one system will not run on the other without modification. **Xinu is not Unix**.
 
 #### History
 
@@ -81,7 +82,7 @@ Notes about the port:
 
 **Acknowledgments**
 
-* Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (from the 1st book edition).
+* Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (Xinue from the 1987 book edition).
  
 
 <a name="douglas"></a>
