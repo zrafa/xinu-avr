@@ -2,6 +2,7 @@
 Quick start
 -----------
 
+```
 # get the repository
 git clone http://github.com/zrfa/xinu-avr
 cd xinu-avr/
@@ -20,3 +21,4 @@ make 	# yes, again
 make flash 
 screen /dev/ttyUSB0  # it could be /dev/ttyACM0 or whatever. Check dmesg
 
+```
