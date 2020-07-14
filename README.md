@@ -3,11 +3,10 @@
 <img style="float: right;" src="www/files/placa2.jpg">
 
 The **xinu-avr** project is a **Xinu Operating System** subset, modified to run on an AVR atmega328p microcontroller. 
-
-For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The **Xinu shell** and several tiny versions of **UNIX-like utilities**, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.
-
 At present, the core pieces of Xinu are working, so you can already integrate it
 in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).
+
+For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The **Xinu shell** and several tiny versions of UNIX-like utilities, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.
 
 The source code is comprise of:
 
@@ -52,6 +51,10 @@ There is just one git repository, and it has everything ([git](http://github.com
 * This version for AVR atmega328p v0.1 (c) 2020
   Rafael Ignacio Zurita <rafa@fi.uncoma.edu.ar>
 
+**Acknowledgments**
+
+* Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (Xinue from the 1987 book edition).
+ 
 
 <a name="xinuavr"></a>
 ### Xinu OS for AVR atmega328p
@@ -80,10 +83,6 @@ Notes about the port:
 13. Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc
 14. tty_in is with interrupts (ok). But tty_out is polled based.
 
-**Acknowledgments**
-
-* Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (Xinue from the 1987 book edition).
- 
 
 <a name="douglas"></a>
 ### Douglas Comer
@@ -91,13 +90,14 @@ Notes about the port:
 Douglas Comer is a Professor of Computer Science at Purdue University who
 was inducted into the Internet Hall of Fame on September, 2019.
 
+As one of the earliest TCP/IP and internetworking researchers, Comer wrote the first series of textbooks explaining the scientific principles underlying the design of the Internet and its communications protocols, providing some of the earliest formal guidance for building efficient networks and applications that use the Internet. 
+Comer's three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals.
+
+Prof. Douglas Comer designed and developed the Xinu operating system in 1979-1980.
+
 [Douglas Comer Page](https://www.cs.purdue.edu/homes/comer/)
 
 [Internet Hall of Fame](https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html)
-
-As one of the earliest TCP/IP and internetworking researchers, Comer wrote the first series of textbooks explaining the scientific principles underlying the design of the Internet and its communications protocols, providing some of the earliest formal guidance for building efficient networks and applications that use the Internet. 
-
-Comer's three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals.
 
 
 

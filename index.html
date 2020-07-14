@@ -39,10 +39,10 @@
 <h3>Introduction</h3>
 
 <p><img style="float: right;" src="www/files/placa2.jpg"></p>
-<p>The <strong>xinu-avr</strong> project is a <strong>Xinu Operating System</strong> subset, modified to run on an AVR atmega328p microcontroller. </p>
-<p>For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The <strong>Xinu shell</strong> and several tiny versions of <strong>UNIX-like utilities</strong>, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.</p>
-<p>At present, the core pieces of Xinu are working, so you can already integrate it
+<p>The <strong>xinu-avr</strong> project is a <strong>Xinu Operating System</strong> subset, modified to run on an AVR atmega328p microcontroller. 
+At present, the core pieces of Xinu are working, so you can already integrate it
 in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).</p>
+<p>For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The <strong>Xinu shell</strong> and several tiny versions of UNIX-like utilities, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.</p>
 <p>The source code is comprise of:</p>
 <ol>
 <li>The <strong>Xinu OS</strong> for AVR atmega328p (microkernel)</li>
@@ -77,6 +77,10 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 <li>This version for AVR atmega328p v0.1 (c) 2020
   Rafael Ignacio Zurita <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#97;&#102;&#97;&#64;&#102;&#105;&#46;&#117;&#110;&#99;&#111;&#109;&#97;&#46;&#101;&#100;&#117;&#46;&#97;&#114;">&#114;&#97;&#102;&#97;&#64;&#102;&#105;&#46;&#117;&#110;&#99;&#111;&#109;&#97;&#46;&#101;&#100;&#117;&#46;&#97;&#114;</a></li>
 </ul>
+<p><strong>Acknowledgments</strong></p>
+<ul>
+<li>Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (Xinue from the 1987 book edition).</li>
+</ul>
 <p><a name="xinuavr"></a></p>
 <h3>Xinu OS for AVR atmega328p</h3>
 <p>Current official Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required changes to some low-level data structures of Xinu, mainly using the FLASH memory in the AVR MCU, for keeping several read-only data structures, previously in RAM. Also, several limits were imposed, so the read-write data structures fits into the SRAM AVR memory. The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.</p>
@@ -100,22 +104,19 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 <li>Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc</li>
 <li>tty_in is with interrupts (ok). But tty_out is polled based.</li>
 </ol>
-<p><strong>Acknowledgments</strong></p>
-<ul>
-<li>Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (Xinue from the 1987 book edition).</li>
-</ul>
 <p><a name="douglas"></a></p>
 <h3>Douglas Comer</h3>
 <p>Douglas Comer is a Professor of Computer Science at Purdue University who
 was inducted into the Internet Hall of Fame on September, 2019.</p>
+<p>As one of the earliest TCP/IP and internetworking researchers, Comer wrote the first series of textbooks explaining the scientific principles underlying the design of the Internet and its communications protocols, providing some of the earliest formal guidance for building efficient networks and applications that use the Internet. 
+Comer's three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals.</p>
+<p>Prof. Douglas Comer designed and developed the Xinu operating system in 1979-1980.</p>
 <p><a href="https://www.cs.purdue.edu/homes/comer/">Douglas Comer Page</a></p>
 <p><a href="https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html">Internet Hall of Fame</a></p>
-<p>As one of the earliest TCP/IP and internetworking researchers, Comer wrote the first series of textbooks explaining the scientific principles underlying the design of the Internet and its communications protocols, providing some of the earliest formal guidance for building efficient networks and applications that use the Internet. </p>
-<p>Comer's three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals.</p>
 <p><a name="lab"></a></p>
 <h3>Getting started</h3>
 <p>Xinu is easy of understand, so a developer can obtain a copy 
-of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.</p><br><br><hr><small><i> last edit: jue jul 9 23:01:05 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
+of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.</p><br><br><hr><small><i> last edit: mar jul 14 11:52:47 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
 
 
 </body></html>
