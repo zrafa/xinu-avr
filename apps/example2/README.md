@@ -9,11 +9,11 @@ git clone http://github.com/zrfa/xinu-avr
 cd xinu-avr/
 ```
 
-2. copy the example0 app to main
+2. copy the example2 app to main
 ```
 # copy an example app to main
 rm -rf main/
-cp -r apps/example0/ main/
+cp -r apps/example2/ main/
 cd compile/
 ```
 
