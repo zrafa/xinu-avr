@@ -22,7 +22,8 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 
 <strong>The Xinu Operating System includes</strong>: dynamic process creation, dynamic memory allocation, real-time clock management, process coordination and synchronization, local and remote file systems, a shell, and device-independent I/O functions.  
 
-Xinu is documented in the book:
+The Xinu Operating System
+documented in the book 
 [D. Comer, Operating System Design - The Xinu Approach, Second Edition CRC Press, 2015. ISBN 9781498712439](https://xinu.cs.purdue.edu/#textbook)
 
 Many sites defines Xinu as a free Unix system, or similar statements. It is not. Xinu differs completely from the internal structure of Unix (or Linux). For academic purposes Xinu is smaller, elegant, and easier to understand. Applications written for one system will not run on the other without modification. **Xinu is not Unix**.
