@@ -74,7 +74,7 @@ Notes about the port:
 4. Max. number of devices (4 to 5)
 4. The clkhandler() wakeup() a process (preemption) for CPU every 100ms
 5. Several limits for buffers: 32bytes for tty input, 16bytes for names of devices, 1byte for the queues keys, and the list continues
-6. sleepms() is now delay sleep100ms()
+6. sleepms() is now delay sleep100ms() (and the key for queue "char" in ms * 100)
 7. Many vars in data structures have a smaller size (e.g. before:int32, now:char)
 8. sleep sleeps max. 20 seconds (date type)
 9. most of the libc are from avr-libc
@@ -84,6 +84,8 @@ Notes about the port:
 13. Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc
 14. tty_in is asynchronous (with interrupts) (ok). But tty_out is polled based (synchronous).
 15. open, read, write, seek, close use struct dentry. It is on flash on this port
+16. remote file systems, local file systems, ram file systems are disabled so far.
+17. ports (ptinit, ptsend, ptrecv, etc) are disabled so far.
 
 
 <a name="douglas"></a>

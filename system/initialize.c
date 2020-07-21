@@ -9,23 +9,20 @@
 
 /* avr specific */
 #include <avr_serial.h>
-#include <avr/pgmspace.h>
+// #include <avr/pgmspace.h>
 
 
-extern	void	start(void);	/* Start of Xinu code			*/
-extern	void	*_end;		/* End of Xinu code			*/
+// extern	void	start(void);	/* Start of Xinu code			*/
+// extern	void	*_end;		/* End of Xinu code			*/
 
 /* Function prototypes */
 
 extern	void main(void);	/* Main is the first process created	*/
-extern	process shell(void);	/* Main is the first process created	*/
-
-// RAFA
-extern	process test(void);	/* test is the first process created	*/
-
 static	void sysinit(); 	/* Internal system initialization	*/
 extern	void meminit(void);	/* Initializes the free memory list	*/
-extern 	int32 initintc(void);
+//extern 	int32 initintc(void);
+//local	process startup(void);	/* Process to finish startup tasks	*/
+
 void startup(int, struct procent *);		/* Process to finish startup tasks	*/
 
 /* Declarations of major kernel variables */
@@ -58,17 +55,12 @@ pid32	currpid;		/* ID of currently executing process	*/
  */
 
 void nullprocess(void) {
-
-//	kprintf("nullp\n");
-	
-	// resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
-	// 200 ok  and 400 ok
-	// resume(create((void *)shell, 400, INITPRIO, "shell", 0, NULL));
+//
+//	// resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
+//	// 200 ok  and 400 ok
+//	// resume(create((void *)shell, 400, INITPRIO, "shell", 0, NULL));
 	resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
-	
-
-//	resume(create((void *)test, 256, INITPRIO, "test", 0, NULL));
-	
+//	
 	for(;;);
 }
 
@@ -123,38 +115,85 @@ void	nulluser()
 	kprintf("S2:%X\n", *(b+32));
 */
 
-	/* Initialize the Null process entry */	
-	int pid = create((void *)nullprocess, INITSTK, 10, "nullp", 0, NULL);
+//	int pid = create((void *)startup, 64, 10, "start", 0, NULL);
+//	// resume(create((void *)startup, INITSTK, INITPRIO,
+//	resume(create((void *)startup, 64, 10,
+//					"start", 0, NULL));
+	kprintf("aqui\n");
 
+	kprintf("aqui 3\n");
+	/* Become the Null process (i.e., guarantee that the CPU has	*/
+	/*  something to run when no other process is ready to execute)	*/
+
+
+//	/* Initialize the Null process entry */	
+	int pid = create((void *)nullprocess, INITSTK, 10, "nullp", 0, NULL);
+//
 	struct procent * prptr = &proctab[pid];
 	prptr->prstate = PR_CURR;
-	
+	//prptr->prstate = PR_READY;
+//	ready(pid);
+//	resume(pid);
+
+	/* Create a process to finish startup and start main */
+
+	//resume(create((void *)startup, INITSTK, INITPRIO,
+	//resume(create((void *)startup, 256, 10,
+	//				"startup", 0, NULL));
 	/* Enable interrupts */
+
 	enable();
 	
-//	/* Initialize the real time clock */
-//	clkinit();
-	
-	/* Start of nullprocess */
+//	resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
+
+
+//	
+//	/* Start of nullprocess */
 	startup(0, prptr);
+//
+//	for(;;);
 
-	for(;;);
-
+	while (TRUE) {
+		;		/* Do nothing */
+	}
 }
 
-/* Startup does a system call, the processor switches to handler 
- * mode and prepares for executing the null process (see syscall.c) 
- * This is also where a kernel mode to user mode switch can
- * take place */
+/*------------------------------------------------------------------------
+ *
+ * startup  -  Finish startup takss that cannot be run from the Null
+ *		  process and then create and resumethe main process
+ *
+ *------------------------------------------------------------------------
+ */
+//local process	startup(void)
+//{
+	/* Create a process to execute function main() */
+
+	//resume(create((void *)main, INITSTK, INITPRIO,
+	//				"Main process", 0, NULL));
+//	kprintf("aqui2\n");
+//
+//	resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
+//	/* Startup process exits at this point */
+//
+//	return OK;
+//}
+
+
+
+// /* Startup does a system call, the processor switches to handler 
+//  * mode and prepares for executing the null process (see syscall.c) 
+//  * This is also where a kernel mode to user mode switch can
+//  * take place */
 void startup(int INIT, struct procent *p) {
 	
-	/* Should not be here, panic */
-	// resume(INIT);
-	nullprocess();
-	//resume(INIT);
-
-	avr_kprintf(m6);
-	panic("");
+ 	/* Should not be here, panic */
+ 	// resume(INIT);
+ 	nullprocess();
+ 	//resume(INIT);
+ 
+ 	avr_kprintf(m6);
+ 	panic("");
 }
 
 
@@ -201,6 +240,23 @@ static	void	sysinit()
 		prptr->prstkbase = NULL;
 		prptr->prprio = 0;
 	}
+
+	/* Initialize the Null process entry */	
+
+/*
+	prptr = &proctab[NULLPROC];
+	prptr->prstate = PR_CURR;
+	prptr->prprio = 0;
+	strncpy(prptr->prname, "prnull", 7);
+	prptr->prstkbase = getstk(NULLSTK);
+	prptr->prstklen = NULLSTK;
+	prptr->prstkptr = 0;
+	currpid = NULLPROC;
+*/
+
+//	int pid = create((void *)nullprocess, INITSTK, 0, "nullp", 0, NULL);
+//	struct procent * prptr = &proctab[pid];
+//	prptr->prstate = PR_CURR;
 
 
 	/* Initialize semaphores */

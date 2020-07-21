@@ -238,6 +238,7 @@ process	main(void)
 			typtr->tyihead = typtr->tyitail = typtr->tyibuff;
 			semreset(typtr->tyisem, 0);
 
+		sleep(10);
 
 		len = read(dev, buf, sizeof(buf));
 
