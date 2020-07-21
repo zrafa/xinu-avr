@@ -7,7 +7,7 @@
 
 /* avr specific */
 #include <avr/interrupt.h>
-#include <serial_avr.h>
+#include <avr_serial.h>
 
 
 /*------------------------------------------------------------------------
@@ -31,6 +31,6 @@ void platinit(void)
 	initintc();
 
 	/* System calls */
-	syscall_init();
+	// syscall_init();
 }
 

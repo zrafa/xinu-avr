@@ -8,7 +8,7 @@
  */
 void	xdone(void)
 {
-	// avr specific
+	/* avr specific */
 	avr_kprintf(m3);
 	halt();				/* Halt the processor		*/
 }

@@ -206,6 +206,16 @@ process	main(void)
 
 	int len_p;
 
+	/* eeprom
+	char p[20];
+	read("/dev/eeprom0", p, 19);
+	p[19] = 0;
+	printf("h:%s\n",p);
+	read("EEPROM0", p, 19);
+	p[19] = 0;
+	printf("h:%s\n",p);
+	*/
+
 	/* Continually prompt the user, read input, and execute command	*/
 	
 //RAFA: for HORRIBLE WORKAROUND
@@ -287,6 +297,7 @@ process	main(void)
 				inname =  &tokbuf[tok[ntok-1]];
 			} else {
 				outname = &tokbuf[tok[ntok-1]];
+				kprintf("out2:%s\n",outname);
 			}
 			ntok -= 2;
 			tlen = tok[ntok];
@@ -311,6 +322,7 @@ process	main(void)
 				    continue;
 				}
 				outname = &tokbuf[tok[ntok-1]];
+				kprintf("out:%s\n",outname);
 			}
 			ntok -= 2;
 			tlen = tok[ntok];
@@ -392,9 +404,11 @@ process	main(void)
 		if (outname != NULL) {
 			stdoutput = open(NAMESPACE,outname,"w");
 			if (stdoutput == SYSERR) {
+				kprintf("error open\n");
 				// fprintf(dev, SHELL_OUTERRMSG, outname);
 				continue;
 			} else {
+				kprintf("ok open\n");
 				control(stdoutput, F_CTL_TRUNC, 0, 0);
 			}
 		}

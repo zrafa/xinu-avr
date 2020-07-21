@@ -6,39 +6,48 @@ struct	defer	Defer;
 
 /* avr specific */
 
-int resched(void)
+/*------------------------------------------------------------------------
+ *  resched  -  Reschedule processor to highest priority eligible process
+ *------------------------------------------------------------------------
+ */
+void	resched(void)		/* Assumes interrupts are disabled	*/
 {
 	register struct procent volatile *ptold;	/* Ptr to table entry for old process	*/
 	register struct procent volatile *ptnew;	/* Ptr to table entry for new process	*/
 	int newpid;
 
-	preempt = QUANTUM;		/* reset preemption counter	*/
+	/* If rescheduling is deferred, record attempt and return */
 
-	/* no switch needed if current process priority higher than next */
+	if (Defer.ndefers > 0) {
+		Defer.attempt = TRUE;
+		return;
+	}
+
+	/* Point to process table entry for the current (old) process */
 	
 	ptold = (struct pentry *)&proctab[currpid];
 
 	if (ptold->prstate == PR_CURR) {  /* Process remains eligible */
 		if (ptold->prprio > firstkey(readylist)) {
-			// kprintf("resch no %s\n", ptold->prname);
-			return (OK);
+			return;
 		}
 
 		ptold->prstate = PR_READY;
 		insert(currpid, readylist, ptold->prprio);
 	}
 
-	/* remove highest priority process at end of ready list */
-	
+	/* Force context switch to highest priority ready process */
+
 	currpid = dequeue(readylist);
 	ptnew = &proctab[currpid];
 	ptnew->prstate = PR_CURR;
-
+	preempt = QUANTUM;		/* Reset time slice for process	*/
 	ctxsw(&ptold->pregs[0],&ptnew->pregs[0]);	/* switch context from old to new */
 
-	return(OK);
-}
+	/* Old process returns here when resumed */
 
+	return;
+}
 
 /*------------------------------------------------------------------------
  *  resched_cntl  -  Control whether rescheduling is deferred or allowed

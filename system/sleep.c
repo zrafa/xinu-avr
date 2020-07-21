@@ -15,7 +15,6 @@ syscall	sleep(
 	if ( (delay < 0) || (delay > MAXSECONDS) ) {
 		return SYSERR;
 	}
-	// sleepms(1000*delay);
 	sleep100ms(10*delay);
 	return OK;
 }
@@ -26,7 +25,6 @@ syscall	sleep(
  *  avr atmega328p specific
  *------------------------------------------------------------------------
  */
-// syscall	sleepms(
 syscall	sleep100ms(
 	  int32	delay			/* Time to delay in msec.	*/
 	)

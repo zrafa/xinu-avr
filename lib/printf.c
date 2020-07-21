@@ -20,49 +20,21 @@ int	printf(
 	)
 {
 
-/*
+	char *c;
+	char buf[PRINTF_BUF];
 	va_list ap;
 
-        char output[81];
-        char *c;
-
-        memset(output, 0, 81);
 	va_start(ap, fmt);
-	vsnprintf(output, 80, fmt, ap);
-	va_end(ap);
+	vsnprintf(buf, sizeof(buf), fmt, ap);
 
-        c = output;
-        while(*c) {
-               //  kputc(*c);
-                putc(stdout, *c);
-                c++;
-        };
-*/
+	c = buf;
+	while(*c) {
+		if(*c == '\n')
+			putc(stdout, '\r');
+		putc(stdout, *c);
+		c++;
+	};
 
-
-  
-        char *c;
-  char buf[PRINTF_BUF];
-  va_list ap;
-  va_start(ap, fmt);
-  vsnprintf(buf, sizeof(buf), fmt, ap);
-        c = buf;
-        while(*c) {
-    		if(*c == '\n')
-      			putc(stdout, '\r');
-                putc(stdout, *c);
-                c++;
-        };
-/*
-  for(char *p = &buf[0]; *p; p++) // emulate cooked mode for newlines
-  {
-    if(*p == '\n')
-    {
-      putchar('\r');
-    }
-    putchar(*p);
-  }
-*/
 	va_end(ap);
 	return 0;
 }

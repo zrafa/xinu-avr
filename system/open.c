@@ -13,8 +13,7 @@ syscall	open(
 	)
 {
 	intmask		mask;		/* Saved interrupt mask		*/
-	// struct dentry	*devptr;	/* Entry in device switch table	*/
-	const __flash struct dentry	*devptr;	/* Entry in device switch table	*/
+	const __flash struct dentry *devptr; /* Entry in device switch table */
 	int32		retval;		/* Value to return to caller	*/
 
 	mask = disable();

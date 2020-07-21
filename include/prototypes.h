@@ -411,7 +411,7 @@ extern	umsg32	recvclr(void);
 extern	umsg32	recvtime(int32);
 
 /* in file resched.c */
-extern	int	resched(void);
+extern	void	resched(void);
 extern	status	resched_cntl(int32);
 
 /* in file intr.S */
@@ -613,19 +613,19 @@ extern void syscall_init();
 
 /* RAFA avr : EEPROM */
 /* in file ramclose.c */
-extern	devcall	eeprom_close(struct dentry *);
+extern	devcall	eeprom_close(const __flash struct dentry *);
 
 /* in file raminit.c */
-extern	devcall	eeprom_init(struct dentry *);
+extern	devcall	eeprom_init(const __flash struct dentry *);
 
 /* in file ramopen.c */
-extern	devcall	eeprom_open(struct dentry *, char *, char *);
+extern	devcall	eeprom_open(const __flash struct dentry *, char *, char *);
 
 /* in file ramread.c */
-extern	devcall	eeprom_read(struct dentry *, char *, int32);
+extern	devcall	eeprom_read(const __flash struct dentry *, char *, int32);
 
 /* in file ramwrite.c */
-extern	devcall	eeprom_write(struct dentry *, char *, int32);
+extern	devcall	eeprom_write(const __flash struct dentry *, char *, int32);
 
 
 /* in file suicide.c */

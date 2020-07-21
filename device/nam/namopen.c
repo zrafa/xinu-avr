@@ -16,13 +16,17 @@ devcall	namopen(
 	char	newname[NM_MAXLEN];	/* Name with prefix replaced	*/
 	did32	newdev;			/* Device ID after mapping	*/
 
-	//RAFA
-//	kprintf("i:%s", name);
 	/* Use namespace to map name to a new name and new descriptor */
 
 	newdev = nammap(name, newname, devptr->dvnum);
 	
+	//RAFA
+	kprintf("i:%s", name);
+	kprintf("i2:%s", newname);
+	kprintf("i3:%d", newdev);
 	if (newdev == SYSERR) {
+		// RAFA
+		kprintf("error nam open\n");
 		return SYSERR;
 	}
 

@@ -29,7 +29,7 @@ pid32	create(
 	intmask 	mask;    	/* interrupt mask		*/
 	pid32		pid;		/* stores new process id	*/
 	struct	procent	*prptr;		/* pointer to proc. table entry */
-	int32		i;
+	int i;
 	unsigned char		*saddr;		/* stack address		*/
 	va_list ap;
 
@@ -81,7 +81,7 @@ pid32	create(
 	// POR AHORA NO prptr->pdevs[0] = prptr->pdevs[1] = BADDEV;
 	
 	int * a = (int *)(&nargs + 1);
-	for (int i = 0; i < nargs; i++) {
+	for (i = 0; i < nargs; i++) {
 		prptr->parg[i] = (int) *a++;
 	}
 	prptr->parg[nargs] = 0;

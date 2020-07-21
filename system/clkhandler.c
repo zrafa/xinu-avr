@@ -19,30 +19,22 @@ volatile unsigned int avr_ticks=0;
 ISR(TIMER0_COMPA_vect)
 {
 
-	/* Every ms: What TO DO */
+	/* Every ms */
 
-	/* every second */
-	/* if avr_ticks == 1000 then 1 second */
+	/* Increment 1000ms counter */
 
+	count1000++;
 
+	/* After 1 sec, increment clktime */
 
+	if(count1000 >= 1000) {	/* previous was: if(count1000 >= 1000) */
+		clktime++;
+		count1000 = 0;
+	}
 
-	       /* Increment 1000ms counter */
+	/* check if sleep queue is empty every 100ms */
 
-		count1000++;
-
-		/* After 1 sec, increment clktime */
-
-		//if(count1000 >= 100) {	/* previous was: if(count1000 >= 1000) */
-		if(count1000 >= 1000) {	/* previous was: if(count1000 >= 1000) */
-			clktime++;
-			count1000 = 0;
-		}
-
-		/* check if sleep queue is empty every 100ms */
-
-		//if ((count1000 % 10) == 0)	/* every 100ms */
-		if ((count1000 % 100) == 0)	/* every 100ms */
+	if ((count1000 % 100) == 0)	/* every 100ms */
 		if(!isempty(sleepq)) {
 			/* sleepq nonempty, decrement the key of */
 			/* topmost process on sleepq             */
@@ -55,11 +47,8 @@ ISR(TIMER0_COMPA_vect)
 
 	/* our MCU is slow (16Mhz), so we do resched/preemption every 300ms */
 	avr_ticks ++;
-//	if (avr_ticks > 100) {		
 	if (avr_ticks > 300) {		
-//	// if (avr_ticks > 10) {		
 		avr_ticks=0;
-
 
 		/* Decrement the preemption counter */
 		/* Reschedule if necessary          */
@@ -68,6 +57,5 @@ ISR(TIMER0_COMPA_vect)
 			resched();
 		}
 	}
-
 }
 

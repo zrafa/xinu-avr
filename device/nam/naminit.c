@@ -41,7 +41,7 @@ status	naminit(void)
 	// RAFA 
 	/* avr specific */
 	char name[10];
-	kprintf("naminit (devices):\n");
+	avr_kprintf(m13);
 
 	for (i=0; i<NDEVS ; i++) {
 		tptr = tmpstr;
@@ -80,22 +80,21 @@ status	naminit(void)
 
 			// RAFA
 			kprintf("  %s\n",tmpstr);
+
 		retval = mount(tmpstr, NULLSTR, devptr->dvnum);
                 if (retval == SYSERR) {
-			// RAFA kprintf("namespace: cannot mount device %d\r\n",
 			avr_kprintf(m4);
-	//		kprintf("%s", devptr->dvname);
 			continue;
 		}
 	}
 
 	/* Add other prefixes (longest prefix first) */
 
-//        mount("/dev/null",	"",        NULLDEV);
+//      mount("/dev/null",	"",        NULLDEV);
 //	mount("/remote/",	"remote:", RFILESYS);
 //	mount("/local/",	NULLSTR,   LFILESYS);
 	mount("/dev/",		NULLSTR,   SYSERR);
- //       mount("~/",		NULLSTR,   LFILESYS);
+//      mount("~/",		NULLSTR,   LFILESYS);
 //	mount("/",		"root:",   RFILESYS);
 //	mount("",		"",        LFILESYS);
 

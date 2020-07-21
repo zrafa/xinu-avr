@@ -45,7 +45,6 @@ syscall	mount(
 	}
 
 	namptr->ndevice = device;	/* Record the device ID		*/
-
         nnames++;			/* Increment number of names	*/
 
 	restore(mask);

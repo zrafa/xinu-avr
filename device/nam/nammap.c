@@ -19,13 +19,14 @@ devcall	nammap(
 	char	tmpname[NM_MAXLEN];	/* Temporary buffer for name	*/
 	int32	iter;			/* Number of iterations		*/
 
-	//RAFA
-	// kprintf("no:%s", name);
 	/* Place original name in temporary buffer and null terminate */
 
 	if (namcpy(tmpname, name, NM_MAXLEN) == SYSERR) {
 		return SYSERR;
 	}
+
+	//RAFA
+	kprintf("tp:%s\n",tmpname);
 
 	/* Repeatedly substitute the name prefix until a non-namespace	*/
 	/*   device is reached or an iteration limit is exceeded	*/
@@ -33,6 +34,8 @@ devcall	nammap(
 
 	for (iter=0; iter<nnames ; iter++) {
 		newdev = namrepl(tmpname, newname);
+	//RAFA
+	kprintf("tp3:%d\n",newdev);
 		if (newdev != namdev) {
 			return newdev;	/* Either valid ID or SYSERR	*/
 		}
@@ -69,8 +72,6 @@ did32	namrepl(
 		namptr = &nametab[i];
 		optr = name;		/* Start at beginning of name	*/
 		pptr = namptr->nprefix;	/* Start at beginning of prefix	*/
-		// RAFA
-//		kprintf("pr:%s", pptr);
 		
 		/* Compare prefix to string and count prefix size */
 

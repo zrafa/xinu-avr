@@ -8,7 +8,7 @@
 #include <string.h>
 
 /* avr specific */
-#include <serial_avr.h>
+#include <avr_serial.h>
 #include <avr/pgmspace.h>
 
 

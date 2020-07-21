@@ -7,7 +7,7 @@
 #include <xinu.h>
 #include <stdarg.h>
 
-#include <serial_avr.h>
+#include <avr_serial.h>
 
 /*------------------------------------------------------------------------
  * kputc - use polled I/O to write a character to the console serial line

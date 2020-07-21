@@ -82,7 +82,8 @@ Notes about the port:
 11. shell manages max. 6 tokens
 12. date and time is managed by a little lib. No NTP or RTC
 13. Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc
-14. tty_in is with interrupts (ok). But tty_out is polled based.
+14. tty_in is asynchronous (with interrupts) (ok). But tty_out is polled based (synchronous).
+15. open, read, write, seek, close use struct dentry. It is on flash on this port
 
 
 <a name="douglas"></a>
@@ -105,6 +106,13 @@ Prof. Douglas Comer designed and developed the Xinu operating system in 1979-198
 
 <a name="lab"></a>
 ### Getting started
+
+```
+# Dependences:
+In a GNU/Linux system you will need:
+make, gcc-avr, avr-libc, avrdude (for flashing), flex, bison, make
+```
+
 Xinu is easy of understand, so a developer can obtain a copy 
 of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.
 

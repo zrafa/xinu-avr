@@ -1,20 +1,23 @@
+/* date.c: set and get the locate date and time */
+
+#include <xinu.h>
 #include <stdint.h>
 
-typedef long unsigned int size_t;
+// typedef long unsigned int size_t;
 typedef uint32_t time_t;
 
 #include <time.h>
 
 time_t seconds;
-
-extern clktime;
+extern uint32 clktime;
 
 int get_date(char * s) 
 {
 	struct tm avr_tm;
+	time_t sec;
 
-	seconds = seconds + clktime;
- 	localtime_r(&seconds, &avr_tm);
+	sec = seconds + clktime;
+ 	localtime_r(&sec, &avr_tm);
  	asctime_r(&avr_tm, s);
 }
 
