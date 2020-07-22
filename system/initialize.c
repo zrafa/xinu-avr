@@ -16,7 +16,8 @@
 extern	void main(void);	/* Main is the first process created	*/
 static	void sysinit(); 	/* Internal system initialization	*/
 extern	void meminit(void);	/* Initializes the free memory list	*/
-local	process startup(void);	/* Process to finish startup tasks	*/
+//local	process startup(void);	/* Process to finish startup tasks	*/
+void startup(int INIT, struct procent *p);
 
 /* Declarations of major kernel variables */
 
@@ -48,6 +49,8 @@ pid32	currpid;		/* ID of currently executing process	*/
  */
 
 void nullprocess(void) {
+
+	resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
 
 	for(;;);
 }
@@ -103,9 +106,9 @@ void	nulluser()
 
 
 	/* Initialize the Null process entry */	
-//	int pid = create((void *)nullprocess, INITSTK, 10, "nullp", 0, NULL);
-//	struct procent * prptr = &proctab[pid];
-//	prptr->prstate = PR_CURR;
+	int pid = create((void *)nullprocess, INITSTK, 10, "nullp", 0, NULL);
+	struct procent * prptr = &proctab[pid];
+	prptr->prstate = PR_CURR;
 
 	/* Enable interrupts */
 
@@ -115,7 +118,11 @@ void	nulluser()
  	 *  - startup is not needed so far 
 	 *  - it fragments the free memory in two
 	 */
-	resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
+	//resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
+
+	/* Start of nullprocess */
+	startup(0, prptr);
+
 
         /* Become the Null process (i.e., guarantee that the CPU has    */
         /*  something to run when no other process is ready to execute) */
@@ -131,11 +138,16 @@ void	nulluser()
  *
  *------------------------------------------------------------------------
  */
-local process	startup(void)
+void startup(int INIT, struct procent *p)
+// local process	startup(void)
 {
 	/* Create a process to execute function main() */
 
-	resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
+	//resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
+
+	nullprocess();
+	avr_kprintf(m6);
+	panic("");
 
 	/* Startup process exits at this point */
 
@@ -189,6 +201,7 @@ static	void	sysinit()
 
 	/* Initialize the Null process entry */	
 
+/*
 	prptr = &proctab[NULLPROC];
 	prptr->prstate = PR_CURR;
 	prptr->prprio = 1;
@@ -198,11 +211,14 @@ static	void	sysinit()
 	prptr->prname[3] = 'l';
 	prptr->prname[4] = 'p';
 	prptr->prname[5] = 0;
+*/
 	// strncpy(prptr->prname, "prnull", 7);
+/*
 	prptr->prstkbase = getstk(NULLSTK);
 	prptr->prstklen = NULLSTK;
 	prptr->prstkptr = 0;
 	currpid = NULLPROC;
+*/
 
 	/* Initialize semaphores */
 
