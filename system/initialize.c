@@ -16,7 +16,6 @@
 extern	void main(void);	/* Main is the first process created	*/
 static	void sysinit(); 	/* Internal system initialization	*/
 extern	void meminit(void);	/* Initializes the free memory list	*/
-void startup(int, struct procent *); /* Process to finish startup tasks	*/
 
 /* Declarations of major kernel variables */
 
@@ -47,14 +46,6 @@ pid32	currpid;		/* ID of currently executing process	*/
  *------------------------------------------------------------------------
  */
 
-void nullprocess(void) {
-
-	// resume(create((void *)main, INITSTK, INITPRIO, "Main Process", 0, NULL));
-	resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
-	
-	for(;;);
-}
-
 void	nulluser()
 {	
 	struct	memblk	*memptr;	/* Ptr to memory block		*/
@@ -83,28 +74,14 @@ void	nulluser()
 
 	enable();
 	
-	/* Start of nullprocess */
+	/* main */
 
 	resume(create((void *)main, 440, INITPRIO, "main", 0, NULL));
-	//startup(0, prptr);
 
+	/* nullprocess continues here */
 	for(;;);
 
 }
-
-/* Startup does a system call, the processor switches to handler 
- * mode and prepares for executing the null process (see syscall.c) 
- * This is also where a kernel mode to user mode switch can
- * take place */
-void startup(int INIT, struct procent *p) {
-	
-	nullprocess();
-
-	/* Should not be here, panic */
-	avr_kprintf(m6);
-	panic("");
-}
-
 
 /*------------------------------------------------------------------------
  *
@@ -134,7 +111,7 @@ static	void	sysinit()
 
 	/* Count the Null process as the first process in the system */
 	prcount = 0;
-//	prcount = 1;
+	// prcount = 1;
 
 	/* Scheduling is not currently blocked */
 
