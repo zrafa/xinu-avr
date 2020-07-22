@@ -206,6 +206,16 @@ process	main(void)
 
 	int len_p;
 
+	/* eeprom
+	char p[20];
+	read("/dev/eeprom0", p, 19);
+	p[19] = 0;
+	printf("h:%s\n",p);
+	read("EEPROM0", p, 19);
+	p[19] = 0;
+	printf("h:%s\n",p);
+	*/
+
 	/* Continually prompt the user, read input, and execute command	*/
 	
 //RAFA: for HORRIBLE WORKAROUND
@@ -227,7 +237,6 @@ process	main(void)
 			typtr= &ttytab[devptr->dvminor];
 			typtr->tyihead = typtr->tyitail = typtr->tyibuff;
 			semreset(typtr->tyisem, 0);
-
 
 		len = read(dev, buf, sizeof(buf));
 
