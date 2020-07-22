@@ -110,12 +110,38 @@ Prof. Douglas Comer designed and developed the Xinu operating system in 1979-198
 <a name="lab"></a>
 ### Getting started
 
+#### Dependences
+
+##### gcc-avr version 2 (it is needed for time.h and date)
+
+#### Other Dependences:
+
 ```
-# Dependences:
 In a GNU/Linux system you will need:
 make, gcc-avr, avr-libc, avrdude (for flashing), flex, bison, make
 ```
 
-Xinu is easy of understand, so a developer can obtain a copy 
-of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.
+#### Getting started with the Xinu OS and the Xinu shell
+
+1. get the repository
+```
+# get the repository
+git clone http://github.com/zrfa/xinu-avr
+cd xinu-avr/
+```
+
+3. build
+```
+# build
+cd compile/
+make clean
+make
+```
+
+4. flash and test
+```
+# flash and test
+make flash 
+screen /dev/ttyUSB0  # it could be /dev/ttyACM0 or whatever. Check dmesg
+```
 

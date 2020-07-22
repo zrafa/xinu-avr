@@ -95,7 +95,7 @@ documented in the book
 <li>Max. number of devices (4 to 5)</li>
 <li>The clkhandler() wakeup() a process (preemption) for CPU every 100ms</li>
 <li>Several limits for buffers: 32bytes for tty input, 16bytes for names of devices, 1byte for the queues keys, and the list continues</li>
-<li>sleepms() is now delay sleep100ms()</li>
+<li>sleepms() is now delay sleep100ms() (and the key for queue "char" in ms * 100)</li>
 <li>Many vars in data structures have a smaller size (e.g. before:int32, now:char)</li>
 <li>sleep sleeps max. 20 seconds (date type)</li>
 <li>most of the libc are from avr-libc</li>
@@ -103,7 +103,11 @@ documented in the book
 <li>shell manages max. 6 tokens</li>
 <li>date and time is managed by a little lib. No NTP or RTC</li>
 <li>Most of the const char in source code was moved to FLASH (program space) via __flash directive from gcc, or PROGMEM from avr-libc</li>
-<li>tty_in is with interrupts (ok). But tty_out is polled based.</li>
+<li>tty_in is asynchronous (with interrupts) (ok). But tty_out is polled based (synchronous).</li>
+<li>open, read, write, seek, close use struct dentry. It is on flash on this port</li>
+<li>remote file systems, local file systems, ram file systems are disabled so far.</li>
+<li>ports (ptinit, ptsend, ptrecv, etc) are disabled so far.</li>
+<li>null process has priority 1.</li>
 </ol>
 <p><a name="douglas"></a></p>
 <h3>Douglas Comer</h3>
@@ -116,8 +120,37 @@ Comer's three-volume textbook series, Internetworking with TCP/IP, written in 19
 <p><a href="https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html">Internet Hall of Fame</a></p>
 <p><a name="lab"></a></p>
 <h3>Getting started</h3>
-<p>Xinu is easy of understand, so a developer can obtain a copy 
-of the system to examine, modify, instrument, measure, extend, or transport it to another architecture.</p><br><br><hr><small><i> last edit: Mon Jul 20 11:29:16 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
+<h4>Dependences</h4>
+<h5>gcc-avr version 2 (it is needed for time.h and date)</h5>
+<h4>Other Dependences:</h4>
+<p><code>In a GNU/Linux system you will need:
+make, gcc-avr, avr-libc, avrdude (for flashing), flex, bison, make</code></p>
+<h4>Getting started with the Xinu OS and the Xinu shell</h4>
+<ol>
+<li>get the repository
+```</li>
+</ol>
+<h1>get the repository</h1>
+<p>git clone http://github.com/zrfa/xinu-avr
+cd xinu-avr/
+```</p>
+<ol>
+<li>build
+```</li>
+</ol>
+<h1>build</h1>
+<p>cd compile/
+make clean
+make
+```</p>
+<ol>
+<li>flash and test
+```</li>
+</ol>
+<h1>flash and test</h1>
+<p>make flash 
+screen /dev/ttyUSB0  # it could be /dev/ttyACM0 or whatever. Check dmesg
+```</p><br><br><hr><small><i> last edit: Wed Jul 22 19:39:56 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
 
 
 </body></html>
