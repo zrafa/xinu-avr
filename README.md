@@ -130,7 +130,7 @@ git clone http://github.com/zrfa/xinu-avr
 cd xinu-avr/
 ```
 
-3. build
+2. build
 ```
 # build
 cd compile/
@@ -138,7 +138,7 @@ make clean
 make
 ```
 
-4. flash and test
+3. flash and test
 ```
 # flash and test
 make flash 
