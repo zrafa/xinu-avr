@@ -1,7 +1,7 @@
 #########################################################################
 #									#
 #									#
-#  Makefile for STM32 version of the Xinu operating system		#
+#  Makefile for AVR atmega328p version of the Xinu operating system	#
 #									#
 #  includes: .deps and .defs						#
 #									#
@@ -38,6 +38,7 @@ MKVERS		=	$(TOPDIR)/compile/bin/mkvers
 REBUILDFLAGS	=	-s $(TOPDIR)/system  debug.c 	\
 			#-s $(TOPDIR)/device/gpio			\
 			#-s $(TOPDIR)/device/spi			\
+			#-s $(TOPDIR)/device/avr_eeprom			\
 			-s $(TOPDIR)/device/tty			\
 			-s $(TOPDIR)/shell  'xsh_rdstest*'
 			#
@@ -45,7 +46,6 @@ REBUILDFLAGS	=	-s $(TOPDIR)/system   	\
 			-s $(TOPDIR)/lib			\
 			-s $(TOPDIR)/device/nam			\
 			-s $(TOPDIR)/device/tty			\
-			-s $(TOPDIR)/device/avr_eeprom			\
 			-s $(TOPDIR)/main  
 
 INCLUDE		=	-I$(TOPDIR)/include
@@ -56,11 +56,13 @@ DEFS		= 	-DVERSION=\""Xinu AVR 0.1 RAFA\0"\"
 # CFLAGS  = -mcpu=cortex-m3 -mno-unaligned-access -mthumb -fno-builtin -fno-stack-protector -nostdlib -c -Wall -O ${DEFS} ${INCLUDE}
 # CFLAGS  = -DF_CPU=16000000UL -mmcu=atmega328p -mrelax -fno-builtin -fno-stack-protector -nostdlib -c -Wall -Os ${DEFS} ${INCLUDE}
 CFLAGS  = -DF_CPU=16000000UL -mmcu=atmega328p  -fno-builtin -c -Wall -Os ${DEFS} ${INCLUDE}
-# RAFA AGREGA LAS 3 de ABAJO
+# RAFA AGREGA LAS 3 de ABAJO para reducir size
 CFLAGS += -Wl,-static
 CFLAGS += -ffunction-sections
 CFLAGS += -fdata-sections
 CFLAGS += -Wl,--gc-sections
+CFLAGS += -mcall-prologues 
+CFLAGS += -mrelax
 
 SFLAGS  = ${INCLUDE}
 
@@ -68,7 +70,7 @@ SFLAGS  = ${INCLUDE}
 
 # RAFA LDFLAGS = -Wl,--wrap,malloc,--wrap,free,--wrap,realloc,--wrap,fdevopen
 # LDFLAGS = -mmcu=atmega328p -nostartfiles -T ld.script  -Wl,-Map,xinu.map
-LDFLAGS = -mmcu=atmega328p -Wl,-Map,xinu.map 
+LDFLAGS = -mmcu=atmega328p -Wl,-Map,xinu.map -lm -Wl,--gc-sections -mrelax
 
 
 all:	xinu
@@ -133,7 +135,8 @@ examine-header:
 
 flash:
 	avr-objcopy -O ihex -R .eeprom $(XINU) $(XINUHEX)
-	avrdude -p atmega328p -c arduino -P /dev/ttyUSB0 -b 57600 -D -U flash:w:$(XINUHEX):i
+	avrdude -p atmega328p -c arduino -P `ls -1 /dev/ttyUSB* /dev/ttyACM* 2>/dev/null | head -1` -b 57600 -D -U flash:w:$(XINUHEX):i 
+	#|| avrdude -p atmega328p -c arduino -P /dev/ttyACM0 -b 115200 -D -U flash:w:$(XINUHEX):i || avrdude -p atmega328p -c arduino -P /dev/ttyUSB0 -b 115200 -D -U flash:w:$(XINUHEX):i || avrdude -p atmega328p -c arduino -P /dev/ttyUSB0 -b 57600 -D -U flash:w:$(XINUHEX):i || avrdude -p atmega328p -c arduino -P /dev/ttyUSB0 -b 57600 -D -U flash:w:$(XINUHEX):i
 	# avrdude -p atmega328p -c arduino -P /dev/ttyUSB0 -b 115200 -D -U flash:w:$(FIRMWARE):i
 
 
