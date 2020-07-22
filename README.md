@@ -86,6 +86,7 @@ Notes about the port:
 15. open, read, write, seek, close use struct dentry. It is on flash on this port
 16. remote file systems, local file systems, ram file systems are disabled so far.
 17. ports (ptinit, ptsend, ptrecv, etc) are disabled so far.
+18. null process has priority 1.
 
 
 <a name="douglas"></a>

@@ -47,8 +47,9 @@ ISR(TIMER0_COMPA_vect)
 
 	/* our MCU is slow (16Mhz), so we do resched/preemption every 300ms */
 	avr_ticks ++;
-	// if (avr_ticks > 300) {		
-	if (avr_ticks > 100) {		
+	if (avr_ticks > 300) {		
+//	if (avr_ticks > 10) {		
+//	if (avr_ticks > 100) {		
 		avr_ticks=0;
 
 		/* Decrement the preemption counter */

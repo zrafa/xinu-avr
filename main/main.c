@@ -224,6 +224,10 @@ process	main(void)
 	/* Pointer to tty control block	*/
 	struct	ttycblk	*typtr;		
 	char *c;
+	printf("mama 6\n");
+//	char t[10];
+//	strncpy(t, "hola 1", 7);
+//	printf("t:%s\n", t);
 // FIN RAFA
 
 	while (TRUE) {
@@ -237,8 +241,6 @@ process	main(void)
 			typtr= &ttytab[devptr->dvminor];
 			typtr->tyihead = typtr->tyitail = typtr->tyibuff;
 			semreset(typtr->tyisem, 0);
-
-		sleep(10);
 
 		len = read(dev, buf, sizeof(buf));
 
