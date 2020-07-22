@@ -1,6 +1,6 @@
 
 This app needs the below modificationes into conf/Configuration file:
 
-#define	NPROC	     3		/* number of user processes		*/
+#define	NPROC	     4		/* number of user processes		*/
 #define	NSEM	     2		/* number of semaphores			*/
 
