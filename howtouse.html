@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+	<meta charset="utf-8" />
+	<title>xinu-avr: The Xinu OS for AVR atmega328p</title>
+	<!--link rel="stylesheet" type="text/css" href="./www/files/mainpage.css"-->
+	<link rel="stylesheet" media="(orientation: portrait)" href="./www/files/page_p.css">
+	<link rel="stylesheet" media="(orientation: landscape)" href="./www/files/page_l.css">
+	<script language="JavaScript" type="text/javascript">
+	</script>
+</head>
+
+<body>
+
+<!--center>
+<img src="./www/files/xinu_web_page_heading.jpeg">
+</center-->
+<h2><strong>xinu-avr</strong>: the Xinu OS for AVR atmega328p devices (e.g. Arduino)</h2>
+
+<center>
+
+<h4>
+
+       [<a href="http://se.fi.uncoma.edu.ar/xinu-avr/index.html#whatisxinu">What is Xinu?</a>]
+       [<a href="https://se.fi.uncoma.edu.ar/xinu-avr/index.html#code">code for download</a>]
+       [<a href="https://se.fi.uncoma.edu.ar/xinu-avr/index.html#authors">authors</a>]
+       [<a href="https://se.fi.uncoma.edu.ar/xinu-avr/index.html#douglas">Douglas Comer</a>]
+       [<a href="https://se.fi.uncoma.edu.ar/xinu-avr/howtouse.html">getting started</a>]
+       [<a href="mailto:rafa@fi.uncoma.edu.ar">contact us</a>]
+</h4>
+</center>
+
+
+<hr>
+
+<a name="description">
+
+<h3>Getting started</h3>
+
+<p>
+<strong>Dependences: gcc-avr version 2 (it is needed for time.h and date)</strong>
+</p>
+
+<p>
+<strong>Other Dependences:</strong> 
+<code>
+make, gcc-avr, avr-libc, avrdude (for flashing), flex, bison, make
+</code>
+</p>
+
+<h4>Getting started with the Xinu OS and the Xinu shell</h4>
+
+<p>
+<strong># 1. get the repositoy</strong>
+</p>
+
+<p>
+<code>git clone http://github.com/zrfa/xinu-avr
+cd xinu-avr/
+</code></p>
+
+<p>
+<strong># 2. build</strong>
+</p>
+
+<p>
+<code>
+cd compile/
+make clean
+make
+</code></p>
+
+<p>
+<strong># 3. flash and test</strong>
+</p>
+
+<p>
+<code>
+make flash 
+screen /dev/ttyUSB0  # it could be /dev/ttyACM0 or whatever. Check dmesg
+</code></p>
+
+
+<h4>Getting started with the Xinu OS and the Xinu shell</h4>
+
+<p>If everything was okey then you will be the Xinu shell prompt ready to use your mini AVR computer like a retro Xinu/UNIX like computer.
+</p>
+
+<p>The output below is an example of a Xinu shell session:<p>
+
+<p>
+<pre>
+Welcome to Xinu!
+
+        Xinu OS Copyright (c) 2012, 2015
+        Douglas E. Comer and CRC Press, Inc.
+
+        Xinu OS for AVR atmega328p v0.1 (c) 2020
+        Rafael Ignacio Zurita <rafa@fi.uncoma.edu.ar>
+
+naminit (devices):
+  /dev/console
+  /dev/nulldev
+  /dev/namespace
+
+FreeMEM:1050 (bytes)
+
+xsh $ help
+
+Commands:
+
+ memdump : display SRAM memory contents
+ editor : text editor
+ basic : BASIC language interpreter
+ help : this help
+ sleep n : sleep n seconds
+ forever : for (;;);
+ uptime : tell how long the Xinu system has been running
+ reboot : reset the Xinu system sw. THIS IS NOT a hw reset
+ kill n : kill (terminates) the n (ID) process
+ free : display amount of free and used memory
+ clear : clear the terminal screen
+ ps : display current processes table
+ echo [arg ...] : write arguments to standard output
+ date [MM/DD/YY HH:MM:SS] : set or get the date and time
+ cal [mon] year : calendar
+
+xsh $ sleep 3
+xsh $ date
+
+Sat Jan 01 00:00:10 2000
+
+xsh $ uptime
+ 0 day(s) & 0h:0m:12s
+xsh $ 
+xsh $ 
+xsh $ date 07/20/20 19:59:03
+xsh $ 
+xsh $ date
+
+Mon Jul 20 19:59:04 2020
+
+xsh $ uptime
+ 0 day(s) & 0h:13m:0s
+xsh $ 
+xsh $ sleep 10
+xsh $ 
+xsh $ forever &			# <- background process
+xsh $ ps
+
+table of current processes
+
+name    id      parent  prio    state   stklen  sem waits
+--
+nullp   0       0       10      2       64      -1
+shell   1       0       20      1       440     0
+forever 3       1       20      2       128     -1
+xsh $ 
+xsh $ kill 3
+xsh $ 
+xsh $ ps
+
+table of current processes
+
+name    id      parent  prio    state   stklen  sem waits
+--
+nullp   0       0       10      2       64      -1
+shell   1       0       20      1       440     0
+xsh $ 
+xsh $ free
+addr            len
+0x000004e5      418
+
+                total   used    free
+SRAM Mem        2303    1885    418
+xsh $ 
+xsh $ basic			# <- tiny basic interpreter under the Xinu shell
+
+Welcome to TinyBasic Plus interpreter v0.15
+210 bytes free.
+available VARS: A - J
+OK
+> 
+> 10 print "hi"
+> 10 ro 
+> 20 for i = 1 to 20 step 2
+> 10 print "hi"
+> 30 print "i",i
+> 40 next i
+> l
+What? 
+> 
+> list
+10 PRINT "hi"
+20 FOR I = 1 TO 20 STEP 2
+30 PRINT "i",I
+40 NEXT I
+OK
+> 
+> run
+hi
+i1
+i3
+i5
+i7
+i9
+i11
+i13
+i15
+i17
+i19
+OK
+> buy
+What? 
+> bye
+xsh $ 
+</pre></p>
+
+
+
+
+<br><br><hr><small><i> last edit: Wed Jul 22 19:42:10 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
+
+
+</body></html>
