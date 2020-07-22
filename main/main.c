@@ -224,10 +224,6 @@ process	main(void)
 	/* Pointer to tty control block	*/
 	struct	ttycblk	*typtr;		
 	char *c;
-	printf("mama 6\n");
-//	char t[10];
-//	strncpy(t, "hola 1", 7);
-//	printf("t:%s\n", t);
 // FIN RAFA
 
 	while (TRUE) {
