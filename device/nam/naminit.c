@@ -74,12 +74,11 @@ status	naminit(void)
 
 		if (len > NM_MAXLEN) {
 			avr_kprintf(m5);
-			//kprintf("%s", devptr->dvname);
 			continue;
 		}
 
-			// RAFA
-			kprintf("  %s\n",tmpstr);
+		// RAFA
+		kprintf("  %s\n",tmpstr);
 
 		retval = mount(tmpstr, NULLSTR, devptr->dvnum);
                 if (retval == SYSERR) {

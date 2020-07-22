@@ -7,7 +7,7 @@
  *------------------------------------------------------------------------
  */
 devcall	eeprom_close (
-	  struct dentry	*devptr		/* Entry in device switch table	*/
+	 const __flash struct dentry	*devptr		/* Entry in device switch table	*/
 	)
 {
 	return OK;

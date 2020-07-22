@@ -81,7 +81,7 @@ extern	qid16	readylist;	/* global ID for list of ready processes*/
 
 /* Size of the stack for the null process */
 
-#define	NULLSTK		256	/* stack size for null process		*/
+#define	NULLSTK		64	/* stack size for null process		*/
 
 /* Prototypes of I/O functions used throughout the kernel */
 

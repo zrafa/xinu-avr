@@ -9,7 +9,6 @@
 status	insert(
 	  pid32		pid,		/* ID of process to insert	*/
 	  qid16		q,		/* ID of queue to use		*/
-	  // int32		key		/* Key for the inserted process	*/
 	  char		key		/* Key for the inserted process	*/
 	)
 {

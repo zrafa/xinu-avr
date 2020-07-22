@@ -8,12 +8,14 @@
  */
 
 devcall	eeprom_open (
-	 struct	dentry	*devptr,	/* Entry in device switch table	*/
+	 const __flash struct	dentry	*devptr,	/* Entry in device switch table	*/
 	 char	*name,			/* Unused for a ram disk	*/
 	 char	*mode			/* Unused for a ram disk	*/
 	)
 {
 	/* No action -- just return the device descriptor */
 
+	//RAFA
+		kprintf("eou:%i\n",devptr->dvnum);
 	return devptr->dvnum;
 }

@@ -38,12 +38,5 @@ const __flash struct	dentry	devtab[] =
 	  (void *)naminit, (void *)namopen, (void *)ioerr,
 	  (void *)ioerr, (void *)ioerr, (void *)ioerr,
 	  (void *)ioerr, (void *)ioerr, (void *)ioerr,
-	  (void *)0x0, (void *)ioerr, 0 },
-
-/* EEPROM0 is eeprom */
-	{ 3, 0, "EEPROM0",
-	  (void *)eeprom_init, (void *)eeprom_open, (void *)eeprom_close,
-	  (void *)eeprom_read, (void *)eeprom_write, (void *)ioerr,
-	  (void *)ioerr, (void *)ioerr, (void *)ioerr,
-	  (void *)0x0, (void *)ionull, 0 }
+	  (void *)0x0, (void *)ioerr, 0 }
 };

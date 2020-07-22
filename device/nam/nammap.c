@@ -25,17 +25,12 @@ devcall	nammap(
 		return SYSERR;
 	}
 
-	//RAFA
-	kprintf("tp:%s\n",tmpname);
-
 	/* Repeatedly substitute the name prefix until a non-namespace	*/
 	/*   device is reached or an iteration limit is exceeded	*/
 
 
 	for (iter=0; iter<nnames ; iter++) {
 		newdev = namrepl(tmpname, newname);
-	//RAFA
-	kprintf("tp3:%d\n",newdev);
 		if (newdev != namdev) {
 			return newdev;	/* Either valid ID or SYSERR	*/
 		}

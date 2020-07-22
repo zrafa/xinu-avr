@@ -20,13 +20,7 @@ devcall	namopen(
 
 	newdev = nammap(name, newname, devptr->dvnum);
 	
-	//RAFA
-	kprintf("i:%s", name);
-	kprintf("i2:%s", newname);
-	kprintf("i3:%d", newdev);
 	if (newdev == SYSERR) {
-		// RAFA
-		kprintf("error nam open\n");
 		return SYSERR;
 	}
 

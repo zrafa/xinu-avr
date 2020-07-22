@@ -118,10 +118,7 @@ local	pid32	newpid(void)
 
 	for (i = 0; i < NPROC; i++) {
 		nextpid %= NPROC;	/* wrap around to beginning */
-			// kprintf("\nnextpid NPROC: 0x%08X\n", NPROC);
-			// kprintf("\nnextpid i: 0x%08X\n", i);
 		if (proctab[nextpid].prstate == PR_FREE) {
-			// kprintf("\nnextpid: 0x%08X\n", nextpid);
 			return nextpid++;
 		} else {
 			nextpid++;

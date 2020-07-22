@@ -66,7 +66,7 @@ void	nulluser()
 
 	/* Initialize the Null process entry */	
 
-	int pid = create((void *)nullprocess, INITSTK, 10, "nullp", 0, NULL);
+	int pid = create(NULL, INITSTK, 10, "nullp", 0, NULL);
 	struct procent * prptr = &proctab[pid];
 	prptr->prstate = PR_CURR;
 	

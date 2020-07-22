@@ -3,19 +3,19 @@
 #include <xinu.h>
 #include <avr_eeprom_disk.h>
 
-// struct	ramdisk	Ram;
+#define EEPROM_SIZE = 1024;
+
+int eeprom_pos = 0;
 
 /*------------------------------------------------------------------------
  *  eeprom_init  -  Initialize the eeprom disk
  *------------------------------------------------------------------------
  */
 devcall	eeprom_init (
-	  struct dentry	*devptr		/* Entry in device switch table	*/
+	  const __flash struct dentry	*devptr		/* Entry in device switch table	*/
 	)
 {
-	/*
-	memcpy(Ram.disk, "hopeless", 8);
-	memcpy( &Ram.disk[8], Ram.disk, RM_BLKSIZ * RM_BLKS - 8);
-	*/
+	eeprom_pos = 0;
+
 	return OK;
 }

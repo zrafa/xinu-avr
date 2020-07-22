@@ -1,21 +1,22 @@
-/* ramread.c  -  ramread */
+/* eeprom_seek.c  */
 
 #include <xinu.h>
 #include <avr_eeprom_disk.h>
 
 /*------------------------------------------------------------------------
- * eeprom_read  -  Read a block from a eeprom disk
+ * eeprom_seek  -  Seek to a specified position
  *------------------------------------------------------------------------
  */
-devcall	eeprom_read (
+devcall	eeprom_seek (
 	  const __flash struct dentry	*devptr,	/* Entry in device switch table	*/
-	  char	*buff,			/* Buffer to hold disk block	*/
-	  uint32	count		/* Count of the bytes to read */
+	  uint32	offset				/* Byte position */
 	)
 {
-	if ((eeprom_pos + count) >= EEPROM_SIZE)
+	
+	if (offset >= EEPROM_SIZE)
 		return SYSERR;
 
-	eeprom_read_block((void *)buff, (const void*)eeprom_pos, count);
+	eeprom_pos = offset;
+
 	return OK;
 }

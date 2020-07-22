@@ -8,15 +8,18 @@
  *------------------------------------------------------------------------
  */
 devcall	eeprom_write (
-	  struct dentry	*devptr,	/* Entry in device switch table	*/
+	  const __flash struct dentry	*devptr,	/* Entry in device switch table	*/
 	  char	*buff,			/* Buffer containing a block	*/
-	  int32	blk			/* Block number to write	*/
+	  uint32 count 			/* Count of bytes to write */
 	)
 {
-	int32	bpos;			/* Byte position of blk		*/
 
-	bpos = RM_BLKSIZ * blk;
-	// memcpy(&Ram.disk[bpos], buff, RM_BLKSIZ);
-	eeprom_write_block(buff, bpos, RM_BLKSIZ);
+	if (eeprom_pos + count >= EEPROM_SIZE)
+		return SYSERR;
+
+	eeprom_write_block((void *)buff, (const void *)eeprom_pos, count);
+
+	eeprom_pos = eeprom_pos + count;
+
 	return OK;
 }
