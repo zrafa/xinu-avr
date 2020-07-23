@@ -14,15 +14,14 @@ cd xinu-avr/
 # copy an example app to main
 rm -rf main/
 cp -r apps/example1/ main/
-cd compile/
 ```
 
 3. build
 ```
 # build
+cd compile/
 make clean
-make 	# it will give you an error. Sorry, just try again
-make 	# yes, again
+make
 ```
 
 4. flash and test

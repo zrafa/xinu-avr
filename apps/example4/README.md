@@ -9,20 +9,19 @@ git clone http://github.com/zrfa/xinu-avr
 cd xinu-avr/
 ```
 
-2. copy the example4 app to main
+2. copy the example1 app to main
 ```
 # copy an example app to main
 rm -rf main/
-cp -r apps/example4/ main/
-cd compile/
+cp -r apps/example1/ main/
 ```
 
 3. build
 ```
 # build
+cd compile/
 make clean
-make 	# it will give you an error. Sorry, just try again
-make 	# yes, again
+make
 ```
 
 4. flash and test
