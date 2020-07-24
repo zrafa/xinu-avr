@@ -38,10 +38,10 @@ shellcmd xsh_uptime(int nargs, char *args[])
 	mins  = secs/secpermin;
 	secs -= mins*secpermin;
 
-	printf(" %d day(s) &", days);
+	printf("\r\n%d day(s) &", days);
 	printf(" %dh:", hrs);
 	printf("%dm:", mins);
-	printf("%ds\n", secs);
+	printf("%ds\r\n\n", secs);
 
 	return 0;
 }

@@ -1,11 +1,13 @@
 [visit the Xinu for AVR atmega328p Web Page](http://se.fi.uncoma.edu.ar/xinu-avr/)
 
 
+<a href="https://youtu.be/PcqB7JS0wpw" title="Demo video: Xinu OS into AVR atmega328p"><img style="float: right;" alt="Demo video: Xinu OS into atmega328p MCU" src="http://se.fi.uncoma.edu.ar/xinu-avr/www/files/placa3.jpg" /></a>
+
 The **xinu-avr** project is a **Xinu Operating System** subset, modified to run on an AVR atmega328p microcontroller. 
 At present, the core pieces of Xinu are working, so you can already integrate it
 in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).
 
-For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The **Xinu shell** and several tiny versions of UNIX-like utilities, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.
+For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The **Xinu shell** and some tiny versions of utilities like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more. Check the [demo video](https://youtu.be/PcqB7JS0wpw) if you want to see a xinu-avr session in a little AVR MCU (like a retro computer system).
 
 The source code is comprise of:
 
@@ -57,7 +59,7 @@ There is just one git repository, and it has everything ([git](http://github.com
  
 
 <a name="xinuavr"></a>
-### Xinu OS for AVR atmega328p
+### Notes to have in count about Xinu OS for AVR atmega328p
 
 Current official Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required changes to some low-level data structures of Xinu, mainly using the FLASH memory in the AVR MCU, for keeping several read-only data structures, previously in RAM. Also, several limits were imposed, so the read-write data structures fits into the SRAM AVR memory. The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.
 

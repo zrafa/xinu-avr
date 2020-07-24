@@ -27,6 +27,7 @@
        [<a href="https://se.fi.uncoma.edu.ar/xinu-avr/index.html#authors">authors</a>]
        [<a href="https://se.fi.uncoma.edu.ar/xinu-avr/index.html#douglas">Douglas Comer</a>]
        [<a href="https://se.fi.uncoma.edu.ar/xinu-avr/howtouse.html">getting started</a>]
+       [<a href="https://se.fi.uncoma.edu.ar/xinu-avr/index.html#notes">notes</a>]
        [<a href="mailto:rafa@fi.uncoma.edu.ar">contact us</a>]
 </h4>
 </center>
@@ -43,7 +44,7 @@
 <p>The <strong>xinu-avr</strong> project is a <strong>Xinu Operating System</strong> subset, modified to run on an AVR atmega328p microcontroller. 
 At present, the core pieces of Xinu are working, so you can already integrate it
 in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).</p>
-<p>For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The <strong>Xinu shell</strong> and several tiny versions of UNIX-like utilities, like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more.</p>
+<p>For lovers of "because small is beautiful" (FusixOS, retrobsd, unix in microcontrollers, etc) this project provides a user interface example as well: The <strong>Xinu shell</strong> and some tiny versions of utilities like echo, a text editor, a basic interpreter, ps, kill, free, date, cal, and some more. Check the <a href="https://youtu.be/PcqB7JS0wpw">demo video</a> if you want to see a xinu-avr session in a little AVR MCU (like a retro computer system).</p>
 <p>The source code is comprise of:</p>
 <ol>
 <li>The <strong>Xinu OS</strong> for AVR atmega328p (microkernel)</li>
@@ -84,7 +85,7 @@ documented in the book
 <li>Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (Xinu from the 1987 book edition).</li>
 </ul>
 <p><a name="xinuavr"></a></p>
-<h3>Xinu OS for AVR atmega328p</h3>
+<h3>Notes to have in count about Xinu OS for AVR atmega328p</h3>
 <p>Current official Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required changes to some low-level data structures of Xinu, mainly using the FLASH memory in the AVR MCU, for keeping several read-only data structures, previously in RAM. Also, several limits were imposed, so the read-write data structures fits into the SRAM AVR memory. The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.</p>
 <p>This MCU has just 2KB of SRAM, 32KB of FLASH memory, and 1KB of EEPROM. The Xinu version for AVR uses 17KB of FLASH and 0.9KB of RAM, so there is still room (SRAM and FLASH) for the embedded application running on Xinu (concurrent processes).</p>
 <p>So this project might be stimulating and very fun for lovers of embedded systems development and operating system internals.</p>
@@ -118,7 +119,7 @@ was inducted into the Internet Hall of Fame on September, 2019.</p>
 Comer's three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals.</p>
 <p>Prof. Douglas Comer designed and developed the Xinu operating system in 1979-1980.</p>
 <p><a href="https://www.cs.purdue.edu/homes/comer/">Douglas Comer Page</a></p>
-<p><a href="https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html">Internet Hall of Fame</a></p><br><br><hr><small><i> last edit: Fri Jul 24 16:54:35 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
+<p><a href="https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html">Internet Hall of Fame</a></p><br><br><hr><small><i> last edit: Fri Jul 24 19:51:35 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
 
 
 </body></html>
