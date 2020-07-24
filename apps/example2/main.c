@@ -10,8 +10,8 @@ void	sndA(void), sndB(void);
  */
 void	main(void)
 {
-	resume( create(sndA, 1024, 20, "process 1", 0) );
-	resume( create(sndB, 1024, 20, "process 2", 0) );
+	resume( create(sndA, 128, 20, "process 1", 0) );
+	resume( create(sndB, 128, 20, "process 2", 0) );
 }
 
 /*------------------------------------------------------------------------

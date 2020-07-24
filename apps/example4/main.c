@@ -12,8 +12,8 @@ int32	n = 0;	      /* external variables are shared by all processes	*/
  */
 void	main(void)
 {
-	resume( create(consume, 1024, 20, "cons", 0) );
-	resume( create(produce, 1024, 20, "prod", 0) );
+	resume( create(consume, 256, 20, "cons", 0) );
+	resume( create(produce, 256, 20, "prod", 0) );
 }
 
 /*------------------------------------------------------------------------

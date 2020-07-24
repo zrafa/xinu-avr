@@ -2,7 +2,8 @@
 
 #include <xinu.h>
 
-void	prod2(sid32, sid32), cons2(sid32, sid32);
+void	prod2(int nargs, char *args[]);
+void	cons2(int nargs, char *args[]);
 
 int32	n = 0;			/* n assigned an initial value of zero	*/
 
@@ -16,19 +17,18 @@ void	main(void)
 
 	consumed = semcreate(0);
 	produced = semcreate(1);
-	resume( create(cons2, 1024, 20, "cons", 2, consumed, produced) );
-	resume( create(prod2, 1024, 20, "prod", 2, consumed, produced) );
+	resume( create(cons2, 256, 20, "cons", 2, consumed, produced) );
+	resume( create(prod2, 256, 20, "prod", 2, consumed, produced) );
 }
 
 /*------------------------------------------------------------------------
  * prod2  --  increment n 2000 times, waiting for it to be consumed
  *------------------------------------------------------------------------
  */
-void	prod2(
-	  sid32		consumed,
-	  sid32		produced
-	)
+void	prod2(int nargs, char *args[])
 {
+	sid32 consumed = args[0];
+	sid32 produced = args[1];
 	int32	i;
 
 	for( i=1 ; i<=2000 ; i++ ) {
@@ -42,11 +42,10 @@ void	prod2(
  * cons2  --  print n 2000 times, waiting for it to be produced
  *------------------------------------------------------------------------
  */
-void	cons2(
-	  sid32		consumed,
-	  sid32		produced
-	)
+void	cons2(int nargs, char *args[])
 {
+	sid32 consumed = args[0];
+	sid32 produced = args[1];
 	int32	i;
 
 	for( i=1 ; i<=2000 ; i++ ) {
