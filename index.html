@@ -84,7 +84,7 @@ documented in the book
 <ul>
 <li>Michael M. Minor: he is the author of another AVR port os Xinu (<a href="https://sites.google.com/site/avrxinu/">avrxinu</a>. We use his context switch code, the addargs in Xinu shell, and a few lines more. His port is for bigger AVR microcontrollers (16KB+ of RAM), and he used an old version of Xinu (Xinu from the 1987 book edition).</li>
 </ul>
-<p><a name="xinuavr"></a></p>
+<p><a name="notes"></a></p>
 <h3>Notes to have in count about Xinu OS for AVR atmega328p</h3>
 <p>Current official Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required changes to some low-level data structures of Xinu, mainly using the FLASH memory in the AVR MCU, for keeping several read-only data structures, previously in RAM. Also, several limits were imposed, so the read-write data structures fits into the SRAM AVR memory. The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.</p>
 <p>This MCU has just 2KB of SRAM, 32KB of FLASH memory, and 1KB of EEPROM. The Xinu version for AVR uses 17KB of FLASH and 0.9KB of RAM, so there is still room (SRAM and FLASH) for the embedded application running on Xinu (concurrent processes).</p>
@@ -119,7 +119,7 @@ was inducted into the Internet Hall of Fame on September, 2019.</p>
 Comer's three-volume textbook series, Internetworking with TCP/IP, written in 1987, is widely considered to be the authoritative reference for Internet protocols. The series played a key role in popularizing Internet protocols by making them more understandable to a new generation of engineers and IT professionals.</p>
 <p>Prof. Douglas Comer designed and developed the Xinu operating system in 1979-1980.</p>
 <p><a href="https://www.cs.purdue.edu/homes/comer/">Douglas Comer Page</a></p>
-<p><a href="https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html">Internet Hall of Fame</a></p><br><br><hr><small><i> last edit: Fri Jul 24 19:51:35 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
+<p><a href="https://www.cs.purdue.edu/news/articles/2019/comer_ihof.html">Internet Hall of Fame</a></p><br><br><hr><small><i> last edit: Fri Jul 24 19:53:54 -03 2020 - Rafael Ignacio Zurita (rafa at fi.uncoma.edu.ar)</i></small> <br><br>
 
 
 </body></html>
