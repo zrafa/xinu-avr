@@ -59,7 +59,7 @@ There is just one git repository, and it has everything ([git](http://github.com
  
 
 <a name="notes"></a>
-### Notes to have in count about Xinu OS for AVR atmega328p
+### Notes about the Xinu OS port for AVR atmega328p
 
 Current official Xinu versions are designed for ARM, MIPS and x86 architectures . The hardware differences between those and the ultra small AVR microcontroller required changes to some low-level data structures of Xinu, mainly using the FLASH memory in the AVR MCU, for keeping several read-only data structures, previously in RAM. Also, several limits were imposed, so the read-write data structures fits into the SRAM AVR memory. The Xinu version for AVR atmega328p has the core functionality of Xinu, and provides some extensions, including an eeprom file system and several UNIX like utilities for the Xinu shell.
 
