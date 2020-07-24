@@ -1,10 +1,6 @@
 [visit the Xinu for AVR atmega328p Web Page](http://se.fi.uncoma.edu.ar/xinu-avr/)
 
 
-[![Demo video: Xinu OS into atmega328p MCU](http://se.fi.uncoma.edu.ar/xinu-avr/www/files/placa2.jpg)](https://youtu.be/PcqB7JS0wpw "Demo video: Xinu OS into AVR atmega328p")
-
-<img style="float: right;" src="www/files/placa2.jpg">
-
 The **xinu-avr** project is a **Xinu Operating System** subset, modified to run on an AVR atmega328p microcontroller. 
 At present, the core pieces of Xinu are working, so you can already integrate it
 in the development of multi-tasking embedded systems (you will also need any bare AVR MCU, or Arduino board, of course).
