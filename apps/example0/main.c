@@ -28,7 +28,7 @@ process	main(void)
 
 	resume(create(example0, 128, 50, "ex_0", 2, 3, "hello world"));
 
-	/* Wait for main to exit */
+	/* Wait for example0 to exit */
 
 	receive();
 	printf("\n %s process has completed.\n", proctab[currpid].prname);
