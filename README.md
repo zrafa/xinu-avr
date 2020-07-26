@@ -23,7 +23,7 @@ Xinu uses powerful primitives to provides all the componentes and the same funct
 
 <strong>The Xinu Operating System includes</strong>: dynamic process creation, dynamic memory allocation, real-time clock management, process coordination and synchronization, local and remote file systems, a shell, and device-independent I/O functions.  
 
-The Xinu Operating System
+The Xinu Operating System is
 documented in the book 
 [D. Comer, Operating System Design - The Xinu Approach, Second Edition CRC Press, 2015. ISBN 9781498712439](https://xinu.cs.purdue.edu/#textbook)
 
