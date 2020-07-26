@@ -18,8 +18,6 @@ void	ttyhandle_out(
 	int32	avail;			/* Available chars in output buf*/
 	int32	uspace;			/* Space left in onboard UART	*/
 					/*   output FIFO		*/
-	//uint32 	ier = 0;
-
 	/* If output is currently held, simply ignore the call */
 
 	if (typtr->tyoheld) {
@@ -31,15 +29,10 @@ void	ttyhandle_out(
 
 	if ( (typtr->tyehead == typtr->tyetail) &&
 	     (semcount(typtr->tyosem) >= TY_OBUFLEN) ) {
-		// STM32 specific: csrptr->cr1 &= ~(1 << UART_INTR_TX); /* deshabilita interrupciones */
-		//ier = csrptr->ier;
-		//csrptr->ier = ier & ~UART_IER_ETBEI;
 		return;
 	}
 	
 	/* Initialize uspace to the available space in the Tx FIFO */
-
-	//uspace = UART_FIFO_SIZE - csrptr->txfifo_lvl;
 
 	/* avr specific: just one byte of fifo so far */
 	uspace = UART_FIFO_SIZE;
@@ -48,8 +41,7 @@ void	ttyhandle_out(
 	/*   nonempty, xmit chars from the echo queue		*/
 
 	while ( (uspace>0) &&  typtr->tyehead != typtr->tyetail) {
-		// STM32 specific: csrptr->dr = *typtr->tyehead++;	/* ENVIA CARACERES POR UART */
-		serial_put_char(*typtr->tyohead++);			/* ENVIA CARACERES POR UART */
+		serial_put_char(*typtr->tyohead++); /* send chars using uart */
 		if (typtr->tyehead >= &typtr->tyebuff[TY_EBUFLEN]) {
 			typtr->tyehead = typtr->tyebuff;
 		}
@@ -62,10 +54,7 @@ void	ttyhandle_out(
 	ochars = 0;
 	avail = TY_OBUFLEN - semcount(typtr->tyosem);
 	while ( (uspace>0) &&  (avail > 0) ) {
-		//while(!(csrptr->sr & UART_TC));
-		//while(csrptr->sr &= ~(1 << UART_TEST));
-		// STM32 specific: csrptr->dr = *typtr->tyohead++;			/* ENVIA CARACERES POR UART */
-		serial_put_char(*typtr->tyohead++);			/* ENVIA CARACERES POR UART */
+		serial_put_char(*typtr->tyohead++); /* send chars using uart */
 		if (typtr->tyohead >= &typtr->tyobuff[TY_OBUFLEN]) {
 			typtr->tyohead = typtr->tyobuff;
 		}
@@ -79,9 +68,7 @@ void	ttyhandle_out(
 
 	if ( (typtr->tyehead == typtr->tyetail) &&
 	     (semcount(typtr->tyosem) >= TY_OBUFLEN) ) {
-		// STM32 specific: csrptr->cr1 &= ~(1 << UART_INTR_TX);  /* deshabilita interrupcines de transmición */
-		//ier = csrptr->ier;
-		//csrptr->ier = (ier & ~UART_IER_ETBEI);
+		/* deshabilitar interrupcines de transmición */
 	}
 	return;
 }

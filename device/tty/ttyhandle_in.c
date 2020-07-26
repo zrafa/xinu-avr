@@ -10,10 +10,6 @@ local	void	eputc(char, struct ttycblk *, struct uart_csreg *);
  *  ttyhandle_in  -  Handle one arriving char (interrupts disabled)
  *------------------------------------------------------------------------
  */
-// void	ttyhandle_in (
-// 	  struct ttycblk *typtr,	/* Pointer to ttytab entry	*/
-// 	  struct uart_csreg *csrptr	/* Address of UART's CSR	*/
-// 	)
 void	ttyhandle_in (
 	  struct ttycblk *typtr,	/* Pointer to ttytab entry	*/
  	  struct uart_csreg *csrptr,	/* Address of UART's CSR	*/
@@ -61,17 +57,6 @@ void	ttyhandle_in (
 	}
 
 	/* If flow control is in effect, handle ^S and ^Q */
-
-// STM32 specific:	if (typtr->tyoflow) {
-// STM32 specific:		if (ch == typtr->tyostart) {	    /* ^Q starts output	*/
-		// STM32 specific:	typtr->tyoheld = FALSE;
-// STM32 specific:			ttykickout(csrptr);
-// STM32 specific:			return;
-// STM32 specific:		} else if (ch == typtr->tyostop) {  /* ^S stops	output	*/
-// STM32 specific:			typtr->tyoheld = TRUE;
-// STM32 specific:			return;
-// STM32 specific:		}
-// STM32 specific:	}
 
 	typtr->tyoheld = FALSE;		/* Any other char starts output */
 
@@ -268,16 +253,8 @@ local	void	eputc(
 	  struct uart_csreg *csrptr	/* Address of UART's CSRs	*/
 	)
 {
-	// *typtr->tyetail++ = ch;
-
-	// RAFA
+	/* very avr specific */
 	serial_put_char(ch);
 
-	/* Wrap around buffer, if needed */
-
-	// if (typtr->tyetail >= &typtr->tyebuff[TY_EBUFLEN]) {
-// 		typtr->tyetail = typtr->tyebuff;
-// 	}
- //	ttykickout(csrptr);
 	return;
 }

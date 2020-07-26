@@ -13,8 +13,7 @@
 #include <bufpool.h>
 #include <mark.h>
 #include <ports.h>
-#include <clk.h> 	/* avr Clock system */
-#include <timer.h>	/* avr Timer peripheral */
+#include <timer.h>
 #include <uart.h>	/* avr UART peripheral */
 #include <tty.h>
 #include <gpio.h>	/* avr GPIO peripherals */

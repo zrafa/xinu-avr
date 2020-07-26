@@ -8,10 +8,8 @@
 #include <avr/interrupt.h>
 
 uint32	clktime;		/* Seconds since boot			*/
-// RAFA uint32  count1000;              /* ms since last clock tick             */
-unsigned long  count1000;              /* ms since last clock tick             */
+unsigned long  count1000;	/* ms since last clock tick             */
 qid16	sleepq;			/* Queue of sleeping processes		*/
-// RAFA uint32	preempt;		/* Preemption counter			*/
 unsigned long preempt;		/* Preemption counter			*/
 
 /*------------------------------------------------------------------------
@@ -22,9 +20,6 @@ void clkinit(void)
 {
 	
 	struct clock_csreg * clockptr;
-	struct timer_csreg * tptr;
-	clockptr = (struct clock_csreg *)CLOCK_BASE;
-	tptr = (struct timer_csreg *)TIM2_BASE;
 
 	sleepq = newqueue();	/* Allocate a queue to hold the delta	*/
 				/*   list of sleeping processes		*/
