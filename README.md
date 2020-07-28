@@ -1,4 +1,4 @@
-[visit the Xinu for AVR atmega328p Web Page](http://se.fi.uncoma.edu.ar/xinu-avr/)
+[visit the Xinu for AVR atmega328p Web Page for instructions](http://se.fi.uncoma.edu.ar/xinu-avr/)
 
 
 <a href="https://www.youtube.com/watch?v=JAcUuP-BKIU" title="Demo video: Xinu OS into AVR atmega328p"><img style="float: right;" alt="Demo video: Xinu OS into atmega328p MCU" src="http://se.fi.uncoma.edu.ar/xinu-avr/www/files/placa3.jpg" /></a>
