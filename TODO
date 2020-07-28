@@ -1,0 +1,8 @@
+
+We are working on the below list of tasks:
+
+- avr internal eeprom block device driver
+- ultra tiny file system on the eeprom block device
+- save as.. option for the text editor and basic interpreter
+- gpio lib and utility
+- redirection to a file test 
