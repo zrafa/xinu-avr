@@ -1,0 +1,18 @@
+
+
+Xinu OS Copyright (c) 2012, 2015
+Douglas E. Comer and CRC Press, Inc.
+
+xinu-avr for AVR atmega328p microcontroller v0.1 (c) 2020
+Rafael Ignacio Zurita <rafa@fi.uncoma.edu.ar>
+
+
+Acknowledgments
+
+Michael M. Minor: he is the author of another AVR port os Xinu 
+(https://sites.google.com/site/avrxinu/)
+We use his context switch code, the addargs in Xinu shell, and 
+a few lines more. His port is for bigger AVR microcontrollers 
+(16KB+ of RAM), and he used an old version of Xinu (Xinu from 
+the 1987 book edition).
+
