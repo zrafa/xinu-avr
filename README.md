@@ -17,7 +17,7 @@ The source code is comprise of:
 
 1. The **Xinu OS** for AVR atmega328p (microkernel)
 2. Basic examples (**apps**) of how to use Xinu
-3. A complete example: **The Xinu shell** and ultra tiny versions of several **UNIX-like utilities**
+3. A complete example: **The Xinu shell** and tiny versions of several **UNIX-like utilities**
 
 <a name="whatisxinu"></a>
 ### What is Xinu?
