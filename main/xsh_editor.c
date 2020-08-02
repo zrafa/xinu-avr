@@ -4,11 +4,11 @@
 #include <stdio.h>
 
 // #include "text_buffer.h"
-#define NLINES 12
+#define NLINES 8
 #define LINE_LEN 32
 #define BUFFER_LEN  (NLINES*LINE_LEN)
 
-const __flash char editor_banner0[] = "text editor - p:";
+const __flash char editor_banner0[] = "text editor - page:";
 const __flash char editor_banner1[] = "-- [SAVE] & EXIT: press ESC then ! --";
 
 /* editor_insert:
@@ -97,7 +97,6 @@ shellcmd xsh_editor(int nargs, char *args[])
 	int col = 0;
 
 	clear();
-	printf("editor\n");
 	fprintf(dev, "%S %i\n", editor_banner0, page);
 
 	for (i=0; i<LINE_LEN; i++)
@@ -123,11 +122,27 @@ shellcmd xsh_editor(int nargs, char *args[])
 		c = getc(0);
 //		printf("%i \n", c);
 		switch (c) {
-		case 27:
+		case 27:		/* ESC */
 			c = getc(0);
 			if (c == '[') {
 				c = getc(0);
 				switch (c) {
+				case 'A': 		/* UP */
+					if (line == 0)
+						break;
+					col = 0;
+					line--;
+					printf("\033[A");
+					printf("\r");
+					break;
+				case 'B': 		/* DOWN */
+					if (line == (NLINES-1))
+						break;
+					col = 0;
+					line++;
+					printf("\033[B");
+					printf("\r");
+					break;
 				case 'D': 
 					if (col == 0)
 						break;

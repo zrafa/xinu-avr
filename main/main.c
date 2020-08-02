@@ -37,6 +37,7 @@ const __flash uint8_t * const __flash cmdtab_cname[] =
   (const __flash uint8_t[]) { "ps" },
   (const __flash uint8_t[]) { "echo" },
   (const __flash uint8_t[]) { "date" },
+  (const __flash uint8_t[]) { "gpio" },
   (const __flash uint8_t[]) { "cal" }
 };
 
@@ -56,6 +57,7 @@ const __flash uint8_t * const __flash cmdtab_help[] =
   (const __flash uint8_t[]) { ": display current processes table" },
   (const __flash uint8_t[]) { "[arg ...] : write arguments to standard output" },
   (const __flash uint8_t[]) { "[MM/DD/YY HH:MM:SS] : set or get the date and time" },
+  (const __flash uint8_t[]) { "p v : set the port p with value v" },
   (const __flash uint8_t[]) { "[mon] year : calendar" }
 };
 typedef int32	(*cmdfunc_t)(int32,char*[]);
@@ -75,12 +77,13 @@ const cmdent_t __flash cmdtab[] = {
 	{TRUE,	xsh_ps},
 	{FALSE,	xsh_echo},
 	{FALSE,	xsh_date},
+	{FALSE,	xsh_gpio},
 	{FALSE,	xsh_cal}
 };
 
 const __flash int cmdtab_stk[] = {
 	256,	/* memdump */
-	500,	/* editor */
+	400,	/* editor */
 	400,	/* basic */
 	128,	/* help */
 	128,	/* sleep */
@@ -93,6 +96,7 @@ const __flash int cmdtab_stk[] = {
 	128,
 	256,
 	256,
+	300,
 	256,
 };
 
