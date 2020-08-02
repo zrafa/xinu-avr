@@ -18,7 +18,7 @@ void outchar( char ch );
 #include "text_buffer.h"
 
 /*------------------------------------------------------------------------
- * xhs_editor - text editor 
+ * xhs_basic - basic interpreter
  *------------------------------------------------------------------------
  */
 shellcmd xsh_basic(int nargs, char *args[])
@@ -478,7 +478,8 @@ static const unsigned char memorymsg[]        PROGMEM = " bytes free.";
 static const unsigned char avr_vars_msg[]        PROGMEM = "available VARS: A - J";
 static const unsigned char breakmsg[]         PROGMEM = "break!";
 static const unsigned char unimplimentedmsg[] PROGMEM = "Unimplemented";
-static const unsigned char backspacemsg[]     PROGMEM = "\b \b";
+static const unsigned char backspacemsg[]     PROGMEM = "\033[D \033[D";
+// static const unsigned char backspacemsg[]     PROGMEM = "\b \b";
 static const unsigned char indentmsg[]        PROGMEM = "    ";
 static const unsigned char sderrormsg[]       PROGMEM = "SD card error.";
 static const unsigned char sdfilemsg[]        PROGMEM = "SD file error.";
