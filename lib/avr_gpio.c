@@ -1,9 +1,10 @@
 
+/* avr_gpio.c - little lib to set/unset AVR digital out pins */
 
 void gpio_write(char p, unsigned char v)
 {
-	volatile unsigned char * DDR;  /* port b _B = 0x24; direccion de DDR B */
-	volatile unsigned char * PORT;  /* port b = 0x25; /* direccion de PUERTO B */
+	volatile unsigned char * DDR;  /* port b _B = 0x24; DDR B address */
+	volatile unsigned char * PORT;  /* port b = 0x25; PORT address */
 	switch (p) {
 	case 'b':
 		DDR =  0x24;
@@ -23,8 +24,8 @@ void gpio_write(char p, unsigned char v)
 /* p : port. e.g. 'b' */
 char gpio_read(char p)
 {
-	volatile unsigned char * DDR;  /* port b _B = 0x24; direccion de DDR B */
-	volatile unsigned char * PORT;  /* port b = 0x25; /* direccion de PUERTO B */
+	volatile unsigned char * DDR;  /* port b _B = 0x24; DDR B address */
+	volatile unsigned char * PORT;  /* port b = 0x25; PORT address */
 	char v;
 
 	switch (p) {
@@ -42,6 +43,7 @@ char gpio_read(char p)
 
 }
 
+/* digital set high/low using arduino board pin number */
 gpio_arduino_write(char pin, unsigned char v)
 {
 	char p;
