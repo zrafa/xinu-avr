@@ -479,7 +479,7 @@ static const unsigned char avr_vars_msg[]        PROGMEM = "available VARS: A - 
 static const unsigned char breakmsg[]         PROGMEM = "break!";
 static const unsigned char unimplimentedmsg[] PROGMEM = "Unimplemented";
 static const unsigned char backspacemsg[]     PROGMEM = "\033[D \033[D";
-// static const unsigned char backspacemsg[]     PROGMEM = "\b \b";
+//static const unsigned char backspacemsg[]     PROGMEM = "\b \b";
 static const unsigned char indentmsg[]        PROGMEM = "    ";
 static const unsigned char sderrormsg[]       PROGMEM = "SD card error.";
 static const unsigned char sdfilemsg[]        PROGMEM = "SD file error.";
@@ -688,7 +688,7 @@ static void getln(char prompt)
         break;
       txtpos--;
 
-      printmsg(backspacemsg);
+      printmsgNoNL(backspacemsg);
       break;
     default:
       // We need to leave at least one space to allow us to shuffle the line into order
