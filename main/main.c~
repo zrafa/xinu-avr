@@ -309,18 +309,18 @@ process	main(void)
 		if ( (ntok >=3) && ( (toktyp[ntok-2] == SH_TOK_LESS)
 				   ||(toktyp[ntok-2] == SH_TOK_GREATER))){
 			if (toktyp[ntok-1] != SH_TOK_OTHER) {
-				fprintf(dev,"%s\n", SHELL_SYNERRMSG);
+				// fprintf(dev,"%s\n", SHELL_SYNERRMSG);
 				continue;
 			}
 			if (toktyp[ntok-2] == SH_TOK_LESS) {
 				if (inname != NULL) {
-				    fprintf(dev,"%s\n", SHELL_SYNERRMSG);
+				    // fprintf(dev,"%s\n", SHELL_SYNERRMSG);
 				    continue;
 				}
 				inname = &tokbuf[tok[ntok-1]];
 			} else {
 				if (outname != NULL) {
-				    fprintf(dev,"%s\n", SHELL_SYNERRMSG);
+				    // fprintf(dev,"%s\n", SHELL_SYNERRMSG);
 				    continue;
 				}
 				outname = &tokbuf[tok[ntok-1]];
@@ -337,7 +337,7 @@ process	main(void)
 			}
 		}
 		if ((ntok == 0) || (i < ntok)) {
-			fprintf(dev, SHELL_SYNERRMSG);
+			// fprintf(dev, SHELL_SYNERRMSG);
 			continue;
 		}
 
@@ -365,7 +365,7 @@ process	main(void)
 		/* Handle command not found */
 
 		if (j >= ncmd) {
-			fprintf(dev, "command %s not found\n", tokbuf);
+			// fprintf(dev, "command %s not found\n", tokbuf);
 			continue;
 		}
 
@@ -373,7 +373,7 @@ process	main(void)
 
 		if (cmdtab[j].cbuiltin) { /* No background or redirect. */
 			if (inname != NULL || outname != NULL || backgnd){
-				fprintf(dev, SHELL_BGERRMSG);
+				// fprintf(dev, SHELL_BGERRMSG);
 				continue;
 			} else {
 				/* Set up arg vector for call */
@@ -398,14 +398,14 @@ process	main(void)
 		if (inname != NULL) {
 			stdinput = open(NAMESPACE,inname,"ro");
 			if (stdinput == SYSERR) {
-				fprintf(dev, SHELL_INERRMSG, inname);
+				// fprintf(dev, SHELL_INERRMSG, inname);
 				continue;
 			}
 		}
 		if (outname != NULL) {
 			stdoutput = open(NAMESPACE,outname,"w");
 			if (stdoutput == SYSERR) {
-				fprintf(dev, SHELL_OUTERRMSG, outname);
+				// fprintf(dev, SHELL_OUTERRMSG, outname);
 				continue;
 			} else {
 				control(stdoutput, F_CTL_TRUNC, 0, 0);
@@ -425,8 +425,8 @@ process	main(void)
 		if ((child == SYSERR) ||
 		    (addargs(child, ntok, tok, tlen, tokbuf, &tmparg)
 							== SYSERR) ) {
-			fprintf(dev, SHELL_CREATMSG);
-			//fprintf(dev, "?\n\r");
+			// fprintf(dev, SHELL_CREATMSG);
+			fprintf(dev, "?\n\r");
 			continue;
 		}
 
@@ -448,6 +448,6 @@ process	main(void)
 
     /* Terminate the shell process by returning from the top level */
 
-    fprintf(dev,SHELL_EXITMSG);
+    // fprintf(dev,SHELL_EXITMSG);
     return OK;
 }

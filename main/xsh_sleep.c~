@@ -25,7 +25,8 @@ shellcmd xsh_sleep(int nargs, char *args[])
 	delay = 0;
 	while (ch != NULLCH) {
 		if ( (ch < '0') || (ch > '9') ) {
-			fprintf(stderr, "%s: nondigit in argument\n",args[0]);
+	//		fprintf(stderr, "%s: nondigit in argument\n",
+	//			args[0]);
 			return 1;
 		}
 		delay = 10*delay + (ch - '0');

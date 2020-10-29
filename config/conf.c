@@ -8,7 +8,7 @@ extern	devcall	ionull(void);
 
 /* Device independent I/O switch */
 
-struct	dentry	devtab[] =
+const __flash struct	dentry	devtab[] =
 {
 /**
  * Format of entries is:

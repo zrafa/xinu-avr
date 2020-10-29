@@ -1,35 +1,63 @@
 Archive member included to satisfy reference by file (symbol)
 
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+                              binaries/mkbufpool.o (__mulsi3)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+                              binaries/xsh_basic.o (__udivmodhi4)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+                              binaries/xsh_basic.o (__divmodhi4)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+                              binaries/clkhandler.o (__udivmodsi4)
 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
-                              binaries/doprnt.o (__divmodsi4)
+                              binaries/create.o (__divmodsi4)
 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
                               /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o) (__negsi2)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+                              binaries/ttycontrol.o (__tablejump2__)
 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                              binaries/create.o (__do_copy_data)
+                              binaries/avr_serial.o (__do_copy_data)
 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
-                              binaries/bufinit.o (__do_clear_bss)
+                              binaries/avr_serial.o (__do_clear_bss)
 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
-                              binaries/doscan.o (__muluhisi3)
-/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
-                              /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o) (__udivmodsi4)
+                              binaries/sleep.o (__muluhisi3)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+                              binaries/blink_avr.o (__prologue_saves__)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+                              binaries/blink_avr.o (__epilogue_restores__)
 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
                               /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o) (__umulhisi3)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(rand.o)
+                              binaries/xsh_basic.o (rand)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
-                              binaries/initialize.o (atoi)
-/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
-                              binaries/addargs.o (memcpy)
+                              binaries/date.o (atoi)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strlen_P.o)
+                              binaries/avr_printf.o (__strlen_P)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp_P.o)
+                              binaries/main.o (strncmp_P)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy_P.o)
+                              binaries/naminit.o (strncpy_P)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
-                              binaries/evec.o (memset)
+                              binaries/kprintf.o (memset)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
-                              binaries/create.o (strncmp)
-/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy.o)
-                              binaries/create.o (strncpy)
+                              binaries/getdev.o (strncmp)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
                               /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o) (__mulhi_const_10)
-/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o)
-                              binaries/debug.o (fprintf)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fgetc.o)
+                              binaries/getchar.o (fgetc)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vsnprintf.o)
+                              binaries/kprintf.o (vsnprintf)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(asctime_r.o)
+                              binaries/date.o (asctime_r)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(localtime_r.o)
+                              binaries/date.o (localtime_r)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mktime.o)
+                              binaries/date.o (mktime)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(print_lz.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(asctime_r.o) (__print_lz)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utc_offset.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(localtime_r.o) (__utc_offset)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
-                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o) (vfprintf)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vsnprintf.o) (vfprintf)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
                               /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o) (strnlen_P)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
@@ -38,45 +66,769 @@ Archive member included to satisfy reference by file (symbol)
                               /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o) (fputc)
 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
                               /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o) (__ultoa_invert)
-/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
-                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o) (__prologue_saves__)
-/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
-                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o) (__epilogue_restores__)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(dst_pointer.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(localtime_r.o) (__dst_ptr)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(gmtime_r.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(localtime_r.o) (gmtime_r)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mk_gmtime.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mktime.o) (mk_gmtime)
+/usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(isLeap.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mk_gmtime.o) (is_leap_year)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mk_gmtime.o) (__usmulhisi3)
+/usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+                              /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(rand.o) (__mulohisi3)
 
-Se asignan símbolos comunes
-Símbolo común       tamaño            fichero
+Allocating common symbols
+Common symbol       size              file
 
-readylist           0x1               binaries/ready.o
-sleepq              0x1               binaries/clkinit.o
-intc_vector         0xb8              binaries/evec.o
-nnames              0x2               binaries/naminit.o
+readylist           0x2               binaries/ready.o
+sleepq              0x2               binaries/clkinit.o
+nnames              0x4               binaries/naminit.o
 minheap             0x2               binaries/meminit.o
-marks               0x28              binaries/mark.o
-currpid             0x1               binaries/initialize.o
-porttab             0x24              binaries/ptinit.o
-proctab             0x9c              binaries/initialize.o
-prcount             0x2               binaries/initialize.o
-nmarks              0x2               binaries/mark.o
-Defer               0x3               binaries/resched.o
-semtab              0x10              binaries/initialize.o
+marks               0x14              binaries/mark.o
+currpid             0x4               binaries/initialize.o
+ttytab              0x50              binaries/ttyinit.o
+proctab             0x16c             binaries/initialize.o
+prcount             0x4               binaries/initialize.o
+nmarks              0x4               binaries/mark.o
+Defer               0x5               binaries/resched.o
+semtab              0x1c              binaries/initialize.o
 maxheap             0x2               binaries/meminit.o
-preempt             0x2               binaries/clkinit.o
-buftab              0x19              binaries/bufinit.o
-mkmutex             0x1               binaries/mark.o
-count1000           0x2               binaries/clkinit.o
-clktime             0x2               binaries/clkinit.o
-nbpools             0x1               binaries/bufinit.o
-nombre              0xa               binaries/create.o
-queuetab            0x40              binaries/queue.o
-ptnextid            0x2               binaries/ptinit.o
-cadena              0x64              binaries/serial_avr.o
-memlist             0x4               binaries/initialize.o
-nametab             0x33              binaries/naminit.o
-ptfree              0x2               binaries/ptinit.o
+preempt             0x4               binaries/clkinit.o
+buftab              0x28              binaries/bufinit.o
+mkmutex             0x2               binaries/mark.o
+__dst_ptr           0x2               /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(dst_pointer.o)
+seconds             0x4               binaries/date.o
+count1000           0x4               binaries/clkinit.o
+clktime             0x4               binaries/clkinit.o
+nbpools             0x4               binaries/bufinit.o
+__utc_offset        0x4               /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utc_offset.o)
+queuetab            0x50              binaries/queue.o
+memlist             0x6               binaries/initialize.o
+nametab             0x54              binaries/naminit.o
+value               0x1               binaries/avr_serial.o
 
-Configuración de la Memoria
+Discarded input sections
 
-Nombre           Origen             Longitud           Atributos
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+ .text          0x0000000000000000        0x0 binaries/start.o
+ .data          0x0000000000000000        0x0 binaries/start.o
+ .bss           0x0000000000000000        0x0 binaries/start.o
+ .text          0x0000000000000000        0x0 binaries/avr_serial.o
+ .data          0x0000000000000000        0x0 binaries/avr_serial.o
+ .bss           0x0000000000000000        0x0 binaries/avr_serial.o
+ .text.serial_get_char
+                0x0000000000000000       0x12 binaries/avr_serial.o
+ .text.serial_put_str
+                0x0000000000000000       0x18 binaries/avr_serial.o
+ .text          0x0000000000000000        0x0 binaries/blink_avr.o
+ .data          0x0000000000000000        0x0 binaries/blink_avr.o
+ .bss           0x0000000000000000        0x0 binaries/blink_avr.o
+ .text          0x0000000000000000        0x0 binaries/bufinit.o
+ .data          0x0000000000000000        0x0 binaries/bufinit.o
+ .bss           0x0000000000000000        0x0 binaries/bufinit.o
+ .text          0x0000000000000000        0x0 binaries/chprio.o
+ .data          0x0000000000000000        0x0 binaries/chprio.o
+ .bss           0x0000000000000000        0x0 binaries/chprio.o
+ .text.chprio   0x0000000000000000       0x5e binaries/chprio.o
+ .comment       0x0000000000000000       0x12 binaries/chprio.o
+ .text          0x0000000000000000        0x0 binaries/clkhandler.o
+ .data          0x0000000000000000        0x0 binaries/clkhandler.o
+ .bss           0x0000000000000000        0x0 binaries/clkhandler.o
+ .text          0x0000000000000000        0x0 binaries/clkinit.o
+ .data          0x0000000000000000        0x0 binaries/clkinit.o
+ .bss           0x0000000000000000        0x0 binaries/clkinit.o
+ .text          0x0000000000000000        0x0 binaries/close.o
+ .data          0x0000000000000000        0x0 binaries/close.o
+ .bss           0x0000000000000000        0x0 binaries/close.o
+ .text          0x0000000000000000        0x0 binaries/conf.o
+ .data          0x0000000000000000        0x0 binaries/conf.o
+ .bss           0x0000000000000000        0x0 binaries/conf.o
+ .text          0x0000000000000000        0x0 binaries/control.o
+ .data          0x0000000000000000        0x0 binaries/control.o
+ .bss           0x0000000000000000        0x0 binaries/control.o
+ .text          0x0000000000000000        0x0 binaries/create.o
+ .data          0x0000000000000000        0x0 binaries/create.o
+ .bss           0x0000000000000000        0x0 binaries/create.o
+ .text          0x0000000000000000        0x0 binaries/evec.o
+ .data          0x0000000000000000        0x0 binaries/evec.o
+ .bss           0x0000000000000000        0x0 binaries/evec.o
+ .text.set_evec
+                0x0000000000000000       0x1c binaries/evec.o
+ .text          0x0000000000000000        0x0 binaries/exit.o
+ .data          0x0000000000000000        0x0 binaries/exit.o
+ .bss           0x0000000000000000        0x0 binaries/exit.o
+ .text          0x0000000000000000        0x0 binaries/freebuf.o
+ .data          0x0000000000000000        0x0 binaries/freebuf.o
+ .bss           0x0000000000000000        0x0 binaries/freebuf.o
+ .text.freebuf  0x0000000000000000       0x7e binaries/freebuf.o
+ .comment       0x0000000000000000       0x12 binaries/freebuf.o
+ .text          0x0000000000000000        0x0 binaries/freemem.o
+ .data          0x0000000000000000        0x0 binaries/freemem.o
+ .bss           0x0000000000000000        0x0 binaries/freemem.o
+ .text          0x0000000000000000        0x0 binaries/getbuf.o
+ .data          0x0000000000000000        0x0 binaries/getbuf.o
+ .bss           0x0000000000000000        0x0 binaries/getbuf.o
+ .text.getbuf   0x0000000000000000       0x82 binaries/getbuf.o
+ .comment       0x0000000000000000       0x12 binaries/getbuf.o
+ .text          0x0000000000000000        0x0 binaries/getc.o
+ .data          0x0000000000000000        0x0 binaries/getc.o
+ .bss           0x0000000000000000        0x0 binaries/getc.o
+ .text          0x0000000000000000        0x0 binaries/getdev.o
+ .data          0x0000000000000000        0x0 binaries/getdev.o
+ .bss           0x0000000000000000        0x0 binaries/getdev.o
+ .text.getdev   0x0000000000000000       0x70 binaries/getdev.o
+ .comment       0x0000000000000000       0x12 binaries/getdev.o
+ .text          0x0000000000000000        0x0 binaries/getitem.o
+ .data          0x0000000000000000        0x0 binaries/getitem.o
+ .bss           0x0000000000000000        0x0 binaries/getitem.o
+ .text.getlast  0x0000000000000000       0x84 binaries/getitem.o
+ .text          0x0000000000000000        0x0 binaries/getmem.o
+ .data          0x0000000000000000        0x0 binaries/getmem.o
+ .bss           0x0000000000000000        0x0 binaries/getmem.o
+ .text.getmem   0x0000000000000000       0xe8 binaries/getmem.o
+ .comment       0x0000000000000000       0x12 binaries/getmem.o
+ .text          0x0000000000000000        0x0 binaries/getpid.o
+ .data          0x0000000000000000        0x0 binaries/getpid.o
+ .bss           0x0000000000000000        0x0 binaries/getpid.o
+ .text          0x0000000000000000        0x0 binaries/getprio.o
+ .data          0x0000000000000000        0x0 binaries/getprio.o
+ .bss           0x0000000000000000        0x0 binaries/getprio.o
+ .text.getprio  0x0000000000000000       0x58 binaries/getprio.o
+ .comment       0x0000000000000000       0x12 binaries/getprio.o
+ .text          0x0000000000000000        0x0 binaries/getstk.o
+ .data          0x0000000000000000        0x0 binaries/getstk.o
+ .bss           0x0000000000000000        0x0 binaries/getstk.o
+ .text          0x0000000000000000        0x0 binaries/getticks.o
+ .data          0x0000000000000000        0x0 binaries/getticks.o
+ .bss           0x0000000000000000        0x0 binaries/getticks.o
+ .text.getticks
+                0x0000000000000000        0x8 binaries/getticks.o
+ .comment       0x0000000000000000       0x12 binaries/getticks.o
+ .text          0x0000000000000000        0x0 binaries/gettime.o
+ .data          0x0000000000000000        0x0 binaries/gettime.o
+ .bss           0x0000000000000000        0x0 binaries/gettime.o
+ .text.gettime  0x0000000000000000       0x16 binaries/gettime.o
+ .comment       0x0000000000000000       0x12 binaries/gettime.o
+ .text          0x0000000000000000        0x0 binaries/init.o
+ .data          0x0000000000000000        0x0 binaries/init.o
+ .bss           0x0000000000000000        0x0 binaries/init.o
+ .text          0x0000000000000000        0x0 binaries/initialize.o
+ .data          0x0000000000000000        0x0 binaries/initialize.o
+ .bss           0x0000000000000000        0x0 binaries/initialize.o
+ .text.stop     0x0000000000000000        0xa binaries/initialize.o
+ .text.delay    0x0000000000000000       0x52 binaries/initialize.o
+ .text          0x0000000000000000        0x0 binaries/insert.o
+ .data          0x0000000000000000        0x0 binaries/insert.o
+ .bss           0x0000000000000000        0x0 binaries/insert.o
+ .text          0x0000000000000000        0x0 binaries/insertd.o
+ .data          0x0000000000000000        0x0 binaries/insertd.o
+ .bss           0x0000000000000000        0x0 binaries/insertd.o
+ .text          0x0000000000000000        0x0 binaries/intr.o
+ .data          0x0000000000000000        0x0 binaries/intr.o
+ .bss           0x0000000000000000        0x0 binaries/intr.o
+ .text          0x0000000000000000        0x0 binaries/ioerr.o
+ .data          0x0000000000000000        0x0 binaries/ioerr.o
+ .bss           0x0000000000000000        0x0 binaries/ioerr.o
+ .text          0x0000000000000000        0x0 binaries/ionull.o
+ .data          0x0000000000000000        0x0 binaries/ionull.o
+ .bss           0x0000000000000000        0x0 binaries/ionull.o
+ .text          0x0000000000000000        0x0 binaries/kill.o
+ .data          0x0000000000000000        0x0 binaries/kill.o
+ .bss           0x0000000000000000        0x0 binaries/kill.o
+ .text          0x0000000000000000        0x0 binaries/kprintf.o
+ .data          0x0000000000000000        0x0 binaries/kprintf.o
+ .bss           0x0000000000000000        0x0 binaries/kprintf.o
+ .text.kgetc    0x0000000000000000        0x2 binaries/kprintf.o
+ .text          0x0000000000000000        0x0 binaries/mark.o
+ .data          0x0000000000000000        0x0 binaries/mark.o
+ .bss           0x0000000000000000        0x0 binaries/mark.o
+ .text.markinit
+                0x0000000000000000       0x26 binaries/mark.o
+ .text.mark     0x0000000000000000       0xb8 binaries/mark.o
+ .comment       0x0000000000000000       0x12 binaries/mark.o
+ COMMON         0x0000000000000000       0x1a binaries/mark.o
+ .text          0x0000000000000000        0x0 binaries/meminit.o
+ .data          0x0000000000000000        0x0 binaries/meminit.o
+ .bss           0x0000000000000000        0x0 binaries/meminit.o
+ .text          0x0000000000000000        0x0 binaries/mkbufpool.o
+ .data          0x0000000000000000        0x0 binaries/mkbufpool.o
+ .bss           0x0000000000000000        0x0 binaries/mkbufpool.o
+ .text.mkbufpool
+                0x0000000000000000      0x1b0 binaries/mkbufpool.o
+ .comment       0x0000000000000000       0x12 binaries/mkbufpool.o
+ .text          0x0000000000000000        0x0 binaries/newqueue.o
+ .data          0x0000000000000000        0x0 binaries/newqueue.o
+ .bss           0x0000000000000000        0x0 binaries/newqueue.o
+ .text          0x0000000000000000        0x0 binaries/open.o
+ .data          0x0000000000000000        0x0 binaries/open.o
+ .bss           0x0000000000000000        0x0 binaries/open.o
+ .text          0x0000000000000000        0x0 binaries/panic.o
+ .data          0x0000000000000000        0x0 binaries/panic.o
+ .bss           0x0000000000000000        0x0 binaries/panic.o
+ .rodata.str1.1
+                0x0000000000000000        0xf binaries/panic.o
+ .text.panic    0x0000000000000000       0x20 binaries/panic.o
+ .comment       0x0000000000000000       0x12 binaries/panic.o
+ .text          0x0000000000000000        0x0 binaries/platinit.o
+ .data          0x0000000000000000        0x0 binaries/platinit.o
+ .bss           0x0000000000000000        0x0 binaries/platinit.o
+ .text          0x0000000000000000        0x0 binaries/putc.o
+ .data          0x0000000000000000        0x0 binaries/putc.o
+ .bss           0x0000000000000000        0x0 binaries/putc.o
+ .text          0x0000000000000000        0x0 binaries/queue.o
+ .data          0x0000000000000000        0x0 binaries/queue.o
+ .bss           0x0000000000000000        0x0 binaries/queue.o
+ .text          0x0000000000000000        0x0 binaries/read.o
+ .data          0x0000000000000000        0x0 binaries/read.o
+ .bss           0x0000000000000000        0x0 binaries/read.o
+ .text          0x0000000000000000        0x0 binaries/ready.o
+ .data          0x0000000000000000        0x0 binaries/ready.o
+ .bss           0x0000000000000000        0x0 binaries/ready.o
+ .text          0x0000000000000000        0x0 binaries/receive.o
+ .data          0x0000000000000000        0x0 binaries/receive.o
+ .bss           0x0000000000000000        0x0 binaries/receive.o
+ .text          0x0000000000000000        0x0 binaries/recvclr.o
+ .data          0x0000000000000000        0x0 binaries/recvclr.o
+ .bss           0x0000000000000000        0x0 binaries/recvclr.o
+ .text          0x0000000000000000        0x0 binaries/recvtime.o
+ .data          0x0000000000000000        0x0 binaries/recvtime.o
+ .bss           0x0000000000000000        0x0 binaries/recvtime.o
+ .text.recvtime
+                0x0000000000000000       0xe4 binaries/recvtime.o
+ .comment       0x0000000000000000       0x12 binaries/recvtime.o
+ .text          0x0000000000000000        0x0 binaries/resched.o
+ .data          0x0000000000000000        0x0 binaries/resched.o
+ .bss           0x0000000000000000        0x0 binaries/resched.o
+ .text          0x0000000000000000        0x0 binaries/resume.o
+ .data          0x0000000000000000        0x0 binaries/resume.o
+ .bss           0x0000000000000000        0x0 binaries/resume.o
+ .text          0x0000000000000000        0x0 binaries/seek.o
+ .data          0x0000000000000000        0x0 binaries/seek.o
+ .bss           0x0000000000000000        0x0 binaries/seek.o
+ .text.seek     0x0000000000000000       0x78 binaries/seek.o
+ .comment       0x0000000000000000       0x12 binaries/seek.o
+ .text          0x0000000000000000        0x0 binaries/semcount.o
+ .data          0x0000000000000000        0x0 binaries/semcount.o
+ .bss           0x0000000000000000        0x0 binaries/semcount.o
+ .text          0x0000000000000000        0x0 binaries/semcreate.o
+ .data          0x0000000000000000        0x0 binaries/semcreate.o
+ .bss           0x0000000000000000        0x0 binaries/semcreate.o
+ .text          0x0000000000000000        0x0 binaries/semdelete.o
+ .data          0x0000000000000000        0x0 binaries/semdelete.o
+ .bss           0x0000000000000000        0x0 binaries/semdelete.o
+ .text.semdelete
+                0x0000000000000000       0x9a binaries/semdelete.o
+ .comment       0x0000000000000000       0x12 binaries/semdelete.o
+ .text          0x0000000000000000        0x0 binaries/semreset.o
+ .data          0x0000000000000000        0x0 binaries/semreset.o
+ .bss           0x0000000000000000        0x0 binaries/semreset.o
+ .text          0x0000000000000000        0x0 binaries/send.o
+ .data          0x0000000000000000        0x0 binaries/send.o
+ .bss           0x0000000000000000        0x0 binaries/send.o
+ .text          0x0000000000000000        0x0 binaries/signal.o
+ .data          0x0000000000000000        0x0 binaries/signal.o
+ .bss           0x0000000000000000        0x0 binaries/signal.o
+ .text          0x0000000000000000        0x0 binaries/signaln.o
+ .data          0x0000000000000000        0x0 binaries/signaln.o
+ .bss           0x0000000000000000        0x0 binaries/signaln.o
+ .text          0x0000000000000000        0x0 binaries/sleep.o
+ .data          0x0000000000000000        0x0 binaries/sleep.o
+ .bss           0x0000000000000000        0x0 binaries/sleep.o
+ .text          0x0000000000000000        0x0 binaries/suspend.o
+ .data          0x0000000000000000        0x0 binaries/suspend.o
+ .bss           0x0000000000000000        0x0 binaries/suspend.o
+ .text.suspend  0x0000000000000000       0xa8 binaries/suspend.o
+ .comment       0x0000000000000000       0x12 binaries/suspend.o
+ .text          0x0000000000000000        0x0 binaries/unsleep.o
+ .data          0x0000000000000000        0x0 binaries/unsleep.o
+ .bss           0x0000000000000000        0x0 binaries/unsleep.o
+ .text          0x0000000000000000        0x0 binaries/userret.o
+ .data          0x0000000000000000        0x0 binaries/userret.o
+ .bss           0x0000000000000000        0x0 binaries/userret.o
+ .text          0x0000000000000000        0x0 binaries/wait.o
+ .data          0x0000000000000000        0x0 binaries/wait.o
+ .bss           0x0000000000000000        0x0 binaries/wait.o
+ .text          0x0000000000000000        0x0 binaries/wakeup.o
+ .data          0x0000000000000000        0x0 binaries/wakeup.o
+ .bss           0x0000000000000000        0x0 binaries/wakeup.o
+ .text          0x0000000000000000        0x0 binaries/write.o
+ .data          0x0000000000000000        0x0 binaries/write.o
+ .bss           0x0000000000000000        0x0 binaries/write.o
+ .text.write    0x0000000000000000       0x8c binaries/write.o
+ .comment       0x0000000000000000       0x12 binaries/write.o
+ .text          0x0000000000000000        0x0 binaries/xdone.o
+ .data          0x0000000000000000        0x0 binaries/xdone.o
+ .bss           0x0000000000000000        0x0 binaries/xdone.o
+ .text          0x0000000000000000        0x0 binaries/yield.o
+ .data          0x0000000000000000        0x0 binaries/yield.o
+ .bss           0x0000000000000000        0x0 binaries/yield.o
+ .text          0x0000000000000000        0x0 binaries/abs.o
+ .data          0x0000000000000000        0x0 binaries/abs.o
+ .bss           0x0000000000000000        0x0 binaries/abs.o
+ .text.abs      0x0000000000000000        0xc binaries/abs.o
+ .comment       0x0000000000000000       0x12 binaries/abs.o
+ .text          0x0000000000000000        0x0 binaries/avr_gpio.o
+ .data          0x0000000000000000        0x0 binaries/avr_gpio.o
+ .bss           0x0000000000000000        0x0 binaries/avr_gpio.o
+ .text          0x0000000000000000        0x0 binaries/avr_messages.o
+ .data          0x0000000000000000        0x0 binaries/avr_messages.o
+ .bss           0x0000000000000000        0x0 binaries/avr_messages.o
+ .progmem.data.m12
+                0x0000000000000000       0x18 binaries/avr_messages.o
+ .progmem.data.m11
+                0x0000000000000000        0xe binaries/avr_messages.o
+ .progmem.data.m9
+                0x0000000000000000       0x19 binaries/avr_messages.o
+ .progmem.data.m8
+                0x0000000000000000       0x21 binaries/avr_messages.o
+ .progmem.data.m7
+                0x0000000000000000       0x1d binaries/avr_messages.o
+ .progmem.data.m6
+                0x0000000000000000       0x15 binaries/avr_messages.o
+ .progmem.data.m2
+                0x0000000000000000       0x15 binaries/avr_messages.o
+ .progmem.data.m1
+                0x0000000000000000       0x15 binaries/avr_messages.o
+ .text          0x0000000000000000        0x0 binaries/avr_printf.o
+ .data          0x0000000000000000        0x0 binaries/avr_printf.o
+ .bss           0x0000000000000000        0x0 binaries/avr_printf.o
+ .text          0x0000000000000000        0x0 binaries/bzero.o
+ .data          0x0000000000000000        0x0 binaries/bzero.o
+ .bss           0x0000000000000000        0x0 binaries/bzero.o
+ .text.bzero    0x0000000000000000       0x16 binaries/bzero.o
+ .comment       0x0000000000000000       0x12 binaries/bzero.o
+ .text          0x0000000000000000        0x0 binaries/change_proc_name.o
+ .data          0x0000000000000000        0x0 binaries/change_proc_name.o
+ .bss           0x0000000000000000        0x0 binaries/change_proc_name.o
+ .text          0x0000000000000000        0x0 binaries/ctype_.o
+ .data          0x0000000000000000        0x0 binaries/ctype_.o
+ .bss           0x0000000000000000        0x0 binaries/ctype_.o
+ .progmem.data._ctype_
+                0x0000000000000000       0x81 binaries/ctype_.o
+ .comment       0x0000000000000000       0x12 binaries/ctype_.o
+ .text          0x0000000000000000        0x0 binaries/date.o
+ .data          0x0000000000000000        0x0 binaries/date.o
+ .bss           0x0000000000000000        0x0 binaries/date.o
+ .text          0x0000000000000000        0x0 binaries/fprintf.o
+ .data          0x0000000000000000        0x0 binaries/fprintf.o
+ .bss           0x0000000000000000        0x0 binaries/fprintf.o
+ .text          0x0000000000000000        0x0 binaries/getchar.o
+ .data          0x0000000000000000        0x0 binaries/getchar.o
+ .bss           0x0000000000000000        0x0 binaries/getchar.o
+ .text.getchar  0x0000000000000000       0x24 binaries/getchar.o
+ .comment       0x0000000000000000       0x12 binaries/getchar.o
+ .text          0x0000000000000000        0x0 binaries/printf.o
+ .data          0x0000000000000000        0x0 binaries/printf.o
+ .bss           0x0000000000000000        0x0 binaries/printf.o
+ .text          0x0000000000000000        0x0 binaries/putchar.o
+ .data          0x0000000000000000        0x0 binaries/putchar.o
+ .bss           0x0000000000000000        0x0 binaries/putchar.o
+ .text.putchar  0x0000000000000000        0xa binaries/putchar.o
+ .comment       0x0000000000000000       0x12 binaries/putchar.o
+ .text          0x0000000000000000        0x0 binaries/userland.o
+ .data          0x0000000000000000        0x0 binaries/userland.o
+ .bss           0x0000000000000000        0x0 binaries/userland.o
+ .text.xinu_syscall
+                0x0000000000000000        0x0 binaries/userland.o
+ .text.xinu_uptime
+                0x0000000000000000       0x36 binaries/userland.o
+ .text.xinu_putc
+                0x0000000000000000       0x3c binaries/userland.o
+ .comment       0x0000000000000000       0x12 binaries/userland.o
+ .text          0x0000000000000000        0x0 binaries/mount.o
+ .data          0x0000000000000000        0x0 binaries/mount.o
+ .bss           0x0000000000000000        0x0 binaries/mount.o
+ .text          0x0000000000000000        0x0 binaries/naminit.o
+ .data          0x0000000000000000        0x0 binaries/naminit.o
+ .bss           0x0000000000000000        0x0 binaries/naminit.o
+ .text          0x0000000000000000        0x0 binaries/nammap.o
+ .data          0x0000000000000000        0x0 binaries/nammap.o
+ .bss           0x0000000000000000        0x0 binaries/nammap.o
+ .text          0x0000000000000000        0x0 binaries/namopen.o
+ .data          0x0000000000000000        0x0 binaries/namopen.o
+ .bss           0x0000000000000000        0x0 binaries/namopen.o
+ .text          0x0000000000000000        0x0 binaries/ttycontrol.o
+ .data          0x0000000000000000        0x0 binaries/ttycontrol.o
+ .bss           0x0000000000000000        0x0 binaries/ttycontrol.o
+ .text          0x0000000000000000        0x0 binaries/ttygetc.o
+ .data          0x0000000000000000        0x0 binaries/ttygetc.o
+ .bss           0x0000000000000000        0x0 binaries/ttygetc.o
+ .text          0x0000000000000000        0x0 binaries/ttyhandle_in.o
+ .data          0x0000000000000000        0x0 binaries/ttyhandle_in.o
+ .bss           0x0000000000000000        0x0 binaries/ttyhandle_in.o
+ .text          0x0000000000000000        0x0 binaries/ttyhandle_out.o
+ .data          0x0000000000000000        0x0 binaries/ttyhandle_out.o
+ .bss           0x0000000000000000        0x0 binaries/ttyhandle_out.o
+ .text          0x0000000000000000        0x0 binaries/ttyhandler.o
+ .data          0x0000000000000000        0x0 binaries/ttyhandler.o
+ .bss           0x0000000000000000        0x0 binaries/ttyhandler.o
+ .text          0x0000000000000000        0x0 binaries/ttyinit.o
+ .data          0x0000000000000000        0x0 binaries/ttyinit.o
+ .bss           0x0000000000000000        0x0 binaries/ttyinit.o
+ .text          0x0000000000000000        0x0 binaries/ttykickout.o
+ .data          0x0000000000000000        0x0 binaries/ttykickout.o
+ .bss           0x0000000000000000        0x0 binaries/ttykickout.o
+ .text          0x0000000000000000        0x0 binaries/ttyputc.o
+ .data          0x0000000000000000        0x0 binaries/ttyputc.o
+ .bss           0x0000000000000000        0x0 binaries/ttyputc.o
+ .text          0x0000000000000000        0x0 binaries/ttyread.o
+ .data          0x0000000000000000        0x0 binaries/ttyread.o
+ .bss           0x0000000000000000        0x0 binaries/ttyread.o
+ .text          0x0000000000000000        0x0 binaries/ttywrite.o
+ .data          0x0000000000000000        0x0 binaries/ttywrite.o
+ .bss           0x0000000000000000        0x0 binaries/ttywrite.o
+ .text          0x0000000000000000        0x0 binaries/addargs.o
+ .data          0x0000000000000000        0x0 binaries/addargs.o
+ .bss           0x0000000000000000        0x0 binaries/addargs.o
+ .text          0x0000000000000000        0x0 binaries/lexan.o
+ .data          0x0000000000000000        0x0 binaries/lexan.o
+ .bss           0x0000000000000000        0x0 binaries/lexan.o
+ .text          0x0000000000000000        0x0 binaries/main.o
+ .data          0x0000000000000000        0x0 binaries/main.o
+ .bss           0x0000000000000000        0x0 binaries/main.o
+ .progmem.data.shell_init_msg
+                0x0000000000000000       0x3c binaries/main.o
+ .text          0x0000000000000000        0x0 binaries/xsh_basic.o
+ .data          0x0000000000000000        0x0 binaries/xsh_basic.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_basic.o
+ .text.setup    0x0000000000000000        0x2 binaries/xsh_basic.o
+ .text.printUnum
+                0x0000000000000000       0x4e binaries/xsh_basic.o
+ .text          0x0000000000000000        0x0 binaries/xsh_cal.o
+ .data          0x0000000000000000        0x0 binaries/xsh_cal.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_cal.o
+ .text          0x0000000000000000        0x0 binaries/xsh_clear.o
+ .data          0x0000000000000000        0x0 binaries/xsh_clear.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_clear.o
+ .text          0x0000000000000000        0x0 binaries/xsh_date.o
+ .data          0x0000000000000000        0x0 binaries/xsh_date.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_date.o
+ .text          0x0000000000000000        0x0 binaries/xsh_echo.o
+ .data          0x0000000000000000        0x0 binaries/xsh_echo.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_echo.o
+ .text          0x0000000000000000        0x0 binaries/xsh_editor.o
+ .data          0x0000000000000000        0x0 binaries/xsh_editor.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_editor.o
+ .text          0x0000000000000000        0x0 binaries/xsh_forever.o
+ .data          0x0000000000000000        0x0 binaries/xsh_forever.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_forever.o
+ .text          0x0000000000000000        0x0 binaries/xsh_free.o
+ .data          0x0000000000000000        0x0 binaries/xsh_free.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_free.o
+ .text          0x0000000000000000        0x0 binaries/xsh_gpio.o
+ .data          0x0000000000000000        0x0 binaries/xsh_gpio.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_gpio.o
+ .text          0x0000000000000000        0x0 binaries/xsh_kill.o
+ .data          0x0000000000000000        0x0 binaries/xsh_kill.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_kill.o
+ .text          0x0000000000000000        0x0 binaries/xsh_memdump.o
+ .data          0x0000000000000000        0x0 binaries/xsh_memdump.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_memdump.o
+ .text          0x0000000000000000        0x0 binaries/xsh_ps.o
+ .data          0x0000000000000000        0x0 binaries/xsh_ps.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_ps.o
+ .text          0x0000000000000000        0x0 binaries/xsh_reboot.o
+ .data          0x0000000000000000        0x0 binaries/xsh_reboot.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_reboot.o
+ .text          0x0000000000000000        0x0 binaries/xsh_sleep.o
+ .data          0x0000000000000000        0x0 binaries/xsh_sleep.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_sleep.o
+ .text          0x0000000000000000        0x0 binaries/xsh_uptime.o
+ .data          0x0000000000000000        0x0 binaries/xsh_uptime.o
+ .bss           0x0000000000000000        0x0 binaries/xsh_uptime.o
+ .data          0x0000000000000000        0x0 binaries/ctxsw.o
+ .bss           0x0000000000000000        0x0 binaries/ctxsw.o
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(rand.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(rand.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strlen_P.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strlen_P.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strlen_P.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp_P.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp_P.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp_P.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy_P.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy_P.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy_P.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
+ .text.avr-libc
+                0x0000000000000000       0x1c /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fgetc.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fgetc.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fgetc.o)
+ .text.avr-libc
+                0x0000000000000000       0x7c /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fgetc.o)
+ .comment       0x0000000000000000       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fgetc.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vsnprintf.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vsnprintf.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vsnprintf.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(asctime_r.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(asctime_r.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(localtime_r.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(localtime_r.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mktime.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mktime.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(print_lz.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(print_lz.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utc_offset.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utc_offset.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utc_offset.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(dst_pointer.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(dst_pointer.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(dst_pointer.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(gmtime_r.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(gmtime_r.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mk_gmtime.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mk_gmtime.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(isLeap.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(isLeap.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+ .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
 text             0x0000000000000000 0x0000000000020000 xr
 data             0x0000000000800060 0x000000000000ffa0 rw !x
 eeprom           0x0000000000810000 0x0000000000010000 rw !x
@@ -86,12 +838,13 @@ signature        0x0000000000840000 0x0000000000000400 rw !x
 user_signatures  0x0000000000850000 0x0000000000000400 rw !x
 *default*        0x0000000000000000 0xffffffffffffffff
 
-Guión del enlazador y mapa de memoria
+Linker script and memory map
 
-La dirección de la sección .data se estableció a 0x800100
+Address of section .data set to 0x800100
 LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a
 LOAD binaries/start.o
-LOAD binaries/ascdate.o
+LOAD binaries/avr_serial.o
 LOAD binaries/blink_avr.o
 LOAD binaries/bufinit.o
 LOAD binaries/chprio.o
@@ -101,7 +854,6 @@ LOAD binaries/close.o
 LOAD binaries/conf.o
 LOAD binaries/control.o
 LOAD binaries/create.o
-LOAD binaries/debug.o
 LOAD binaries/evec.o
 LOAD binaries/exit.o
 LOAD binaries/freebuf.o
@@ -120,11 +872,11 @@ LOAD binaries/init.o
 LOAD binaries/initialize.o
 LOAD binaries/insert.o
 LOAD binaries/insertd.o
+LOAD binaries/intr.o
 LOAD binaries/ioerr.o
 LOAD binaries/ionull.o
 LOAD binaries/kill.o
 LOAD binaries/kprintf.o
-LOAD binaries/main.o
 LOAD binaries/mark.o
 LOAD binaries/meminit.o
 LOAD binaries/mkbufpool.o
@@ -132,14 +884,6 @@ LOAD binaries/newqueue.o
 LOAD binaries/open.o
 LOAD binaries/panic.o
 LOAD binaries/platinit.o
-LOAD binaries/ptclear.o
-LOAD binaries/ptcount.o
-LOAD binaries/ptcreate.o
-LOAD binaries/ptdelete.o
-LOAD binaries/ptinit.o
-LOAD binaries/ptrecv.o
-LOAD binaries/ptreset.o
-LOAD binaries/ptsend.o
 LOAD binaries/putc.o
 LOAD binaries/queue.o
 LOAD binaries/read.o
@@ -155,12 +899,10 @@ LOAD binaries/semcreate.o
 LOAD binaries/semdelete.o
 LOAD binaries/semreset.o
 LOAD binaries/send.o
-LOAD binaries/serial_avr.o
 LOAD binaries/signal.o
 LOAD binaries/signaln.o
 LOAD binaries/sleep.o
 LOAD binaries/suspend.o
-LOAD binaries/syscall.o
 LOAD binaries/unsleep.o
 LOAD binaries/userret.o
 LOAD binaries/wait.o
@@ -168,25 +910,60 @@ LOAD binaries/wakeup.o
 LOAD binaries/write.o
 LOAD binaries/xdone.o
 LOAD binaries/yield.o
+LOAD binaries/abs.o
+LOAD binaries/avr_gpio.o
+LOAD binaries/avr_messages.o
+LOAD binaries/avr_printf.o
+LOAD binaries/bzero.o
+LOAD binaries/change_proc_name.o
 LOAD binaries/ctype_.o
-LOAD binaries/doprnt.o
-LOAD binaries/doscan.o
-LOAD binaries/messages.o
+LOAD binaries/date.o
+LOAD binaries/fprintf.o
+LOAD binaries/getchar.o
+LOAD binaries/printf.o
+LOAD binaries/putchar.o
 LOAD binaries/userland.o
 LOAD binaries/mount.o
 LOAD binaries/naminit.o
 LOAD binaries/nammap.o
 LOAD binaries/namopen.o
+LOAD binaries/ttycontrol.o
+LOAD binaries/ttygetc.o
+LOAD binaries/ttyhandle_in.o
+LOAD binaries/ttyhandle_out.o
+LOAD binaries/ttyhandler.o
+LOAD binaries/ttyinit.o
+LOAD binaries/ttykickout.o
+LOAD binaries/ttyputc.o
+LOAD binaries/ttyread.o
+LOAD binaries/ttywrite.o
 LOAD binaries/addargs.o
 LOAD binaries/lexan.o
-LOAD binaries/shell.o
-LOAD binaries/intr.o
+LOAD binaries/main.o
+LOAD binaries/xsh_basic.o
+LOAD binaries/xsh_cal.o
+LOAD binaries/xsh_clear.o
+LOAD binaries/xsh_date.o
+LOAD binaries/xsh_echo.o
+LOAD binaries/xsh_editor.o
+LOAD binaries/xsh_forever.o
+LOAD binaries/xsh_free.o
+LOAD binaries/xsh_gpio.o
+LOAD binaries/xsh_kill.o
+LOAD binaries/xsh_memdump.o
+LOAD binaries/xsh_ps.o
+LOAD binaries/xsh_reboot.o
+LOAD binaries/xsh_sleep.o
+LOAD binaries/xsh_uptime.o
+LOAD binaries/ctxsw.o
 START GROUP
 LOAD /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a
 LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a
 LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a
 LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libatmega328p.a
 END GROUP
+                0x0000000000000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                0x0000000000800060                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
                 0x0000000000020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
                 0x000000000000ffa0                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
                 0x0000000000010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
@@ -285,7 +1062,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x4384
+.text           0x0000000000000000     0x6daa
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
                 0x0000000000000000                __vectors
@@ -293,55 +1070,230 @@ END GROUP
  .vectors       0x0000000000000068       0x68 binaries/start.o
  *(.vectors)
  *(.progmem.gcc*)
-                0x00000000000000d0                . = ALIGN (0x2)
-                0x00000000000000d0                __trampolines_start = .
+ .progmem.gcc_sw_table.ttycontrol
+                0x00000000000000d0       0x10 binaries/ttycontrol.o
+ .progmem.gcc_sw_table.expression
+                0x00000000000000e0        0xe binaries/xsh_basic.o
+ .progmem.gcc_sw_table.loop
+                0x00000000000000ee       0x3a binaries/xsh_basic.o
+                0x0000000000000128                . = ALIGN (0x2)
+                0x0000000000000128                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x00000000000000d0        0x0 linker stubs
+ .trampolines   0x0000000000000128        0x0 linker stubs
  *(.trampolines*)
-                0x00000000000000d0                __trampolines_end = .
+                0x0000000000000128                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
  *libc.a:*(.progmem.data)
  *(.progmem*)
- .progmem.data  0x00000000000000d0       0x81 binaries/conf.o
-                0x00000000000000d0                devtab
- .progmem.data  0x0000000000000151       0x81 binaries/ctype_.o
-                0x0000000000000151                _ctype_
- .progmem.data  0x00000000000001d2       0xcc binaries/messages.o
-                0x00000000000001d2                m6
-                0x00000000000001e7                m5
-                0x000000000000020c                m4
-                0x0000000000000230                m3
-                0x0000000000000257                m2
-                0x000000000000027c                m1
-                0x000000000000029e                . = ALIGN (0x2)
+ .progmem.data.devtab
+                0x0000000000000128       0x7b binaries/conf.o
+                0x0000000000000128                devtab
+ .progmem.data.m13
+                0x00000000000001a3       0x15 binaries/avr_messages.o
+                0x00000000000001a3                m13
+ .progmem.data.m10
+                0x00000000000001b8       0x11 binaries/avr_messages.o
+                0x00000000000001b8                m10
+ .progmem.data.m5
+                0x00000000000001c9       0x25 binaries/avr_messages.o
+                0x00000000000001c9                m5
+ .progmem.data.m4
+                0x00000000000001ee       0x1d binaries/avr_messages.o
+                0x00000000000001ee                m4
+ .progmem.data.m3
+                0x000000000000020b       0x27 binaries/avr_messages.o
+                0x000000000000020b                m3
+ .progmem.data.sysinit_m0
+                0x0000000000000232       0xbc binaries/avr_messages.o
+                0x0000000000000232                sysinit_m0
+ .progmem.data.shell_commands
+                0x00000000000002ee        0xf binaries/main.o
+                0x00000000000002ee                shell_commands
+ .progmem.data.cmdtab_stk
+                0x00000000000002fd       0x20 binaries/main.o
+                0x00000000000002fd                cmdtab_stk
+ .progmem.data.cmdtab
+                0x000000000000031d       0x30 binaries/main.o
+                0x000000000000031d                cmdtab
+ .progmem.data.cmdtab_help
+                0x000000000000034d       0x20 binaries/main.o
+                0x000000000000034d                cmdtab_help
+ .progmem.data.__compound_literal.31
+                0x000000000000036d       0x16 binaries/main.o
+ .progmem.data.__compound_literal.30
+                0x0000000000000383       0x22 binaries/main.o
+ .progmem.data.__compound_literal.29
+                0x00000000000003a5       0x33 binaries/main.o
+ .progmem.data.__compound_literal.28
+                0x00000000000003d8       0x2f binaries/main.o
+ .progmem.data.__compound_literal.27
+                0x0000000000000407       0x22 binaries/main.o
+ .progmem.data.__compound_literal.26
+                0x0000000000000429       0x1c binaries/main.o
+ .progmem.data.__compound_literal.25
+                0x0000000000000445       0x29 binaries/main.o
+ .progmem.data.__compound_literal.24
+                0x000000000000046e       0x29 binaries/main.o
+ .progmem.data.__compound_literal.23
+                0x0000000000000497       0x33 binaries/main.o
+ .progmem.data.__compound_literal.22
+                0x00000000000004ca       0x31 binaries/main.o
+ .progmem.data.__compound_literal.21
+                0x00000000000004fb        0xc binaries/main.o
+ .progmem.data.__compound_literal.20
+                0x0000000000000507       0x14 binaries/main.o
+ .progmem.data.__compound_literal.19
+                0x000000000000051b        0xc binaries/main.o
+ .progmem.data.__compound_literal.18
+                0x0000000000000527       0x1d binaries/main.o
+ .progmem.data.__compound_literal.17
+                0x0000000000000544        0xe binaries/main.o
+ .progmem.data.__compound_literal.16
+                0x0000000000000552       0x1f binaries/main.o
+ .progmem.data.cmdtab_cname
+                0x0000000000000571       0x20 binaries/main.o
+                0x0000000000000571                cmdtab_cname
+ .progmem.data.__compound_literal.15
+                0x0000000000000591        0x4 binaries/main.o
+ .progmem.data.__compound_literal.14
+                0x0000000000000595        0x5 binaries/main.o
+ .progmem.data.__compound_literal.13
+                0x000000000000059a        0x5 binaries/main.o
+ .progmem.data.__compound_literal.12
+                0x000000000000059f        0x5 binaries/main.o
+ .progmem.data.__compound_literal.11
+                0x00000000000005a4        0x3 binaries/main.o
+ .progmem.data.__compound_literal.10
+                0x00000000000005a7        0x6 binaries/main.o
+ .progmem.data.__compound_literal.9
+                0x00000000000005ad        0x5 binaries/main.o
+ .progmem.data.__compound_literal.8
+                0x00000000000005b2        0x5 binaries/main.o
+ .progmem.data.__compound_literal.7
+                0x00000000000005b7        0x7 binaries/main.o
+ .progmem.data.__compound_literal.6
+                0x00000000000005be        0x7 binaries/main.o
+ .progmem.data.__compound_literal.5
+                0x00000000000005c5        0x8 binaries/main.o
+ .progmem.data.__compound_literal.4
+                0x00000000000005cd        0x6 binaries/main.o
+ .progmem.data.__compound_literal.3
+                0x00000000000005d3        0x5 binaries/main.o
+ .progmem.data.__compound_literal.2
+                0x00000000000005d8        0x6 binaries/main.o
+ .progmem.data.__compound_literal.1
+                0x00000000000005de        0x7 binaries/main.o
+ .progmem.data.__compound_literal.0
+                0x00000000000005e5        0x8 binaries/main.o
+ .progmem.data.backspacemsg
+                0x00000000000005ed        0x8 binaries/xsh_basic.o
+ .progmem.data.unimplimentedmsg
+                0x00000000000005f5        0xe binaries/xsh_basic.o
+ .progmem.data.avr_vars_msg
+                0x0000000000000603       0x16 binaries/xsh_basic.o
+ .progmem.data.memorymsg
+                0x0000000000000619        0xd binaries/xsh_basic.o
+ .progmem.data.initmsg
+                0x0000000000000626       0x2d binaries/xsh_basic.o
+ .progmem.data.sorrymsg
+                0x0000000000000653        0x7 binaries/xsh_basic.o
+ .progmem.data.howmsg
+                0x000000000000065a        0x5 binaries/xsh_basic.o
+ .progmem.data.whatmsg
+                0x000000000000065f        0x7 binaries/xsh_basic.o
+ .progmem.data.okmsg
+                0x0000000000000666        0x3 binaries/xsh_basic.o
+ .progmem.data.relop_tab
+                0x0000000000000669        0xc binaries/xsh_basic.o
+ .progmem.data.step_tab
+                0x0000000000000675        0x5 binaries/xsh_basic.o
+ .progmem.data.to_tab
+                0x000000000000067a        0x3 binaries/xsh_basic.o
+ .progmem.data.func_tab
+                0x000000000000067d       0x15 binaries/xsh_basic.o
+ .progmem.data.keywords
+                0x0000000000000692       0x6e binaries/xsh_basic.o
+ .progmem.data.smon
+                0x0000000000000700       0x18 binaries/xsh_cal.o
+                0x0000000000000700                smon
+ .progmem.data.__compound_literal.11
+                0x0000000000000718        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.10
+                0x000000000000071c        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.9
+                0x0000000000000720        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.8
+                0x0000000000000724        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.7
+                0x0000000000000728        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.6
+                0x000000000000072c        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.5
+                0x0000000000000730        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.4
+                0x0000000000000734        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.3
+                0x0000000000000738        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.2
+                0x000000000000073c        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.1
+                0x0000000000000740        0x4 binaries/xsh_cal.o
+ .progmem.data.__compound_literal.0
+                0x0000000000000744        0x4 binaries/xsh_cal.o
+ .progmem.data.dayw
+                0x0000000000000748       0x15 binaries/xsh_cal.o
+                0x0000000000000748                dayw
+ .progmem.data.editor_banner1
+                0x000000000000075d       0x26 binaries/xsh_editor.o
+                0x000000000000075d                editor_banner1
+ .progmem.data.editor_banner0
+                0x0000000000000783       0x14 binaries/xsh_editor.o
+                0x0000000000000783                editor_banner0
+ .progmem.data.free_msg1
+                0x0000000000000797       0x1d binaries/xsh_free.o
+                0x0000000000000797                free_msg1
+ .progmem.data.free_msg0
+                0x00000000000007b4       0x1c binaries/xsh_free.o
+                0x00000000000007b4                free_msg0
+ .progmem.data.ps_msg1
+                0x00000000000007d0       0x30 binaries/xsh_ps.o
+                0x00000000000007d0                ps_msg1
+ .progmem.data.ps_msg0
+                0x0000000000000800       0x1d binaries/xsh_ps.o
+                0x0000000000000800                ps_msg0
+ .progmemx.data
+                0x000000000000081d       0x3b /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(asctime_r.o)
+                0x000000000000081d                ascdays
+                0x0000000000000833                ascmonths
+                0x0000000000000858                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000000000000029e                __ctors_start = .
+                0x0000000000000858                __ctors_start = .
  *(.ctors)
-                0x000000000000029e                __ctors_end = .
-                0x000000000000029e                __dtors_start = .
+                0x0000000000000858                __ctors_end = .
+                0x0000000000000858                __dtors_start = .
  *(.dtors)
-                0x000000000000029e                __dtors_end = .
+                0x0000000000000858                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000000000000029e        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
-                0x000000000000029e                __init
+ .init0         0x0000000000000858        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+                0x0000000000000858                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000000000000029e        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+ .init2         0x0000000000000858        0xc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000000000002aa       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
-                0x00000000000002aa                __do_copy_data
- .init4         0x00000000000002c0       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
-                0x00000000000002c0                __do_clear_bss
+ .init4         0x0000000000000864       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000000864                __do_copy_data
+ .init4         0x000000000000087a       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x000000000000087a                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -350,439 +1302,445 @@ END GROUP
  *(.init7)
  *(.init7)
  *(.init8)
- .init8         0x00000000000002d0        0x4 binaries/start.o
+ .init8         0x000000000000088a        0x4 binaries/start.o
  *(.init8)
  *(.init9)
- .init9         0x00000000000002d4        0x8 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+ .init9         0x000000000000088e        0x6 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
  *(.init9)
  *(.text)
- .text          0x00000000000002dc        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
-                0x00000000000002dc                __vector_22
-                0x00000000000002dc                __vector_1
-                0x00000000000002dc                __vector_24
-                0x00000000000002dc                __vector_12
-                0x00000000000002dc                __bad_interrupt
-                0x00000000000002dc                __vector_6
-                0x00000000000002dc                __vector_3
-                0x00000000000002dc                __vector_23
-                0x00000000000002dc                __vector_25
-                0x00000000000002dc                __vector_11
-                0x00000000000002dc                __vector_13
-                0x00000000000002dc                __vector_17
-                0x00000000000002dc                __vector_19
-                0x00000000000002dc                __vector_7
-                0x00000000000002dc                __vector_5
-                0x00000000000002dc                __vector_4
-                0x00000000000002dc                __vector_9
-                0x00000000000002dc                __vector_2
-                0x00000000000002dc                __vector_21
-                0x00000000000002dc                __vector_15
-                0x00000000000002dc                __vector_8
-                0x00000000000002dc                __vector_14
-                0x00000000000002dc                __vector_10
-                0x00000000000002dc                __vector_16
-                0x00000000000002dc                __vector_18
-                0x00000000000002dc                __vector_20
- .text          0x00000000000002e0        0x0 binaries/start.o
- .text          0x00000000000002e0        0x4 binaries/ascdate.o
-                0x00000000000002e0                ascdate
- .text          0x00000000000002e4       0x80 binaries/blink_avr.o
-                0x00000000000002e4                my_delay
-                0x0000000000000344                blink_avr
- .text          0x0000000000000364        0x8 binaries/bufinit.o
-                0x0000000000000364                bufinit
- .text          0x000000000000036c       0x3c binaries/chprio.o
-                0x000000000000036c                chprio
- .text          0x00000000000003a8       0x92 binaries/clkhandler.o
-                0x00000000000003a8                clkhandler
- .text          0x000000000000043a       0x82 binaries/clkinit.o
-                0x000000000000043a                clkinit
- .text          0x00000000000004bc       0x40 binaries/close.o
-                0x00000000000004bc                close
- .text          0x00000000000004fc        0x0 binaries/conf.o
- .text          0x00000000000004fc       0x64 binaries/control.o
-                0x00000000000004fc                control
- .text          0x0000000000000560      0x202 binaries/create.o
-                0x0000000000000560                create
- .text          0x0000000000000762      0x2d2 binaries/debug.o
-                0x0000000000000762                hexdump
- .text          0x0000000000000a34       0xa6 binaries/evec.o
-                0x0000000000000a34                dummy_isr
-                0x0000000000000a34                exception_message
-                0x0000000000000a74                initintc
-                0x0000000000000aba                set_evec
- .text          0x0000000000000ada        0x8 binaries/exit.o
-                0x0000000000000ada                exit
- .text          0x0000000000000ae2       0x5c binaries/freebuf.o
-                0x0000000000000ae2                freebuf
- .text          0x0000000000000b3e      0x112 binaries/freemem.o
-                0x0000000000000b3e                freemem
- .text          0x0000000000000c50       0x68 binaries/getbuf.o
-                0x0000000000000c50                getbuf
- .text          0x0000000000000cb8       0x40 binaries/getc.o
-                0x0000000000000cb8                getc
- .text          0x0000000000000cf8       0x54 binaries/getdev.o
-                0x0000000000000cf8                getdev
- .text          0x0000000000000d4c       0x7c binaries/getitem.o
-                0x0000000000000d4c                getitem
-                0x0000000000000d82                getfirst
-                0x0000000000000d9e                getlast
- .text          0x0000000000000dc8       0x96 binaries/getmem.o
-                0x0000000000000dc8                getmem
- .text          0x0000000000000e5e        0x6 binaries/getpid.o
-                0x0000000000000e5e                getpid
- .text          0x0000000000000e64       0x34 binaries/getprio.o
-                0x0000000000000e64                getprio
- .text          0x0000000000000e98       0xa4 binaries/getstk.o
-                0x0000000000000e98                getstk
- .text          0x0000000000000f3c        0x6 binaries/getticks.o
-                0x0000000000000f3c                getticks
- .text          0x0000000000000f42        0x4 binaries/gettime.o
-                0x0000000000000f42                gettime
- .text          0x0000000000000f46       0x40 binaries/init.o
-                0x0000000000000f46                init
- .text          0x0000000000000f86      0x246 binaries/initialize.o
-                0x0000000000000f86                nullprocess
-                0x0000000000000fc2                notmain
-                0x0000000000000fc4                nulluser
-                0x0000000000001156                startup
-                0x000000000000115e                stop
-                0x0000000000001178                delay
- .text          0x00000000000011cc       0x84 binaries/insert.o
-                0x00000000000011cc                insert
- .text          0x0000000000001250       0xea binaries/insertd.o
-                0x0000000000001250                insertd
- .text          0x000000000000133a        0x4 binaries/ioerr.o
-                0x000000000000133a                ioerr
- .text          0x000000000000133e        0x4 binaries/ionull.o
-                0x000000000000133e                ionull
- .text          0x0000000000001342      0x118 binaries/kill.o
-                0x0000000000001342                kill
- .text          0x000000000000145a       0x6e binaries/kprintf.o
-                0x000000000000145a                kputc
-                0x00000000000014a0                kgetc
-                0x00000000000014a2                kprintf
- .text          0x00000000000014c8        0x0 binaries/main.o
- .text          0x00000000000014c8       0x90 binaries/mark.o
-                0x00000000000014c8                markinit
-                0x00000000000014de                mark
- .text          0x0000000000001558       0x3e binaries/meminit.o
-                0x0000000000001558                meminit
- .text          0x0000000000001596      0x10a binaries/mkbufpool.o
-                0x0000000000001596                mkbufpool
- .text          0x00000000000016a0       0x5a binaries/newqueue.o
-                0x00000000000016a0                newqueue
- .text          0x00000000000016fa       0x58 binaries/open.o
-                0x00000000000016fa                open
- .text          0x0000000000001752       0x20 binaries/panic.o
-                0x0000000000001752                panic
- .text          0x0000000000001772       0x50 binaries/platinit.o
-                0x0000000000001772                platinit
-                0x000000000000177a                uartinit
- .text          0x00000000000017c2       0xac binaries/ptclear.o
-                0x00000000000017c2                _ptclear
- .text          0x000000000000186e       0x7a binaries/ptcount.o
-                0x000000000000186e                ptcount
- .text          0x00000000000018e8       0xbe binaries/ptcreate.o
-                0x00000000000018e8                ptcreate
- .text          0x00000000000019a6       0x66 binaries/ptdelete.o
-                0x00000000000019a6                ptdelete
- .text          0x0000000000001a0c       0x8a binaries/ptinit.o
-                0x0000000000001a0c                ptinit
- .text          0x0000000000001a96       0xce binaries/ptrecv.o
-                0x0000000000001a96                ptrecv
- .text          0x0000000000001b64       0x5e binaries/ptreset.o
-                0x0000000000001b64                ptreset
- .text          0x0000000000001bc2       0xfa binaries/ptsend.o
-                0x0000000000001bc2                ptsend
- .text          0x0000000000001cbc       0x48 binaries/putc.o
-                0x0000000000001cbc                putc
- .text          0x0000000000001d04       0xa2 binaries/queue.o
-                0x0000000000001d04                enqueue
-                0x0000000000001d70                dequeue
- .text          0x0000000000001da6       0x58 binaries/read.o
-                0x0000000000001da6                read
- .text          0x0000000000001dfe       0x38 binaries/ready.o
-                0x0000000000001dfe                ready
- .text          0x0000000000001e36       0x3c binaries/receive.o
-                0x0000000000001e36                receive
- .text          0x0000000000001e72       0x2e binaries/recvclr.o
-                0x0000000000001e72                recvclr
- .text          0x0000000000001ea0       0x8e binaries/recvtime.o
-                0x0000000000001ea0                recvtime
- .text          0x0000000000001f2e       0xc2 binaries/resched.o
-                0x0000000000001f2e                resched
-                0x0000000000001fa4                resched_cntl
- .text          0x0000000000001ff0       0x2c binaries/resume.o
-                0x0000000000001ff0                resume
- .text          0x000000000000201c       0x4c binaries/seek.o
-                0x000000000000201c                seek
- .text          0x0000000000002068       0x32 binaries/semcount.o
-                0x0000000000002068                semcount
- .text          0x000000000000209a       0x6c binaries/semcreate.o
-                0x000000000000209a                semcreate
- .text          0x0000000000002106       0x7e binaries/semdelete.o
-                0x0000000000002106                semdelete
- .text          0x0000000000002184       0x7c binaries/semreset.o
-                0x0000000000002184                semreset
- .text          0x0000000000002200       0x64 binaries/send.o
-                0x0000000000002200                send
- .text          0x0000000000002264       0x96 binaries/serial_avr.o
-                0x0000000000002264                serial_init
-                0x000000000000228e                serial_put_char
-                0x000000000000229c                serial_get_char
-                0x00000000000022aa                serial_put_str
-                0x00000000000022c2                serial_get_str
- .text          0x00000000000022fa       0x56 binaries/signal.o
-                0x00000000000022fa                signal
- .text          0x0000000000002350       0x98 binaries/signaln.o
-                0x0000000000002350                signaln
- .text          0x00000000000023e8       0x8a binaries/sleep.o
-                0x00000000000023e8                sleepms
-                0x000000000000244e                sleep
- .text          0x0000000000002472       0x88 binaries/suspend.o
-                0x0000000000002472                suspend
- .text          0x00000000000024fa       0x32 binaries/syscall.o
-                0x00000000000024fa                _svc_handler
-                0x000000000000252a                syscall_init
- .text          0x000000000000252c       0x86 binaries/unsleep.o
-                0x000000000000252c                unsleep
- .text          0x00000000000025b2        0x8 binaries/userret.o
-                0x00000000000025b2                userret
- .text          0x00000000000025ba       0x6c binaries/wait.o
-                0x00000000000025ba                wait
- .text          0x0000000000002626       0x46 binaries/wakeup.o
-                0x0000000000002626                wakeup
- .text          0x000000000000266c       0x58 binaries/write.o
-                0x000000000000266c                write
- .text          0x00000000000026c4       0x14 binaries/xdone.o
-                0x00000000000026c4                xdone
- .text          0x00000000000026d8        0xc binaries/yield.o
-                0x00000000000026d8                yield
- .text          0x00000000000026e4        0x0 binaries/ctype_.o
- .text          0x00000000000026e4      0x7b4 binaries/doprnt.o
-                0x00000000000026e4                _prtl10
-                0x00000000000027dc                _prtl8
-                0x000000000000285e                _prtl16
-                0x0000000000002900                _prtX16
-                0x00000000000029a2                _prtl2
-                0x0000000000002a1c                _doprnt
- .text          0x0000000000002e98      0x67a binaries/doscan.o
-                0x0000000000002e98                _doscan
- .text          0x0000000000003512        0x0 binaries/messages.o
- .text          0x0000000000003512       0x2c binaries/userland.o
-                0x0000000000003512                xinu_syscall
-                0x0000000000003512                xinu_uptime
-                0x0000000000003528                xinu_putc
- .text          0x000000000000353e      0x104 binaries/mount.o
-                0x000000000000353e                namlen
-                0x0000000000003560                mount
- .text          0x0000000000003642      0x120 binaries/naminit.o
-                0x0000000000003642                naminit
- .text          0x0000000000003762      0x18c binaries/nammap.o
-                0x0000000000003762                namrepl
-                0x0000000000003848                namcpy
-                0x0000000000003868                nammap
- .text          0x00000000000038ee       0x54 binaries/namopen.o
-                0x00000000000038ee                namopen
- .text          0x0000000000003942      0x108 binaries/addargs.o
-                0x0000000000003942                addargs
- .text          0x0000000000003a4a      0x182 binaries/lexan.o
-                0x0000000000003a4a                lexan
- .text          0x0000000000003bcc        0x4 binaries/shell.o
-                0x0000000000003bcc                shell
- .text          0x0000000000003bd0        0x0 binaries/intr.o
-                0x0000000000003bd0                pause
-                0x0000000000003bd0                enable
-                0x0000000000003bd0                disable
-                0x0000000000003bd0                halt
-                0x0000000000003bd0                restore
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .text          0x0000000000003bd0        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
-                0x0000000000003bd0                . = ALIGN (0x2)
+ .text          0x0000000000000894        0x2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+                0x0000000000000894                __vector_22
+                0x0000000000000894                __vector_1
+                0x0000000000000894                __vector_24
+                0x0000000000000894                __vector_12
+                0x0000000000000894                __bad_interrupt
+                0x0000000000000894                __vector_6
+                0x0000000000000894                __vector_3
+                0x0000000000000894                __vector_23
+                0x0000000000000894                __vector_25
+                0x0000000000000894                __vector_11
+                0x0000000000000894                __vector_13
+                0x0000000000000894                __vector_17
+                0x0000000000000894                __vector_19
+                0x0000000000000894                __vector_7
+                0x0000000000000894                __vector_5
+                0x0000000000000894                __vector_4
+                0x0000000000000894                __vector_9
+                0x0000000000000894                __vector_2
+                0x0000000000000894                __vector_21
+                0x0000000000000894                __vector_15
+                0x0000000000000894                __vector_8
+                0x0000000000000894                __vector_10
+                0x0000000000000894                __vector_16
+                0x0000000000000894                __vector_20
+ .text          0x0000000000000896       0xb0 binaries/ctxsw.o
+                0x0000000000000896                ctxsw
+ .text          0x0000000000000946       0xf0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(asctime_r.o)
+                0x0000000000000946                asctime_r
+ .text          0x0000000000000a36       0x82 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(localtime_r.o)
+                0x0000000000000a36                localtime_r
+ .text          0x0000000000000ab8       0xae /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mktime.o)
+                0x0000000000000ab8                mktime
+ .text          0x0000000000000b66       0x24 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(print_lz.o)
+                0x0000000000000b66                __print_lz
+ .text          0x0000000000000b8a      0x18e /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(gmtime_r.o)
+                0x0000000000000b8a                gmtime_r
+ .text          0x0000000000000d18      0x154 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mk_gmtime.o)
+                0x0000000000000d18                mk_gmtime
+ .text          0x0000000000000e6c       0x28 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(isLeap.o)
+                0x0000000000000e6c                is_leap_year
+                0x0000000000000e94                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x0000000000003bd0       0xa4 binaries/main.o
-                0x0000000000003bd0                main
+ .text.serial_init
+                0x0000000000000e94       0x18 binaries/avr_serial.o
+                0x0000000000000e94                serial_init
+ .text.serial_put_char
+                0x0000000000000eac       0x12 binaries/avr_serial.o
+                0x0000000000000eac                serial_put_char
+ .text.__vector_18
+                0x0000000000000ebe       0x5c binaries/avr_serial.o
+                0x0000000000000ebe                __vector_18
+ .text.my_delay
+                0x0000000000000f1a       0x52 binaries/blink_avr.o
+                0x0000000000000f1a                my_delay
+ .text.blink_avr
+                0x0000000000000f6c       0x1c binaries/blink_avr.o
+                0x0000000000000f6c                blink_avr
+ .text.bufinit  0x0000000000000f88       0x14 binaries/bufinit.o
+                0x0000000000000f88                bufinit
+ .text.__vector_14
+                0x0000000000000f9c      0x17a binaries/clkhandler.o
+                0x0000000000000f9c                __vector_14
+ .text.clkinit  0x0000000000001116       0x5e binaries/clkinit.o
+                0x0000000000001116                clkinit
+ .text.close    0x0000000000001174       0x5a binaries/close.o
+                0x0000000000001174                close
+ .text.control  0x00000000000011ce       0xbc binaries/control.o
+                0x00000000000011ce                control
+ .text.create   0x000000000000128a      0x28e binaries/create.o
+                0x000000000000128a                create
+ .text.initintc
+                0x0000000000001518        0xa binaries/evec.o
+                0x0000000000001518                initintc
+ .text.exit     0x0000000000001522        0x4 binaries/exit.o
+                0x0000000000001522                exit
+ .text.freemem  0x0000000000001526      0x1c2 binaries/freemem.o
+                0x0000000000001526                freemem
+ .text.getc     0x00000000000016e8       0x5a binaries/getc.o
+                0x00000000000016e8                getc
+ .text.getfirst
+                0x0000000000001742       0x6c binaries/getitem.o
+                0x0000000000001742                getfirst
+ .text.getitem  0x00000000000017ae       0x3e binaries/getitem.o
+                0x00000000000017ae                getitem
+ .text.getpid   0x00000000000017ec       0x12 binaries/getpid.o
+                0x00000000000017ec                getpid
+ .text.getstk   0x00000000000017fe      0x102 binaries/getstk.o
+                0x00000000000017fe                getstk
+ .text.init     0x0000000000001900       0x5a binaries/init.o
+                0x0000000000001900                init
+ .text.nulluser
+                0x000000000000195a      0x156 binaries/initialize.o
+                0x000000000000195a                nulluser
+ .text.insert   0x0000000000001ab0       0xb0 binaries/insert.o
+                0x0000000000001ab0                insert
+ .text.insertd  0x0000000000001b60      0x13a binaries/insertd.o
+                0x0000000000001b60                insertd
+ .text.disable  0x0000000000001c9a        0x6 binaries/intr.o
+                0x0000000000001c9a                disable
+ .text.restore  0x0000000000001ca0        0x4 binaries/intr.o
+                0x0000000000001ca0                restore
+ .text.enable   0x0000000000001ca4        0x4 binaries/intr.o
+                0x0000000000001ca4                enable
+ .text.halt     0x0000000000001ca8        0x2 binaries/intr.o
+                0x0000000000001ca8                halt
+ .text.ioerr    0x0000000000001caa        0x4 binaries/ioerr.o
+                0x0000000000001caa                ioerr
+ .text.ionull   0x0000000000001cae        0x4 binaries/ionull.o
+                0x0000000000001cae                ionull
+ .text.kill     0x0000000000001cb2      0x19e binaries/kill.o
+                0x0000000000001cb2                kill
+ .text.kputc    0x0000000000001e50       0x22 binaries/kprintf.o
+                0x0000000000001e50                kputc
+ .text.kprintf  0x0000000000001e72       0x5e binaries/kprintf.o
+                0x0000000000001e72                kprintf
+ .text.meminit  0x0000000000001ed0       0x6e binaries/meminit.o
+                0x0000000000001ed0                meminit
+ .text.newqueue
+                0x0000000000001f3e       0x62 binaries/newqueue.o
+                0x0000000000001f3e                newqueue
+ .text.open     0x0000000000001fa0       0x72 binaries/open.o
+                0x0000000000001fa0                open
+ .text.platinit
+                0x0000000000002012       0x10 binaries/platinit.o
+                0x0000000000002012                platinit
+ .text.putc     0x0000000000002022       0x5e binaries/putc.o
+                0x0000000000002022                putc
+ .text.enqueue  0x0000000000002080       0x9e binaries/queue.o
+                0x0000000000002080                enqueue
+ .text.dequeue  0x000000000000211e       0x5e binaries/queue.o
+                0x000000000000211e                dequeue
+ .text.read     0x000000000000217c       0x86 binaries/read.o
+                0x000000000000217c                read
+ .text.ready    0x0000000000002202       0x40 binaries/ready.o
+                0x0000000000002202                ready
+ .text.receive  0x0000000000002242       0x7a binaries/receive.o
+                0x0000000000002242                receive
+ .text.recvclr  0x00000000000022bc       0x60 binaries/recvclr.o
+                0x00000000000022bc                recvclr
+ .text.resched  0x000000000000231c      0x10e binaries/resched.o
+                0x000000000000231c                resched
+ .text.resched_cntl
+                0x000000000000242a       0x98 binaries/resched.o
+                0x000000000000242a                resched_cntl
+ .text.resume   0x00000000000024c2       0x6a binaries/resume.o
+                0x00000000000024c2                resume
+ .text.semcount
+                0x000000000000252c       0x36 binaries/semcount.o
+                0x000000000000252c                semcount
+ .text.semcreate
+                0x0000000000002562       0x98 binaries/semcreate.o
+                0x0000000000002562                semcreate
+ .text.semreset
+                0x00000000000025fa       0xa2 binaries/semreset.o
+                0x00000000000025fa                semreset
+ .text.send     0x000000000000269c       0x96 binaries/send.o
+                0x000000000000269c                send
+ .text.signal   0x0000000000002732       0x66 binaries/signal.o
+                0x0000000000002732                signal
+ .text.signaln  0x0000000000002798       0xaa binaries/signaln.o
+                0x0000000000002798                signaln
+ .text.sleep100ms
+                0x0000000000002842       0x88 binaries/sleep.o
+                0x0000000000002842                sleep100ms
+ .text.sleep    0x00000000000028ca       0x24 binaries/sleep.o
+                0x00000000000028ca                sleep
+ .text.unsleep  0x00000000000028ee       0x96 binaries/unsleep.o
+                0x00000000000028ee                unsleep
+ .text.userret  0x0000000000002984        0x6 binaries/userret.o
+                0x0000000000002984                userret
+ .text.wait     0x000000000000298a       0x92 binaries/wait.o
+                0x000000000000298a                wait
+ .text.wakeup   0x0000000000002a1c       0x56 binaries/wakeup.o
+                0x0000000000002a1c                wakeup
+ .text.xdone    0x0000000000002a72        0x8 binaries/xdone.o
+                0x0000000000002a72                xdone
+ .text.yield    0x0000000000002a7a       0x12 binaries/yield.o
+                0x0000000000002a7a                yield
+ .text.gpio_write
+                0x0000000000002a8c        0xe binaries/avr_gpio.o
+                0x0000000000002a8c                gpio_write
+ .text.gpio_read
+                0x0000000000002a9a        0xc binaries/avr_gpio.o
+                0x0000000000002a9a                gpio_read
+ .text.gpio_arduino_write
+                0x0000000000002aa6       0x6c binaries/avr_gpio.o
+                0x0000000000002aa6                gpio_arduino_write
+ .text.avr_kprintf
+                0x0000000000002b12       0x30 binaries/avr_printf.o
+                0x0000000000002b12                avr_kprintf
+ .text.change_proc_name
+                0x0000000000002b42       0x50 binaries/change_proc_name.o
+                0x0000000000002b42                change_proc_name
+ .text.get_date
+                0x0000000000002b92       0x5e binaries/date.o
+                0x0000000000002b92                get_date
+ .text.set_date
+                0x0000000000002bf0       0xe0 binaries/date.o
+                0x0000000000002bf0                set_date
+ .text.fprintf  0x0000000000002cd0       0x70 binaries/fprintf.o
+                0x0000000000002cd0                fprintf
+ .text.printf   0x0000000000002d40       0x9c binaries/printf.o
+                0x0000000000002d40                printf
+ .text.namlen   0x0000000000002ddc       0x3a binaries/mount.o
+                0x0000000000002ddc                namlen
+ .text.mount    0x0000000000002e16      0x134 binaries/mount.o
+                0x0000000000002e16                mount
+ .text.naminit  0x0000000000002f4a      0x130 binaries/naminit.o
+                0x0000000000002f4a                naminit
+ .text.namrepl  0x000000000000307a      0x182 binaries/nammap.o
+                0x000000000000307a                namrepl
+ .text.namcpy   0x00000000000031fc       0x42 binaries/nammap.o
+                0x00000000000031fc                namcpy
+ .text.nammap   0x000000000000323e       0x82 binaries/nammap.o
+                0x000000000000323e                nammap
+ .text.namopen  0x00000000000032c0       0x50 binaries/namopen.o
+                0x00000000000032c0                namopen
+ .text.ttycontrol
+                0x0000000000003310       0xde binaries/ttycontrol.o
+                0x0000000000003310                ttycontrol
+ .text.ttygetc  0x00000000000033ee       0x98 binaries/ttygetc.o
+                0x00000000000033ee                ttygetc
+ .text.echoch.isra.2
+                0x0000000000003486       0x54 binaries/ttyhandle_in.o
+ .text.ttyhandle_in
+                0x00000000000034da      0x2f8 binaries/ttyhandle_in.o
+                0x00000000000034da                ttyhandle_in
+ .text.ttyhandle_out
+                0x00000000000037d2      0x104 binaries/ttyhandle_out.o
+                0x00000000000037d2                ttyhandle_out
+ .text.ttyhandler
+                0x00000000000038d6       0x24 binaries/ttyhandler.o
+                0x00000000000038d6                ttyhandler
+ .text.ttyinit  0x00000000000038fa       0xd8 binaries/ttyinit.o
+                0x00000000000038fa                ttyinit
+ .text.ttykickout
+                0x00000000000039d2       0x16 binaries/ttykickout.o
+                0x00000000000039d2                ttykickout
+ .text.ttyputc  0x00000000000039e8       0xc6 binaries/ttyputc.o
+                0x00000000000039e8                ttyputc
+ .text.ttyread  0x0000000000003aae       0xe4 binaries/ttyread.o
+                0x0000000000003aae                ttyread
+ .text.ttywrite
+                0x0000000000003b92       0x44 binaries/ttywrite.o
+                0x0000000000003b92                ttywrite
+ .text.addargs  0x0000000000003bd6       0xf8 binaries/addargs.o
+                0x0000000000003bd6                addargs
+ .text.lexan    0x0000000000003cce      0x1e0 binaries/lexan.o
+                0x0000000000003cce                lexan
+ .text.xsh_help
+                0x0000000000003eae       0xc8 binaries/main.o
+                0x0000000000003eae                xsh_help
+ .text.startup.main
+                0x0000000000003f76      0x842 binaries/main.o
+                0x0000000000003f76                main
+ .text.ignore_blanks
+                0x00000000000047b8       0x20 binaries/xsh_basic.o
+ .text.scantable
+                0x00000000000047d8       0x76 binaries/xsh_basic.o
+ .text.testnum  0x000000000000484e       0x52 binaries/xsh_basic.o
+ .text.findline
+                0x00000000000048a0       0x34 binaries/xsh_basic.o
+ .text.toUppercaseBuffer
+                0x00000000000048d4       0x40 binaries/xsh_basic.o
+ .text.expr4    0x0000000000004914      0x17a binaries/xsh_basic.o
+ .text.expr3    0x0000000000004a8e       0x6a binaries/xsh_basic.o
+ .text.expr2    0x0000000000004af8       0x5e binaries/xsh_basic.o
+ .text.expression
+                0x0000000000004b56       0x9a binaries/xsh_basic.o
+ .text.outchar  0x0000000000004bf0       0x22 binaries/xsh_basic.o
+                0x0000000000004bf0                outchar
+ .text.printnum
+                0x0000000000004c12       0x6a binaries/xsh_basic.o
+                0x0000000000004c12                printnum
+ .text.printmsgNoNL
+                0x0000000000004c7c       0x20 binaries/xsh_basic.o
+                0x0000000000004c7c                printmsgNoNL
+ .text.line_terminator
+                0x0000000000004c9c        0x8 binaries/xsh_basic.o
+ .text.printmsg
+                0x0000000000004ca4        0x4 binaries/xsh_basic.o
+                0x0000000000004ca4                printmsg
+ .text.printline
+                0x0000000000004ca8       0x4c binaries/xsh_basic.o
+                0x0000000000004ca8                printline
+ .text.getln    0x0000000000004cf4       0xa0 binaries/xsh_basic.o
+ .text.loop     0x0000000000004d94      0x90e binaries/xsh_basic.o
+                0x0000000000004d94                loop
+ .text.xsh_basic
+                0x00000000000056a2       0x56 binaries/xsh_basic.o
+                0x00000000000056a2                xsh_basic
+ .text.number   0x00000000000056f8       0x42 binaries/xsh_cal.o
+                0x00000000000056f8                number
+ .text.jan1     0x000000000000573a       0x5e binaries/xsh_cal.o
+                0x000000000000573a                jan1
+ .text.print_spaces
+                0x0000000000005798       0x34 binaries/xsh_cal.o
+                0x0000000000005798                print_spaces
+ .text.cal_p    0x00000000000057cc      0x162 binaries/xsh_cal.o
+                0x00000000000057cc                cal_p
+ .text.xsh_cal  0x000000000000592e      0x172 binaries/xsh_cal.o
+                0x000000000000592e                xsh_cal
+ .text.xsh_clear
+                0x0000000000005aa0       0x34 binaries/xsh_clear.o
+                0x0000000000005aa0                xsh_clear
+ .text.xsh_date
+                0x0000000000005ad4       0x56 binaries/xsh_date.o
+                0x0000000000005ad4                xsh_date
+ .text.xsh_echo
+                0x0000000000005b2a       0x90 binaries/xsh_echo.o
+                0x0000000000005b2a                xsh_echo
+ .text.clear    0x0000000000005bba       0x32 binaries/xsh_editor.o
+ .text.editor_insert
+                0x0000000000005bec       0xa0 binaries/xsh_editor.o
+                0x0000000000005bec                editor_insert
+ .text.editor_del
+                0x0000000000005c8c       0xcc binaries/xsh_editor.o
+                0x0000000000005c8c                editor_del
+ .text.printnl  0x0000000000005d58       0x12 binaries/xsh_editor.o
+                0x0000000000005d58                printnl
+ .text.xsh_editor
+                0x0000000000005d6a      0x252 binaries/xsh_editor.o
+                0x0000000000005d6a                xsh_editor
+ .text.xsh_forever
+                0x0000000000005fbc        0x2 binaries/xsh_forever.o
+                0x0000000000005fbc                xsh_forever
+ .text.xsh_free
+                0x0000000000005fbe       0xd0 binaries/xsh_free.o
+                0x0000000000005fbe                xsh_free
+ .text.xsh_gpio
+                0x000000000000608e       0x5c binaries/xsh_gpio.o
+                0x000000000000608e                xsh_gpio
+ .text.xsh_kill
+                0x00000000000060ea       0x7a binaries/xsh_kill.o
+                0x00000000000060ea                xsh_kill
+ .text.xsh_memdump
+                0x0000000000006164       0xe8 binaries/xsh_memdump.o
+                0x0000000000006164                xsh_memdump
+ .text.xsh_ps   0x000000000000624c      0x154 binaries/xsh_ps.o
+                0x000000000000624c                xsh_ps
+ .text.xsh_reboot
+                0x00000000000063a0        0xa binaries/xsh_reboot.o
+                0x00000000000063a0                xsh_reboot
+ .text.xsh_sleep
+                0x00000000000063aa       0xb4 binaries/xsh_sleep.o
+                0x00000000000063aa                xsh_sleep
+ .text.xsh_uptime
+                0x000000000000645e       0xfc binaries/xsh_uptime.o
+                0x000000000000645e                xsh_uptime
  .text.libgcc.mul
-                0x0000000000003c74        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+                0x000000000000655a       0x1e /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulsi3.o)
+                0x000000000000655a                __mulsi3
  .text.libgcc.div
-                0x0000000000003c74       0x2e /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
-                0x0000000000003c74                __divmodsi4
- .text.libgcc   0x0000000000003ca2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
- .text.libgcc.prologue
-                0x0000000000003ca2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
- .text.libgcc.builtins
-                0x0000000000003ca2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
- .text.libgcc.fmul
-                0x0000000000003ca2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
- .text.libgcc.fixed
-                0x0000000000003ca2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000006578       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodhi4.o)
+                0x0000000000006578                __udivmodhi4
+ .text.libgcc.div
+                0x00000000000065a0       0x26 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodhi4.o)
+                0x00000000000065a0                __divmodhi4
+                0x00000000000065a0                _div
+ .text.libgcc.div
+                0x00000000000065c6       0x44 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x00000000000065c6                __udivmodsi4
+ .text.libgcc.div
+                0x000000000000660a       0x28 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
+                0x000000000000660a                __divmodsi4
+ .text.libgcc.div
+                0x0000000000006632       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000006632                __negsi2
+ .text.libgcc   0x0000000000006642        0xc /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_tablejump2.o)
+                0x0000000000006642                __tablejump2__
  .text.libgcc.mul
-                0x0000000000003ca2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
- .text.libgcc.div
-                0x0000000000003ca2       0x10 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
-                0x0000000000003ca2                __negsi2
- .text.libgcc   0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+                0x000000000000664e       0x14 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
+                0x000000000000664e                __muluhisi3
  .text.libgcc.prologue
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
- .text.libgcc.builtins
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
- .text.libgcc.fmul
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
- .text.libgcc.fixed
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000006662       0x38 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
+                0x0000000000006662                __prologue_saves__
+ .text.libgcc.prologue
+                0x000000000000669a       0x36 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+                0x000000000000669a                __epilogue_restores__
  .text.libgcc.mul
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .text.libgcc.div
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .text.libgcc   0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .text.libgcc.prologue
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .text.libgcc.builtins
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .text.libgcc.fmul
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .text.libgcc.fixed
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
+                0x00000000000066d0       0x1e /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
+                0x00000000000066d0                __umulhisi3
+ .text.avr-libc
+                0x00000000000066ee       0xaa /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(rand.o)
+                0x000000000000677a                rand_r
+                0x000000000000677c                rand
+                0x0000000000006782                srand
+ .text.avr-libc
+                0x0000000000006798       0x3a /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
+                0x0000000000006798                atoi
+ .text.avr-libc
+                0x00000000000067d2       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strlen_P.o)
+                0x00000000000067d2                __strlen_P
+ .text.avr-libc
+                0x00000000000067e4       0x1c /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp_P.o)
+                0x00000000000067e4                strncmp_P
+ .text.avr-libc
+                0x0000000000006800       0x1e /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy_P.o)
+                0x0000000000006800                strncpy_P
+ .text.avr-libc
+                0x000000000000681e        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
+                0x000000000000681e                memset
+ .text.avr-libc
+                0x000000000000682c       0x10 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
+                0x000000000000682c                __mulhi_const_10
+ .text.avr-libc
+                0x000000000000683c       0x52 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vsnprintf.o)
+                0x000000000000683c                vsnprintf
+ .text.avr-libc
+                0x000000000000688e      0x3a4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
+                0x000000000000688e                vfprintf
+ .text.avr-libc
+                0x0000000000006c32       0x16 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
+                0x0000000000006c32                strnlen_P
+ .text.avr-libc
+                0x0000000000006c48       0x16 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
+                0x0000000000006c48                strnlen
+ .text.avr-libc
+                0x0000000000006c5e       0x78 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
+                0x0000000000006c5e                fputc
+ .text.avr-libc
+                0x0000000000006cd6       0xbc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
+                0x0000000000006cd6                __ultoa_invert
  .text.libgcc.mul
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc.div
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc   0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc.prologue
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc.builtins
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc.fmul
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc.fixed
-                0x0000000000003cb2        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000006d92        0xc /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_usmulhisi3.o)
+                0x0000000000006d92                __usmulhisi3
+                0x0000000000006d94                __usmulhisi3_tail
  .text.libgcc.mul
-                0x0000000000003cb2       0x16 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
-                0x0000000000003cb2                __muluhisi3
- .text.libgcc.div
-                0x0000000000003cc8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .text.libgcc   0x0000000000003cc8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .text.libgcc.prologue
-                0x0000000000003cc8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .text.libgcc.builtins
-                0x0000000000003cc8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .text.libgcc.fmul
-                0x0000000000003cc8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .text.libgcc.fixed
-                0x0000000000003cc8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .text.libgcc.mul
-                0x0000000000003cc8        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .text.libgcc.div
-                0x0000000000003cc8       0x44 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
-                0x0000000000003cc8                __udivmodsi4
- .text.libgcc   0x0000000000003d0c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .text.libgcc.prologue
-                0x0000000000003d0c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .text.libgcc.builtins
-                0x0000000000003d0c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .text.libgcc.fmul
-                0x0000000000003d0c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .text.libgcc.fixed
-                0x0000000000003d0c        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .text.libgcc.mul
-                0x0000000000003d0c       0x1e /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
-                0x0000000000003d0c                __umulhisi3
- .text.libgcc.div
-                0x0000000000003d2a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .text.libgcc   0x0000000000003d2a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .text.libgcc.prologue
-                0x0000000000003d2a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .text.libgcc.builtins
-                0x0000000000003d2a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .text.libgcc.fmul
-                0x0000000000003d2a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .text.libgcc.fixed
-                0x0000000000003d2a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .text.avr-libc
-                0x0000000000003d2a       0x3c /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
-                0x0000000000003d2a                atoi
- .text.avr-libc
-                0x0000000000003d66       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
-                0x0000000000003d66                memcpy
- .text.avr-libc
-                0x0000000000003d78        0xe /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
-                0x0000000000003d78                memset
- .text.avr-libc
-                0x0000000000003d86       0x1c /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
-                0x0000000000003d86                strncmp
- .text.avr-libc
-                0x0000000000003da2       0x1e /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy.o)
-                0x0000000000003da2                strncpy
- .text.avr-libc
-                0x0000000000003dc0       0x10 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
-                0x0000000000003dc0                __mulhi_const_10
- .text.avr-libc
-                0x0000000000003dd0       0x24 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o)
-                0x0000000000003dd0                fprintf
- .text.avr-libc
-                0x0000000000003df4      0x3c2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
-                0x0000000000003df4                vfprintf
- .text.avr-libc
-                0x00000000000041b6       0x16 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
-                0x00000000000041b6                strnlen_P
- .text.avr-libc
-                0x00000000000041cc       0x16 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
-                0x00000000000041cc                strnlen
- .text.avr-libc
-                0x00000000000041e2       0x78 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
-                0x00000000000041e2                fputc
- .text.avr-libc
-                0x000000000000425a       0xbc /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
-                0x000000000000425a                __ultoa_invert
- .text.libgcc.mul
-                0x0000000000004316        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .text.libgcc.div
-                0x0000000000004316        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .text.libgcc   0x0000000000004316        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .text.libgcc.prologue
-                0x0000000000004316       0x38 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
-                0x0000000000004316                __prologue_saves__
- .text.libgcc.builtins
-                0x000000000000434e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .text.libgcc.fmul
-                0x000000000000434e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .text.libgcc.fixed
-                0x000000000000434e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .text.libgcc.mul
-                0x000000000000434e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
- .text.libgcc.div
-                0x000000000000434e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
- .text.libgcc   0x000000000000434e        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
- .text.libgcc.prologue
-                0x000000000000434e       0x36 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
-                0x000000000000434e                __epilogue_restores__
- .text.libgcc.builtins
-                0x0000000000004384        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
- .text.libgcc.fmul
-                0x0000000000004384        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
- .text.libgcc.fixed
-                0x0000000000004384        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
-                0x0000000000004384                . = ALIGN (0x2)
+                0x0000000000006d9e        0xc /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_mulshisi3.o)
+                0x0000000000006d9e                __mulshisi3
+                0x0000000000006da2                __mulohisi3
+                0x0000000000006daa                . = ALIGN (0x2)
  *(.fini9)
  *(.fini9)
  *(.fini8)
@@ -803,325 +1761,144 @@ END GROUP
  *(.fini1)
  *(.fini0)
  *(.fini0)
-                0x0000000000004384                _etext = .
+                0x0000000000006daa                _etext = .
 
-.data           0x0000000000800100      0x198 dirección de carga 0x0000000000004384
+.data           0x0000000000800100      0x1da load address 0x0000000000006daa
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
- .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
- .data          0x0000000000800100        0x0 binaries/start.o
- .data          0x0000000000800100        0x0 binaries/ascdate.o
- .data          0x0000000000800100        0x0 binaries/blink_avr.o
- .data          0x0000000000800100        0x0 binaries/bufinit.o
- .data          0x0000000000800100        0x0 binaries/chprio.o
- .data          0x0000000000800100        0x0 binaries/clkhandler.o
- .data          0x0000000000800100        0x0 binaries/clkinit.o
- .data          0x0000000000800100        0x0 binaries/close.o
- .data          0x0000000000800100        0x0 binaries/conf.o
- .data          0x0000000000800100        0x0 binaries/control.o
- .data          0x0000000000800100        0x0 binaries/create.o
- .data          0x0000000000800100        0x0 binaries/debug.o
- .data          0x0000000000800100        0x0 binaries/evec.o
- .data          0x0000000000800100        0x0 binaries/exit.o
- .data          0x0000000000800100        0x0 binaries/freebuf.o
- .data          0x0000000000800100        0x0 binaries/freemem.o
- .data          0x0000000000800100        0x0 binaries/getbuf.o
- .data          0x0000000000800100        0x0 binaries/getc.o
- .data          0x0000000000800100        0x0 binaries/getdev.o
- .data          0x0000000000800100        0x0 binaries/getitem.o
- .data          0x0000000000800100        0x0 binaries/getmem.o
- .data          0x0000000000800100        0x0 binaries/getpid.o
- .data          0x0000000000800100        0x0 binaries/getprio.o
- .data          0x0000000000800100        0x0 binaries/getstk.o
- .data          0x0000000000800100        0x0 binaries/getticks.o
- .data          0x0000000000800100        0x0 binaries/gettime.o
- .data          0x0000000000800100        0x0 binaries/init.o
- .data          0x0000000000800100       0x15 binaries/initialize.o
-                0x0000000000800100                frase
- .data          0x0000000000800115        0x0 binaries/insert.o
- .data          0x0000000000800115        0x0 binaries/insertd.o
- .data          0x0000000000800115        0x0 binaries/ioerr.o
- .data          0x0000000000800115        0x0 binaries/ionull.o
- .data          0x0000000000800115        0x0 binaries/kill.o
- .data          0x0000000000800115        0x0 binaries/kprintf.o
- .data          0x0000000000800115        0x0 binaries/main.o
- .data          0x0000000000800115        0x0 binaries/mark.o
- .data          0x0000000000800115        0x0 binaries/meminit.o
- .data          0x0000000000800115        0x0 binaries/mkbufpool.o
- .data          0x0000000000800115        0x1 binaries/newqueue.o
- .data          0x0000000000800116        0x0 binaries/open.o
- .data          0x0000000000800116        0x0 binaries/panic.o
- .data          0x0000000000800116        0x0 binaries/platinit.o
- .data          0x0000000000800116        0x0 binaries/ptclear.o
- .data          0x0000000000800116        0x0 binaries/ptcount.o
- .data          0x0000000000800116        0x0 binaries/ptcreate.o
- .data          0x0000000000800116        0x0 binaries/ptdelete.o
- .data          0x0000000000800116        0x0 binaries/ptinit.o
- .data          0x0000000000800116        0x0 binaries/ptrecv.o
- .data          0x0000000000800116        0x0 binaries/ptreset.o
- .data          0x0000000000800116        0x0 binaries/ptsend.o
- .data          0x0000000000800116        0x0 binaries/putc.o
- .data          0x0000000000800116        0x0 binaries/queue.o
- .data          0x0000000000800116        0x0 binaries/read.o
- .data          0x0000000000800116        0x0 binaries/ready.o
- .data          0x0000000000800116        0x0 binaries/receive.o
- .data          0x0000000000800116        0x0 binaries/recvclr.o
- .data          0x0000000000800116        0x0 binaries/recvtime.o
- .data          0x0000000000800116        0x0 binaries/resched.o
- .data          0x0000000000800116        0x0 binaries/resume.o
- .data          0x0000000000800116        0x0 binaries/seek.o
- .data          0x0000000000800116        0x0 binaries/semcount.o
- .data          0x0000000000800116        0x0 binaries/semcreate.o
- .data          0x0000000000800116        0x0 binaries/semdelete.o
- .data          0x0000000000800116        0x0 binaries/semreset.o
- .data          0x0000000000800116        0x0 binaries/send.o
- .data          0x0000000000800116        0x1 binaries/serial_avr.o
-                0x0000000000800116                letra_start
- .data          0x0000000000800117        0x0 binaries/signal.o
- .data          0x0000000000800117        0x0 binaries/signaln.o
- .data          0x0000000000800117        0x0 binaries/sleep.o
- .data          0x0000000000800117        0x0 binaries/suspend.o
- .data          0x0000000000800117        0x0 binaries/syscall.o
- .data          0x0000000000800117        0x0 binaries/unsleep.o
- .data          0x0000000000800117        0x0 binaries/userret.o
- .data          0x0000000000800117        0x0 binaries/wait.o
- .data          0x0000000000800117        0x0 binaries/wakeup.o
- .data          0x0000000000800117        0x0 binaries/write.o
- .data          0x0000000000800117        0x0 binaries/xdone.o
- .data          0x0000000000800117        0x0 binaries/yield.o
- .data          0x0000000000800117        0x0 binaries/ctype_.o
- .data          0x0000000000800117        0x0 binaries/doprnt.o
- .data          0x0000000000800117       0x80 binaries/doscan.o
-                0x0000000000800117                _sctab
- .data          0x0000000000800197        0x0 binaries/messages.o
- .data          0x0000000000800197        0x0 binaries/userland.o
- .data          0x0000000000800197        0x0 binaries/mount.o
- .data          0x0000000000800197        0x0 binaries/naminit.o
- .data          0x0000000000800197        0x0 binaries/nammap.o
- .data          0x0000000000800197        0x0 binaries/namopen.o
- .data          0x0000000000800197        0x0 binaries/addargs.o
- .data          0x0000000000800197        0x0 binaries/lexan.o
- .data          0x0000000000800197        0x0 binaries/shell.o
- .data          0x0000000000800197        0x0 binaries/intr.o
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .data          0x0000000000800197        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
+ .data          0x0000000000800100        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(rand.o)
  *(.data*)
+ .data.serial_port
+                0x0000000000800104        0x2 binaries/avr_serial.o
+                0x0000000000800104                serial_port
+ .data.nextqid.2798
+                0x0000000000800106        0x2 binaries/newqueue.o
+ .data.ncmd     0x0000000000800108        0x4 binaries/main.o
+                0x0000000000800108                ncmd
+ .data.mon      0x000000000080010c        0xd binaries/xsh_cal.o
+                0x000000000080010c                mon
+ *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000800197        0x5 binaries/create.o
+                0x0000000000800119       0x2f binaries/initialize.o
  .rodata.str1.1
-                0x000000000080019c       0x16 binaries/debug.o
-                                         0x1c (tamaño antes de la relajación)
+                0x0000000000800148        0xc binaries/naminit.o
+                                          0xd (size before relaxing)
  .rodata.str1.1
-                0x00000000008001b2        0x8 binaries/evec.o
+                0x0000000000800154       0xd5 binaries/main.o
+                                         0xdb (size before relaxing)
  .rodata.str1.1
-                0x00000000008001ba       0x56 binaries/initialize.o
+                0x0000000000800229        0x3 binaries/xsh_basic.o
  .rodata.str1.1
-                0x0000000000800210        0x6 binaries/main.o
+                0x000000000080022c       0x1a binaries/xsh_cal.o
+                                         0x25 (size before relaxing)
  .rodata.str1.1
-                0x0000000000800216        0xf binaries/panic.o
+                0x0000000000800246        0x9 binaries/xsh_clear.o
  .rodata.str1.1
-                0x0000000000800225       0x1d binaries/ptinit.o
+                0x000000000080024f        0x6 binaries/xsh_date.o
  .rodata.str1.1
-                0x0000000000800242       0x1d binaries/syscall.o
+                0x0000000000800255        0x4 binaries/xsh_echo.o
+                                          0x9 (size before relaxing)
  .rodata.str1.1
-                0x000000000080025f       0x29 binaries/doprnt.o
+                0x0000000000800259       0x1e binaries/xsh_editor.o
+                                         0x34 (size before relaxing)
  .rodata.str1.1
-                0x0000000000800288       0x10 binaries/naminit.o
-                                         0x11 (tamaño antes de la relajación)
- *(.gnu.linkonce.d*)
-                0x0000000000800298                . = ALIGN (0x2)
-                0x0000000000800298                _edata = .
-                0x0000000000800298                PROVIDE (__data_end, .)
+                0x0000000000800277       0x15 binaries/xsh_free.o
+                                         0x18 (size before relaxing)
+ .rodata.str1.1
+                0x000000000080028c        0x9 binaries/xsh_memdump.o
+                                         0x13 (size before relaxing)
+ .rodata.str1.1
+                0x0000000000800295        0xb binaries/xsh_ps.o
+                                         0x10 (size before relaxing)
+ .rodata.str1.1
+                0x00000000008002a0       0x1a binaries/xsh_sleep.o
+ .rodata.str1.1
+                0x00000000008002ba       0x20 binaries/xsh_uptime.o
+ *(.gnu.linkonce.r*)
+                0x00000000008002da                . = ALIGN (0x2)
+                0x00000000008002da                _edata = .
+                0x00000000008002da                PROVIDE (__data_end, .)
 
-.bss            0x0000000000800298      0x307
-                0x0000000000800298                PROVIDE (__bss_start, .)
+.bss            0x00000000008002da      0x2fc
+                0x00000000008002da                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0000000000800298        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
- .bss           0x0000000000800298        0x0 binaries/start.o
- .bss           0x0000000000800298        0x0 binaries/ascdate.o
- .bss           0x0000000000800298        0x0 binaries/blink_avr.o
- .bss           0x0000000000800298        0x0 binaries/bufinit.o
- .bss           0x0000000000800298        0x0 binaries/chprio.o
- .bss           0x0000000000800298        0x0 binaries/clkhandler.o
- .bss           0x0000000000800298        0x0 binaries/clkinit.o
- .bss           0x0000000000800298        0x0 binaries/close.o
- .bss           0x0000000000800298        0x0 binaries/conf.o
- .bss           0x0000000000800298        0x0 binaries/control.o
- .bss           0x0000000000800298        0x1 binaries/create.o
- .bss           0x0000000000800299        0x0 binaries/debug.o
- .bss           0x0000000000800299        0x0 binaries/evec.o
- .bss           0x0000000000800299        0x0 binaries/exit.o
- .bss           0x0000000000800299        0x0 binaries/freebuf.o
- .bss           0x0000000000800299        0x0 binaries/freemem.o
- .bss           0x0000000000800299        0x0 binaries/getbuf.o
- .bss           0x0000000000800299        0x0 binaries/getc.o
- .bss           0x0000000000800299        0x0 binaries/getdev.o
- .bss           0x0000000000800299        0x0 binaries/getitem.o
- .bss           0x0000000000800299        0x0 binaries/getmem.o
- .bss           0x0000000000800299        0x0 binaries/getpid.o
- .bss           0x0000000000800299        0x0 binaries/getprio.o
- .bss           0x0000000000800299        0x0 binaries/getstk.o
- .bss           0x0000000000800299        0x0 binaries/getticks.o
- .bss           0x0000000000800299        0x0 binaries/gettime.o
- .bss           0x0000000000800299        0x0 binaries/init.o
- .bss           0x0000000000800299        0x0 binaries/initialize.o
- .bss           0x0000000000800299        0x0 binaries/insert.o
- .bss           0x0000000000800299        0x0 binaries/insertd.o
- .bss           0x0000000000800299        0x0 binaries/ioerr.o
- .bss           0x0000000000800299        0x0 binaries/ionull.o
- .bss           0x0000000000800299        0x0 binaries/kill.o
- .bss           0x0000000000800299        0x0 binaries/kprintf.o
- .bss           0x0000000000800299        0x0 binaries/main.o
- .bss           0x0000000000800299        0x0 binaries/mark.o
- .bss           0x0000000000800299        0x0 binaries/meminit.o
- .bss           0x0000000000800299        0x0 binaries/mkbufpool.o
- .bss           0x0000000000800299        0x0 binaries/newqueue.o
- .bss           0x0000000000800299        0x0 binaries/open.o
- .bss           0x0000000000800299        0x0 binaries/panic.o
- .bss           0x0000000000800299        0x0 binaries/platinit.o
- .bss           0x0000000000800299        0x0 binaries/ptclear.o
- .bss           0x0000000000800299        0x0 binaries/ptcount.o
- .bss           0x0000000000800299        0x0 binaries/ptcreate.o
- .bss           0x0000000000800299        0x0 binaries/ptdelete.o
- .bss           0x0000000000800299        0x0 binaries/ptinit.o
- .bss           0x0000000000800299        0x0 binaries/ptrecv.o
- .bss           0x0000000000800299        0x0 binaries/ptreset.o
- .bss           0x0000000000800299        0x0 binaries/ptsend.o
- .bss           0x0000000000800299        0x0 binaries/putc.o
- .bss           0x0000000000800299        0x0 binaries/queue.o
- .bss           0x0000000000800299        0x0 binaries/read.o
- .bss           0x0000000000800299        0x0 binaries/ready.o
- .bss           0x0000000000800299        0x0 binaries/receive.o
- .bss           0x0000000000800299        0x0 binaries/recvclr.o
- .bss           0x0000000000800299        0x0 binaries/recvtime.o
- .bss           0x0000000000800299        0x0 binaries/resched.o
- .bss           0x0000000000800299        0x0 binaries/resume.o
- .bss           0x0000000000800299        0x0 binaries/seek.o
- .bss           0x0000000000800299        0x0 binaries/semcount.o
- .bss           0x0000000000800299        0x1 binaries/semcreate.o
- .bss           0x000000000080029a        0x0 binaries/semdelete.o
- .bss           0x000000000080029a        0x0 binaries/semreset.o
- .bss           0x000000000080029a        0x0 binaries/send.o
- .bss           0x000000000080029a        0x0 binaries/serial_avr.o
- .bss           0x000000000080029a        0x0 binaries/signal.o
- .bss           0x000000000080029a        0x0 binaries/signaln.o
- .bss           0x000000000080029a        0x0 binaries/sleep.o
- .bss           0x000000000080029a        0x0 binaries/suspend.o
- .bss           0x000000000080029a        0x0 binaries/syscall.o
- .bss           0x000000000080029a        0x0 binaries/unsleep.o
- .bss           0x000000000080029a        0x0 binaries/userret.o
- .bss           0x000000000080029a        0x0 binaries/wait.o
- .bss           0x000000000080029a        0x0 binaries/wakeup.o
- .bss           0x000000000080029a        0x0 binaries/write.o
- .bss           0x000000000080029a        0x0 binaries/xdone.o
- .bss           0x000000000080029a        0x0 binaries/yield.o
- .bss           0x000000000080029a        0x0 binaries/ctype_.o
- .bss           0x000000000080029a        0x0 binaries/doprnt.o
- .bss           0x000000000080029a        0x0 binaries/doscan.o
- .bss           0x000000000080029a        0x0 binaries/messages.o
- .bss           0x000000000080029a        0x0 binaries/userland.o
- .bss           0x000000000080029a        0x0 binaries/mount.o
- .bss           0x000000000080029a        0x0 binaries/naminit.o
- .bss           0x000000000080029a        0x0 binaries/nammap.o
- .bss           0x000000000080029a        0x0 binaries/namopen.o
- .bss           0x000000000080029a        0x0 binaries/addargs.o
- .bss           0x000000000080029a        0x0 binaries/lexan.o
- .bss           0x000000000080029a        0x0 binaries/shell.o
- .bss           0x000000000080029a        0x0 binaries/intr.o
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_divmodsi4.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_negsi2.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_copy_data.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_clear_bss.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_muluhisi3.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_udivmodsi4.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_umulhisi3.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(atoi.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memcpy.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(memset.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncmp.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strncpy.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mul10.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen_P.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(strnlen.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(ultoa_invert.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_prologue.o)
- .bss           0x000000000080029a        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_epilogue.o)
  *(.bss*)
+ .bss.avr_ticks
+                0x00000000008002da        0x2 binaries/clkhandler.o
+                0x00000000008002da                avr_ticks
+ .bss.nextpid.2824
+                0x00000000008002dc        0x4 binaries/create.o
+ .bss.nextsem.2805
+                0x00000000008002e0        0x2 binaries/semcreate.o
+ .bss.linenum   0x00000000008002e2        0x2 binaries/xsh_basic.o
+ .bss.table_index
+                0x00000000008002e4        0x1 binaries/xsh_basic.o
+ .bss.sp        0x00000000008002e5        0x2 binaries/xsh_basic.o
+ .bss.current_line
+                0x00000000008002e7        0x2 binaries/xsh_basic.o
+ .bss.variables_begin
+                0x00000000008002e9        0x2 binaries/xsh_basic.o
+ .bss.program_end
+                0x00000000008002eb        0x2 binaries/xsh_basic.o
+ .bss.program_start
+                0x00000000008002ed        0x2 binaries/xsh_basic.o
+ .bss.stack_limit
+                0x00000000008002ef        0x2 binaries/xsh_basic.o
+ .bss.expression_error
+                0x00000000008002f1        0x1 binaries/xsh_basic.o
+ .bss.tmptxtpos
+                0x00000000008002f2        0x2 binaries/xsh_basic.o
+ .bss.list_line
+                0x00000000008002f4        0x2 binaries/xsh_basic.o
+ .bss.txtpos    0x00000000008002f6        0x2 binaries/xsh_basic.o
  *(COMMON)
- COMMON         0x000000000080029a       0x1a binaries/bufinit.o
-                0x000000000080029a                buftab
-                0x00000000008002b3                nbpools
- COMMON         0x00000000008002b4        0x7 binaries/clkinit.o
-                0x00000000008002b4                sleepq
-                0x00000000008002b5                preempt
-                0x00000000008002b7                count1000
-                0x00000000008002b9                clktime
- COMMON         0x00000000008002bb        0xa binaries/create.o
-                0x00000000008002bb                nombre
- *fill*         0x00000000008002c5       0x3b 
- COMMON         0x0000000000800300       0xb8 binaries/evec.o
-                0x0000000000800300                intc_vector
- COMMON         0x00000000008003b8       0xb3 binaries/initialize.o
-                0x00000000008003b8                currpid
-                0x00000000008003b9                proctab
-                0x0000000000800455                prcount
-                0x0000000000800457                semtab
-                0x0000000000800467                memlist
- COMMON         0x000000000080046b       0x2b binaries/mark.o
-                0x000000000080046b                marks
-                0x0000000000800493                nmarks
-                0x0000000000800495                mkmutex
- COMMON         0x0000000000800496        0x4 binaries/meminit.o
-                0x0000000000800496                minheap
-                0x0000000000800498                maxheap
- COMMON         0x000000000080049a       0x28 binaries/ptinit.o
-                0x000000000080049a                porttab
-                0x00000000008004be                ptnextid
-                0x00000000008004c0                ptfree
- COMMON         0x00000000008004c2       0x40 binaries/queue.o
-                0x00000000008004c2                queuetab
- COMMON         0x0000000000800502        0x1 binaries/ready.o
-                0x0000000000800502                readylist
- COMMON         0x0000000000800503        0x3 binaries/resched.o
-                0x0000000000800503                Defer
- COMMON         0x0000000000800506       0x64 binaries/serial_avr.o
-                0x0000000000800506                cadena
- COMMON         0x000000000080056a       0x35 binaries/naminit.o
-                0x000000000080056a                nnames
-                0x000000000080056c                nametab
-                0x000000000080059f                PROVIDE (__bss_end, .)
-                0x0000000000004384                __data_load_start = LOADADDR (.data)
-                0x000000000000451c                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00000000008002f8        0x1 binaries/avr_serial.o
+                0x00000000008002f8                value
+ COMMON         0x00000000008002f9       0x2c binaries/bufinit.o
+                0x00000000008002f9                buftab
+                0x0000000000800321                nbpools
+ COMMON         0x0000000000800325        0xe binaries/clkinit.o
+                0x0000000000800325                sleepq
+                0x0000000000800327                preempt
+                0x000000000080032b                count1000
+                0x000000000080032f                clktime
+ COMMON         0x0000000000800333      0x196 binaries/initialize.o
+                0x0000000000800333                currpid
+                0x0000000000800337                proctab
+                0x00000000008004a3                prcount
+                0x00000000008004a7                semtab
+                0x00000000008004c3                memlist
+ COMMON         0x00000000008004c9        0x4 binaries/meminit.o
+                0x00000000008004c9                minheap
+                0x00000000008004cb                maxheap
+ COMMON         0x00000000008004cd       0x50 binaries/queue.o
+                0x00000000008004cd                queuetab
+ COMMON         0x000000000080051d        0x2 binaries/ready.o
+                0x000000000080051d                readylist
+ COMMON         0x000000000080051f        0x5 binaries/resched.o
+                0x000000000080051f                Defer
+ COMMON         0x0000000000800524        0x4 binaries/date.o
+                0x0000000000800524                seconds
+ COMMON         0x0000000000800528       0x58 binaries/naminit.o
+                0x0000000000800528                nnames
+                0x000000000080052c                nametab
+ COMMON         0x0000000000800580       0x50 binaries/ttyinit.o
+                0x0000000000800580                ttytab
+ COMMON         0x00000000008005d0        0x4 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utc_offset.o)
+                0x00000000008005d0                __utc_offset
+ COMMON         0x00000000008005d4        0x2 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(dst_pointer.o)
+                0x00000000008005d4                __dst_ptr
+                0x00000000008005d6                PROVIDE (__bss_end, .)
+                0x0000000000006daa                __data_load_start = LOADADDR (.data)
+                0x0000000000006f84                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x000000000080059f        0x0
+.noinit         0x00000000008005d6        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x000000000080059f                _end = .
+                0x00000000008005d6                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
@@ -1163,99 +1940,109 @@ END GROUP
 
 .comment        0x0000000000000000       0x11
  *(.comment)
- .comment       0x0000000000000000       0x11 binaries/ascdate.o
-                                         0x12 (tamaño antes de la relajación)
+ .comment       0x0000000000000000       0x11 binaries/avr_serial.o
+                                         0x12 (size before relaxing)
  .comment       0x0000000000000011       0x12 binaries/blink_avr.o
  .comment       0x0000000000000011       0x12 binaries/bufinit.o
- .comment       0x0000000000000011       0x12 binaries/chprio.o
  .comment       0x0000000000000011       0x12 binaries/clkhandler.o
  .comment       0x0000000000000011       0x12 binaries/clkinit.o
  .comment       0x0000000000000011       0x12 binaries/close.o
  .comment       0x0000000000000011       0x12 binaries/conf.o
  .comment       0x0000000000000011       0x12 binaries/control.o
  .comment       0x0000000000000011       0x12 binaries/create.o
- .comment       0x0000000000000011       0x12 binaries/debug.o
  .comment       0x0000000000000011       0x12 binaries/evec.o
  .comment       0x0000000000000011       0x12 binaries/exit.o
- .comment       0x0000000000000011       0x12 binaries/freebuf.o
  .comment       0x0000000000000011       0x12 binaries/freemem.o
- .comment       0x0000000000000011       0x12 binaries/getbuf.o
  .comment       0x0000000000000011       0x12 binaries/getc.o
- .comment       0x0000000000000011       0x12 binaries/getdev.o
  .comment       0x0000000000000011       0x12 binaries/getitem.o
- .comment       0x0000000000000011       0x12 binaries/getmem.o
  .comment       0x0000000000000011       0x12 binaries/getpid.o
- .comment       0x0000000000000011       0x12 binaries/getprio.o
  .comment       0x0000000000000011       0x12 binaries/getstk.o
- .comment       0x0000000000000011       0x12 binaries/getticks.o
- .comment       0x0000000000000011       0x12 binaries/gettime.o
  .comment       0x0000000000000011       0x12 binaries/init.o
  .comment       0x0000000000000011       0x12 binaries/initialize.o
  .comment       0x0000000000000011       0x12 binaries/insert.o
  .comment       0x0000000000000011       0x12 binaries/insertd.o
+ .comment       0x0000000000000011       0x12 binaries/intr.o
  .comment       0x0000000000000011       0x12 binaries/ioerr.o
  .comment       0x0000000000000011       0x12 binaries/ionull.o
  .comment       0x0000000000000011       0x12 binaries/kill.o
  .comment       0x0000000000000011       0x12 binaries/kprintf.o
- .comment       0x0000000000000011       0x12 binaries/main.o
- .comment       0x0000000000000011       0x12 binaries/mark.o
  .comment       0x0000000000000011       0x12 binaries/meminit.o
- .comment       0x0000000000000011       0x12 binaries/mkbufpool.o
  .comment       0x0000000000000011       0x12 binaries/newqueue.o
  .comment       0x0000000000000011       0x12 binaries/open.o
- .comment       0x0000000000000011       0x12 binaries/panic.o
  .comment       0x0000000000000011       0x12 binaries/platinit.o
- .comment       0x0000000000000011       0x12 binaries/ptclear.o
- .comment       0x0000000000000011       0x12 binaries/ptcount.o
- .comment       0x0000000000000011       0x12 binaries/ptcreate.o
- .comment       0x0000000000000011       0x12 binaries/ptdelete.o
- .comment       0x0000000000000011       0x12 binaries/ptinit.o
- .comment       0x0000000000000011       0x12 binaries/ptrecv.o
- .comment       0x0000000000000011       0x12 binaries/ptreset.o
- .comment       0x0000000000000011       0x12 binaries/ptsend.o
  .comment       0x0000000000000011       0x12 binaries/putc.o
  .comment       0x0000000000000011       0x12 binaries/queue.o
  .comment       0x0000000000000011       0x12 binaries/read.o
  .comment       0x0000000000000011       0x12 binaries/ready.o
  .comment       0x0000000000000011       0x12 binaries/receive.o
  .comment       0x0000000000000011       0x12 binaries/recvclr.o
- .comment       0x0000000000000011       0x12 binaries/recvtime.o
  .comment       0x0000000000000011       0x12 binaries/resched.o
  .comment       0x0000000000000011       0x12 binaries/resume.o
- .comment       0x0000000000000011       0x12 binaries/seek.o
  .comment       0x0000000000000011       0x12 binaries/semcount.o
  .comment       0x0000000000000011       0x12 binaries/semcreate.o
- .comment       0x0000000000000011       0x12 binaries/semdelete.o
  .comment       0x0000000000000011       0x12 binaries/semreset.o
  .comment       0x0000000000000011       0x12 binaries/send.o
- .comment       0x0000000000000011       0x12 binaries/serial_avr.o
  .comment       0x0000000000000011       0x12 binaries/signal.o
  .comment       0x0000000000000011       0x12 binaries/signaln.o
  .comment       0x0000000000000011       0x12 binaries/sleep.o
- .comment       0x0000000000000011       0x12 binaries/suspend.o
- .comment       0x0000000000000011       0x12 binaries/syscall.o
  .comment       0x0000000000000011       0x12 binaries/unsleep.o
  .comment       0x0000000000000011       0x12 binaries/userret.o
  .comment       0x0000000000000011       0x12 binaries/wait.o
  .comment       0x0000000000000011       0x12 binaries/wakeup.o
- .comment       0x0000000000000011       0x12 binaries/write.o
  .comment       0x0000000000000011       0x12 binaries/xdone.o
  .comment       0x0000000000000011       0x12 binaries/yield.o
- .comment       0x0000000000000011       0x12 binaries/ctype_.o
- .comment       0x0000000000000011       0x12 binaries/doprnt.o
- .comment       0x0000000000000011       0x12 binaries/doscan.o
- .comment       0x0000000000000011       0x12 binaries/messages.o
- .comment       0x0000000000000011       0x12 binaries/userland.o
+ .comment       0x0000000000000011       0x12 binaries/avr_gpio.o
+ .comment       0x0000000000000011       0x12 binaries/avr_messages.o
+ .comment       0x0000000000000011       0x12 binaries/avr_printf.o
+ .comment       0x0000000000000011       0x12 binaries/change_proc_name.o
+ .comment       0x0000000000000011       0x12 binaries/date.o
+ .comment       0x0000000000000011       0x12 binaries/fprintf.o
+ .comment       0x0000000000000011       0x12 binaries/printf.o
  .comment       0x0000000000000011       0x12 binaries/mount.o
  .comment       0x0000000000000011       0x12 binaries/naminit.o
  .comment       0x0000000000000011       0x12 binaries/nammap.o
  .comment       0x0000000000000011       0x12 binaries/namopen.o
+ .comment       0x0000000000000011       0x12 binaries/ttycontrol.o
+ .comment       0x0000000000000011       0x12 binaries/ttygetc.o
+ .comment       0x0000000000000011       0x12 binaries/ttyhandle_in.o
+ .comment       0x0000000000000011       0x12 binaries/ttyhandle_out.o
+ .comment       0x0000000000000011       0x12 binaries/ttyhandler.o
+ .comment       0x0000000000000011       0x12 binaries/ttyinit.o
+ .comment       0x0000000000000011       0x12 binaries/ttykickout.o
+ .comment       0x0000000000000011       0x12 binaries/ttyputc.o
+ .comment       0x0000000000000011       0x12 binaries/ttyread.o
+ .comment       0x0000000000000011       0x12 binaries/ttywrite.o
  .comment       0x0000000000000011       0x12 binaries/addargs.o
  .comment       0x0000000000000011       0x12 binaries/lexan.o
- .comment       0x0000000000000011       0x12 binaries/shell.o
- .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fprintf.o)
+ .comment       0x0000000000000011       0x12 binaries/main.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_basic.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_cal.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_clear.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_date.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_echo.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_editor.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_forever.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_free.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_gpio.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_kill.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_memdump.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_ps.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_reboot.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_sleep.o
+ .comment       0x0000000000000011       0x12 binaries/xsh_uptime.o
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(rand.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vsnprintf.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(asctime_r.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(localtime_r.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mktime.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(print_lz.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(utc_offset.o)
  .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(vfprintf_std.o)
  .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(fputc.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(dst_pointer.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(gmtime_r.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(mk_gmtime.o)
+ .comment       0x0000000000000011       0x12 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libc.a(isLeap.o)
 
 .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x40
