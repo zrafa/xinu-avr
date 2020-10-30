@@ -265,7 +265,7 @@ process	main(void)
 		/* Handle parsing error */
 
 		if (ntok == SYSERR) {
-			fprintf(dev,"%s\n", SHELL_SYNERRMSG);
+			// fprintf(dev,"%s\n", SHELL_SYNERRMSG);
 			continue;
 		}
 
