@@ -265,7 +265,7 @@ process	main(void)
 		/* Handle parsing error */
 
 		if (ntok == SYSERR) {
-			// fprintf(dev,"%s\n", SHELL_SYNERRMSG);
+			fprintf(dev,"%s\n", SHELL_SYNERRMSG);
 			continue;
 		}
 
@@ -365,7 +365,7 @@ process	main(void)
 		/* Handle command not found */
 
 		if (j >= ncmd) {
-			// fprintf(dev, "command %s not found\n", tokbuf);
+			fprintf(dev, "not found\n", tokbuf);
 			continue;
 		}
 
