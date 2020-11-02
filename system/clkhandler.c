@@ -32,32 +32,21 @@ ISR(TIMER0_COMPA_vect)
 		count1000 = 0;
 	}
 
-	/* check if sleep queue is empty every 100ms */
+	if(!isempty(sleepq)) {
+		/* sleepq nonempty, decrement the key of */
+		/* topmost process on sleepq             */
 
-	if ((count1000 % 100) == 0)	/* every 100ms */
-		if(!isempty(sleepq)) {
-			/* sleepq nonempty, decrement the key of */
-			/* topmost process on sleepq             */
+		if((--queuetab[firstid(sleepq)].qkey) == 0) {
 
-			if((--queuetab[firstid(sleepq)].qkey) == 0) {
-
-				wakeup();
-			}
+			wakeup();
 		}
+	}
 
-	/* our MCU is slow (16Mhz), so we do resched/preemption every 300ms */
-	avr_ticks ++;
-	if (avr_ticks > 300) {		
-//	if (avr_ticks > 10) {		
-//	if (avr_ticks > 100) {		
-		avr_ticks=0;
-
-		/* Decrement the preemption counter */
-		/* Reschedule if necessary          */
-		if((--preempt) == 0) {
-			preempt = QUANTUM;
-			resched();
-		}
+	/* Decrement the preemption counter */
+	/* Reschedule if necessary          */
+	if((--preempt) == 0) {
+		preempt = QUANTUM;
+		resched();
 	}
 }
 

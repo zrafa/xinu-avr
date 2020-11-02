@@ -13,7 +13,7 @@
 #define	MINKEY	0x80000000	/* Min key that can be stored in queue	*/
 
 struct	qentry	{		/* One per process plus two per list	*/
-	char	qkey;		/* Key on which the queue is ordered	*/
+	uint16	qkey;		/* Key on which the queue is ordered	*/
 //	int32	qkey;		/* Key on which the queue is ordered	*/
 	qid16	qnext;		/* Index of next process or tail	*/
 	qid16	qprev;		/* Index of previous process or head	*/

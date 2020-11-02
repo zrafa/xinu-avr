@@ -162,7 +162,7 @@ extern	status	insert(pid32, qid16, char);
 
 /* in file insertd.c */
 // extern	status	insertd(pid32, qid16, int32);
-extern	status	insertd(pid32, qid16, char);
+extern	status	insertd(pid32, qid16, uint16);
 
 /* in file intr.S */
 extern	intmask	disable(void);
@@ -514,8 +514,7 @@ extern	syscall	signal(sid32);
 extern	syscall	signaln(sid32, int32);
 
 /* in file sleep.c */
-// extern	syscall	sleepms(int32);
-extern	syscall	sleep100ms(int32);		/* avr atmega328p specific */
+extern	syscall	sleepms(int32);
 extern	syscall	sleep(int32);
 
 /* in file spicontrol.c */
