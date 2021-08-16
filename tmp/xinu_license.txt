@@ -22,3 +22,23 @@ permission from the copyright holders. <== (This last sentence prevents
 publishing the code in a competing textbook,and it allows all other uses).
 
 
+Dudas de RAFA
+-------------
+
+1- La licencia no tiene la expresión ",with or without modification," en 
+   la primera oración, como varias licencias BSD. 
+   ¿Significa eso que el software no puede distribuirse/publicarse modificado?
+   La duda viene porque otras licencias BSD si lo expresan explícitamente,
+   como dando a entender, que si eso no está, sólo se permite distribuirlo
+   tal cual está (o lo recibiste).
+
+2- La ultima oración: según Douglas Comer (le pregunté), esta oración
+   es unicamente para que no publiquen un libro que sea competencia al
+   que CRC press le publica a él. Si bien no me parece tan mal en 
+   principio, no sé si la oración "semánticamente" significa exactamente
+   lo que él me dice. Es decir, como que pareciera que podría tener
+   dos significados. La gente podría confundir esta oración con 
+   este significado (ejemplo):
+     a- que el software no se puede vender
+     b- que el software no puede ser publicado dentro de un libro
+   Si esa confusión se da, entonces a- me preocupa. ¿Sería open source?
