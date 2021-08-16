@@ -33,12 +33,14 @@ Dudas de RAFA
    tal cual está (o lo recibiste).
 
 2- La ultima oración: según Douglas Comer (le pregunté), esta oración
-   es unicamente para que no publiquen un libro que sea competencia al
-   que CRC press le publica a él. Si bien no me parece tan mal en 
-   principio, no sé si la oración "semánticamente" significa exactamente
-   lo que él me dice. Es decir, como que pareciera que podría tener
+   es unicamente para que no publiquen un libro con el código de Xinu,
+   y que sea competencia al que CRC press le publica a él. Si bien no me 
+   parece tan mal en principio, no sé si la oración "semánticamente" 
+   significa exactamente lo que él me dice, o si no se presta a confusión.
+   Es decir, como que pareciera que podría tener
    dos significados. La gente podría confundir esta oración con 
    este significado (ejemplo):
      a- que el software no se puede vender
      b- que el software no puede ser publicado dentro de un libro
-   Si esa confusión se da, entonces a- me preocupa. ¿Sería open source?
+   ¿Es tan clara la oración? Si esa confusión se da creo que entonces
+   a- me preocupa. ¿Sería open source?
